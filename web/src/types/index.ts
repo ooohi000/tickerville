@@ -138,6 +138,10 @@ export interface CompanyProfile {
 /** 최근 공시 한 건 */
 export interface Filing {
   form: string; // "8-K", "4", "10-Q", "10-K" ...
+  /** 8-K 항목 번호 "2.02,9.01" (2.02 = 실적 발표). 그 외 폼은 null */
+  items: string | null;
+  /** 서버가 붙인 한글 이름: "실적 발표", "내부자 거래", "분기 보고서" ... */
+  labelKo: string;
   filedAt: string; // YYYY-MM-DD
   /** SEC 원문 링크 */
   url: string;
@@ -151,6 +155,17 @@ export interface CompanyDetail {
   latestQuarter: FinancialStatement | null;
   /** 최근 공시 (최신순, 최대 20건) */
   recentFilings: Filing[];
+  earnings: EarningsSummary;
+}
+
+/** BMO 장 시작 전 · DURING 장중 · AMC 장 마감 후 (미국 동부) */
+export type EarningsTiming = "BMO" | "DURING" | "AMC";
+
+export interface EarningsSummary {
+  /** 가장 최근 실적 발표 (SEC 8-K 항목 2.02) */
+  lastReported: { date: string; timing: EarningsTiming | null } | null;
+  /** 다음 발표. EXPECTED 는 추정이라 화면에 "예상" 표시 필수 */
+  next: { date: string; status: "EXPECTED" | "CONFIRMED"; source: "ESTIMATE" | "MANUAL" } | null;
 }
 
 export type ApiErrorCode =

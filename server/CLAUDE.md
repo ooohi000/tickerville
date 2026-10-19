@@ -21,9 +21,9 @@ com.usstockmap.server
     admin/      AdminKeyInterceptor (/api/admin/** 는 X-Admin-Key)
   admin/        관리자 API: 수집기 실행·상태(/api/admin/collectors/{sec|fred}), 품질 이상 목록, 티커로 기업 등록 (docs/api.md 관리자 API)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
-  company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies (상세는 다음)
-  filing/       30일 공시 집계 (FilingActivityCalculator)
-  earnings/     실적 발표: 8-K 2.02 → 지난 발표·장전/장후, 다음 발표 예상(작년 같은 분기 + 52주)
+  company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies, 상세 GET /companies/{ticker}·/financials (CompanyDetailService·CompanyDetailQueryRepository)
+  filing/       공시(Filing 읽기 전용), 30일 집계(FilingActivityCalculator), 한글 이름(FilingLabels)
+  earnings/     실적 발표(EarningsEvent 읽기 전용): 8-K 2.02 → 지난 발표·장전/장후, 다음 발표 예상(작년 같은 분기 + 52주)
   quality/      수집 결과 자동 점검 (DataQualityChecker → data_quality_issue)
   financial/    재무 정리 규칙 (순수): SecFact → PeriodNormalizer → FinancialStatementBuilder → MapMetricsCalculator. 개념 후보는 Metric, 규칙 버전 FinancialCalc.VERSION
   weather/      시장 날씨: MarketWeatherIndex(순수, 10년 백분위), MarketWeather, GET /market-weather
@@ -44,7 +44,7 @@ com.usstockmap.server
 - 섹터처럼 소문자 문자열 값은 enum + `AttributeConverter` (`SectorConverter`).
 - 계산 규칙(매출 TTM, 공시 집계, 시장 날씨 지수)은 **순수 클래스**로 분리하고 단위 테스트를 붙인다.
 - 외부 API 클라이언트는 인터페이스로 감싼다 (테스트에서 가짜로 바꿀 수 있게). `RestClient`는 클라이언트 안에서 직접 만든다 (Boot 4 는 자동 구성 Builder 가 별도 스타터라 의존성을 늘리지 않음)
-- 수집기의 대량 쓰기(원본 값·재무제표·공시·기록)는 `JdbcTemplate` 배치, 기업·최신 지표는 JPA 엔티티. 네트워크는 트랜잭션 밖, 저장만 기업 하나 단위 트랜잭션
+- 수집기의 대량 쓰기(원본 값·재무제표·공시·기록)는 `JdbcTemplate` 배치, 기업·최신 지표는 JPA 엔티티. 수집기가 쓰는 테이블의 조회용 엔티티는 `@Immutable`(FinancialPeriod·Filing·EarningsEvent). 네트워크는 트랜잭션 밖, 저장만 기업 하나 단위 트랜잭션
 
 ## SEC 접근 규칙 (어기면 IP 차단)
 - 초당 10회 이하 (`app.sec.max-requests-per-second` = 8로 여유)

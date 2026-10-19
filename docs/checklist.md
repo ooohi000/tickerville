@@ -63,7 +63,7 @@
 - [ ] 🏠 층마다 창문 줄무늬
 - [ ] 📱 로고 확장 (`logoUrl?` 있으면 로고, 없으면 티커)
 
-## 서버 (`server/`: Spring Boot 4 + PostgreSQL + Redis) ← 진행 중
+## 서버 (`server/`: Spring Boot 4 + PostgreSQL + Redis) — 1차 완성
 - [x] 📱 API 계약 `docs/api.md` + 응답 타입 + 계약 예시 타입 테스트
 - [x] 📱 모노레포로 정리 (`web/`·`server/`·`docs/`, 루트·각 폴더 CLAUDE.md)
 - [x] 📱 스프링부트 뼈대: Java 21, Boot 4.1, JPA + QueryDSL 7.7, PostgreSQL·Redis(compose), Flyway, 서버용 CLAUDE.md
@@ -89,7 +89,8 @@
 - [ ] 🏠 FRED API 키 발급 (무료, https://fred.stlouisfed.org/docs/api/api_key.html) → `FRED_API_KEY`
 - [ ] 📱 수출입은행 원/달러 + 매크로 시리즈(금리·유가, `macro_observation` 재사용) — 랜드마크·전광판 때
 - [ ] 📱 배치 스케줄 (`@Scheduled`), Redis 캐시
-- [ ] 📱 상세·재무제표 API
+- [x] 📱 상세·재무제표 API: `GET /companies/{ticker}` (기본 정보·최근 분기/연간·공시 20건 한글 이름·실적 지난/다음 예상), `GET /companies/{ticker}/financials?period&limit` (테스트 총 181개)
+- [ ] 📱 Redis 캐시 (상세·목록, 수집 끝나면 비우기)
 - [ ] 📱 방문자 익명 집계 `company_view_daily` + 수집 API (프론트 연결 때)
 - [ ] 🏠 프론트: 정적 JSON → API 호출로 교체 (응답 모양이 같아서 데이터 읽는 곳만). 시장 날씨 503이면 기본 하늘(흐림)로
 - [ ] 🏠 배포 (서버·DB 호스팅 정하기)

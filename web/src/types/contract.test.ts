@@ -60,10 +60,16 @@ const detail = {
   recentFilings: [
     {
       form: "8-K",
+      items: "2.02,9.01",
+      labelKo: "실적 발표",
       filedAt: "2026-08-27",
       url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000001/0001045810-26-000001-index.htm",
     },
   ],
+  earnings: {
+    lastReported: { date: "2026-08-26", timing: "AMC" },
+    next: { date: "2026-11-18", status: "EXPECTED", source: "ESTIMATE" },
+  },
 } satisfies CompanyDetail;
 
 const error = {

@@ -118,14 +118,21 @@
   "latestAnnual": { "...": "FinancialStatement, 가장 최근 연간" },
   "latestQuarter": { "...": "FinancialStatement, 가장 최근 분기" },
   "recentFilings": [
-    { "form": "8-K", "filedAt": "2026-08-27", "url": "https://www.sec.gov/Archives/edgar/data/..." }
-  ]
+    { "form": "8-K", "items": "2.02,9.01", "labelKo": "실적 발표", "filedAt": "2026-08-27", "url": "https://www.sec.gov/Archives/edgar/data/..." }
+  ],
+  "earnings": {
+    "lastReported": { "date": "2026-08-26", "timing": "AMC" },
+    "next": { "date": "2026-11-18", "status": "EXPECTED", "source": "ESTIMATE" }
+  }
 }
 ```
 - `profile`: SEC `submissions` 기본 정보 + `descriptionKo`(직접 작성한 한글 한 줄 소개, 없으면 `null`)
 - `fiscalYearEnd`: 회계연도 마감 `MMDD` — 화면에서 "회계연도 1월 말 마감"처럼 안내해 날짜 혼동을 막는다
 - `recentFilings`: 최근 공시 최신순 최대 20건, SEC 원문 링크 포함 ("최근 소식" 목록)
-- `profile`, `latestAnnual`, `latestQuarter`는 아직 수집 안 됐으면 `null`, `recentFilings`는 빈 배열
+- `recentFilings[].items`: 8-K 항목 번호 (그 외 폼은 `null`). `labelKo`: 서버가 붙이는 한글 이름 — 10-K 연간 보고서, 10-Q 분기 보고서, 8-K 2.02 실적 발표·5.02 경영진 변동·1.01 주요 계약·2.01 인수·매각 완료·그 외 중요 사건, 4 내부자 거래, DEF 14A 주주총회 안내, 정정(`/A`)은 뒤에 "(정정)"
+- `earnings.lastReported`: 가장 최근 실적 발표 (8-K 2.02). `timing` = `BMO` 장 시작 전 · `DURING` 장중 · `AMC` 장 마감 후 (SEC 접수 시각 기준, 보도자료 시각과 다를 수 있음), 모르면 `null`
+- `earnings.next`: 오늘 이후 다음 발표. `status` = `CONFIRMED`(회사가 발표, 직접 입력) · `EXPECTED`(작년 같은 분기 + 52주 추정, 화면에 **"예상"** 표시 필수). `source` = `MANUAL` · `ESTIMATE`. 없으면 `null`
+- `profile`, `latestAnnual`, `latestQuarter`는 아직 수집 안 됐으면 `null`, `recentFilings`는 빈 배열, `earnings`의 두 값은 `null`
 
 ### `GET /api/v1/companies/{ticker}/financials?period=quarterly&limit=8`
 재무제표 목록, **최신순**. → 타입 `FinancialStatement[]`
