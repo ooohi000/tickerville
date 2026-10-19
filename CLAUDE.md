@@ -36,6 +36,8 @@ src/
 ```
 
 ## 코드 규칙
+- **공통으로 뽑을 수 있는 건 최대한 공통으로 뽑는다.** 종류별 컴포넌트를 따로 만들지 말고 컴포넌트 하나 + props + 설정 객체로 분기한다. (예: `Building` 하나에 `tier` prop, 모양 차이는 `BUILDING_SPECS[tier]`)
+- 두 번 이상 쓰이는 값·로직은 상수나 `lib/` 함수로 올린다.
 - **계산은 `lib/`, 그리기는 `components/`.** 컴포넌트 안에서 좌표·등급을 직접 계산하지 않는다.
 - `lib/`의 모든 함수는 같은 폴더에 `*.test.ts`를 둔다.
 - named export만 사용 (default export는 Next 라우트 파일만).
