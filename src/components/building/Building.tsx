@@ -2,7 +2,9 @@
 
 import type { ThreeEvent } from "@react-three/fiber";
 import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/buildingSpec";
+import type { SignMode } from "@/lib/company/sign";
 import type { Company, WorldPoint } from "@/types";
+import { Sign } from "./Sign";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
 const BODY_COLOR = "#e8e2d4";
@@ -12,6 +14,8 @@ const HIGHLIGHT_EMISSIVE = "#f5c542";
 export interface BuildingProps {
   company: Company;
   position: WorldPoint;
+  /** 옥상 간판 표시 방식 (getSignModes로 계산) */
+  signMode?: SignMode;
   highlighted?: boolean;
   onSelect?: (ticker: string) => void;
 }
@@ -20,7 +24,13 @@ export interface BuildingProps {
  * 모든 등급 공통 건물. 모양 차이는 BUILDING_SPECS(lib)에서만 결정된다.
  * 건물 원점은 바닥 중앙.
  */
-export function Building({ company, position, highlighted = false, onSelect }: BuildingProps) {
+export function Building({
+  company,
+  position,
+  signMode = "always",
+  highlighted = false,
+  onSelect,
+}: BuildingProps) {
   const d = getBuildingDimensions(company.marketCapUsd);
   const emissive = highlighted ? HIGHLIGHT_EMISSIVE : "#000000";
 
@@ -36,6 +46,7 @@ export function Building({ company, position, highlighted = false, onSelect }: B
         <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />
       </mesh>
       <Roof d={d} emissive={emissive} />
+      <Sign ticker={company.ticker} building={d} mode={signMode} highlighted={highlighted} />
     </group>
   );
 }

@@ -12,6 +12,8 @@ export interface BuildingSpec {
   roof: RoofType;
   /** 지붕/첨탑 높이 */
   roofHeight: number;
+  /** 옥상 간판 글자 크기 */
+  signFontSize: number;
 }
 
 /** 한 층 높이 (월드 단위). 모든 등급이 공유 */
@@ -20,15 +22,15 @@ export const FLOOR_HEIGHT = 0.4;
 /** 같은 등급 안 최대 높이 보정. 1.5면 등급 상한에서 1.5배 */
 export const MAX_IN_TIER_HEIGHT_FACTOR = 1.5;
 
-/** 티커 라벨이 건물 꼭대기에서 떠 있는 간격 */
+/** 옥상 간판이 건물 꼭대기에서 떠 있는 간격 */
 export const LABEL_GAP = 0.5;
 
 /** 등급별 건물 설정. 값은 초안 — 집에서 화면 보고 조정 */
 export const BUILDING_SPECS: Readonly<Record<MarketCapTier, BuildingSpec>> = {
-  small: { floors: 1, footprint: 0.5, roof: "gable", roofHeight: 0.35 },
-  mid: { floors: 3, footprint: 0.6, roof: "flat", roofHeight: 0 },
-  large: { floors: 6, footprint: 0.8, roof: "antenna", roofHeight: 0.8 },
-  mega: { floors: 10, footprint: 1.0, roof: "spire", roofHeight: 1.5 },
+  small: { floors: 1, footprint: 0.5, roof: "gable", roofHeight: 0.35, signFontSize: 0.35 },
+  mid: { floors: 3, footprint: 0.6, roof: "flat", roofHeight: 0, signFontSize: 0.45 },
+  large: { floors: 6, footprint: 0.8, roof: "antenna", roofHeight: 0.8, signFontSize: 0.6 },
+  mega: { floors: 10, footprint: 1.0, roof: "spire", roofHeight: 1.5, signFontSize: 0.8 },
 };
 
 /** Building 컴포넌트가 그대로 쓰는 최종 치수 */
@@ -42,8 +44,9 @@ export interface BuildingDimensions {
   roofHeight: number;
   /** 몸통 + 지붕 */
   totalHeight: number;
-  /** 티커 라벨 y 위치 */
+  /** 옥상 간판 바닥 y 위치 */
   labelY: number;
+  signFontSize: number;
 }
 
 /** 시총 → 건물 치수. 등급으로 모양을 정하고, 등급 안 위치로 높이만 보정한다. */
@@ -63,5 +66,6 @@ export function getBuildingDimensions(marketCapUsd: number): BuildingDimensions 
     roofHeight: spec.roofHeight,
     totalHeight,
     labelY: totalHeight + LABEL_GAP,
+    signFontSize: spec.signFontSize,
   };
 }

@@ -4,10 +4,15 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Building } from "@/components/building/Building";
 import dataset from "@/data/companies.json";
+import regionsData from "@/data/regions.json";
+import { assignRegions } from "@/lib/cluster/assignRegions";
+import { getSignModes } from "@/lib/company/sign";
 import { projectLatLng } from "@/lib/geo/project";
-import type { CompanyDataset } from "@/types";
+import type { CompanyDataset, Region } from "@/types";
 
 const { companies } = dataset as CompanyDataset;
+// 정적 데이터라 모듈 로드 시 한 번만 계산
+const signModes = getSignModes(assignRegions(companies, regionsData as Region[]));
 
 /**
  * M1 뼈대: 카메라 + 조명 + 바닥 + 컨트롤.
@@ -30,7 +35,9 @@ export function MapScene() {
       {companies.map((c) => {
         const p = projectLatLng(c.hq.lat, c.hq.lng);
         if (!p) return null;
-        return <Building key={c.ticker} company={c} position={p} />;
+        return (
+          <Building key={c.ticker} company={c} position={p} signMode={signModes.get(c.ticker)} />
+        );
       })}
 
       <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.2} />

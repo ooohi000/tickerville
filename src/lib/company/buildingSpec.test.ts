@@ -22,6 +22,14 @@ describe("BUILDING_SPECS", () => {
     }
   });
 
+  it("등급이 오를수록 간판 글자가 커진다", () => {
+    for (let i = 1; i < ORDER.length; i++) {
+      expect(BUILDING_SPECS[ORDER[i]].signFontSize).toBeGreaterThan(
+        BUILDING_SPECS[ORDER[i - 1]].signFontSize,
+      );
+    }
+  });
+
   it("등급마다 지붕 모양이 다르다", () => {
     const roofs = ORDER.map((t) => BUILDING_SPECS[t].roof);
     expect(new Set(roofs).size).toBe(ORDER.length);
