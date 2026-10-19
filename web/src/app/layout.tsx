@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "미국 기업 본사 3D 지도",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>{children}</body>

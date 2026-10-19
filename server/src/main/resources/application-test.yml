@@ -1,0 +1,5 @@
+# 슬라이스 테스트용. DB·Redis 없이 웹 계층만 띄운다
+spring:
+  docker:
+    compose:
+      enabled: false

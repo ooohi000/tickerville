@@ -1,16 +1,11 @@
 # US Stock Map
 
-관심 있는 미국 기업 본사를 실제 미국 지도 위 3D 건물로 보여주는 앱. Next.js + React Three Fiber(three.js).
+미국 기업 본사를 실제 미국 지도 위 3D 건물로 보여주는 서비스. SEC 공시와 연준 공개 지표로 만든다.
 
-```bash
-npm install
-npm run dev     # http://localhost:3000
-npm test
-```
+| 폴더 | 내용 | 실행 |
+|---|---|---|
+| [`web/`](./web) | Next.js + React Three Fiber 프론트 | `cd web && npm install && npm run dev` → http://localhost:3000 |
+| [`server/`](./server) | Spring Boot API 서버 | `cd server && ./gradlew bootRun` (Docker 필요: PostgreSQL·Redis 자동 실행) → http://localhost:8080 |
+| [`docs/`](./docs) | 기획·API 계약·데이터 소스·체크리스트 | |
 
-- 작업 규칙: [`CLAUDE.md`](./CLAUDE.md)
-- 기획·데이터 계약·마일스톤: [`docs/spec.md`](./docs/spec.md)
-- 서버 API 계약: [`docs/api.md`](./docs/api.md)
-- 데이터 소스·비용 조사: [`docs/data-sources.md`](./docs/data-sources.md)
-- 진행 체크리스트: [`docs/checklist.md`](./docs/checklist.md)
-- 이동 중 조각 요청 형식: [`docs/request-template.md`](./docs/request-template.md)
+데이터: U.S. SEC EDGAR, FRED®(Federal Reserve Bank of St. Louis), 한국수출입은행. 투자 권유가 아닌 정보 제공 목적.

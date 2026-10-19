@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: us-stock-map-server
+  jpa:
+    # 스키마는 Flyway가 관리한다. JPA는 엔티티와 일치하는지만 검사
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  cors:
+    # 프론트 주소. 배포 후 실제 도메인 추가
+    allowed-origins:
+      - http://localhost:3000
+  sec:
+    # SEC 접근 규칙: 앱 이름 + 연락처 이메일 필수, 초당 10회 이하
+    user-agent: "UsStockMap/0.1 (${SEC_CONTACT_EMAIL:change-me@example.com})"
+    max-requests-per-second: 8
+  fred:
+    api-key: ${FRED_API_KEY:}

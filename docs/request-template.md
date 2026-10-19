@@ -5,7 +5,7 @@
 
 ```
 [종류] 함수 / 컴포넌트 / 테스트 / 데이터
-[위치] src/lib/cluster/assignRegion.ts
+[위치] web/src/lib/cluster/assignRegion.ts  (서버면 server/src/main/java/...)
 [하는 일] 기업마다 가장 가까운 지역을 찾아 묶는다
 [입력] Company[], Region[]
 [출력] Map<regionId, Company[]> + 어디에도 안 속한 기업 목록
@@ -15,7 +15,7 @@
 ```
 
 ## 받는 쪽(Claude) 약속
-- `CLAUDE.md`의 폴더·코드 규칙과 `src/types/index.ts` 타입을 그대로 따른다.
+- 루트·해당 폴더 `CLAUDE.md`의 규칙과 `docs/api.md`·`web/src/types/index.ts` 계약을 그대로 따른다.
 - 타입 변경이 필요하면 코드보다 먼저 말한다.
 - `lib/` 함수는 테스트까지 같이 주고, 실제로 돌려본 결과를 알려준다.
 - 화면 조정(색, 크기, 카메라)이 필요한 부분은 "집에서 확인" 표시를 단다.
