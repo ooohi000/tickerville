@@ -63,6 +63,7 @@
 - [x] 📱 공통 에러 응답(`ApiException`·`GlobalExceptionHandler`, 계약 모양), CORS, 캐시 헤더
 - [x] 📱 `GET /api/v1/regions` (classpath JSON) + 슬라이스 테스트 12개
 - [ ] 🏠 `./gradlew bootRun`으로 Docker DB·Redis 띄워서 실행 확인
+- [x] 📱 SEC 실제 응답 확인 (7개 기업): 개념 이름·기간 함정·누락 정리 → `data-sources.md`
 - [ ] 📱 엔티티·스키마: 기업(+SEC 기본 정보·한글 소개), 재무제표(원본 JSONB + 주요 지표), 공시 목록, 시장 날씨, 매크로 지표
 - [ ] 📱 조회 API: 목데이터 10개를 DB에 넣고 `/companies`, `/market-weather`
 - [x] 📱 데이터 소스 조사 → `docs/data-sources.md`. **결정: SEC + FRED + 수출입은행, 월 $0** (계약 `api.md` 반영 완료)

@@ -65,6 +65,7 @@ describe("findStateAt", () => {
       NY: "New York",
       GA: "Georgia",
       CO: "Colorado",
+      FL: "Florida",
     };
     for (const c of (dataset as CompanyDataset).companies) {
       const state = findStateAt(projectLatLng(c.hq.lat, c.hq.lng)!);

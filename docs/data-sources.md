@@ -124,6 +124,39 @@ SEC는 sec.gov 정보가 공개 정보이며 허락 없이 복사·재배포할 
   - SEC 함정: `companyfacts`의 `fy`·`fp`는 **그 값이 실린 공시의** 회계연도·분기다. 10-K에 같이 실린 전년도 비교값도 같은 `fy`를 단다 → 기간은 반드시 `start`·`end` 날짜로 판정하고, 같은 기간이 여러 공시에 나오면 `filed`가 최신인 값(정정 반영)을 쓴다
 - 바뀐 추천: 재무제표·발행주식수 = SEC, 주가·거래량 = 공개 표시 가능한 저가 제공처(Marketstack 확인), FMP는 쓰지 않거나 개발 중 교차 검증용
 
+## SEC 실제 데이터 확인 (2026-10-19, 7개 기업 직접 수집)
+대상: AAPL·NVDA·JPM·KO·PLTR·TSLA·AMZN. 접속 OK (User-Agent에 연락처, 요청 간 0.3초).
+
+### 기업마다 다른 것 → "개념 후보 목록 + 업종 규칙"으로 정규화
+| 항목 | 관찰 |
+|---|---|
+| 매출 | AAPL·PLTR·AMZN = `RevenueFromContractWithCustomerExcludingAssessedTax`, KO = `Revenues`, **NVDA는 2022년에 이름을 바꿈**(→ `Revenues`), **JPM(은행) = `RevenuesNetOfInterestExpense`** |
+| 영업이익 | 대부분 `OperatingIncomeLoss`, **은행(JPM)은 없음** → 영업이익률 `null` |
+| 설비투자 | `PaymentsToAcquirePropertyPlantAndEquipment` 또는 `PaymentsToAcquireProductiveAssets`(NVDA·AMZN), 은행은 없음 |
+| 순이익·총자산·영업현금흐름 | 7개 모두 `NetIncomeLoss`·`Assets`·`NetCashProvidedByUsedInOperatingActivities` |
+| 발행주식수 | `dei:EntityCommonStockSharesOutstanding` 분기마다 갱신. **PLTR은 없음**(주식 종류가 여러 개) |
+| 공시상 시총 | `dei:EntityPublicFloat` 7개 모두 있음. 기준일이 **2025년 3~7월**이라 1년 이상 묵음 (예상대로) |
+
+→ 규칙: 기업마다 고정 개념을 정하지 말고, **기간마다 후보 목록을 우선순위대로 찾아 값이 있는 것**을 쓴다. 은행은 별도 후보 목록.
+
+### 기간 함정 (확인됨)
+- **10-Q 한 건에 3개월 값과 누적 값이 같이 있다**: AAPL 3분기 10-Q에 90일(3개월)·272일(9개월 누적) 값이 전년·당해 각각 → **기간 길이(약 90일)로 분기 값을 고른다**
+- **10-K 한 건에 3개 연도가 전부 `fy=2025, fp=FY`로 들어 있다** → `fy`·`fp` 믿지 말고 `start`·`end`로 판정
+- 4분기 값은 따로 없다 → 연간 − (1~3분기)
+- 같은 기간이 여러 공시에 반복 등장 (한 기간이 4번) → `filed` 최신 값
+- **KO는 최신 분기(2026-06) 매출이 companyfacts에 아직 없음** (마지막 2026-04-03) → 기업마다 "데이터 기준일"을 따로 저장하고 화면에 표시
+
+### submissions에서 바로 얻는 것
+- 회계연도 마감(AAPL 0926, NVDA 0131, 나머지 1231), SIC 업종, 거래소, **본사 주소**
+- **PLTR 본사가 플로리다 Aventura로 나옴** (목데이터의 덴버와 다름) → 본사 좌표는 SEC 주소로 갱신하는 게 맞다
+- 최근 30일: AAPL Form 4 14건, NVDA 4건, PLTR 7건, JPM 8-K 2건·Form 4 5건, TSLA 8-K 2건, KO 0건 → 공시 열기에 실제로 차이가 난다
+- JPM은 구조화 채권 공시 때문에 최근 목록이 2만 건 이상(파일 4.6MB) → 공시 집계는 폼 종류로 거르고, 큰 응답에 대비
+
+### 스키마에 반영할 것
+- `financial_fact`: 필요한 개념만 원본 행으로 저장 (개념, 단위, start, end, 값, 공시번호, filed, form)
+- `financial_period`: 정규화 결과 (기업, 기간 종류 Q/FY, 기간 시작·끝, 매출·순이익…) — 계산은 순수 클래스
+- `company`: SEC 기본 정보 + `dataAsOf`(재무 데이터 기준일)
+
 ## 추가 조사: 공개 표시가 되는 유료 주가 API (2026-10-19)
 | 제공처 | 공개 표시 | 월 비용 |
 |---|---|---|
