@@ -17,4 +17,8 @@ public class ApiException extends RuntimeException {
     public static ApiException companyNotFound(String ticker) {
         return new ApiException(ErrorCode.COMPANY_NOT_FOUND, "ticker " + ticker + " not found");
     }
+
+    public static ApiException dataNotReady(String what) {
+        return new ApiException(ErrorCode.DATA_NOT_READY, what + " not collected yet");
+    }
 }

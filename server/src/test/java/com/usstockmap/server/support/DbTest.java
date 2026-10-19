@@ -6,6 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
+import com.usstockmap.server.common.config.QuerydslConfig;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -17,7 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 @Retention(RetentionPolicy.RUNTIME)
 @DataJpaTest(properties = "spring.flyway.locations=classpath:db/migration,classpath:db/seed")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import(EmbeddedPostgresConfig.class)
+@Import({EmbeddedPostgresConfig.class, QuerydslConfig.class})
 @ActiveProfiles("test")
 public @interface DbTest {
 }

@@ -153,7 +153,11 @@ export interface CompanyDetail {
   recentFilings: Filing[];
 }
 
-export type ApiErrorCode = "INVALID_PARAMETER" | "COMPANY_NOT_FOUND" | "INTERNAL_ERROR";
+export type ApiErrorCode =
+  | "INVALID_PARAMETER"
+  | "COMPANY_NOT_FOUND"
+  | "DATA_NOT_READY"
+  | "INTERNAL_ERROR";
 
 export interface ApiError {
   error: { code: ApiErrorCode; message: string };

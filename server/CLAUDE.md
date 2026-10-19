@@ -15,12 +15,13 @@ API 계약은 `../docs/api.md`가 단일 원본이다. 데이터 소스 결정�
 com.usstockmap.server
   common/
     api/        에러 응답(ApiErrorResponse, ErrorCode, ApiException, GlobalExceptionHandler)
-    config/     WebConfig(CORS·캐시 헤더), QuerydslConfig, AppProperties(app.*)
+    config/     WebConfig(CORS·캐시 헤더), QuerydslConfig, ClockConfig, AppProperties(app.*)
+    time/       MarketDates (계약 날짜 = 미국 동부)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
-  company/      기업(Company)·지도용 지표(CompanySnapshot), 목록·상세 API (다음)
+  company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies (상세는 다음)
   filing/       공시 목록·30일 집계 (다음)
   financial/    재무제표 정규화 (다음)
-  weather/      시장 날씨 지수(MarketWeather), API (다음)
+  weather/      시장 날씨 지수(MarketWeather), GET /market-weather
   collector/    외부 수집기: sec/, fred/, koreaexim/ (다음)
 ```
 
@@ -45,6 +46,9 @@ com.usstockmap.server
 - 웹 계층은 `@WebMvcTest` 슬라이스 + `MockMvcTester` (`@ActiveProfiles("test")`)
 - **테스트 메서드명은 영어, 한글 설명은 `@DisplayName`** (한글 메서드명은 환경에 따라 리포트 파일명이 깨진다)
 - DB 테스트는 `@DbTest` 하나만 붙인다 (`support/`): JPA 슬라이스 + 진짜 PostgreSQL 17(zonky embedded, Docker 불필요) + Flyway(스키마+목데이터). 테스트마다 롤백
+- 직접 만든 QueryDSL 리포지토리(`*QueryRepository`)는 JPA 슬라이스가 자동으로 안 올린다 → 테스트에서 `@Import`
+- 단위 테스트(서비스·계산)는 스프링 없이 `mock()` + 생성자. 현재 시각은 `Clock` 빈, 날짜 변환은 `MarketDates`(미국 동부)
+- `contract/WebSampleContractTest`: 서버 전체를 띄워 응답이 `web/src/data/*.json`과 같은지 확인. 응답 모양을 바꾸면 이 테스트가 먼저 깨진다
 - PostgreSQL은 실패한 SQL 뒤 트랜잭션 전체가 막힌다 → 실패를 기대하는 경우는 테스트를 나누거나 `@ParameterizedTest`
 
 ## 명령어

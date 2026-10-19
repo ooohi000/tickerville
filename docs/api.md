@@ -29,6 +29,7 @@
 |---|---|---|
 | 400 | `INVALID_PARAMETER` | 쿼리 값이 잘못됨 (`period=weekly` 등) |
 | 404 | `COMPANY_NOT_FOUND` | 없는 티커 |
+| 503 | `DATA_NOT_READY` | 아직 한 번도 수집되지 않은 데이터 (예: 첫 배포 직후 시장 날씨). 프론트는 기본 화면으로 대체 |
 | 500 | `INTERNAL_ERROR` | 그 외 |
 
 ---
@@ -60,7 +61,9 @@
   ]
 }
 ```
-- `asOf`: 데이터 갱신일
+- `asOf`: 데이터 갱신일 = 기업 지표가 마지막으로 갱신된 날 (미국 동부 날짜). 아직 지표가 하나도 없으면 오늘 날짜
+- 정렬: 티커 오름차순 (화면 정렬은 프론트가 높이 기준대로 한다)
+- 지표가 아직 없는 기업도 목록에 나온다: 지표는 전부 `null`, `filings30d`는 `{ "material": 0, "insider": 0 }`
 - `revenueTtmUsd`: **최근 4개 분기 매출 합** (SEC `companyfacts`, 서버 계산). 정리 못 하면 `null`
   - 매출 항목 후보(순서대로): `RevenueFromContractWithCustomerExcludingAssessedTax` → `Revenues` → `SalesRevenueNet`. 은행 등 금융사는 별도 규칙 필요
   - 10-K는 연간 값만 있으므로 4분기 = 연간 − (1~3분기)
@@ -87,7 +90,8 @@
 - 서버 계산 (초안): `value = clamp(50 − STLFSI × 20, 0, 100)`
   - STLFSI = 세인트루이스 연준 금융스트레스 지수 (FRED `STLFSI4`, 주간, 0이 평소). 예: −0.72 → 64(안정), 0 → 50(보통), 1.25 → 25(불안 경계)
   - 계수는 과거 분포 보고 조정. 나중에 금리차 등 다른 공공 지표를 섞을 수 있게 계산을 한 곳에 모은다
-- `asOf`: 지수의 기준 주(금요일)
+- `asOf`: 지수의 기준 주(금요일). 가장 최근 기준일 값 하나를 내려준다
+- 아직 값이 없으면 503 `DATA_NOT_READY`
 
 ---
 
