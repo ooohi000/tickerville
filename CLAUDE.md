@@ -51,6 +51,6 @@ src/
 - `npm run build` 빌드 확인
 
 ## 작업 방식
-- 한 번에 기능 하나. 끝나면 테스트·빌드 통과 확인 후 커밋.
+- 한 번에 기능 하나. 끝나면 테스트·빌드 통과 확인 → `docs/checklist.md` 체크 → 커밋.
 - 커밋 메시지: `feat(map): ...`, `fix(cluster): ...`, `test(geo): ...`
 - 이동 중에 만든 조각은 `docs/request-template.md` 형식으로 요청된다.
