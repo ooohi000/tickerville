@@ -1,6 +1,9 @@
 spring:
   application:
     name: us-stock-map-server
+  profiles:
+    # 아무 프로필도 안 주면 local (목데이터 포함). 운영은 SPRING_PROFILES_ACTIVE=prod
+    default: local
   jpa:
     # 스키마는 Flyway가 관리한다. JPA는 엔티티와 일치하는지만 검사
     hibernate:

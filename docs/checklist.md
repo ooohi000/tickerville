@@ -64,8 +64,11 @@
 - [x] 📱 `GET /api/v1/regions` (classpath JSON) + 슬라이스 테스트 12개
 - [ ] 🏠 `./gradlew bootRun`으로 Docker DB·Redis 띄워서 실행 확인
 - [x] 📱 SEC 실제 응답 확인 (7개 기업): 개념 이름·기간 함정·누락 정리 → `data-sources.md`
-- [ ] 📱 엔티티·스키마: 기업(+SEC 기본 정보·한글 소개), 재무제표(원본 JSONB + 주요 지표), 공시 목록, 시장 날씨, 매크로 지표
-- [ ] 📱 조회 API: 목데이터 10개를 DB에 넣고 `/companies`, `/market-weather`
+- [x] 📱 스키마 `V1__init.sql`: 기업(+SEC 기본 정보·한글 소개), 지도용 지표, SEC 원본 값, 정규화 재무제표(분기·연간), 공시 목록, 시장 날씨. DB 검사 규칙(섹터·주 코드·CIK·0~100)
+- [x] 📱 목데이터 10개 + 시장 날씨 62 → `db/seed/R__mock_companies.sql` (local 프로필·DB 테스트에서만)
+- [x] 📱 엔티티·리포지토리: `Company`·`CompanySnapshot`·`MarketWeather` + DB 테스트(진짜 PostgreSQL 17, Docker 없이). 총 테스트 25개
+- [ ] 📱 매크로 지표 테이블 (FRED 수집기 만들 때)
+- [ ] 📱 조회 API `/companies`, `/market-weather` (목데이터는 DB에 들어감) ← 다음
 - [x] 📱 데이터 소스 조사 → `docs/data-sources.md`. **결정: SEC + FRED + 수출입은행, 월 $0** (계약 `api.md` 반영 완료)
 - [ ] 📱 SEC 수집기: 티커↔CIK, submissions(기본 정보·공시), companyfacts(재무 정규화·TTM 매출). 초당 10회·User-Agent 준수
 - [ ] 📱 FRED·수출입은행 수집기: STLFSI4 → 시장 날씨 지수, 매크로 시리즈, 원/달러

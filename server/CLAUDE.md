@@ -17,10 +17,10 @@ com.usstockmap.server
     api/        에러 응답(ApiErrorResponse, ErrorCode, ApiException, GlobalExceptionHandler)
     config/     WebConfig(CORS·캐시 헤더), QuerydslConfig, AppProperties(app.*)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
-  company/      기업, 지도용 목록·상세 API (다음)
+  company/      기업(Company)·지도용 지표(CompanySnapshot), 목록·상세 API (다음)
   filing/       공시 목록·30일 집계 (다음)
   financial/    재무제표 정규화 (다음)
-  weather/      시장 날씨 지수 (다음)
+  weather/      시장 날씨 지수(MarketWeather), API (다음)
   collector/    외부 수집기: sec/, fred/, koreaexim/ (다음)
 ```
 
@@ -29,6 +29,10 @@ com.usstockmap.server
 - 응답 DTO는 `record`. 필드 이름·null 규칙은 `../docs/api.md` 그대로 (없는 값은 필드를 빼지 말고 `null`).
 - 계층: Controller(얇게) → Service(규칙) → Repository(JPA, 동적 조건은 QueryDSL).
 - 스키마는 Flyway만 바꾼다 (`src/main/resources/db/migration/V{번호}__{설명}.sql`). JPA는 `ddl-auto: validate`.
+- 이미 적용된 V 파일은 고치지 않는다 — 바꿀 게 생기면 새 번호 파일.
+- 목데이터는 `db/seed/R__*.sql` (upsert로 작성). `local` 프로필(기본)과 DB 테스트에서만 넣는다. 운영은 `prod` 프로필이라 안 들어간다.
+- DB 타입 ↔ 자바: 금액 `bigint`↔`Long`, 비율·좌표 `double precision`↔`Double`, 날짜 `date`↔`LocalDate`, 시각 `timestamptz`↔`Instant`. 고정 길이 값은 `char` 대신 `varchar` + `check` (검증과 매핑을 단순하게).
+- 섹터처럼 소문자 문자열 값은 enum + `AttributeConverter` (`SectorConverter`).
 - 계산 규칙(매출 TTM, 공시 집계, 시장 날씨 지수)은 **순수 클래스**로 분리하고 단위 테스트를 붙인다.
 - 외부 API 클라이언트는 인터페이스로 감싼다 (테스트에서 가짜로 바꿀 수 있게).
 
@@ -40,7 +44,8 @@ com.usstockmap.server
 ## 테스트
 - 웹 계층은 `@WebMvcTest` 슬라이스 + `MockMvcTester` (`@ActiveProfiles("test")`)
 - **테스트 메서드명은 영어, 한글 설명은 `@DisplayName`** (한글 메서드명은 환경에 따라 리포트 파일명이 깨진다)
-- DB가 필요한 테스트는 Testcontainers로 (Docker 있는 환경에서)
+- DB 테스트는 `@DbTest` 하나만 붙인다 (`support/`): JPA 슬라이스 + 진짜 PostgreSQL 17(zonky embedded, Docker 불필요) + Flyway(스키마+목데이터). 테스트마다 롤백
+- PostgreSQL은 실패한 SQL 뒤 트랜잭션 전체가 막힌다 → 실패를 기대하는 경우는 테스트를 나누거나 `@ParameterizedTest`
 
 ## 명령어
 - `./gradlew test` 테스트

@@ -1,0 +1,6 @@
+# 로컬 개발 (기본 프로필). compose.yaml 의 PostgreSQL + 목데이터 10개
+spring:
+  flyway:
+    locations:
+      - classpath:db/migration
+      - classpath:db/seed
