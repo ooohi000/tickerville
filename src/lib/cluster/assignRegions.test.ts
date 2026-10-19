@@ -10,7 +10,7 @@ const make = (ticker: string, lat: number, lng: number, marketCapUsd = 1): Compa
   sector: "tech",
   hq: { city: "", state: "CA", lat, lng },
   marketCapUsd,
-  interest: 0,
+  relativeVolume: 1,
 });
 
 const region = (id: string, lat: number, lng: number, radiusKm: number): Region => ({

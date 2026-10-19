@@ -32,8 +32,11 @@ export interface Company {
   hq: Headquarters;
   /** 달러 단위 시총 스냅샷 (실시간 아님) */
   marketCapUsd: number;
-  /** 본인의 매수 관심도 0~1 — 건물 주변 땅 색 강도 */
-  interest: number;
+  /**
+   * 상대 거래량(RVOL) = 당일 거래량 ÷ 최근 20일 평균 거래량. 1.0 = 평소 수준.
+   * 건물 주변 땅 색 강도로 표시 (시장의 관심이 몰리는 곳).
+   */
+  relativeVolume: number;
   /** 한 줄 메모. 상세 분석은 이후 단계 */
   memo?: string;
 }

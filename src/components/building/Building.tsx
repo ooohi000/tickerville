@@ -6,6 +6,7 @@ import type { SignMode } from "@/lib/company/sign";
 import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
 import { Sign } from "./Sign";
+import { VolumeHeat } from "./VolumeHeat";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
 const BODY_COLOR = "#e8e2d4";
@@ -46,6 +47,7 @@ export function Building({
         <boxGeometry args={[d.width, d.bodyHeight, d.depth]} />
         <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />
       </mesh>
+      <VolumeHeat relativeVolume={company.relativeVolume} />
       <Roof d={d} emissive={emissive} />
       <Sign ticker={company.ticker} building={d} mode={signMode} highlighted={highlighted} />
     </group>

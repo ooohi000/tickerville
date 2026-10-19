@@ -8,7 +8,7 @@ const make = (ticker: string, marketCapUsd: number): Company => ({
   sector: "tech",
   hq: { city: "", state: "CA", lat: 0, lng: 0 },
   marketCapUsd,
-  interest: 0,
+  relativeVolume: 1,
 });
 
 describe("sortByMarketCap", () => {
