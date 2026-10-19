@@ -94,7 +94,7 @@ class FinancialStatementBuilderTest {
     }
 
     @ParameterizedTest(name = "{0}")
-    @ValueSource(strings = {"AAPL", "AMZN", "JPM", "KO", "NVDA", "PLTR", "TSLA"})
+    @ValueSource(strings = {"AAPL", "AMZN", "GOOGL", "JPM", "KO", "NVDA", "PLTR", "TSLA"})
     @DisplayName("모든 기업: 마감된 회계연도의 네 분기 합 = 연간 (매출·순이익·영업현금흐름)")
     void quartersSumToAnnual(String ticker) {
         List<FinancialRow> all = rows(ticker);
@@ -119,8 +119,29 @@ class FinancialStatementBuilderTest {
         assertThat(checked).as("검증한 연도 수").isGreaterThanOrEqualTo(4);
     }
 
+    @Test
+    @DisplayName("알파벳: 2025년에 매출 태그를 바꿔도 회계연도 이름이 섞이지 않는다 (2024-12 마감 = FY2024)")
+    void alphabetConceptSwitchKeepsFiscalYears() {
+        List<FinancialRow> googl = rows("GOOGL");
+
+        assertThat(find(googl, PeriodType.FY, "2024-12-31").fiscalYear()).isEqualTo(2024);
+        assertThat(find(googl, PeriodType.FY, "2025-12-31").fiscalYear()).isEqualTo(2025);
+        assertThat(find(googl, PeriodType.Q, "2024-12-31").fiscalYear()).isEqualTo(2024);
+        assertThat(googl).filteredOn(r -> r.type() == PeriodType.FY)
+                .extracting(FinancialRow::fiscalYear).doesNotHaveDuplicates();
+        assertThat(find(googl, PeriodType.FY, "2024-12-31").revenue()).isEqualTo(350_018_000_000L);
+    }
+
     @ParameterizedTest(name = "{0}")
-    @ValueSource(strings = {"AAPL", "AMZN", "JPM", "KO", "NVDA", "PLTR", "TSLA"})
+    @ValueSource(strings = {"AAPL", "AMZN", "GOOGL", "JPM", "KO", "NVDA", "PLTR", "TSLA"})
+    @DisplayName("모든 기업: 연간 기간의 회계연도 이름이 겹치지 않는다")
+    void fiscalYearLabelsUnique(String ticker) {
+        assertThat(rows(ticker)).filteredOn(r -> r.type() == PeriodType.FY)
+                .extracting(FinancialRow::fiscalYear).as(ticker).doesNotHaveDuplicates();
+    }
+
+    @ParameterizedTest(name = "{0}")
+    @ValueSource(strings = {"AAPL", "AMZN", "GOOGL", "JPM", "KO", "NVDA", "PLTR", "TSLA"})
     @DisplayName("모든 기업: 같은 기간이 두 번 나오지 않고, 최신순 정렬")
     void uniqueAndSorted(String ticker) {
         List<FinancialRow> all = rows(ticker);

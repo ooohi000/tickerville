@@ -50,9 +50,9 @@ class MapMetricsCalculatorTest {
     }
 
     @Test
-    @DisplayName("7개 기업 모두 TTM 매출·순이익·총자산·성장률·공시상 시총이 나온다")
+    @DisplayName("8개 기업 모두 TTM 매출·순이익·총자산·성장률·공시상 시총이 나온다")
     void allCompaniesHaveCoreMetrics() {
-        for (String t : List.of("AAPL", "AMZN", "JPM", "KO", "NVDA", "PLTR", "TSLA")) {
+        for (String t : List.of("AAPL", "AMZN", "GOOGL", "JPM", "KO", "NVDA", "PLTR", "TSLA")) {
             MapMetrics m = metrics(t);
             assertThat(m.revenueTtmUsd()).as(t).isNotNull();
             assertThat(m.netIncomeTtmUsd()).as(t).isNotNull();

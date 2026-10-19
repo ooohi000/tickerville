@@ -151,16 +151,16 @@ class SecSyncServiceTest {
     }
 
     @Test
-    @DisplayName("전체 수집: 등록된 10개 중 응답 파일이 있는 7개 성공")
+    @DisplayName("전체 수집: 등록된 10개 중 응답 파일이 있는 8개 성공")
     void syncAll() {
         SecSyncResult result = service.syncAll();
 
-        assertThat(result.succeeded()).containsExactly("AAPL", "AMZN", "JPM", "KO", "NVDA", "PLTR", "TSLA");
+        assertThat(result.succeeded()).containsExactly("AAPL", "AMZN", "GOOGL", "JPM", "KO", "NVDA", "PLTR", "TSLA");
         long ko = companies.findByTicker("KO").orElseThrow().getId();
         assertThat(jdbc.queryForList("select code from data_quality_issue where company_id = ?", String.class, ko))
                 .containsExactlyInAnyOrder("STALE", "FACTS_BEHIND_FILINGS");
         assertThat(result.failed()).extracting(SecSyncResult.Failure::ticker)
-                .containsExactlyInAnyOrder("GOOGL", "META", "MSFT");
+                .containsExactlyInAnyOrder("META", "MSFT");
     }
 
     @Test

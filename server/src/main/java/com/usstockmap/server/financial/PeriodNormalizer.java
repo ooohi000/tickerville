@@ -22,7 +22,7 @@ import java.util.TreeSet;
  *   <li>회계연도 틀 = 10-K 의 연간 기간(350~380일). 마지막 연간 다음 날부터는 "진행 중인 해"</li>
  *   <li>분기 값 = 3개월(80~100일) 값이 있으면 그대로, 없으면 연초부터 누적끼리 뺀다
  *       (현금흐름표 2·3분기 = 누적 − 직전 누적)</li>
- *   <li>4분기 = 연간 − (1~3분기 합). 1~3분기 중 빈 게 있으면 연간 − 9개월 누적.
+ *   <li>4분기 = 연간 − (1~3분기 합). 10-K 에 4분기 단독 값이 있어도 이걸로 (반올림 차이 제거). 1~3분기 중 빈 게 있으면 연간 − 9개월 누적.
  *       정정·반올림이 공시마다 달라도 네 분기 합이 항상 연간과 같게 (JPM 2019 매출, AMZN·NVDA 백만 달러 반올림)</li>
  *   <li>52·53주 회계연도(애플·엔비디아)는 날짜가 하루 이틀 어긋날 수 있어 시작일을 ±3일로 맞춘다</li>
  *   <li>정기 보고서(10-K·10-Q, 정정본 포함) 값만 쓴다. 위임장(DEF 14A) 등은 반올림한 숫자를 다시 태그한다
@@ -60,10 +60,15 @@ public final class PeriodNormalizer {
      * @return 분기(Q1~Q4)·연간(FY) 값, 기간 끝 오름차순
      */
     public static List<PeriodValue> flows(List<SecFact> facts, boolean subtractable) {
+        return flows(facts, subtractable, FiscalYearLabels.from(facts));
+    }
+
+    /** @param labels 회계연도 이름표 (기업의 전체 원본 값으로 만든 것 — 개념마다 다르면 안 된다) */
+    public static List<PeriodValue> flows(List<SecFact> facts, boolean subtractable, FiscalYearLabels labels) {
         Map<Key, Picked> periods = dedupe(facts.stream().filter(SecFact::isDuration).toList(),
                 f -> new Key(f.start(), f.end()));
         List<PeriodValue> out = new ArrayList<>();
-        for (Frame frame : frames(periods)) {
+        for (Frame frame : frames(periods, labels)) {
             out.addAll(quartersOf(frame, periods, subtractable));
             if (!frame.open()) {
                 out.add(new PeriodValue(PeriodType.FY, frame.fiscalYear(), "FY", frame.start(), frame.end(),
@@ -75,22 +80,51 @@ public final class PeriodNormalizer {
     }
 
     /** 10-K 연간 기간마다 틀 하나 + 마지막 연간 다음 날부터 진행 중인 틀 하나 */
-    private static List<Frame> frames(Map<Key, Picked> periods) {
+    private static List<Frame> frames(Map<Key, Picked> periods, FiscalYearLabels labels) {
         List<Map.Entry<Key, Picked>> annuals = periods.entrySet().stream()
                 .filter(e -> isAnnual(days(e.getKey())))
                 .filter(e -> e.getValue().originForm() != null && e.getValue().originForm().startsWith("10-K"))
                 .sorted(Comparator.comparing(e -> e.getKey().end()))
                 .toList();
-        List<Frame> frames = new ArrayList<>();
+        List<Map.Entry<Key, Picked>> kept = new ArrayList<>();
         LocalDate lastEnd = null;
         for (Map.Entry<Key, Picked> a : annuals) {
-            Key k = a.getKey();
-            if (lastEnd != null && !k.end().isAfter(lastEnd)) {
+            if (lastEnd != null && !a.getKey().end().isAfter(lastEnd)) {
                 continue; // 겹치는 연간 기간(이상치)은 건너뛴다
             }
-            int fy = a.getValue().originFy() != null ? a.getValue().originFy() : k.end().getYear();
-            frames.add(new Frame(k.start(), k.end(), fy, a.getValue()));
-            lastEnd = k.end();
+            kept.add(a);
+            lastEnd = a.getKey().end();
+        }
+        // 이름표: 그 해가 자기 10-K 를 가진 경우 그 이름. 없으면(상장 전 해 등) 이웃 해에서 ±1 씩
+        Integer[] fy = new Integer[kept.size()];
+        for (int i = 0; i < kept.size(); i++) {
+            fy[i] = labels.forAnnualEnd(kept.get(i).getKey().end()).orElse(null);
+        }
+        for (int i = 0; i < fy.length; i++) {
+            if (fy[i] != null) {
+                continue;
+            }
+            Integer inferred = null;
+            for (int j = i + 1; j < fy.length && inferred == null; j++) {
+                if (fy[j] != null) {
+                    inferred = fy[j] - (j - i);
+                }
+            }
+            for (int j = i - 1; j >= 0 && inferred == null; j--) {
+                if (fy[j] != null) {
+                    inferred = fy[j] + (i - j);
+                }
+            }
+            if (inferred == null) {
+                Picked p = kept.get(i).getValue();
+                inferred = p.originFy() != null ? p.originFy() : kept.get(i).getKey().end().getYear();
+            }
+            fy[i] = inferred;
+        }
+        List<Frame> frames = new ArrayList<>();
+        for (int i = 0; i < kept.size(); i++) {
+            Key k = kept.get(i).getKey();
+            frames.add(new Frame(k.start(), k.end(), fy[i], kept.get(i).getValue()));
         }
         if (!frames.isEmpty()) {
             Frame last = frames.getLast();
@@ -145,7 +179,7 @@ public final class PeriodNormalizer {
 
             int index = (int) Math.max(1, Math.min(4, Math.round(ChronoUnit.DAYS.between(s, e) / DAYS_PER_QUARTER)));
             boolean closingQuarter = !frame.open() && index == 4 && e.equals(frame.end());
-            if (closingQuarter && !directFits && subtractable && emittedCount == 3) {
+            if (closingQuarter && subtractable && emittedCount == 3) { // 직접 공시된 4분기가 있어도 합을 맞춘다
                 value = frame.annual().value().subtract(emittedSum);
                 filed = later(frame.annual().filed(), filed);
             }

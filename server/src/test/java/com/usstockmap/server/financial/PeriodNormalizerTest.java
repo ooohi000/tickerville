@@ -129,6 +129,23 @@ class PeriodNormalizerTest {
     }
 
     @Test
+    @DisplayName("회계연도 이름은 공시 단위: 이 태그가 다음 해 10-K 에 처음 실렸어도 원래 해 이름 (알파벳 태그 변경)")
+    void fiscalYearLabelIndependentOfConcept() {
+        // 새 태그(Revenues)로는 2024 연간 값이 2025 10-K 비교 열에 처음 나온다 (fy=2025 로 태그됨)
+        List<SecFact> newTag = List.of(
+                flow("2024-01-01", "2024-12-31", 350, "10-K", "2026-02-05", 2025),
+                flow("2025-01-01", "2025-12-31", 402, "10-K", "2026-02-05", 2025));
+        // 이름표는 기업 전체 원본으로: 2025-02 10-K(옛 태그)의 가장 늦은 연간 기간 = 2024-12-31 → FY2024
+        List<SecFact> all = new java.util.ArrayList<>(newTag);
+        all.add(flow("2024-01-01", "2024-12-31", 350, "10-K", "2025-02-05", 2024));
+
+        assertThat(PeriodNormalizer.flows(newTag, true, FiscalYearLabels.from(all)))
+                .filteredOn(v -> v.type() == PeriodType.FY)
+                .extracting(PeriodValue::fiscalYear)
+                .containsExactly(2024, 2025);
+    }
+
+    @Test
     @DisplayName("1분기 보고서가 빠져도 3분기는 누적끼리 빼서 만든다 (2분기는 못 만듦)")
     void missingFirstQuarter() {
         List<SecFact> facts = List.of(

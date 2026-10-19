@@ -22,9 +22,9 @@ class DataQualityCheckerTest {
     }
 
     @Test
-    @DisplayName("실제 6개 기업은 이상 신호 없음")
+    @DisplayName("실제 7개 기업은 이상 신호 없음 (알파벳 포함 — 태그 변경 버그가 다시 생기면 MISSING_QUARTERS 로 잡힌다)")
     void realCompaniesAreClean() {
-        for (String t : List.of("AAPL", "AMZN", "JPM", "NVDA", "PLTR", "TSLA")) {
+        for (String t : List.of("AAPL", "AMZN", "GOOGL", "JPM", "NVDA", "PLTR", "TSLA")) {
             assertThat(checkReal(t)).as(t).isEmpty();
         }
     }

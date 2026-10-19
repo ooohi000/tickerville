@@ -31,6 +31,7 @@ public final class FinancialStatementBuilder {
                 .filter(f -> Metric.TAXONOMY.equals(f.taxonomy()))
                 .collect(Collectors.groupingBy(f -> f.concept() + "|" + f.unit()));
 
+        FiscalYearLabels labels = FiscalYearLabels.from(facts);
         Map<Metric, Map<RowKey, PeriodValue>> flows = new EnumMap<>(Metric.class);
         Map<Metric, Map<LocalDate, Picked>> stocks = new EnumMap<>(Metric.class);
         for (Metric m : Metric.values()) {
@@ -44,7 +45,7 @@ public final class FinancialStatementBuilder {
                     PeriodNormalizer.stocks(list).forEach(target::putIfAbsent);
                 } else {
                     Map<RowKey, PeriodValue> target = flows.computeIfAbsent(m, k -> new LinkedHashMap<>());
-                    for (PeriodValue v : PeriodNormalizer.flows(list, m.kind() == Metric.Kind.FLOW)) {
+                    for (PeriodValue v : PeriodNormalizer.flows(list, m.kind() == Metric.Kind.FLOW, labels)) {
                         target.putIfAbsent(new RowKey(v.type(), v.end()), v);
                     }
                 }
