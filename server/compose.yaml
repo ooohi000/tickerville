@@ -1,4 +1,5 @@
-# 로컬 개발용 DB·캐시. `./gradlew bootRun` 하면 Spring Boot가 자동으로 띄운다 (Docker 필요)
+# 로컬 개발용 DB·캐시. 서버를 켜면 Spring Boot 가 자동으로 띄운다 (Docker Desktop 실행 필요)
+# DB 접속 (IntelliJ Database·psql): localhost:5432 / usstockmap / usstockmap / local-only
 services:
   postgres:
     image: 'postgres:17'
@@ -8,7 +9,13 @@ services:
       - 'POSTGRES_PASSWORD=local-only'
     ports:
       - '5432:5432'
+    volumes:
+      # 이름 있는 볼륨: 컨테이너를 지우거나 다시 만들어도 쌓은 데이터가 남는다
+      - 'postgres-data:/var/lib/postgresql/data'
   redis:
     image: 'redis:7'
     ports:
       - '6379:6379'
+
+volumes:
+  postgres-data:
