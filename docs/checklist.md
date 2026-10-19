@@ -11,22 +11,17 @@
 - [x] 날씨 판정 `getWeather` + `WEATHER_SPECS`
 - [x] 건물 설정 `BUILDING_SPECS` + `Building` 컴포넌트
 - [x] 옥상 티커 간판 `Sign` (대표만 / 가까이 가면 전부)
+- [x] M2 미국 지도: 주 경계 → 월드 좌표 다각형, `MAP_HEIGHT`, `UsMap` extrude + 경계선, 바다 판 (위에서 본 2D 미리보기로 위치 검증)
 
 ## 🏠 집에서 확인 (지금까지 만든 것)
 - [ ] `npm install` → `npm run dev` 실행
 - [ ] GitHub 레포 만들고 푸시
-- [ ] 건물 위치가 대략 맞는지 (임시 바닥 위)
+- [ ] 지도 3D 모양, 땅·바다·경계선 색, 성능 (정점 약 16만 개)
 - [ ] 건물 크기 비율, 지붕 색, 하이라이트 밝기
 - [ ] 간판 크기, 글자가 판 밖으로 넘치는지 (`SIGN_CHAR_WIDTH_EM`), 표시 거리 30 (`SIGN_DETAIL_DISTANCE`)
 - [ ] 카메라 시작 위치, 회전·줌 제한
 
-## M2 미국 지도 ← 다음
-- [ ] 📱 `lib/geo`: us-atlas 주 경계 → 주별 월드 좌표 다각형 + 테스트
-- [ ] 📱 지도 두께 `MAP_HEIGHT` 상수 → 건물이 땅 위에 서도록 공유
-- [ ] 🏠 `components/map/UsMap`: extrude, 땅 색, 주 경계선
-- [ ] 🏠 임시 바닥·그리드 제거
-
-## M8 땅 관심도 색
+## M8 땅 관심도 색 ← 다음
 - [ ] 📱 `interest`(0~1) → 색·강도 계산 + 테스트
 - [ ] 🏠 건물 주변 원판 그리기
 

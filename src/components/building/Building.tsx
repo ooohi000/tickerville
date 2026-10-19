@@ -3,6 +3,7 @@
 import type { ThreeEvent } from "@react-three/fiber";
 import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/buildingSpec";
 import type { SignMode } from "@/lib/company/sign";
+import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
 import { Sign } from "./Sign";
 
@@ -22,7 +23,7 @@ export interface BuildingProps {
 
 /**
  * 모든 등급 공통 건물. 모양 차이는 BUILDING_SPECS(lib)에서만 결정된다.
- * 건물 원점은 바닥 중앙.
+ * 건물 원점은 바닥 중앙이고, 땅 윗면(MAP_HEIGHT) 위에 선다.
  */
 export function Building({
   company,
@@ -40,7 +41,7 @@ export function Building({
   };
 
   return (
-    <group position={[position.x, 0, position.z]} onClick={handleClick} name={company.ticker}>
+    <group position={[position.x, MAP_HEIGHT, position.z]} onClick={handleClick} name={company.ticker}>
       <mesh position={[0, d.bodyHeight / 2, 0]} castShadow receiveShadow>
         <boxGeometry args={[d.width, d.bodyHeight, d.depth]} />
         <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />

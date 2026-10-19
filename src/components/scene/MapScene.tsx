@@ -3,6 +3,7 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Building } from "@/components/building/Building";
+import { UsMap } from "@/components/map/UsMap";
 import dataset from "@/data/companies.json";
 import regionsData from "@/data/regions.json";
 import { assignRegions } from "@/lib/cluster/assignRegions";
@@ -15,8 +16,7 @@ const { companies } = dataset as CompanyDataset;
 const signModes = getSignModes(assignRegions(companies, regionsData as Region[]));
 
 /**
- * M1 뼈대: 카메라 + 조명 + 바닥 + 컨트롤.
- * 바닥은 임시 (M2에서 미국 지도 메시로 교체).
+ * 카메라 + 조명 + 바다 + 미국 지도 + 건물 + 컨트롤.
  */
 export function MapScene() {
   return (
@@ -25,12 +25,12 @@ export function MapScene() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[30, 60, 20]} intensity={1.2} castShadow />
 
-      {/* 임시 바닥 — M2에서 미국 지도 메시로 교체 */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
-        <planeGeometry args={[140, 90]} />
-        <meshStandardMaterial color="#1f2a37" />
+      {/* 바다 — 땅 아래에 깔린 넓은 판. 색은 초안 */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
+        <planeGeometry args={[400, 400]} />
+        <meshStandardMaterial color="#2a5a7a" />
       </mesh>
-      <gridHelper args={[140, 28, "#2f3b4a", "#26303c"]} position={[0, 0.01, 0]} />
+      <UsMap />
 
       {companies.map((c) => {
         const p = projectLatLng(c.hq.lat, c.hq.lng);
