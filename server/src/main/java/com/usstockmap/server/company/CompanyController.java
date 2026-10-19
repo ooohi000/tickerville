@@ -26,16 +26,16 @@ public class CompanyController {
     }
 
     @GetMapping("/{ticker}")
-    public CompanyDetailResponse company(@PathVariable String ticker) {
+    public CompanyDetailResponse company(@PathVariable("ticker") String ticker) {
         return detail.get(ticker);
     }
 
     /** period = quarterly(기본) | annual, limit = 1~40 (기본 8) */
     @GetMapping("/{ticker}/financials")
     public List<FinancialStatementResponse> financials(
-            @PathVariable String ticker,
-            @RequestParam(defaultValue = "quarterly") String period,
-            @RequestParam(defaultValue = "8") int limit) {
+            @PathVariable("ticker") String ticker,
+            @RequestParam(name = "period", defaultValue = "quarterly") String period,
+            @RequestParam(name = "limit", defaultValue = "8") int limit) {
         return detail.financials(ticker, period, limit);
     }
 }

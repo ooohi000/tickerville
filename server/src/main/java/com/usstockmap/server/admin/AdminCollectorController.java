@@ -37,13 +37,13 @@ public class AdminCollectorController {
     }
 
     @GetMapping("/{name}")
-    public CollectorJob.Status<?> status(@PathVariable String name) {
+    public CollectorJob.Status<?> status(@PathVariable("name") String name) {
         return job(name).status();
     }
 
     @PostMapping("/{name}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public CollectorJob.Status<?> run(@PathVariable String name, @RequestBody(required = false) RunRequest request) {
+    public CollectorJob.Status<?> run(@PathVariable("name") String name, @RequestBody(required = false) RunRequest request) {
         CollectorJob<?> job = job(name);
         List<String> targets = request == null ? List.of() : request.normalized();
         if (!job.start(CollectorJob.Trigger.MANUAL, targets)) {

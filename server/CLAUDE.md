@@ -35,6 +35,7 @@ com.usstockmap.server
 
 ## 코드 규칙
 - **공통으로 뽑을 수 있는 건 최대한 공통으로.** 에러는 `ApiException` + `ErrorCode`로만 던지고 응답 변환은 `GlobalExceptionHandler` 한 곳.
+- `@PathVariable("이름")`·`@RequestParam(name = "이름")` 처럼 **이름을 항상 적는다.** IntelliJ 자체 빌드는 `-parameters` 없이 컴파일해서 이름을 못 찾고 500 이 난다 (Gradle 빌드는 괜찮음)
 - 응답 DTO는 `record`. 필드 이름·null 규칙은 `../docs/api.md` 그대로 (없는 값은 필드를 빼지 말고 `null`).
 - 계층: Controller(얇게) → Service(규칙) → Repository(JPA, 동적 조건은 QueryDSL).
 - 스키마는 Flyway만 바꾼다 (`src/main/resources/db/migration/V{번호}__{설명}.sql`). JPA는 `ddl-auto: validate`.
