@@ -50,7 +50,8 @@
 - [ ] 📱 스프링부트 뼈대 (Java·Gradle, JPA, PostgreSQL, 폴더 구조, 서버용 CLAUDE.md)
 - [ ] 📱 엔티티·스키마: 기업, 일별 시세(시총·거래량), 공포·탐욕, 재무제표(원본 JSONB + 주요 지표)
 - [ ] 📱 조회 API: 목데이터 10개를 DB에 넣고 `/companies`, `/regions`, `/fear-greed`
-- [ ] 📱 데이터 소스 조사 (시총·거래량, 공포·탐욕, SEC 재무제표)
+- [x] 📱 데이터 소스 조사 → `docs/data-sources.md` (무료 공개 가능 vs 라이선스 필요, 월 비용)
+- [ ] 📱 제공처 문의: Marketstack 공개 표시 가능 여부 등 (`data-sources.md` 하단)
 - [ ] 📱 수집 배치 (`@Scheduled`), 상대 거래량 계산
 - [ ] 📱 상세·재무제표 API
 - [ ] 🏠 프론트: 정적 JSON → API 호출로 교체 (응답 모양이 같아서 데이터 읽는 곳만)
