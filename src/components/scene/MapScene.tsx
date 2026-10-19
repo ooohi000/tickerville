@@ -2,6 +2,7 @@
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Building } from "@/components/building/Building";
 import dataset from "@/data/companies.json";
 import { projectLatLng } from "@/lib/geo/project";
 import type { CompanyDataset } from "@/types";
@@ -10,7 +11,7 @@ const { companies } = dataset as CompanyDataset;
 
 /**
  * M1 뼈대: 카메라 + 조명 + 바닥 + 컨트롤.
- * 기업 위치는 투영 확인용 임시 기둥 (M3에서 building/ 컴포넌트로 교체).
+ * 바닥은 임시 (M2에서 미국 지도 메시로 교체).
  */
 export function MapScene() {
   return (
@@ -29,12 +30,7 @@ export function MapScene() {
       {companies.map((c) => {
         const p = projectLatLng(c.hq.lat, c.hq.lng);
         if (!p) return null;
-        return (
-          <mesh key={c.ticker} position={[p.x, 1, p.z]} castShadow>
-            <boxGeometry args={[0.6, 2, 0.6]} />
-            <meshStandardMaterial color="#f5c542" />
-          </mesh>
-        );
+        return <Building key={c.ticker} company={c} position={p} />;
       })}
 
       <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.2} />
