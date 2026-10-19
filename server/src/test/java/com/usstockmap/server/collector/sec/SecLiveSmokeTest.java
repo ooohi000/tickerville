@@ -22,8 +22,8 @@ class SecLiveSmokeTest {
     void realSec() {
         String email = System.getenv().getOrDefault("SEC_CONTACT_EMAIL", "change-me@example.com");
         AppProperties props = new AppProperties(new AppProperties.Cors(List.of()),
-                new AppProperties.Sec("UsStockMap/0.1 (" + email + ")", 8, false, ""),
-                new AppProperties.Admin(""), new AppProperties.Fred(""));
+                new AppProperties.Sec("UsStockMap/0.1 (" + email + ")", 8, ""), new AppProperties.Fred("", ""),
+                new AppProperties.Collector(false), new AppProperties.Admin(""));
         HttpSecClient client = new HttpSecClient(props);
 
         String aaplCik = CompanyTickersParser.parse(client.companyTickers()).get("AAPL");

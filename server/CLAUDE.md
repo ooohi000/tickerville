@@ -19,17 +19,18 @@ com.usstockmap.server
     time/       MarketDates (계약 날짜 = 미국 동부)
     geo/        GeoPoint(거리), ZipCentroids(우편번호 중심, 번들), CensusGeocoder, HqLocator(주소 → 좌표)
     admin/      AdminKeyInterceptor (/api/admin/** 는 X-Admin-Key)
-  admin/        관리자 API: SEC 수집 실행·상태, 품질 이상 목록, 티커로 기업 등록 (docs/api.md 관리자 API)
+  admin/        관리자 API: 수집기 실행·상태(/api/admin/collectors/{sec|fred}), 품질 이상 목록, 티커로 기업 등록 (docs/api.md 관리자 API)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
   company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies (상세는 다음)
   filing/       30일 공시 집계 (FilingActivityCalculator)
   earnings/     실적 발표: 8-K 2.02 → 지난 발표·장전/장후, 다음 발표 예상(작년 같은 분기 + 52주)
   quality/      수집 결과 자동 점검 (DataQualityChecker → data_quality_issue)
   financial/    재무 정리 규칙 (순수): SecFact → PeriodNormalizer → FinancialStatementBuilder → MapMetricsCalculator. 개념 후보는 Metric, 규칙 버전 FinancialCalc.VERSION
-  weather/      시장 날씨 지수(MarketWeather), GET /market-weather
-  collector/    외부 수집기. RateLimiter(공통)
-    sec/        SecClient(HttpSecClient·테스트는 FixtureSecClient) → 파서 → SecCompanyUpdate(순수 계산) → SecSyncWriter(기업 단위 트랜잭션), SecSyncService(흐름), SecSyncJob(한 번에 하나, 스케줄·수동 공통)
-    fred/, koreaexim/ (다음)
+  weather/      시장 날씨: MarketWeatherIndex(순수, 10년 백분위), MarketWeather, GET /market-weather
+  collector/    외부 수집기 공통: CollectorJob(한 번에 하나·상태)·CollectorJobs·CollectorConfig(실행 스레드·매일 스케줄), HttpRetry, CollectorHttp, RateLimiter
+    sec/        SecClient(HttpSecClient·테스트는 FixtureSecClient) → 파서 → SecCompanyUpdate(순수 계산) → SecSyncWriter(기업 단위 트랜잭션), SecSyncService(흐름)
+    fred/       FredClient(HttpFredClient·테스트는 FixtureFredClient) → macro_observation → MarketWeatherIndex → market_weather (FredSyncService)
+    koreaexim/  (다음)
 ```
 
 ## 코드 규칙
@@ -64,6 +65,7 @@ com.usstockmap.server
 ## 환경변수
 - `SEC_CONTACT_EMAIL` SEC User-Agent 연락처 (필수, 코드에 적지 않는다)
 - `ADMIN_API_KEY` 관리자 API 키 (없으면 관리자 API 꺼짐)
+- `FRED_API_KEY` FRED API 키 (무료 발급, 없으면 FRED 수집 건너뜀). 로그·에러 메시지에 남기지 않는다
 - `SPRING_PROFILES_ACTIVE=prod` 운영 (매일 수집 켜짐, 목데이터 없음)
 
 ## 명령어

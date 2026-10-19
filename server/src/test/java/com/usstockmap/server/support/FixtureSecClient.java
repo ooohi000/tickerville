@@ -1,7 +1,7 @@
 package com.usstockmap.server.support;
 
 import com.usstockmap.server.collector.sec.CompanyTickersParser;
-import com.usstockmap.server.collector.sec.SecApiException;
+import com.usstockmap.server.collector.CollectorHttpException;
 import com.usstockmap.server.collector.sec.SecClient;
 import java.io.IOException;
 import java.io.InputStream;
@@ -51,7 +51,7 @@ public class FixtureSecClient implements SecClient {
     private String tickerOf(String cik) {
         String t = cikToTicker.get(cik);
         if (t == null) {
-            throw new SecApiException("not found " + cik, 404, null);
+            throw new CollectorHttpException("not found " + cik, 404, null);
         }
         return t;
     }
@@ -59,7 +59,7 @@ public class FixtureSecClient implements SecClient {
     private static JsonNode read(String path) {
         try (InputStream in = FixtureSecClient.class.getResourceAsStream(path)) {
             if (in == null) {
-                throw new SecApiException("not found " + path, 404, null);
+                throw new CollectorHttpException("not found " + path, 404, null);
             }
             return JSON.readTree(in);
         } catch (IOException e) {

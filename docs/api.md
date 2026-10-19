@@ -91,9 +91,10 @@
 ```json
 { "value": 64, "asOf": "2026-10-09" }
 ```
-- 서버 계산 (초안): `value = clamp(50 − STLFSI × 20, 0, 100)`
-  - STLFSI = 세인트루이스 연준 금융스트레스 지수 (FRED `STLFSI4`, 주간, 0이 평소). 예: −0.72 → 64(안정), 0 → 50(보통), 1.25 → 25(불안 경계)
-  - 계수는 과거 분포 보고 조정. 나중에 금리차 등 다른 공공 지표를 섞을 수 있게 계산을 한 곳에 모은다
+- 서버 계산: `value = 100 × (1 − 이번 주 STLFSI4 가 최근 10년(520주) 중 차지하는 백분위)` = "지난 10년 중 이번 주보다 불안했던 주의 비율". 소수 1자리
+  - STLFSI4 = 세인트루이스 연준 금융스트레스 지수 (FRED, 주간, 0이 평소, 클수록 불안). 원본은 `macro_observation` 에 쌓는다
+  - 5년치 이력이 없으면 계산하지 않음. 규칙 버전 `MarketWeatherIndex.VERSION`
+  - 초안(`50 − 20 × STLFSI`)을 버린 이유: 33년 실제 데이터에서 "맑음"이 한 번도 안 나오고 최근 1년 94%가 "구름 조금" (`docs/data-sources.md`)
 - `asOf`: 지수의 기준 주(금요일). 가장 최근 기준일 값 하나를 내려준다
 - 아직 값이 없으면 503 `DATA_NOT_READY`
 
@@ -170,12 +171,12 @@
 
 | 요청 | 하는 일 | 응답 |
 |---|---|---|
-| `POST /api/admin/sec-sync` 본문 `{"tickers":["AAPL"]}` (없으면 전체) | SEC 수집 백그라운드 시작 | 202 + 상태. 이미 돌고 있으면 409 |
-| `GET /api/admin/sec-sync` | 마지막(진행 중) 수집 상태 `{running, trigger, startedAt, finishedAt, result:{succeeded, failed[{ticker, reason}]}, error}` | 200 |
+| `POST /api/admin/collectors/{name}` (`sec`·`fred`) 본문 `{"targets":["AAPL"]}` (없으면 전체, fred 는 무시) | 수집 백그라운드 시작 | 202 + 상태. 이미 돌고 있으면 409, 모르는 이름 400 |
+| `GET /api/admin/collectors` · `GET /api/admin/collectors/{name}` | 수집 상태 `{name, running, trigger, targets, startedAt, finishedAt, result, error}`. sec result = `{succeeded, failed[{ticker, reason}]}`, fred result = `{seriesId, fetched, weatherWeeks, latestAsOf, latestValue, skippedReason}` | 200 |
 | `GET /api/admin/quality-issues` | 확인이 필요한 기업 `[{ticker, code, detail, calcVersion, detectedAt}]` | 200 |
 | `POST /api/admin/companies` 본문 `{"ticker":"COST","nameKo":"코스트코","sector":null}` | 티커로 등록: SEC 이름·본사 주소 → 좌표(인구조사국 지오코더, 안 되면 우편번호 중심), 섹터 없으면 SIC 로 추정 | 201 `{ticker, name, nameKo, sector, hqCity, hqState, lat, lng, locationPrecision}` |
 
-- 매일 수집: 평일 미국 동부 22:15 (`prod` 프로필에서만). 수동 실행과 겹치면 하나만
+- 매일 수집: 평일 미국 동부 SEC 22:15, FRED 22:30 (`prod` 프로필에서만). 수집기는 한 줄로 순서대로, 같은 수집기는 한 번에 하나만
 - 품질 코드: `NO_REVENUE` `NO_TTM` `NO_QUARTERS` `STALE` `FACTS_BEHIND_FILINGS` `REVENUE_JUMP` `NEGATIVE_REVENUE` `MISSING_QUARTERS` `QUARTER_SUM_MISMATCH` `HQ_FAR_FROM_SEC_ADDRESS`
 
 ## 출처 표기 (화면 하단 고정)

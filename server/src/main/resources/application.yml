@@ -30,11 +30,16 @@ app:
     # SEC 접근 규칙: 앱 이름 + 연락처 이메일 필수, 초당 10회 이하
     user-agent: "UsStockMap/0.1 (${SEC_CONTACT_EMAIL:change-me@example.com})"
     max-requests-per-second: 8
-    # 매일 수집 (미국 동부). EDGAR 접수가 22시에 끝나서 그 뒤에. 켜는 건 prod 프로필
-    schedule-enabled: false
+    # 매일 수집 (미국 동부). EDGAR 접수가 22시에 끝나서 그 뒤에
     sync-cron: "0 15 22 * * MON-FRI"
   admin:
     # 관리자 API(/api/admin/**) 키. 비어 있으면 관리자 API 전체가 막힌다
     api-key: ${ADMIN_API_KEY:}
   fred:
+    # 무료 발급 https://fred.stlouisfed.org/docs/api/api_key.html  비어 있으면 FRED 수집 건너뜀
     api-key: ${FRED_API_KEY:}
+    # STLFSI4 는 매주 목요일 갱신. 매일 확인해도 요청 1번
+    sync-cron: "0 30 22 * * MON-FRI"
+  collector:
+    # 매일 수집 스케줄. 켜는 건 prod 프로필
+    schedule-enabled: false

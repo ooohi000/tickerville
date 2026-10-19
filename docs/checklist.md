@@ -83,9 +83,11 @@
 - [x] 📱 SEC 수집기 ② SEC 클라이언트(초당 8회·User-Agent·재시도)·티커↔CIK·submissions(기본 정보·공시·실적 8-K)·companyfacts 저장, 매일 기록·실적 이벤트·품질 검사. 실제 SEC 접속 확인 (테스트 총 118개)
 - [x] 📱 SEC 수집기 ③ 매일 스케줄(평일 동부 22:15, prod 만)·관리자 API(`X-Admin-Key`): 수집 실행/상태, 품질 이상 목록, 티커로 기업 등록 (테스트 총 153개)
 - [x] 📱 본사 좌표: SEC 주소 → 인구조사국 지오코더(무료·공공) → 안 되면 우편번호 중심(번들 3.4만 개). 좌표가 SEC 주소와 50km 넘게 멀면 품질 경고
-- [ ] 🏠 실제 수집 한 번: `ADMIN_API_KEY=… SEC_CONTACT_EMAIL=… ./gradlew bootRun` → `curl -X POST -H "X-Admin-Key: …" localhost:8080/api/admin/sec-sync` → 지도에 실제 값
+- [ ] 🏠 실제 수집 한 번: `ADMIN_API_KEY=… SEC_CONTACT_EMAIL=… ./gradlew bootRun` → `curl -X POST -H "X-Admin-Key: …" localhost:8080/api/admin/collectors/sec` (+ `/fred`) → 지도·하늘에 실제 값
 - [ ] 📱 실적 발표 API + 화면 (지난 발표·다음 예상 "예상" 표시, 직접 확정 입력)
-- [ ] 📱 FRED·수출입은행 수집기: STLFSI4 → 시장 날씨 지수, 매크로 시리즈, 원/달러
+- [x] 📱 FRED 수집기: STLFSI4 → `macro_observation` 쌓기 → 시장 날씨 = 최근 10년 백분위 (33년 데이터로 공식 검증, 위기 4번 모두 폭풍). 수집 실행기 공통화(`CollectorJob`·`HttpRetry`), 관리자 `/api/admin/collectors/{sec|fred}` (테스트 총 160개)
+- [ ] 🏠 FRED API 키 발급 (무료, https://fred.stlouisfed.org/docs/api/api_key.html) → `FRED_API_KEY`
+- [ ] 📱 수출입은행 원/달러 + 매크로 시리즈(금리·유가, `macro_observation` 재사용) — 랜드마크·전광판 때
 - [ ] 📱 배치 스케줄 (`@Scheduled`), Redis 캐시
 - [ ] 📱 상세·재무제표 API
 - [ ] 📱 방문자 익명 집계 `company_view_daily` + 수집 API (프론트 연결 때)

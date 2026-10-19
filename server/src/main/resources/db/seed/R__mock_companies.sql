@@ -45,7 +45,8 @@ on conflict (company_id) do update set
     filings_material_30d = excluded.filings_material_30d, filings_insider_30d = excluded.filings_insider_30d,
     updated_at = now();
 
--- 시장 날씨 샘플: value = clamp(50 - STLFSI × 20, 0, 100) → STLFSI -0.6 이면 62 (구름 조금)
-insert into market_weather (as_of, stress_index, value)
-values (date '2026-10-16', -0.6, 62)
+-- 시장 날씨 샘플 62 (구름 조금). 아주 옛날 날짜로 넣어서 FRED 수집이 한 번이라도 돌면 실제 값이 최신이 된다
+delete from market_weather where as_of = date '2026-10-16' and stress_index = -0.6; -- 예전 샘플 날짜 정리
+insert into market_weather (as_of, stress_index, value, calc_version)
+values (date '2000-01-07', -0.6, 62, 0)
 on conflict (as_of) do update set stress_index = excluded.stress_index, value = excluded.value;

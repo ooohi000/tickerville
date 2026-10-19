@@ -32,7 +32,8 @@ class HttpSecClientTest {
         RestClient.Builder builder = RestClient.builder();
         server = MockRestServiceServer.bindTo(builder).build();
         AppProperties props = new AppProperties(new AppProperties.Cors(List.of()),
-                new AppProperties.Sec(UA, 8, false, ""), new AppProperties.Admin(""), new AppProperties.Fred(""));
+                new AppProperties.Sec(UA, 8, ""), new AppProperties.Fred("", ""),
+                new AppProperties.Collector(false), new AppProperties.Admin(""));
         client = new HttpSecClient(builder, props, new RateLimiter(1000), 1);
     }
 
@@ -59,13 +60,13 @@ class HttpSecClientTest {
     }
 
     @Test
-    @DisplayName("다시 시도해도 계속 실패하면 SecApiException (원래 + 3번)")
+    @DisplayName("다시 시도해도 계속 실패하면 com.usstockmap.server.collector.CollectorHttpException (원래 + 3번)")
     void givesUpAfterRetries() {
         server.expect(ExpectedCount.times(4), requestTo(FACTS_URL))
                 .andRespond(withStatus(HttpStatus.TOO_MANY_REQUESTS));
 
         assertThatThrownBy(() -> client.companyFacts("0000320193"))
-                .isInstanceOfSatisfying(SecApiException.class, e -> assertThat(e.status()).isEqualTo(429));
+                .isInstanceOfSatisfying(com.usstockmap.server.collector.CollectorHttpException.class, e -> assertThat(e.status()).isEqualTo(429));
         server.verify();
     }
 
@@ -75,7 +76,7 @@ class HttpSecClientTest {
         server.expect(ExpectedCount.once(), requestTo(FACTS_URL)).andRespond(withStatus(HttpStatus.NOT_FOUND));
 
         assertThatThrownBy(() -> client.companyFacts("0000320193"))
-                .isInstanceOfSatisfying(SecApiException.class, e -> assertThat(e.status()).isEqualTo(404));
+                .isInstanceOfSatisfying(com.usstockmap.server.collector.CollectorHttpException.class, e -> assertThat(e.status()).isEqualTo(404));
         server.verify();
     }
 
