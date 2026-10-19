@@ -1,0 +1,42 @@
+.badge {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 25;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(27, 36, 48, 0.85);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 12px;
+  color: #9aa7b8;
+}
+
+.value {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 날씨(구간)별 강조색 */
+.badge[data-weather="storm"] .label { color: #e5484d; }
+.badge[data-weather="rain"] .label { color: #f08c4a; }
+.badge[data-weather="cloudy"] .label { color: #c3cad3; }
+.badge[data-weather="partlyCloudy"] .label { color: #8fd18a; }
+.badge[data-weather="sunny"] .label { color: #46c26b; }
+
+.asOf {
+  font-size: 11px;
+  color: #6f7c8d;
+}

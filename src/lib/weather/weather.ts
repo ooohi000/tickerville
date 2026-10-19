@@ -97,3 +97,14 @@ export function getWeatherSpec(fearGreedValue: number): WeatherSpec & { weather:
   const weather = getWeather(fearGreedValue);
   return { weather, ...WEATHER_SPECS[weather] };
 }
+
+/**
+ * 개발용: 주소에 ?fg=10 처럼 붙이면 그 지수로 하늘을 보여준다 (날씨별 화면 조정용).
+ * 0~100 숫자가 아니면 null.
+ */
+export function parseFearGreedOverride(search: string): number | null {
+  const raw = new URLSearchParams(search).get("fg");
+  if (raw === null || raw.trim() === "") return null;
+  const v = Number(raw);
+  return Number.isFinite(v) && v >= 0 && v <= 100 ? v : null;
+}

@@ -21,7 +21,8 @@
 src/
   app/                 라우트 (page.tsx는 조립만)
   components/
-    scene/             Canvas, 카메라, 조명, 하늘
+    scene/             Canvas, 카메라, 공통 훅
+      sky/             하늘 (조명, 구름, 비, 번개)
     map/               미국 지도 메시
     building/          기업 건물, 티커 라벨, 하이라이트
     cluster/           클러스터 대표 건물, +N 배지, 지역 이름표
@@ -30,7 +31,8 @@ src/
     geo/               위경도 → 월드 좌표, 거리 계산
     company/           시총 등급, 정렬
     cluster/           지역 묶기
-    weather/           공포·탐욕 → 날씨
+    weather/           공포·탐욕 → 날씨, 하늘 배치
+    math/              시드 난수 등 범용
   data/                정적 JSON
   types/               공통 타입 (계약)
 ```

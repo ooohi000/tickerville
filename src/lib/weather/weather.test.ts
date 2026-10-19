@@ -1,6 +1,12 @@
 import { describe, expect, it } from "vitest";
 import type { Weather } from "@/types";
-import { WEATHER_SPECS, WEATHER_THRESHOLDS, getWeather, getWeatherSpec } from "./weather";
+import {
+  WEATHER_SPECS,
+  WEATHER_THRESHOLDS,
+  getWeather,
+  getWeatherSpec,
+  parseFearGreedOverride,
+} from "./weather";
 
 describe("getWeather", () => {
   it.each([
@@ -59,5 +65,20 @@ describe("getWeatherSpec", () => {
     const spec = getWeatherSpec(80);
     expect(spec.weather).toBe("sunny");
     expect(spec.label).toBe("극단적 탐욕");
+  });
+});
+
+describe("parseFearGreedOverride", () => {
+  it.each([
+    ["?fg=10", 10],
+    ["?fg=0", 0],
+    ["?fg=100", 100],
+    ["?x=1&fg=55.5", 55.5],
+  ])("%s → %d", (search, v) => {
+    expect(parseFearGreedOverride(search)).toBe(v);
+  });
+
+  it.each(["", "?fg=", "?fg=abc", "?fg=-1", "?fg=101", "?other=3"])("%s → null", (search) => {
+    expect(parseFearGreedOverride(search)).toBeNull();
   });
 });
