@@ -19,10 +19,14 @@ com.usstockmap.server
     time/       MarketDates (계약 날짜 = 미국 동부)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
   company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies (상세는 다음)
-  filing/       공시 목록·30일 집계 (다음)
+  filing/       30일 공시 집계 (FilingActivityCalculator)
+  earnings/     실적 발표: 8-K 2.02 → 지난 발표·장전/장후, 다음 발표 예상(작년 같은 분기 + 52주)
+  quality/      수집 결과 자동 점검 (DataQualityChecker → data_quality_issue)
   financial/    재무 정리 규칙 (순수): SecFact → PeriodNormalizer → FinancialStatementBuilder → MapMetricsCalculator. 개념 후보는 Metric, 규칙 버전 FinancialCalc.VERSION
   weather/      시장 날씨 지수(MarketWeather), GET /market-weather
-  collector/    외부 수집기: sec/(CompanyFactsParser ✅, 클라이언트 다음), fred/, koreaexim/
+  collector/    외부 수집기. RateLimiter(공통)
+    sec/        SecClient(HttpSecClient·테스트는 FixtureSecClient) → 파서 → SecCompanyUpdate(순수 계산) → SecSyncWriter(기업 단위 트랜잭션), SecSyncService(흐름)
+    fred/, koreaexim/ (다음)
 ```
 
 ## 코드 규칙
@@ -35,13 +39,15 @@ com.usstockmap.server
 - DB 타입 ↔ 자바: 금액 `bigint`↔`Long`, 비율·좌표 `double precision`↔`Double`, 날짜 `date`↔`LocalDate`, 시각 `timestamptz`↔`Instant`. 고정 길이 값은 `char` 대신 `varchar` + `check` (검증과 매핑을 단순하게).
 - 섹터처럼 소문자 문자열 값은 enum + `AttributeConverter` (`SectorConverter`).
 - 계산 규칙(매출 TTM, 공시 집계, 시장 날씨 지수)은 **순수 클래스**로 분리하고 단위 테스트를 붙인다.
-- 외부 API 클라이언트는 인터페이스로 감싼다 (테스트에서 가짜로 바꿀 수 있게).
+- 외부 API 클라이언트는 인터페이스로 감싼다 (테스트에서 가짜로 바꿀 수 있게). `RestClient`는 클라이언트 안에서 직접 만든다 (Boot 4 는 자동 구성 Builder 가 별도 스타터라 의존성을 늘리지 않음)
+- 수집기의 대량 쓰기(원본 값·재무제표·공시·기록)는 `JdbcTemplate` 배치, 기업·최신 지표는 JPA 엔티티. 네트워크는 트랜잭션 밖, 저장만 기업 하나 단위 트랜잭션
 
 ## SEC 접근 규칙 (어기면 IP 차단)
 - 초당 10회 이하 (`app.sec.max-requests-per-second` = 8로 여유)
 - 모든 요청에 `User-Agent: 앱이름 연락처이메일` (`app.sec.user-agent`, 이메일은 환경변수 `SEC_CONTACT_EMAIL`)
 - 기간 판정은 `fy`·`fp`가 아니라 `start`·`end` 날짜로. 같은 기간은 `filed`가 최신인 값. 정기 보고서(10-K·10-Q) 값만
-- 실제 응답 테스트 데이터: `src/test/resources/sec/companyfacts/{티커}.json` (`SecFixtures`). 규칙을 바꾸면 네 분기 합 = 연간 테스트가 먼저 잡는다
+- 실제 응답 테스트 데이터: `src/test/resources/sec/{companyfacts,submissions}/{티커}.json`, `company_tickers.json` (`SecFixtures`, `FixtureSecClient`). 규칙을 바꾸면 네 분기 합 = 연간 테스트가 먼저 잡는다
+- 실제 SEC 확인: `SEC_CONTACT_EMAIL=… ./gradlew test --tests '*SecLiveSmokeTest' -Dsec.live=true` (평소엔 건너뜀)
 
 ## 테스트
 - 웹 계층은 `@WebMvcTest` 슬라이스 + `MockMvcTester` (`@ActiveProfiles("test")`)

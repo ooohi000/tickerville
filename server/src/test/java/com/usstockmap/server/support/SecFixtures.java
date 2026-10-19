@@ -21,7 +21,14 @@ public final class SecFixtures {
     }
 
     public static JsonNode companyFactsJson(String ticker) {
-        String path = "/sec/companyfacts/" + ticker + ".json";
+        return read("/sec/companyfacts/" + ticker + ".json");
+    }
+
+    public static JsonNode submissionsJson(String ticker) {
+        return read("/sec/submissions/" + ticker + ".json");
+    }
+
+    private static JsonNode read(String path) {
         try (InputStream in = SecFixtures.class.getResourceAsStream(path)) {
             if (in == null) {
                 throw new IllegalArgumentException("no fixture: " + path);

@@ -71,6 +71,20 @@ public class Company {
     @Column(columnDefinition = "text")
     private String memo;
 
+    @Column(length = 200)
+    private String secStreet;
+
+    @Column(length = 100)
+    private String secCity;
+
+    @Column(length = 10)
+    private String secState;
+
+    @Column(length = 20)
+    private String secZip;
+
+    private Instant secSyncedAt;
+
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
@@ -88,5 +102,24 @@ public class Company {
         this.hqState = hqState;
         this.hqLat = hqLat;
         this.hqLng = hqLng;
+    }
+
+    /**
+     * SEC submissions 기본 정보 반영. 이름·한글 이름·본사 좌표는 우리가 관리하므로 건드리지 않는다
+     * (SEC 주소는 좌표 변환 전 원본으로만 저장).
+     */
+    public void applySecProfile(String cik, String exchange, String sicCode, String sicDescription,
+                                String fiscalYearEnd, String street, String city, String state, String zip,
+                                Instant syncedAt) {
+        this.cik = cik;
+        this.exchange = exchange;
+        this.sicCode = sicCode;
+        this.sicDescription = sicDescription;
+        this.fiscalYearEnd = fiscalYearEnd;
+        this.secStreet = street;
+        this.secCity = city;
+        this.secState = state;
+        this.secZip = zip;
+        this.secSyncedAt = syncedAt;
     }
 }

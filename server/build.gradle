@@ -57,6 +57,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	// 실제 SEC 호출 테스트는 ./gradlew test -Dsec.live=true 일 때만 (평소엔 건너뜀)
+	systemProperty 'sec.live', System.getProperty('sec.live', 'false')
 }
 
 // QueryDSL Q클래스 생성 위치 (build 폴더라 커밋되지 않는다)
