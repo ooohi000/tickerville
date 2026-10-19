@@ -62,7 +62,7 @@ com.usstockmap.server
 - `contract/WebSampleContractTest`: 서버 전체를 띄워 응답이 `web/src/data/*.json`과 같은지 확인. 응답 모양을 바꾸면 이 테스트가 먼저 깨진다
 - PostgreSQL은 실패한 SQL 뒤 트랜잭션 전체가 막힌다 → 실패를 기대하는 경우는 테스트를 나누거나 `@ParameterizedTest`
 
-## 환경변수
+## 환경변수 (로컬은 `server/.env` 에 — `cp server/.env.example server/.env`, git 에 안 올라감)
 - `SEC_CONTACT_EMAIL` SEC User-Agent 연락처 (필수, 코드에 적지 않는다)
 - `ADMIN_API_KEY` 관리자 API 키 (없으면 관리자 API 꺼짐)
 - `FRED_API_KEY` FRED API 키 (무료 발급, 없으면 FRED 수집 건너뜀). 로그·에러 메시지에 남기지 않는다

@@ -1,5 +1,10 @@
 # 로컬 개발 (기본 프로필). compose.yaml 의 PostgreSQL + 목데이터 10개
 spring:
+  config:
+    # server/.env 의 KEY=VALUE 를 읽는다 (없으면 무시). 터미널 bootRun·IntelliJ 실행 둘 다 되게 두 위치
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:server/.env[.properties]
   flyway:
     locations:
       - classpath:db/migration

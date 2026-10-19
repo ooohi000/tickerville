@@ -2,3 +2,8 @@
 .idea/
 .vscode/
 *.iml
+
+# 비밀값 (서버 server/.env, 프론트 web/.env.local). 예시 파일만 커밋
+.env
+.env.*
+!.env.example
