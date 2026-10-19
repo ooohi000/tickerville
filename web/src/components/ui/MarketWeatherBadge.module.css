@@ -1,8 +1,4 @@
 .badge {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 25;
   display: flex;
   align-items: baseline;
   gap: 6px;
@@ -10,7 +6,6 @@
   border-radius: 10px;
   background: rgba(27, 36, 48, 0.85);
   color: #ffffff;
-  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   pointer-events: none;
 }
 

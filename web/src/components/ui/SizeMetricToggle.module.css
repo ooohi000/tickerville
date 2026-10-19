@@ -1,11 +1,6 @@
-/* 시장 날씨 표시 바로 아래 (왼쪽 위). 색은 간판·패널과 같은 계열 */
+/* 왼쪽 위 (TopLeftHud 안). 색은 간판·패널과 같은 계열 */
 .wrap {
-  position: fixed;
-  top: 60px;
-  left: 12px;
-  z-index: 25;
-  max-width: calc(100vw - 24px);
-  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  max-width: 100%;
 }
 
 .group {

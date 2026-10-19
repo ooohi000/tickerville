@@ -8,8 +8,10 @@ import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
 import { Sky } from "@/components/scene/sky/Sky";
 import { ClusterListPanel } from "@/components/ui/ClusterListPanel";
+import { MarketClockBadge } from "@/components/ui/MarketClockBadge";
 import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
+import { TopLeftHud } from "@/components/ui/TopLeftHud";
 import dataset from "@/data/companies.json";
 import marketWeatherData from "@/data/marketWeather.json";
 import regionsData from "@/data/regions.json";
@@ -118,8 +120,11 @@ export function MapScene() {
         <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.2} />
       </Canvas>
 
-      <MarketWeatherBadge data={marketWeather} />
-      <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />
+      <TopLeftHud>
+        <MarketClockBadge />
+        <MarketWeatherBadge data={marketWeather} />
+        <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />
+      </TopLeftHud>
       {openGroup && (
         <ClusterListPanel
           key={openGroup.region.id}

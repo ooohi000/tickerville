@@ -1,0 +1,48 @@
+/* 색·모양은 MarketWeatherBadge 와 같은 계열. 위치는 TopLeftHud 가 정한다 */
+.badge {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(27, 36, 48, 0.85);
+  color: #ffffff;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.note {
+  color: #f5c542;
+  font-size: 12px;
+}
+
+.next {
+  color: #c3cad3;
+  font-size: 12px;
+}
+
+.clocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 12px;
+  color: #c3cad3;
+  font-size: 12px;
+}
+
+.city {
+  color: #6f7c8d;
+}
