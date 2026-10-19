@@ -20,9 +20,9 @@ com.usstockmap.server
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
   company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies (상세는 다음)
   filing/       공시 목록·30일 집계 (다음)
-  financial/    재무제표 정규화 (다음)
+  financial/    재무 정리 규칙 (순수): SecFact → PeriodNormalizer → FinancialStatementBuilder → MapMetricsCalculator. 개념 후보는 Metric, 규칙 버전 FinancialCalc.VERSION
   weather/      시장 날씨 지수(MarketWeather), GET /market-weather
-  collector/    외부 수집기: sec/, fred/, koreaexim/ (다음)
+  collector/    외부 수집기: sec/(CompanyFactsParser ✅, 클라이언트 다음), fred/, koreaexim/
 ```
 
 ## 코드 규칙
@@ -40,7 +40,8 @@ com.usstockmap.server
 ## SEC 접근 규칙 (어기면 IP 차단)
 - 초당 10회 이하 (`app.sec.max-requests-per-second` = 8로 여유)
 - 모든 요청에 `User-Agent: 앱이름 연락처이메일` (`app.sec.user-agent`, 이메일은 환경변수 `SEC_CONTACT_EMAIL`)
-- 기간 판정은 `fy`·`fp`가 아니라 `start`·`end` 날짜로. 같은 기간은 `filed`가 최신인 값
+- 기간 판정은 `fy`·`fp`가 아니라 `start`·`end` 날짜로. 같은 기간은 `filed`가 최신인 값. 정기 보고서(10-K·10-Q) 값만
+- 실제 응답 테스트 데이터: `src/test/resources/sec/companyfacts/{티커}.json` (`SecFixtures`). 규칙을 바꾸면 네 분기 합 = 연간 테스트가 먼저 잡는다
 
 ## 테스트
 - 웹 계층은 `@WebMvcTest` 슬라이스 + `MockMvcTester` (`@ActiveProfiles("test")`)

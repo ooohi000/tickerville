@@ -65,8 +65,10 @@
 - 정렬: 티커 오름차순 (화면 정렬은 프론트가 높이 기준대로 한다)
 - 지표가 아직 없는 기업도 목록에 나온다: 지표는 전부 `null`, `filings30d`는 `{ "material": 0, "insider": 0 }`
 - `revenueTtmUsd`: **최근 4개 분기 매출 합** (SEC `companyfacts`, 서버 계산). 정리 못 하면 `null`
-  - 매출 항목 후보(순서대로): `RevenueFromContractWithCustomerExcludingAssessedTax` → `Revenues` → `SalesRevenueNet`. 은행 등 금융사는 별도 규칙 필요
-  - 10-K는 연간 값만 있으므로 4분기 = 연간 − (1~3분기)
+  - 매출 항목 후보(순서대로): `Revenues`(있으면 총매출 줄) → `RevenueFromContractWithCustomerExcludingAssessedTax` → `SalesRevenueNet` → `…IncludingAssessedTax`. 은행(SIC 6020~6029·6035·6036)은 `RevenuesNetOfInterestExpense` → `Revenues`
+  - 10-K는 연간 값만 있으므로 4분기 = 연간 − (1~3분기 합). 네 분기 합이 항상 연간과 같다
+  - 값은 정기 보고서(10-K·10-Q, 정정본 포함)에서만 (위임장 등의 반올림 값 제외)
+  - 규칙 전체: `server/.../financial/PeriodNormalizer.java`, 버전 `FinancialCalc.VERSION`
   - 기간은 `fy`·`fp`가 아니라 `start`·`end` 날짜로 판정 (`data-sources.md`의 SEC 함정 참고)
 - `netIncomeTtmUsd`: 최근 4분기 순이익 합 (`NetIncomeLoss`), 적자면 음수
 - `totalAssetsUsd`: 가장 최근 분기말 총자산 (`Assets`, 시점 값이라 합산하지 않음)
@@ -155,6 +157,8 @@
 - 같은 기간이 여러 공시에 나오면 `filedAt`이 가장 최근인 값(정정 반영)을 쓴다
 - `freeCashFlow` = `operatingCashFlow` − `capitalExpenditure` (서버가 계산)
 - 원본에 없는 항목은 `null`
+- `totalLiabilities`: 부채 합계를 공시하지 않는 기업(아마존·코카콜라)은 총자산 − 자본(비지배지분 포함)
+- `epsDiluted`: 4분기는 직접 공시가 없으면 `null` (주당 값은 빼서 만들 수 없다)
 
 ### `GET /api/v1/macro` (예정)
 매크로 전광판·랜드마크용 지표. 공개 가능한 것만: 미국채 2년·10년, 장단기 금리차, 실효 기준금리, WTI, 천연가스(헨리허브), 달러 가치(Broad), 원/달러. 랜드마크 작업 때 확정한다.

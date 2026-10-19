@@ -79,7 +79,9 @@
 - [x] 📱 계약 테스트: 서버 전체를 띄워 응답 = `web/src/data/*.json` (필드·값). 총 테스트 38개
 - [x] 📱 데이터 소스 조사 → `docs/data-sources.md`. **결정: SEC + FRED + 수출입은행, 월 $0** (계약 `api.md` 반영 완료)
 - [ ] 📱 V2 쌓기 테이블: `company_metric_daily`(+`calc_version`), `earnings_event` (`data-sources.md` 데이터 쌓기 원칙)
-- [ ] 📱 SEC 수집기 ← 다음: 티커↔CIK, submissions(기본 정보·공시), companyfacts(재무 정규화·TTM 매출). 초당 10회·User-Agent 준수
+- [x] 📱 SEC 수집기 ① 정리 규칙 (`financial/`): 원본 → 분기·연간 재무제표 → 지도 지표(TTM·성장률·영업이익률·공시상 시총). 실제 7개 기업 데이터로 테스트 49개 (애플 4분기 1,024.66억, 네 분기 합 = 연간, 은행 규칙, 위임장 반올림 값 제외)
+- [ ] 📱 SEC 수집기 ② ← 다음: SEC 클라이언트(초당 8회)·티커↔CIK·submissions(기본 정보·공시·실적 8-K)·companyfacts 저장 + V2 쌓기 테이블
+- [ ] 📱 SEC 수집기 ③: 스케줄·수동 실행 API
 - [ ] 📱 FRED·수출입은행 수집기: STLFSI4 → 시장 날씨 지수, 매크로 시리즈, 원/달러
 - [ ] 📱 배치 스케줄 (`@Scheduled`), Redis 캐시
 - [ ] 📱 상세·재무제표 API
