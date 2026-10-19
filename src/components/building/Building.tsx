@@ -6,8 +6,16 @@ import type { Group } from "three";
 import { useDistanceVisible } from "@/components/scene/useDistanceVisible";
 import { isVisibleAt, type VisibilityMode } from "@/lib/cluster/visibility";
 import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/buildingSpec";
+import { isHighGrowth } from "@/lib/company/growth";
+import {
+  DEFAULT_SIZE_METRIC,
+  SIZE_METRICS,
+  getSizeValue,
+  type SizeMetricId,
+} from "@/lib/company/sizeMetric";
 import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
+import { Crane } from "./Crane";
 import { Sign } from "./Sign";
 import { EventHeat } from "./EventHeat";
 
@@ -19,6 +27,8 @@ const HIGHLIGHT_EMISSIVE = "#f5c542";
 export interface BuildingProps {
   company: Company;
   position: WorldPoint;
+  /** 건물 높이 기준 (화면 토글) */
+  sizeMetric?: SizeMetricId;
   /** always: 항상 / near: 클러스터가 펼쳐졌을 때만 (getVisibilityModes) */
   visibilityMode?: VisibilityMode;
   /** 클러스터 대표일 때 숨은 기업 수 → 간판 "+N" (getHiddenCounts) */
@@ -34,13 +44,17 @@ export interface BuildingProps {
 export function Building({
   company,
   position,
+  sizeMetric = DEFAULT_SIZE_METRIC,
   visibilityMode = "always",
   hiddenCount = 0,
   highlighted = false,
   onSelect,
 }: BuildingProps) {
   const ref = useRef<Group>(null);
-  const d = getBuildingDimensions(company.revenueTtmUsd);
+  const d = getBuildingDimensions(
+    getSizeValue(company, sizeMetric),
+    SIZE_METRICS[sizeMetric].ranges,
+  );
   const emissive = highlighted ? HIGHLIGHT_EMISSIVE : "#000000";
 
   // 선택된 건물은 거리와 상관없이 보인다
@@ -66,6 +80,7 @@ export function Building({
       </mesh>
       <EventHeat filings={company.filings30d} />
       <Roof d={d} emissive={emissive} />
+      {isHighGrowth(company.revenueGrowthYoy) && <Crane building={d} />}
       <Sign
         ticker={company.ticker}
         building={d}

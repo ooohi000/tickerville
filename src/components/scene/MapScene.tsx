@@ -9,21 +9,44 @@ import { UsMap } from "@/components/map/UsMap";
 import { Sky } from "@/components/scene/sky/Sky";
 import { ClusterListPanel } from "@/components/ui/ClusterListPanel";
 import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
+import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import dataset from "@/data/companies.json";
 import marketWeatherData from "@/data/marketWeather.json";
 import regionsData from "@/data/regions.json";
 import { assignRegions } from "@/lib/cluster/assignRegions";
 import { getHiddenCounts, getVisibilityModes } from "@/lib/cluster/visibility";
+import {
+  DEFAULT_SIZE_METRIC,
+  SIZE_METRIC_ORDER,
+  type SizeMetricId,
+} from "@/lib/company/sizeMetric";
 import { projectLatLng } from "@/lib/geo/project";
 import { parseWeatherOverride } from "@/lib/weather/weather";
 import type { CompanyDataset, MarketWeather, Region } from "@/types";
 
 const { companies } = dataset as CompanyDataset;
 
-// 정적 데이터라 모듈 로드 시 한 번만 계산
-const assignment = assignRegions(companies, regionsData as Region[]);
-const visibilityModes = getVisibilityModes(assignment);
-const hiddenCounts = getHiddenCounts(assignment);
+/**
+ * 건물 높이 기준마다 대표 건물(크기 1위)이 달라지므로, 기준별로 묶음 결과를 미리 계산해 둔다.
+ * 정적 데이터라 모듈 로드 시 한 번만 (기준 4개 × 기업 수 정도라 가볍다).
+ */
+const VIEWS = Object.fromEntries(
+  SIZE_METRIC_ORDER.map((id) => {
+    const assignment = assignRegions(companies, regionsData as Region[], { sizeMetric: id });
+    return [
+      id,
+      {
+        assignment,
+        visibilityModes: getVisibilityModes(assignment),
+        hiddenCounts: getHiddenCounts(assignment),
+      },
+    ];
+  }),
+) as Record<SizeMetricId, {
+  assignment: ReturnType<typeof assignRegions>;
+  visibilityModes: ReturnType<typeof getVisibilityModes>;
+  hiddenCounts: ReturnType<typeof getHiddenCounts>;
+}>;
 
 // 개발용 ?mw=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
 const noopSubscribe = () => () => {};
@@ -36,6 +59,8 @@ const serverWeatherOverride = () => null;
 export function MapScene() {
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
+  const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
+  const { assignment, visibilityModes, hiddenCounts } = VIEWS[sizeMetric];
   // 서버에서는 null, 브라우저에서 주소를 읽는다 (hydration 어긋남 없음)
   const override = useSyncExternalStore(
     noopSubscribe,
@@ -72,6 +97,7 @@ export function MapScene() {
               key={c.ticker}
               company={c}
               position={p}
+              sizeMetric={sizeMetric}
               visibilityMode={visibilityModes.get(c.ticker)}
               hiddenCount={hiddenCounts.get(c.ticker)}
               highlighted={selectedTicker === c.ticker}
@@ -93,10 +119,12 @@ export function MapScene() {
       </Canvas>
 
       <MarketWeatherBadge data={marketWeather} />
+      <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />
       {openGroup && (
         <ClusterListPanel
           key={openGroup.region.id}
           group={openGroup}
+          sizeMetric={sizeMetric}
           selectedTicker={selectedTicker}
           onSelect={setSelectedTicker}
           onClose={() => setOpenRegionId(null)}

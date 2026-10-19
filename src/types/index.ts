@@ -35,6 +35,18 @@ export interface Company {
    * 공시가 없거나 정리 못 하면 null → 가장 작은 건물
    */
   revenueTtmUsd: number | null;
+  /** 최근 4분기 순이익 합계(TTM, 달러). 적자면 음수 */
+  netIncomeTtmUsd: number | null;
+  /** 최근 분기말 총자산(달러). 은행·보험처럼 매출보다 자산이 의미 있는 회사용 */
+  totalAssetsUsd: number | null;
+  /** 영업이익률(TTM) = 영업이익 ÷ 매출. 0.32 = 32%. 은행 등 계산 불가면 null */
+  operatingMarginTtm: number | null;
+  /** 매출 성장률 = 최근 4분기 매출 ÷ 직전 4분기 매출 − 1. 0.25 = +25% */
+  revenueGrowthYoy: number | null;
+  /** 공시상 유동 시가총액(달러) — 10-K 표지의 EntityPublicFloat. 연 1회, 반기 말 기준이라 오래된 값 */
+  publicFloatUsd: number | null;
+  /** publicFloatUsd 기준일 YYYY-MM-DD */
+  publicFloatAsOf: string | null;
   /** 최근 30일 공시 활동. 건물 주변 땅 "열기"로 표시 */
   filings30d: FilingActivity;
   /** 한 줄 메모. 상세 분석은 이후 단계 */
@@ -68,7 +80,7 @@ export interface Region {
 /** 지역 하나에 묶인 기업들. 기업이 1개 이상인 지역만 만들어진다. */
 export interface RegionGroup {
   region: Region;
-  /** 매출 내림차순. [0]이 대표 건물 */
+  /** 현재 건물 크기 기준 내림차순. [0]이 대표 건물 */
   companies: Company[];
   /** MIN_CLUSTER_SIZE 이상이면 true → 대표 건물 + "+N" 배지 + 목록 */
   isCluster: boolean;
@@ -77,7 +89,7 @@ export interface RegionGroup {
 export interface RegionAssignment {
   /** regions.json 순서 유지 */
   groups: RegionGroup[];
-  /** 어느 지역 반경에도 안 들어간 기업 (매출 내림차순) */
+  /** 어느 지역 반경에도 안 들어간 기업 (건물 크기 기준 내림차순) */
   standalone: Company[];
 }
 

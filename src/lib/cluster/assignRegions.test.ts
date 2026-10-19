@@ -1,17 +1,12 @@
 import { describe, expect, it } from "vitest";
 import dataset from "@/data/companies.json";
 import regionsData from "@/data/regions.json";
+import { makeCompany } from "@/test/makeCompany";
 import type { Company, CompanyDataset, Region } from "@/types";
 import { assignRegions } from "./assignRegions";
 
-const make = (ticker: string, lat: number, lng: number, revenueTtmUsd = 1): Company => ({
-  ticker,
-  name: ticker,
-  sector: "tech",
-  hq: { city: "", state: "CA", lat, lng },
-  revenueTtmUsd,
-  filings30d: { material: 0, insider: 0 },
-});
+const make = (ticker: string, lat: number, lng: number, revenueTtmUsd = 1): Company =>
+  makeCompany({ ticker, hq: { city: "", state: "CA", lat, lng }, revenueTtmUsd });
 
 const region = (id: string, lat: number, lng: number, radiusKm: number): Region => ({
   id,

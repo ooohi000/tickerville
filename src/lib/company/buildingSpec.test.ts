@@ -7,7 +7,7 @@ import {
   MAX_IN_TIER_HEIGHT_FACTOR,
   getBuildingDimensions,
 } from "./buildingSpec";
-import { TIER_RANGES } from "./tier";
+import { SIZE_METRICS } from "./sizeMetric";
 
 const B = 1_000_000_000;
 const ORDER: SizeTier[] = ["small", "mid", "large", "mega"];
@@ -45,7 +45,7 @@ describe("BUILDING_SPECS", () => {
 
 describe("getBuildingDimensions", () => {
   it("등급 하한이면 기본 층수 그대로", () => {
-    const d = getBuildingDimensions(TIER_RANGES.mega[0]);
+    const d = getBuildingDimensions(SIZE_METRICS.revenue.ranges.mega[0]);
     expect(d.tier).toBe("mega");
     expect(d.bodyHeight).toBeCloseTo(BUILDING_SPECS.mega.floors * FLOOR_HEIGHT);
   });

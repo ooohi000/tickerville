@@ -1,15 +1,9 @@
 import { describe, expect, it } from "vitest";
+import { makeCompany } from "@/test/makeCompany";
 import type { Company } from "@/types";
 import { getClusterListView } from "./clusterList";
 
-const make = (ticker: string): Company => ({
-  ticker,
-  name: ticker,
-  sector: "tech",
-  hq: { city: "", state: "CA", lat: 0, lng: 0 },
-  revenueTtmUsd: 1,
-  filings30d: { material: 0, insider: 0 },
-});
+const make = (ticker: string): Company => makeCompany({ ticker });
 const list = (n: number) => Array.from({ length: n }, (_, i) => make(`T${i}`));
 const tickers = (cs: Company[]) => cs.map((c) => c.ticker);
 

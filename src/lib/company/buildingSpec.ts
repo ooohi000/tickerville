@@ -1,5 +1,6 @@
 import type { SizeTier } from "@/types";
-import { getPositionInTier, getSizeTier } from "./tier";
+import { SIZE_METRICS } from "./sizeMetric";
+import { getPositionInTier, getSizeTier, type TierRanges } from "./tier";
 
 /** 부루마블 느낌: 집 → 빌딩 → 고층 빌딩 → 랜드마크 */
 export type RoofType = "gable" | "flat" | "antenna" | "spire";
@@ -49,11 +50,17 @@ export interface BuildingDimensions {
   signFontSize: number;
 }
 
-/** 매출(최근 4분기) → 건물 치수. 등급으로 모양을 정하고, 등급 안 위치로 높이만 보정한다. */
-export function getBuildingDimensions(revenueTtmUsd: number | null): BuildingDimensions {
-  const tier = getSizeTier(revenueTtmUsd);
+/**
+ * 건물 크기 기준 값 → 건물 치수. 등급으로 모양을 정하고, 등급 안 위치로 높이만 보정한다.
+ * ranges는 지표마다 다르다 (SIZE_METRICS). 기본은 매출.
+ */
+export function getBuildingDimensions(
+  value: number | null,
+  ranges: TierRanges = SIZE_METRICS.revenue.ranges,
+): BuildingDimensions {
+  const tier = getSizeTier(value, ranges);
   const spec = BUILDING_SPECS[tier];
-  const factor = 1 + getPositionInTier(revenueTtmUsd) * (MAX_IN_TIER_HEIGHT_FACTOR - 1);
+  const factor = 1 + getPositionInTier(value, ranges) * (MAX_IN_TIER_HEIGHT_FACTOR - 1);
   const bodyHeight = spec.floors * FLOOR_HEIGHT * factor;
   const totalHeight = bodyHeight + spec.roofHeight;
 

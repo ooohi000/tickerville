@@ -48,6 +48,12 @@
       "sector": "tech",
       "hq": { "city": "Santa Clara", "state": "CA", "lat": 37.3707, "lng": -121.9638 },
       "revenueTtmUsd": 200000000000,
+      "netIncomeTtmUsd": 105000000000,
+      "totalAssetsUsd": 140000000000,
+      "operatingMarginTtm": 0.62,
+      "revenueGrowthYoy": 0.55,
+      "publicFloatUsd": 2900000000000,
+      "publicFloatAsOf": "2026-07-27",
       "filings30d": { "material": 3, "insider": 14 },
       "memo": null
     }
@@ -59,6 +65,11 @@
   - 매출 항목 후보(순서대로): `RevenueFromContractWithCustomerExcludingAssessedTax` → `Revenues` → `SalesRevenueNet`. 은행 등 금융사는 별도 규칙 필요
   - 10-K는 연간 값만 있으므로 4분기 = 연간 − (1~3분기)
   - 기간은 `fy`·`fp`가 아니라 `start`·`end` 날짜로 판정 (`data-sources.md`의 SEC 함정 참고)
+- `netIncomeTtmUsd`: 최근 4분기 순이익 합 (`NetIncomeLoss`), 적자면 음수
+- `totalAssetsUsd`: 가장 최근 분기말 총자산 (`Assets`, 시점 값이라 합산하지 않음)
+- `operatingMarginTtm`: 최근 4분기 영업이익(`OperatingIncomeLoss`) ÷ 매출. 은행처럼 영업이익 개념이 다르면 `null`
+- `revenueGrowthYoy`: 최근 4분기 매출 ÷ 그 직전 4분기 매출 − 1. 직전 데이터가 없으면 `null`
+- `publicFloatUsd` / `publicFloatAsOf`: 10-K 표지의 `dei:EntityPublicFloat`(내부자 지분 제외 시가총액)와 그 기준일. **연 1회, 반기 말 기준**이라 현재 시총과 다를 수 있다. 화면에 기준일과 함께 표시
 - `filings30d`: 최근 30일 공시 건수 (SEC `submissions`의 최근 공시 목록, 서버 계산)
   - `material` = 폼 `8-K`·`8-K/A` 건수, `insider` = 폼 `4`·`4/A` 건수
 

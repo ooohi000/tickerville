@@ -1,0 +1,56 @@
+/* 시장 날씨 표시 바로 아래 (왼쪽 위). 색은 간판·패널과 같은 계열 */
+.wrap {
+  position: fixed;
+  top: 60px;
+  left: 12px;
+  z-index: 25;
+  max-width: calc(100vw - 24px);
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 10px;
+  background: rgba(27, 36, 48, 0.85);
+}
+
+.title {
+  padding: 0 6px 0 4px;
+  color: #9aa7b8;
+  font-size: 12px;
+}
+
+.option {
+  min-height: 32px;
+  padding: 4px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #ffffff;
+  font: 600 13px/1 inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.active,
+.active:hover {
+  background: #f5c542;
+  color: #1b2430;
+}
+
+.note {
+  margin-top: 4px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(27, 36, 48, 0.75);
+  color: #c3cad3;
+  font-size: 11px;
+}

@@ -1,3 +1,4 @@
+import type { SizeMetricId } from "@/lib/company/sizeMetric";
 import { sortBySize } from "@/lib/company/sort";
 import { distanceKm } from "@/lib/geo/distance";
 import type { Company, Region, RegionAssignment } from "@/types";
@@ -11,12 +12,14 @@ export const MIN_CLUSTER_SIZE = 2;
  * - 여러 지역 반경에 걸치면 중심이 더 가까운 지역
  * - 어디에도 안 들어가면 standalone
  * 기업이 1개 이상인 지역만 groups에 들어간다 (이름표는 1개여도 표시).
+ * 각 그룹은 현재 건물 크기 기준(sizeMetric)으로 정렬되어 [0]이 대표 건물이 된다.
  */
 export function assignRegions(
   companies: readonly Company[],
   regions: readonly Region[],
-  minClusterSize = MIN_CLUSTER_SIZE,
+  options: { minClusterSize?: number; sizeMetric?: SizeMetricId } = {},
 ): RegionAssignment {
+  const { minClusterSize = MIN_CLUSTER_SIZE, sizeMetric } = options;
   const buckets = new Map<string, Company[]>();
   const standalone: Company[] = [];
 
@@ -40,9 +43,9 @@ export function assignRegions(
   const groups = regions
     .filter((r) => buckets.has(r.id))
     .map((region) => {
-      const members = sortBySize(buckets.get(region.id)!);
+      const members = sortBySize(buckets.get(region.id)!, sizeMetric);
       return { region, companies: members, isCluster: members.length >= minClusterSize };
     });
 
-  return { groups, standalone: sortBySize(standalone) };
+  return { groups, standalone: sortBySize(standalone, sizeMetric) };
 }
