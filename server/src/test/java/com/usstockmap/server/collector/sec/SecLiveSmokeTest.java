@@ -22,7 +22,8 @@ class SecLiveSmokeTest {
     void realSec() {
         String email = System.getenv().getOrDefault("SEC_CONTACT_EMAIL", "change-me@example.com");
         AppProperties props = new AppProperties(new AppProperties.Cors(List.of()),
-                new AppProperties.Sec("UsStockMap/0.1 (" + email + ")", 8), new AppProperties.Fred(""));
+                new AppProperties.Sec("UsStockMap/0.1 (" + email + ")", 8, false, ""),
+                new AppProperties.Admin(""), new AppProperties.Fred(""));
         HttpSecClient client = new HttpSecClient(props);
 
         String aaplCik = CompanyTickersParser.parse(client.companyTickers()).get("AAPL");
@@ -36,5 +37,11 @@ class SecLiveSmokeTest {
             assertThat(u.metrics().revenueTtmUsd()).isPositive();
             assertThat(u.submission().filings()).isNotEmpty();
         }
+
+        // 인구조사국 지오코더: 팔란티어 SEC 주소 → 아벤투라 (우편번호 33180 중심과 수 km 이내)
+        var point = new com.usstockmap.server.common.geo.CensusGeocoder()
+                .geocode("19505 Biscayne Blvd", "AVENTURA", "FL", "33180").orElseThrow();
+        System.out.println("[live] census PLTR " + point);
+        assertThat(point.distanceKm(25.962149, -80.140904)).isLessThan(10);
     }
 }

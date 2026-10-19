@@ -21,4 +21,16 @@ public class ApiException extends RuntimeException {
     public static ApiException dataNotReady(String what) {
         return new ApiException(ErrorCode.DATA_NOT_READY, what + " not collected yet");
     }
+
+    public static ApiException unauthorized() {
+        return new ApiException(ErrorCode.UNAUTHORIZED, "admin key required");
+    }
+
+    public static ApiException conflict(String message) {
+        return new ApiException(ErrorCode.CONFLICT, message);
+    }
+
+    public static ApiException invalid(String message) {
+        return new ApiException(ErrorCode.INVALID_PARAMETER, message);
+    }
 }

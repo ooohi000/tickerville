@@ -33,6 +33,17 @@ public record SecCompanyUpdate(
         List<QualityIssue> issues
 ) {
 
+    /** 수집 흐름에서 덧붙이는 이상 신호 (예: 본사 좌표가 SEC 주소와 멀다) */
+    public SecCompanyUpdate withExtraIssues(List<QualityIssue> extra) {
+        if (extra.isEmpty()) {
+            return this;
+        }
+        List<QualityIssue> all = new java.util.ArrayList<>(issues);
+        all.addAll(extra);
+        return new SecCompanyUpdate(submission, profile, facts, statements, metrics, filingActivity,
+                reportedEarnings, nextEarningsEstimate, List.copyOf(all));
+    }
+
     public static SecCompanyUpdate compute(String ticker, JsonNode submissionsJson, JsonNode companyFactsJson,
                                            LocalDate today) {
         SecSubmission submission = SubmissionsParser.parse(submissionsJson, ticker);

@@ -30,5 +30,11 @@ app:
     # SEC 접근 규칙: 앱 이름 + 연락처 이메일 필수, 초당 10회 이하
     user-agent: "UsStockMap/0.1 (${SEC_CONTACT_EMAIL:change-me@example.com})"
     max-requests-per-second: 8
+    # 매일 수집 (미국 동부). EDGAR 접수가 22시에 끝나서 그 뒤에. 켜는 건 prod 프로필
+    schedule-enabled: false
+    sync-cron: "0 15 22 * * MON-FRI"
+  admin:
+    # 관리자 API(/api/admin/**) 키. 비어 있으면 관리자 API 전체가 막힌다
+    api-key: ${ADMIN_API_KEY:}
   fred:
     api-key: ${FRED_API_KEY:}

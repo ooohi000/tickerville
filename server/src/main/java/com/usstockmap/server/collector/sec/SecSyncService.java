@@ -1,6 +1,8 @@
 package com.usstockmap.server.collector.sec;
 
+import com.usstockmap.server.common.geo.ZipCentroids;
 import com.usstockmap.server.common.time.MarketDates;
+import com.usstockmap.server.quality.QualityIssue;
 import com.usstockmap.server.company.Company;
 import com.usstockmap.server.company.CompanyRepository;
 import java.time.Clock;
@@ -27,12 +29,18 @@ public class SecSyncService {
     private final SecClient sec;
     private final SecSyncWriter writer;
     private final CompanyRepository companies;
+    private final ZipCentroids zips;
     private final Clock clock;
 
-    public SecSyncService(SecClient sec, SecSyncWriter writer, CompanyRepository companies, Clock clock) {
+    /** 우리 본사 좌표와 SEC 주소(우편번호 중심)가 이보다 멀면 이상 신호 */
+    static final double HQ_MISMATCH_KM = 50;
+
+    public SecSyncService(SecClient sec, SecSyncWriter writer, CompanyRepository companies, ZipCentroids zips,
+                          Clock clock) {
         this.sec = sec;
         this.writer = writer;
         this.companies = companies;
+        this.zips = zips;
         this.clock = clock;
     }
 
@@ -78,11 +86,24 @@ public class SecSyncService {
         return new SecSyncResult(ok, failed);
     }
 
+    /** 본사를 옮겼거나 좌표를 잘못 넣은 경우 (PLTR: 덴버 → 플로리다 이전) */
+    List<QualityIssue> hqIssues(Company c, SecSubmission s) {
+        String zip = s.businessAddress().zip();
+        return zips.find(zip)
+                .filter(p -> p.distanceKm(c.getHqLat(), c.getHqLng()) > HQ_MISMATCH_KM)
+                .map(p -> List.of(new QualityIssue("HQ_FAR_FROM_SEC_ADDRESS", String.format(
+                        "지도 좌표(%s, %s)가 SEC 본사 주소(%s %s %s)와 %.0fkm 떨어짐 — 이전했는지 확인",
+                        c.getHqCity(), c.getHqState(), s.businessAddress().city(), s.businessAddress().state(), zip,
+                        p.distanceKm(c.getHqLat(), c.getHqLng())))))
+                .orElse(List.of());
+    }
+
     private void syncOne(Company c, String cik) {
         JsonNode submissions = sec.submissions(cik);
         JsonNode facts = sec.companyFacts(cik);
         LocalDate today = MarketDates.today(clock);
-        SecCompanyUpdate update = SecCompanyUpdate.compute(c.getTicker(), submissions, facts, today);
+        SecCompanyUpdate update = SecCompanyUpdate.compute(c.getTicker(), submissions, facts, today)
+                .withExtraIssues(hqIssues(c, SubmissionsParser.parse(submissions, c.getTicker())));
         writer.write(c.getId(), update, today, clock.instant());
     }
 }

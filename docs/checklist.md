@@ -81,8 +81,9 @@
 - [x] 📱 V2 쌓기 테이블: `company_metric_daily`(+`calc_version`), `earnings_event`, `data_quality_issue`, 공시 항목·접수 시각, SEC 본사 주소
 - [x] 📱 SEC 수집기 ① 정리 규칙 (`financial/`): 원본 → 분기·연간 재무제표 → 지도 지표(TTM·성장률·영업이익률·공시상 시총). 실제 7개 기업 데이터로 테스트 49개 (애플 4분기 1,024.66억, 네 분기 합 = 연간, 은행 규칙, 위임장 반올림 값 제외)
 - [x] 📱 SEC 수집기 ② SEC 클라이언트(초당 8회·User-Agent·재시도)·티커↔CIK·submissions(기본 정보·공시·실적 8-K)·companyfacts 저장, 매일 기록·실적 이벤트·품질 검사. 실제 SEC 접속 확인 (테스트 총 118개)
-- [ ] 📱 SEC 수집기 ③ ← 다음: 매일 스케줄(`@Scheduled`, 동부 장 마감 후)·관리자 수동 실행 API(+간단한 키 보호)·품질 이상 목록 API
-- [ ] 📱 본사 좌표: SEC 주소 → 위경도 (좌표가 없거나 주소가 바뀐 기업만, 무료 지오코딩 조사)
+- [x] 📱 SEC 수집기 ③ 매일 스케줄(평일 동부 22:15, prod 만)·관리자 API(`X-Admin-Key`): 수집 실행/상태, 품질 이상 목록, 티커로 기업 등록 (테스트 총 153개)
+- [x] 📱 본사 좌표: SEC 주소 → 인구조사국 지오코더(무료·공공) → 안 되면 우편번호 중심(번들 3.4만 개). 좌표가 SEC 주소와 50km 넘게 멀면 품질 경고
+- [ ] 🏠 실제 수집 한 번: `ADMIN_API_KEY=… SEC_CONTACT_EMAIL=… ./gradlew bootRun` → `curl -X POST -H "X-Admin-Key: …" localhost:8080/api/admin/sec-sync` → 지도에 실제 값
 - [ ] 📱 실적 발표 API + 화면 (지난 발표·다음 예상 "예상" 표시, 직접 확정 입력)
 - [ ] 📱 FRED·수출입은행 수집기: STLFSI4 → 시장 날씨 지수, 매크로 시리즈, 원/달러
 - [ ] 📱 배치 스케줄 (`@Scheduled`), Redis 캐시

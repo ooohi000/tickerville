@@ -28,7 +28,9 @@
 | 상태 | code | 언제 |
 |---|---|---|
 | 400 | `INVALID_PARAMETER` | 쿼리 값이 잘못됨 (`period=weekly` 등) |
+| 401 | `UNAUTHORIZED` | 관리자 API 키가 없거나 틀림 |
 | 404 | `COMPANY_NOT_FOUND` | 없는 티커 |
+| 409 | `CONFLICT` | 관리자: 수집이 이미 진행 중, 이미 등록된 티커 |
 | 503 | `DATA_NOT_READY` | 아직 한 번도 수집되지 않은 데이터 (예: 첫 배포 직후 시장 날씨). 프론트는 기본 화면으로 대체 |
 | 500 | `INTERNAL_ERROR` | 그 외 |
 
@@ -162,6 +164,19 @@
 
 ### `GET /api/v1/macro` (예정)
 매크로 전광판·랜드마크용 지표. 공개 가능한 것만: 미국채 2년·10년, 장단기 금리차, 실효 기준금리, WTI, 천연가스(헨리허브), 달러 가치(Broad), 원/달러. 랜드마크 작업 때 확정한다.
+
+## 관리자 API (`/api/admin/**`)
+공개 API 가 아니다. 헤더 `X-Admin-Key` 필수 (서버 환경변수 `ADMIN_API_KEY`, 비어 있으면 전부 401). CORS 없음, 캐시 금지.
+
+| 요청 | 하는 일 | 응답 |
+|---|---|---|
+| `POST /api/admin/sec-sync` 본문 `{"tickers":["AAPL"]}` (없으면 전체) | SEC 수집 백그라운드 시작 | 202 + 상태. 이미 돌고 있으면 409 |
+| `GET /api/admin/sec-sync` | 마지막(진행 중) 수집 상태 `{running, trigger, startedAt, finishedAt, result:{succeeded, failed[{ticker, reason}]}, error}` | 200 |
+| `GET /api/admin/quality-issues` | 확인이 필요한 기업 `[{ticker, code, detail, calcVersion, detectedAt}]` | 200 |
+| `POST /api/admin/companies` 본문 `{"ticker":"COST","nameKo":"코스트코","sector":null}` | 티커로 등록: SEC 이름·본사 주소 → 좌표(인구조사국 지오코더, 안 되면 우편번호 중심), 섹터 없으면 SIC 로 추정 | 201 `{ticker, name, nameKo, sector, hqCity, hqState, lat, lng, locationPrecision}` |
+
+- 매일 수집: 평일 미국 동부 22:15 (`prod` 프로필에서만). 수동 실행과 겹치면 하나만
+- 품질 코드: `NO_REVENUE` `NO_TTM` `NO_QUARTERS` `STALE` `FACTS_BEHIND_FILINGS` `REVENUE_JUMP` `NEGATIVE_REVENUE` `MISSING_QUARTERS` `QUARTER_SUM_MISMATCH` `HQ_FAR_FROM_SEC_ADDRESS`
 
 ## 출처 표기 (화면 하단 고정)
 - "데이터: U.S. SEC EDGAR, FRED®(Federal Reserve Bank of St. Louis), 한국수출입은행"

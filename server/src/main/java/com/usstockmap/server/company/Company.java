@@ -122,4 +122,9 @@ public class Company {
         this.secZip = zip;
         this.secSyncedAt = syncedAt;
     }
+
+    /** 한글 이름 (직접 관리) */
+    public void changeNameKo(String nameKo) {
+        this.nameKo = nameKo;
+    }
 }

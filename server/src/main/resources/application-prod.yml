@@ -1,0 +1,12 @@
+# 운영. DB 접속은 환경변수 SPRING_DATASOURCE_URL·USERNAME·PASSWORD
+spring:
+  docker:
+    compose:
+      enabled: false
+
+app:
+  sec:
+    schedule-enabled: true
+  cors:
+    allowed-origins:
+      - ${FRONT_ORIGIN:http://localhost:3000}

@@ -155,7 +155,9 @@ export interface CompanyDetail {
 
 export type ApiErrorCode =
   | "INVALID_PARAMETER"
+  | "UNAUTHORIZED"
   | "COMPANY_NOT_FOUND"
+  | "CONFLICT"
   | "DATA_NOT_READY"
   | "INTERNAL_ERROR";
 

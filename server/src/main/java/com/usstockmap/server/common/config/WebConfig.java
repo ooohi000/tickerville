@@ -1,6 +1,7 @@
 package com.usstockmap.server.common.config;
 
 import java.util.concurrent.TimeUnit;
+import com.usstockmap.server.common.admin.AdminKeyInterceptor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
@@ -48,5 +49,6 @@ public class WebConfig implements WebMvcConfigurer {
             }
         };
         registry.addInterceptor(cacheHeader).addPathPatterns(API_PATH);
+        registry.addInterceptor(new AdminKeyInterceptor(props.admin())).addPathPatterns(AdminKeyInterceptor.PATH);
     }
 }

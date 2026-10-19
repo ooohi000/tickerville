@@ -32,7 +32,7 @@ class HttpSecClientTest {
         RestClient.Builder builder = RestClient.builder();
         server = MockRestServiceServer.bindTo(builder).build();
         AppProperties props = new AppProperties(new AppProperties.Cors(List.of()),
-                new AppProperties.Sec(UA, 8), new AppProperties.Fred(""));
+                new AppProperties.Sec(UA, 8, false, ""), new AppProperties.Admin(""), new AppProperties.Fred(""));
         client = new HttpSecClient(builder, props, new RateLimiter(1000), 1);
     }
 

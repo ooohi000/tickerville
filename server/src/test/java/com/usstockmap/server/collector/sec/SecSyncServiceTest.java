@@ -2,6 +2,7 @@ package com.usstockmap.server.collector.sec;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.usstockmap.server.common.geo.ZipCentroids;
 import com.usstockmap.server.company.Company;
 import com.usstockmap.server.company.CompanyRepository;
 import com.usstockmap.server.company.CompanySnapshot;
@@ -26,7 +27,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 /** 수집 전체 흐름: 가짜 SEC(실제 응답 파일) → 계산 → 진짜 PostgreSQL 저장 */
 @DbTest
-@Import({SecSyncService.class, SecSyncWriter.class, SecSyncServiceTest.Config.class})
+@Import({SecSyncService.class, SecSyncWriter.class, ZipCentroids.class, SecSyncServiceTest.Config.class})
 class SecSyncServiceTest {
 
     @TestConfiguration
@@ -160,6 +161,22 @@ class SecSyncServiceTest {
                 .containsExactlyInAnyOrder("STALE", "FACTS_BEHIND_FILINGS");
         assertThat(result.failed()).extracting(SecSyncResult.Failure::ticker)
                 .containsExactlyInAnyOrder("GOOGL", "META", "MSFT");
+    }
+
+    @Test
+    @DisplayName("지도 좌표가 SEC 본사 주소와 50km 넘게 멀면 이상 신호 (코카콜라 좌표를 덴버로 바꿔봄)")
+    void flagsHqMismatch() {
+        jdbc.update("update company set hq_lat = 39.74, hq_lng = -104.99 where ticker = 'KO'");
+        em.clear();
+
+        service.syncTickers(List.of("KO", "PLTR"));
+
+        long ko = companies.findByTicker("KO").orElseThrow().getId();
+        long pltr = companies.findByTicker("PLTR").orElseThrow().getId();
+        assertThat(jdbc.queryForList("select code from data_quality_issue where company_id = ?", String.class, ko))
+                .contains("HQ_FAR_FROM_SEC_ADDRESS");
+        assertThat(jdbc.queryForList("select code from data_quality_issue where company_id = ?", String.class, pltr))
+                .doesNotContain("HQ_FAR_FROM_SEC_ADDRESS"); // 목데이터 좌표가 이미 SEC 주소(아벤투라)
     }
 
     private int count(String table, long companyId) {
