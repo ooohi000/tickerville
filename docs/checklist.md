@@ -78,10 +78,12 @@
 - [x] 📱 조회 API `GET /api/v1/companies`(QueryDSL, 지표 없는 기업도 포함), `GET /api/v1/market-weather`(없으면 503 `DATA_NOT_READY`)
 - [x] 📱 계약 테스트: 서버 전체를 띄워 응답 = `web/src/data/*.json` (필드·값). 총 테스트 38개
 - [x] 📱 데이터 소스 조사 → `docs/data-sources.md`. **결정: SEC + FRED + 수출입은행, 월 $0** (계약 `api.md` 반영 완료)
+- [ ] 📱 V2 쌓기 테이블: `company_metric_daily`(+`calc_version`), `earnings_event` (`data-sources.md` 데이터 쌓기 원칙)
 - [ ] 📱 SEC 수집기 ← 다음: 티커↔CIK, submissions(기본 정보·공시), companyfacts(재무 정규화·TTM 매출). 초당 10회·User-Agent 준수
 - [ ] 📱 FRED·수출입은행 수집기: STLFSI4 → 시장 날씨 지수, 매크로 시리즈, 원/달러
 - [ ] 📱 배치 스케줄 (`@Scheduled`), Redis 캐시
 - [ ] 📱 상세·재무제표 API
+- [ ] 📱 방문자 익명 집계 `company_view_daily` + 수집 API (프론트 연결 때)
 - [ ] 🏠 프론트: 정적 JSON → API 호출로 교체 (응답 모양이 같아서 데이터 읽는 곳만). 시장 날씨 503이면 기본 하늘(흐림)로
 - [ ] 🏠 배포 (서버·DB 호스팅 정하기)
 
