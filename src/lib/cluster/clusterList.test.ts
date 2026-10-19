@@ -7,8 +7,8 @@ const make = (ticker: string): Company => ({
   name: ticker,
   sector: "tech",
   hq: { city: "", state: "CA", lat: 0, lng: 0 },
-  marketCapUsd: 1,
-  relativeVolume: 1,
+  revenueTtmUsd: 1,
+  filings30d: { material: 0, insider: 0 },
 });
 const list = (n: number) => Array.from({ length: n }, (_, i) => make(`T${i}`));
 const tickers = (cs: Company[]) => cs.map((c) => c.ticker);

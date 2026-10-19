@@ -21,9 +21,9 @@ describe("getVisibilityModes", () => {
     expect(modes.size).toBe(companies.length);
   });
 
-  it("클러스터 대표와 단독 기업은 always", () => {
-    expect(modes.get("NVDA")).toBe("always");
-    expect(modes.get("MSFT")).toBe("always");
+  it("클러스터 대표(매출 1위)와 단독 기업은 always", () => {
+    expect(modes.get("AAPL")).toBe("always");
+    expect(modes.get("AMZN")).toBe("always");
     expect(modes.get("TSLA")).toBe("always");
   });
 
@@ -32,8 +32,8 @@ describe("getVisibilityModes", () => {
   });
 
   it("클러스터 일반 멤버는 near", () => {
-    expect(modes.get("AAPL")).toBe("near");
-    expect(modes.get("AMZN")).toBe("near");
+    expect(modes.get("NVDA")).toBe("near");
+    expect(modes.get("MSFT")).toBe("near");
   });
 });
 
@@ -53,12 +53,12 @@ describe("getHiddenCounts", () => {
   const counts = getHiddenCounts(assignment);
 
   it("클러스터 대표에만 숨은 개수가 붙는다", () => {
-    expect(counts.get("NVDA")).toBe(3);
-    expect(counts.get("MSFT")).toBe(1);
+    expect(counts.get("AAPL")).toBe(3);
+    expect(counts.get("AMZN")).toBe(1);
   });
 
   it("멤버, 단독 기업, 1개뿐인 지역에는 없다", () => {
-    expect(counts.has("AAPL")).toBe(false);
+    expect(counts.has("NVDA")).toBe(false);
     expect(counts.has("TSLA")).toBe(false);
     expect(counts.has("JPM")).toBe(false);
   });

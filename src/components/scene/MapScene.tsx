@@ -8,15 +8,15 @@ import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
 import { Sky } from "@/components/scene/sky/Sky";
 import { ClusterListPanel } from "@/components/ui/ClusterListPanel";
-import { FearGreedBadge } from "@/components/ui/FearGreedBadge";
+import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
 import dataset from "@/data/companies.json";
-import fearGreedData from "@/data/fearGreed.json";
+import marketWeatherData from "@/data/marketWeather.json";
 import regionsData from "@/data/regions.json";
 import { assignRegions } from "@/lib/cluster/assignRegions";
 import { getHiddenCounts, getVisibilityModes } from "@/lib/cluster/visibility";
 import { projectLatLng } from "@/lib/geo/project";
-import { parseFearGreedOverride } from "@/lib/weather/weather";
-import type { CompanyDataset, FearGreed, Region } from "@/types";
+import { parseWeatherOverride } from "@/lib/weather/weather";
+import type { CompanyDataset, MarketWeather, Region } from "@/types";
 
 const { companies } = dataset as CompanyDataset;
 
@@ -25,13 +25,13 @@ const assignment = assignRegions(companies, regionsData as Region[]);
 const visibilityModes = getVisibilityModes(assignment);
 const hiddenCounts = getHiddenCounts(assignment);
 
-// 개발용 ?fg=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
+// 개발용 ?mw=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
 const noopSubscribe = () => () => {};
-const readFearGreedOverride = () => parseFearGreedOverride(window.location.search);
-const serverFearGreedOverride = () => null;
+const readWeatherOverride = () => parseWeatherOverride(window.location.search);
+const serverWeatherOverride = () => null;
 
 /**
- * 하늘 + 바다 + 미국 지도 + 건물 + 지역 이름표, 그리고 화면 위 공포·탐욕 표시·목록 패널.
+ * 하늘 + 바다 + 미국 지도 + 건물 + 지역 이름표, 그리고 화면 위 시장 날씨 표시·목록 패널.
  */
 export function MapScene() {
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
@@ -39,11 +39,11 @@ export function MapScene() {
   // 서버에서는 null, 브라우저에서 주소를 읽는다 (hydration 어긋남 없음)
   const override = useSyncExternalStore(
     noopSubscribe,
-    readFearGreedOverride,
-    serverFearGreedOverride,
+    readWeatherOverride,
+    serverWeatherOverride,
   );
-  const fearGreed: FearGreed =
-    override !== null ? { value: override, asOf: "미리보기" } : (fearGreedData as FearGreed);
+  const marketWeather: MarketWeather =
+    override !== null ? { value: override, asOf: "미리보기" } : (marketWeatherData as MarketWeather);
 
   const openGroup = assignment.groups.find((g) => g.region.id === openRegionId) ?? null;
 
@@ -55,7 +55,7 @@ export function MapScene() {
         // 빈 곳(바다·땅) 클릭하면 목록만 닫는다. 선택은 유지
         onPointerMissed={() => setOpenRegionId(null)}
       >
-        <Sky fearGreedValue={fearGreed.value} />
+        <Sky weatherIndex={marketWeather.value} />
 
         {/* 바다 — 땅 아래에 깔린 넓은 판. 색은 초안 */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
@@ -92,7 +92,7 @@ export function MapScene() {
         <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.2} />
       </Canvas>
 
-      <FearGreedBadge data={fearGreed} />
+      <MarketWeatherBadge data={marketWeather} />
       {openGroup && (
         <ClusterListPanel
           key={openGroup.region.id}

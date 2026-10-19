@@ -1,4 +1,4 @@
-import { sortByMarketCap } from "@/lib/company/sort";
+import { sortBySize } from "@/lib/company/sort";
 import { distanceKm } from "@/lib/geo/distance";
 import type { Company, Region, RegionAssignment } from "@/types";
 
@@ -40,9 +40,9 @@ export function assignRegions(
   const groups = regions
     .filter((r) => buckets.has(r.id))
     .map((region) => {
-      const members = sortByMarketCap(buckets.get(region.id)!);
+      const members = sortBySize(buckets.get(region.id)!);
       return { region, companies: members, isCluster: members.length >= minClusterSize };
     });
 
-  return { groups, standalone: sortByMarketCap(standalone) };
+  return { groups, standalone: sortBySize(standalone) };
 }

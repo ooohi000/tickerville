@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { getClusterListView } from "@/lib/cluster/clusterList";
-import { displayName, formatMarketCap } from "@/lib/company/format";
+import { displayName, formatUsdShort } from "@/lib/company/format";
 import type { RegionGroup } from "@/types";
 import styles from "./ClusterListPanel.module.css";
 
@@ -14,7 +14,7 @@ export interface ClusterListPanelProps {
 }
 
 /**
- * 지역 기업 목록 (시총순). 모바일은 아래 시트, 넓은 화면은 오른쪽 패널.
+ * 지역 기업 목록 (매출순). 모바일은 아래 시트, 넓은 화면은 오른쪽 패널.
  * 항목을 누르면 그 건물을 선택한다 (줌인은 M6).
  */
 export function ClusterListPanel({ group, selectedTicker, onSelect, onClose }: ClusterListPanelProps) {
@@ -41,7 +41,9 @@ export function ClusterListPanel({ group, selectedTicker, onSelect, onClose }: C
             >
               <span className={styles.ticker}>{c.ticker}</span>
               <span className={styles.name}>{displayName(c)}</span>
-              <span className={styles.cap}>{formatMarketCap(c.marketCapUsd)}</span>
+              <span className={styles.cap} title="최근 4분기 매출">
+                {c.revenueTtmUsd === null ? "—" : formatUsdShort(c.revenueTtmUsd)}
+              </span>
             </button>
           </li>
         ))}

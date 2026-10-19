@@ -1,6 +1,6 @@
 import type { Weather } from "@/types";
 
-/** 날씨별 지수 하한선. CNN 공포·탐욕 공식 구간과 같다. 큰 값부터 검사. */
+/** 날씨별 시장 날씨 지수 하한선. 큰 값부터 검사. 구간은 집에서 실제 분포 보고 조정 */
 export const WEATHER_THRESHOLDS: ReadonlyArray<[Weather, number]> = [
   ["sunny", 76],
   ["partlyCloudy", 56],
@@ -9,12 +9,12 @@ export const WEATHER_THRESHOLDS: ReadonlyArray<[Weather, number]> = [
   ["storm", 0],
 ];
 
-/** 공포·탐욕 지수(0~100) → 날씨. 범위 밖 값은 0~100으로 자른다. */
-export function getWeather(fearGreedValue: number): Weather {
-  if (!Number.isFinite(fearGreedValue)) {
-    throw new Error(`공포·탐욕 지수가 숫자가 아님: ${fearGreedValue}`);
+/** 시장 날씨 지수(0~100, 높을수록 안정) → 날씨. 범위 밖 값은 0~100으로 자른다. */
+export function getWeather(indexValue: number): Weather {
+  if (!Number.isFinite(indexValue)) {
+    throw new Error(`시장 날씨 지수가 숫자가 아님: ${indexValue}`);
   }
-  const v = Math.min(100, Math.max(0, fearGreedValue));
+  const v = Math.min(100, Math.max(0, indexValue));
   for (const [weather, min] of WEATHER_THRESHOLDS) {
     if (v >= min) return weather;
   }
@@ -22,7 +22,7 @@ export function getWeather(fearGreedValue: number): Weather {
 }
 
 export interface WeatherSpec {
-  /** CNN 구간 이름 (화면 표시용) */
+  /** 구간 이름 (화면 표시용) */
   label: string;
   skyColor: string;
   /** 0이면 구름 없음 */
@@ -41,7 +41,7 @@ export interface WeatherSpec {
  */
 export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
   storm: {
-    label: "극단적 공포",
+    label: "매우 불안",
     skyColor: "#2b2f36",
     cloudCount: 40,
     cloudColor: "#3a3f47",
@@ -51,7 +51,7 @@ export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
     lightning: true,
   },
   rain: {
-    label: "공포",
+    label: "불안",
     skyColor: "#55606e",
     cloudCount: 30,
     cloudColor: "#6b7480",
@@ -61,7 +61,7 @@ export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
     lightning: false,
   },
   cloudy: {
-    label: "중립",
+    label: "보통",
     skyColor: "#8c9aab",
     cloudCount: 22,
     cloudColor: "#c3cad3",
@@ -71,7 +71,7 @@ export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
     lightning: false,
   },
   partlyCloudy: {
-    label: "탐욕",
+    label: "안정",
     skyColor: "#7fb3e6",
     cloudCount: 10,
     cloudColor: "#f2f5f8",
@@ -81,7 +81,7 @@ export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
     lightning: false,
   },
   sunny: {
-    label: "극단적 탐욕",
+    label: "매우 안정",
     skyColor: "#5aa8f0",
     cloudCount: 0,
     cloudColor: "#ffffff",
@@ -93,17 +93,17 @@ export const WEATHER_SPECS: Readonly<Record<Weather, WeatherSpec>> = {
 };
 
 /** 지수 → 화면 설정 한 번에 */
-export function getWeatherSpec(fearGreedValue: number): WeatherSpec & { weather: Weather } {
-  const weather = getWeather(fearGreedValue);
+export function getWeatherSpec(indexValue: number): WeatherSpec & { weather: Weather } {
+  const weather = getWeather(indexValue);
   return { weather, ...WEATHER_SPECS[weather] };
 }
 
 /**
- * 개발용: 주소에 ?fg=10 처럼 붙이면 그 지수로 하늘을 보여준다 (날씨별 화면 조정용).
+ * 개발용: 주소에 ?mw=10 처럼 붙이면 그 지수로 하늘을 보여준다 (날씨별 화면 조정용).
  * 0~100 숫자가 아니면 null.
  */
-export function parseFearGreedOverride(search: string): number | null {
-  const raw = new URLSearchParams(search).get("fg");
+export function parseWeatherOverride(search: string): number | null {
+  const raw = new URLSearchParams(search).get("mw");
   if (raw === null || raw.trim() === "") return null;
   const v = Number(raw);
   return Number.isFinite(v) && v >= 0 && v <= 100 ? v : null;

@@ -3,8 +3,8 @@
  * 여기를 바꾸면 docs/spec.md의 "데이터 계약"도 같이 고친다.
  */
 
-/** 시총 등급 — 건물 모양을 결정한다 (부루마블의 집/빌딩/호텔 느낌). */
-export type MarketCapTier = "mega" | "large" | "mid" | "small";
+/** 규모 등급 (최근 4분기 매출 기준) — 건물 모양을 결정한다 (부루마블의 집/빌딩/호텔 느낌). */
+export type SizeTier = "mega" | "large" | "mid" | "small";
 
 export type Sector =
   | "tech"
@@ -30,20 +30,28 @@ export interface Company {
   nameKo?: string | null;
   sector: Sector;
   hq: Headquarters;
-  /** 달러 단위 시총 스냅샷 (실시간 아님) */
-  marketCapUsd: number;
   /**
-   * 상대 거래량(RVOL) = 당일 거래량 ÷ 최근 20일 평균 거래량. 1.0 = 평소 수준.
-   * 건물 주변 땅 색 강도로 표시 (시장의 관심이 몰리는 곳).
+   * 최근 4분기 매출 합계(TTM, 달러). SEC 공시 기준. 건물 크기를 정한다.
+   * 공시가 없거나 정리 못 하면 null → 가장 작은 건물
    */
-  relativeVolume: number;
+  revenueTtmUsd: number | null;
+  /** 최근 30일 공시 활동. 건물 주변 땅 "열기"로 표시 */
+  filings30d: FilingActivity;
   /** 한 줄 메모. 상세 분석은 이후 단계 */
   memo?: string | null;
 }
 
+/** 최근 공시 건수 (SEC submissions 기준) */
+export interface FilingActivity {
+  /** 8-K: 중요 사건 공시 (실적 발표, 경영진 변경, 인수합병 등) */
+  material: number;
+  /** Form 4: 임원·대주주 내부자 거래 신고 */
+  insider: number;
+}
+
 /** companies.json 파일 전체 형태 */
 export interface CompanyDataset {
-  asOf: string; // 시총 기준일 YYYY-MM-DD
+  asOf: string; // 데이터 기준일 YYYY-MM-DD
   companies: Company[];
 }
 
@@ -60,7 +68,7 @@ export interface Region {
 /** 지역 하나에 묶인 기업들. 기업이 1개 이상인 지역만 만들어진다. */
 export interface RegionGroup {
   region: Region;
-  /** 시총 내림차순. [0]이 대표 건물 */
+  /** 매출 내림차순. [0]이 대표 건물 */
   companies: Company[];
   /** MIN_CLUSTER_SIZE 이상이면 true → 대표 건물 + "+N" 배지 + 목록 */
   isCluster: boolean;
@@ -69,7 +77,7 @@ export interface RegionGroup {
 export interface RegionAssignment {
   /** regions.json 순서 유지 */
   groups: RegionGroup[];
-  /** 어느 지역 반경에도 안 들어간 기업 (시총 내림차순) */
+  /** 어느 지역 반경에도 안 들어간 기업 (매출 내림차순) */
   standalone: Company[];
 }
 
@@ -104,11 +112,23 @@ export interface FinancialStatement {
   freeCashFlow: number | null;
 }
 
+/** SEC submissions에서 오는 기본 정보 + 직접 쓴 한글 소개 */
 export interface CompanyProfile {
-  description: string | null;
-  website: string | null;
-  employees: number | null;
-  exchange: string | null;
+  cik: string; // SEC 기업번호 10자리 (앞자리 0 포함)
+  exchange: string | null; // NASDAQ, NYSE ...
+  sicCode: string | null; // SEC 업종 코드
+  sicDescription: string | null; // 업종 설명 (영문 원본)
+  fiscalYearEnd: string | null; // 회계연도 마감 MMDD (예: "0928" = 9월 28일)
+  /** 한 줄 소개 (직접 작성한 한글). 없으면 null */
+  descriptionKo: string | null;
+}
+
+/** 최근 공시 한 건 */
+export interface Filing {
+  form: string; // "8-K", "4", "10-Q", "10-K" ...
+  filedAt: string; // YYYY-MM-DD
+  /** SEC 원문 링크 */
+  url: string;
 }
 
 /** GET /api/v1/companies/{ticker} */
@@ -117,6 +137,8 @@ export interface CompanyDetail {
   profile: CompanyProfile | null;
   latestAnnual: FinancialStatement | null;
   latestQuarter: FinancialStatement | null;
+  /** 최근 공시 (최신순, 최대 20건) */
+  recentFilings: Filing[];
 }
 
 export type ApiErrorCode = "INVALID_PARAMETER" | "COMPANY_NOT_FOUND" | "INTERNAL_ERROR";
@@ -125,10 +147,14 @@ export interface ApiError {
   error: { code: ApiErrorCode; message: string };
 }
 
-/** CNN 공포·탐욕 지수 → 하늘 날씨 */
+/** 시장 날씨 지수 → 하늘 날씨 */
 export type Weather = "storm" | "rain" | "cloudy" | "partlyCloudy" | "sunny";
 
-export interface FearGreed {
+/**
+ * 자체 "시장 날씨 지수". 0~100, 높을수록 시장이 안정(맑음).
+ * 서버가 세인트루이스 연준 금융스트레스 지수(STLFSI) 등 공개 지표로 계산한다 (docs/api.md).
+ */
+export interface MarketWeather {
   value: number; // 0~100
   asOf: string;
 }

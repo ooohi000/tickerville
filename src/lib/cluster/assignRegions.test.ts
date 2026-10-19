@@ -4,13 +4,13 @@ import regionsData from "@/data/regions.json";
 import type { Company, CompanyDataset, Region } from "@/types";
 import { assignRegions } from "./assignRegions";
 
-const make = (ticker: string, lat: number, lng: number, marketCapUsd = 1): Company => ({
+const make = (ticker: string, lat: number, lng: number, revenueTtmUsd = 1): Company => ({
   ticker,
   name: ticker,
   sector: "tech",
   hq: { city: "", state: "CA", lat, lng },
-  marketCapUsd,
-  relativeVolume: 1,
+  revenueTtmUsd,
+  filings30d: { material: 0, insider: 0 },
 });
 
 const region = (id: string, lat: number, lng: number, radiusKm: number): Region => ({
@@ -67,7 +67,7 @@ describe("assignRegions", () => {
     expect(result.groups.find((g) => g.region.id === "two")!.isCluster).toBe(true);
   });
 
-  it("그룹 안과 standalone 모두 시총 내림차순", () => {
+  it("그룹 안과 standalone 모두 매출 내림차순", () => {
     const r = region("r", 0, 0, 10);
     const result = assignRegions(
       [make("S", 0, 0, 1), make("L", 0, 0, 9), make("M", 0, 0, 5), make("X1", 40, 40, 2), make("X2", 41, 41, 8)],
@@ -82,9 +82,9 @@ describe("assignRegions", () => {
     const result = assignRegions(companies, regionsData as Region[]);
     const byId = Object.fromEntries(result.groups.map((g) => [g.region.id, g]));
 
-    expect(tickers(byId["silicon-valley"].companies)).toEqual(["NVDA", "AAPL", "GOOGL", "META"]);
+    expect(tickers(byId["silicon-valley"].companies)).toEqual(["AAPL", "GOOGL", "NVDA", "META"]);
     expect(byId["silicon-valley"].isCluster).toBe(true);
-    expect(tickers(byId["seattle"].companies)).toEqual(["MSFT", "AMZN"]);
+    expect(tickers(byId["seattle"].companies)).toEqual(["AMZN", "MSFT"]);
     expect(byId["new-york"].isCluster).toBe(false);
     expect(tickers(result.standalone).sort()).toEqual(["KO", "PLTR", "TSLA"]);
   });

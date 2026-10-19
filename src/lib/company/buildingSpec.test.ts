@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { MarketCapTier } from "@/types";
+import type { SizeTier } from "@/types";
 import {
   BUILDING_SPECS,
   FLOOR_HEIGHT,
@@ -10,7 +10,7 @@ import {
 import { TIER_RANGES } from "./tier";
 
 const B = 1_000_000_000;
-const ORDER: MarketCapTier[] = ["small", "mid", "large", "mega"];
+const ORDER: SizeTier[] = ["small", "mid", "large", "mega"];
 
 describe("BUILDING_SPECS", () => {
   it("등급이 오를수록 층수·바닥 크기가 커진다", () => {
@@ -57,12 +57,12 @@ describe("getBuildingDimensions", () => {
     );
   });
 
-  it("같은 등급이면 시총이 클수록 높고, 모양은 같다", () => {
-    const ko = getBuildingDimensions(300 * B);
-    const nvda = getBuildingDimensions(4_000 * B);
-    expect(nvda.bodyHeight).toBeGreaterThan(ko.bodyHeight);
-    expect(nvda.roof).toBe(ko.roof);
-    expect(nvda.width).toBe(ko.width);
+  it("같은 등급이면 매출이 클수록 높고, 모양은 같다", () => {
+    const smaller = getBuildingDimensions(150 * B);
+    const bigger = getBuildingDimensions(600 * B);
+    expect(bigger.bodyHeight).toBeGreaterThan(smaller.bodyHeight);
+    expect(bigger.roof).toBe(smaller.roof);
+    expect(bigger.width).toBe(smaller.width);
   });
 
   it("전체 높이 = 몸통 + 지붕, 라벨은 그 위", () => {
@@ -71,9 +71,10 @@ describe("getBuildingDimensions", () => {
     expect(d.labelY).toBeCloseTo(d.totalHeight + LABEL_GAP);
   });
 
-  it("시총 0도 안전하게 small", () => {
-    const d = getBuildingDimensions(0);
-    expect(d.tier).toBe("small");
-    expect(d.bodyHeight).toBeGreaterThan(0);
+  it("매출 0·null도 안전하게 small", () => {
+    for (const d of [getBuildingDimensions(0), getBuildingDimensions(null)]) {
+      expect(d.tier).toBe("small");
+      expect(d.bodyHeight).toBeGreaterThan(0);
+    }
   });
 });

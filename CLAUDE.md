@@ -30,9 +30,9 @@ src/
     ui/                2D 오버레이 (목록 패널 등)
   lib/                 순수 함수만 (React, three 객체 생성 금지)
     geo/               위경도 → 월드 좌표, 거리 계산
-    company/           시총 등급, 정렬
+    company/           규모 등급(매출), 정렬, 공시 열기, 간판
     cluster/           지역 묶기
-    weather/           공포·탐욕 → 날씨, 하늘 배치
+    weather/           시장 날씨 지수 → 날씨, 하늘 배치
     math/              시드 난수 등 범용
   data/                정적 JSON
   types/               공통 타입 (계약)

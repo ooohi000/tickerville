@@ -5,7 +5,7 @@ import {
   WEATHER_THRESHOLDS,
   getWeather,
   getWeatherSpec,
-  parseFearGreedOverride,
+  parseWeatherOverride,
 } from "./weather";
 
 describe("getWeather", () => {
@@ -44,7 +44,7 @@ describe("WEATHER_SPECS", () => {
     for (const w of all) expect(WEATHER_SPECS[w]).toBeDefined();
   });
 
-  it("공포에서 탐욕으로 갈수록 햇빛은 세지고 구름은 줄어든다", () => {
+  it("불안에서 안정으로 갈수록 햇빛은 세지고 구름은 줄어든다", () => {
     const order: Weather[] = ["storm", "rain", "cloudy", "partlyCloudy", "sunny"];
     for (let i = 1; i < order.length; i++) {
       const prev = WEATHER_SPECS[order[i - 1]];
@@ -54,7 +54,7 @@ describe("WEATHER_SPECS", () => {
     }
   });
 
-  it("비는 공포 구간에서만, 번개는 극단적 공포에서만", () => {
+  it("비는 불안 구간에서만, 번개는 매우 불안에서만", () => {
     expect(all.filter((w) => WEATHER_SPECS[w].rain)).toEqual(["rain", "storm"]);
     expect(all.filter((w) => WEATHER_SPECS[w].lightning)).toEqual(["storm"]);
   });
@@ -64,21 +64,21 @@ describe("getWeatherSpec", () => {
   it("날씨와 설정을 함께 돌려준다", () => {
     const spec = getWeatherSpec(80);
     expect(spec.weather).toBe("sunny");
-    expect(spec.label).toBe("극단적 탐욕");
+    expect(spec.label).toBe("매우 안정");
   });
 });
 
-describe("parseFearGreedOverride", () => {
+describe("parseWeatherOverride", () => {
   it.each([
-    ["?fg=10", 10],
-    ["?fg=0", 0],
-    ["?fg=100", 100],
-    ["?x=1&fg=55.5", 55.5],
+    ["?mw=10", 10],
+    ["?mw=0", 0],
+    ["?mw=100", 100],
+    ["?x=1&mw=55.5", 55.5],
   ])("%s → %d", (search, v) => {
-    expect(parseFearGreedOverride(search)).toBe(v);
+    expect(parseWeatherOverride(search)).toBe(v);
   });
 
-  it.each(["", "?fg=", "?fg=abc", "?fg=-1", "?fg=101", "?other=3"])("%s → null", (search) => {
-    expect(parseFearGreedOverride(search)).toBeNull();
+  it.each(["", "?mw=", "?mw=abc", "?mw=-1", "?mw=101", "?fg=30"])("%s → null", (search) => {
+    expect(parseWeatherOverride(search)).toBeNull();
   });
 });

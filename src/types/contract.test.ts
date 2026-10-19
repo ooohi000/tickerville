@@ -32,8 +32,8 @@ const dataset = {
       nameKo: "엔비디아",
       sector: "tech",
       hq: { city: "Santa Clara", state: "CA", lat: 37.3707, lng: -121.9638 },
-      marketCapUsd: 4_000_000_000_000,
-      relativeVolume: 1.3,
+      revenueTtmUsd: 200_000_000_000,
+      filings30d: { material: 3, insider: 14 },
       memo: null,
     },
   ],
@@ -41,9 +41,23 @@ const dataset = {
 
 const detail = {
   company: dataset.companies[0],
-  profile: null,
+  profile: {
+    cik: "0001045810",
+    exchange: "Nasdaq",
+    sicCode: "3674",
+    sicDescription: "Semiconductors & Related Devices",
+    fiscalYearEnd: "0126",
+    descriptionKo: "GPU·AI 가속기 설계 기업",
+  },
   latestAnnual: null,
   latestQuarter: financial,
+  recentFilings: [
+    {
+      form: "8-K",
+      filedAt: "2026-08-27",
+      url: "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000001/0001045810-26-000001-index.htm",
+    },
+  ],
 } satisfies CompanyDetail;
 
 const error = {

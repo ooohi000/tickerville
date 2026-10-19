@@ -1,7 +1,8 @@
 "use client";
 
 import { CanvasTexture, type Texture } from "three";
-import { getVolumeHeat } from "@/lib/company/volumeHeat";
+import { getEventHeat } from "@/lib/company/eventHeat";
+import type { FilingActivity } from "@/types";
 
 /** 땅 윗면·경계선과 겹쳐 깜빡이지 않게 띄우는 높이 (경계선보다 살짝 아래) */
 const HEAT_LIFT = 0.005;
@@ -26,13 +27,13 @@ function getRadialTexture(): Texture | null {
   return sharedTexture;
 }
 
-export interface VolumeHeatProps {
-  relativeVolume: number;
+export interface EventHeatProps {
+  filings: FilingActivity;
 }
 
-/** 건물 바닥 주변 원판. 상대 거래량이 클수록 넓고 진하다. 강도 0이면 그리지 않는다 */
-export function VolumeHeat({ relativeVolume }: VolumeHeatProps) {
-  const heat = getVolumeHeat(relativeVolume);
+/** 건물 바닥 주변 원판. 최근 공시가 많을수록 넓고 진하다. 강도 0이면 그리지 않는다 */
+export function EventHeat({ filings }: EventHeatProps) {
+  const heat = getEventHeat(filings);
   if (heat.intensity === 0) return null;
 
   return (

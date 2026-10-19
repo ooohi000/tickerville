@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { displayName, formatMarketCap } from "./format";
+import { displayName, formatUsdShort } from "./format";
 
-describe("formatMarketCap", () => {
+describe("formatUsdShort", () => {
   it.each([
     [4e12, "$4.0T"],
     [3.84e12, "$3.8T"],
@@ -11,7 +11,7 @@ describe("formatMarketCap", () => {
     [850e6, "$850M"],
     [500, "$500"],
   ])("%d → %s", (usd, text) => {
-    expect(formatMarketCap(usd)).toBe(text);
+    expect(formatUsdShort(usd)).toBe(text);
   });
 });
 

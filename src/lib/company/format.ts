@@ -1,7 +1,7 @@
 import type { Company } from "@/types";
 
-/** 시총 짧게: $4.0T, $350B, $1.9B, $850M */
-export function formatMarketCap(usd: number): string {
+/** 달러 금액 짧게: $4.0T, $350B, $1.9B, $850M (매출·시총 등 공통) */
+export function formatUsdShort(usd: number): string {
   const units: Array<[number, string]> = [
     [1e12, "T"],
     [1e9, "B"],

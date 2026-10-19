@@ -12,15 +12,16 @@ import { Rain } from "./Rain";
 const SHADOW_EXTENT = 70;
 
 export interface SkyProps {
-  fearGreedValue: number;
+  /** 시장 날씨 지수 0~100 */
+  weatherIndex: number;
 }
 
 /**
- * 공포·탐욕 지수 → 하늘 전체 (배경색, 안개, 햇빛·주변광, 구름, 비, 번개).
+ * 시장 날씨 지수 → 하늘 전체 (배경색, 안개, 햇빛·주변광, 구름, 비, 번개).
  * 모든 값은 WEATHER_SPECS에서 오고, 여기서는 그리기만 한다.
  */
-export function Sky({ fearGreedValue }: SkyProps) {
-  const spec = getWeatherSpec(fearGreedValue);
+export function Sky({ weatherIndex }: SkyProps) {
+  const spec = getWeatherSpec(weatherIndex);
 
   return (
     <>

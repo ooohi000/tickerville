@@ -9,7 +9,7 @@ import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/bu
 import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
 import { Sign } from "./Sign";
-import { VolumeHeat } from "./VolumeHeat";
+import { EventHeat } from "./EventHeat";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
 const BODY_COLOR = "#e8e2d4";
@@ -40,7 +40,7 @@ export function Building({
   onSelect,
 }: BuildingProps) {
   const ref = useRef<Group>(null);
-  const d = getBuildingDimensions(company.marketCapUsd);
+  const d = getBuildingDimensions(company.revenueTtmUsd);
   const emissive = highlighted ? HIGHLIGHT_EMISSIVE : "#000000";
 
   // 선택된 건물은 거리와 상관없이 보인다
@@ -64,7 +64,7 @@ export function Building({
         <boxGeometry args={[d.width, d.bodyHeight, d.depth]} />
         <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />
       </mesh>
-      <VolumeHeat relativeVolume={company.relativeVolume} />
+      <EventHeat filings={company.filings30d} />
       <Roof d={d} emissive={emissive} />
       <Sign
         ticker={company.ticker}

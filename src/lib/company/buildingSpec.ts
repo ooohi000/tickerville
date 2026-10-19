@@ -1,5 +1,5 @@
-import type { MarketCapTier } from "@/types";
-import { getMarketCapTier, getPositionInTier } from "./tier";
+import type { SizeTier } from "@/types";
+import { getPositionInTier, getSizeTier } from "./tier";
 
 /** 부루마블 느낌: 집 → 빌딩 → 고층 빌딩 → 랜드마크 */
 export type RoofType = "gable" | "flat" | "antenna" | "spire";
@@ -26,7 +26,7 @@ export const MAX_IN_TIER_HEIGHT_FACTOR = 1.5;
 export const LABEL_GAP = 0.5;
 
 /** 등급별 건물 설정. 값은 초안 — 집에서 화면 보고 조정 */
-export const BUILDING_SPECS: Readonly<Record<MarketCapTier, BuildingSpec>> = {
+export const BUILDING_SPECS: Readonly<Record<SizeTier, BuildingSpec>> = {
   small: { floors: 1, footprint: 0.5, roof: "gable", roofHeight: 0.35, signFontSize: 0.35 },
   mid: { floors: 3, footprint: 0.6, roof: "flat", roofHeight: 0, signFontSize: 0.45 },
   large: { floors: 6, footprint: 0.8, roof: "antenna", roofHeight: 0.8, signFontSize: 0.6 },
@@ -35,7 +35,7 @@ export const BUILDING_SPECS: Readonly<Record<MarketCapTier, BuildingSpec>> = {
 
 /** Building 컴포넌트가 그대로 쓰는 최종 치수 */
 export interface BuildingDimensions {
-  tier: MarketCapTier;
+  tier: SizeTier;
   roof: RoofType;
   width: number;
   depth: number;
@@ -49,11 +49,11 @@ export interface BuildingDimensions {
   signFontSize: number;
 }
 
-/** 시총 → 건물 치수. 등급으로 모양을 정하고, 등급 안 위치로 높이만 보정한다. */
-export function getBuildingDimensions(marketCapUsd: number): BuildingDimensions {
-  const tier = getMarketCapTier(marketCapUsd);
+/** 매출(최근 4분기) → 건물 치수. 등급으로 모양을 정하고, 등급 안 위치로 높이만 보정한다. */
+export function getBuildingDimensions(revenueTtmUsd: number | null): BuildingDimensions {
+  const tier = getSizeTier(revenueTtmUsd);
   const spec = BUILDING_SPECS[tier];
-  const factor = 1 + getPositionInTier(marketCapUsd) * (MAX_IN_TIER_HEIGHT_FACTOR - 1);
+  const factor = 1 + getPositionInTier(revenueTtmUsd) * (MAX_IN_TIER_HEIGHT_FACTOR - 1);
   const bodyHeight = spec.floors * FLOOR_HEIGHT * factor;
   const totalHeight = bodyHeight + spec.roofHeight;
 
