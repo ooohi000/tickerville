@@ -22,6 +22,7 @@
 타입 원본은 `src/types/index.ts`.
 
 - `companies.json`: `{ asOf, companies: Company[] }`
+- `fearGreed.json`: `FearGreed` — 지수 스냅샷 (현재 샘플)
 - `regions.json`: `Region[]` — 중심 위경도 + 반경(km). 반경 안의 본사가 그 지역에 묶인다.
 - 시총은 스냅샷이며 `asOf`에 기준일을 적는다. 현재 값은 **샘플**이라 실제 값으로 갱신 필요.
 
@@ -32,7 +33,7 @@
 | 투영 | `geoAlbersUsa().scale(140).translate([0,0])` → 본토 폭 약 100 단위 |
 | 지역 소속 | 본사–지역 중심 거리 ≤ `radiusKm` (경계 포함). 겹치면 더 가까운 지역 |
 | 클러스터 | 소속 기업 `MIN_CLUSTER_SIZE`(=2) 이상 → 대표 건물 + "+N" + 목록. 1개여도 지역 이름표는 표시 |
-| 날씨 | 0–24 storm · 25–44 rain · 45–55 cloudy · 56–75 partlyCloudy · 76–100 sunny |
+| 날씨 | 0–24 storm(극단적 공포) · 25–44 rain(공포) · 45–55 cloudy(중립) · 56–75 partlyCloudy(탐욕) · 76–100 sunny(극단적 탐욕). 범위 밖은 0~100으로 자름. 화면 값은 `WEATHER_SPECS` |
 
 ## 단계
 1. **클라이언트 전용** (현재): 정적 JSON + 3D 화면
