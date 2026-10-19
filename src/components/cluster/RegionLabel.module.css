@@ -1,0 +1,35 @@
+/* 색은 간판과 같은 계열. 집에서 조정 */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 2px solid #f5c542;
+  border-radius: 6px;
+  background: rgba(27, 36, 48, 0.88);
+  color: #ffffff;
+  font: 600 13px/1.2 system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  /* 땅에 붙은 느낌으로 살짝 아래에 */
+  transform: translateY(14px);
+  transition: background 0.15s, color 0.15s;
+}
+
+.label:hover,
+.active {
+  background: #f5c542;
+  color: #1b2430;
+}
+
+.count {
+  min-width: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #e5484d;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: center;
+}

@@ -1,8 +1,11 @@
 "use client";
 
 import type { ThreeEvent } from "@react-three/fiber";
+import { useRef } from "react";
+import type { Group } from "three";
+import { useDistanceVisible } from "@/components/scene/useDistanceVisible";
+import { isVisibleAt, type VisibilityMode } from "@/lib/cluster/visibility";
 import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/buildingSpec";
-import type { SignMode } from "@/lib/company/sign";
 import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
 import { Sign } from "./Sign";
@@ -16,8 +19,10 @@ const HIGHLIGHT_EMISSIVE = "#f5c542";
 export interface BuildingProps {
   company: Company;
   position: WorldPoint;
-  /** 옥상 간판 표시 방식 (getSignModes로 계산) */
-  signMode?: SignMode;
+  /** always: 항상 / near: 클러스터가 펼쳐졌을 때만 (getVisibilityModes) */
+  visibilityMode?: VisibilityMode;
+  /** 클러스터 대표일 때 숨은 기업 수 → 간판 "+N" (getHiddenCounts) */
+  hiddenCount?: number;
   highlighted?: boolean;
   onSelect?: (ticker: string) => void;
 }
@@ -29,27 +34,44 @@ export interface BuildingProps {
 export function Building({
   company,
   position,
-  signMode = "always",
+  visibilityMode = "always",
+  hiddenCount = 0,
   highlighted = false,
   onSelect,
 }: BuildingProps) {
+  const ref = useRef<Group>(null);
   const d = getBuildingDimensions(company.marketCapUsd);
   const emissive = highlighted ? HIGHLIGHT_EMISSIVE : "#000000";
 
+  // 선택된 건물은 거리와 상관없이 보인다
+  useDistanceVisible(ref, (dist) => highlighted || isVisibleAt(visibilityMode, dist));
+
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
+    // 숨은 건물은 클릭을 가로채지 않고 뒤(대표 건물)로 넘긴다
+    if (!ref.current?.visible) return;
     e.stopPropagation();
     onSelect?.(company.ticker);
   };
 
   return (
-    <group position={[position.x, MAP_HEIGHT, position.z]} onClick={handleClick} name={company.ticker}>
+    <group
+      ref={ref}
+      position={[position.x, MAP_HEIGHT, position.z]}
+      onClick={handleClick}
+      name={company.ticker}
+    >
       <mesh position={[0, d.bodyHeight / 2, 0]} castShadow receiveShadow>
         <boxGeometry args={[d.width, d.bodyHeight, d.depth]} />
         <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />
       </mesh>
       <VolumeHeat relativeVolume={company.relativeVolume} />
       <Roof d={d} emissive={emissive} />
-      <Sign ticker={company.ticker} building={d} mode={signMode} highlighted={highlighted} />
+      <Sign
+        ticker={company.ticker}
+        building={d}
+        hiddenCount={hiddenCount}
+        highlighted={highlighted}
+      />
     </group>
   );
 }

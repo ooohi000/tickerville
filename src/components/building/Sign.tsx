@@ -1,49 +1,37 @@
 "use client";
 
 import { Billboard, Text } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Vector3, type Group } from "three";
+import type { Group } from "three";
+import { useDistanceVisible } from "@/components/scene/useDistanceVisible";
+import { isExpanded } from "@/lib/cluster/visibility";
 import type { BuildingDimensions } from "@/lib/company/buildingSpec";
-import {
-  SIGN_FONT_URL,
-  getSignDimensions,
-  isSignVisible,
-  type SignMode,
-} from "@/lib/company/sign";
+import { SIGN_FONT_URL, getBadgeLayout, getSignDimensions } from "@/lib/company/sign";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
 const PLATE_COLOR = "#1b2430";
 const PLATE_HIGHLIGHT_COLOR = "#f5c542";
 const TEXT_COLOR = "#ffffff";
 const TEXT_HIGHLIGHT_COLOR = "#1b2430";
+const BADGE_COLOR = "#e5484d";
 
 export interface SignProps {
   ticker: string;
   building: BuildingDimensions;
-  mode: SignMode;
+  /** 클러스터 대표일 때 숨은 기업 수. 0이면 배지 없음 */
+  hiddenCount?: number;
   highlighted?: boolean;
 }
 
-const worldPos = new Vector3();
-
 /**
  * 옥상 간판. 항상 카메라를 향한다(Billboard).
- * 표시 여부는 매 프레임 ref로만 바꿔 리렌더를 만들지 않는다.
+ * 보이고 숨는 건 부모 Building이 정한다. 여기서는 "+N" 배지만 거리로 판단.
  */
-export function Sign({ ticker, building, mode, highlighted = false }: SignProps) {
-  const ref = useRef<Group>(null);
+export function Sign({ ticker, building, hiddenCount = 0, highlighted = false }: SignProps) {
   const s = getSignDimensions(ticker, building);
 
-  useFrame(({ camera }) => {
-    const g = ref.current;
-    if (!g) return;
-    g.getWorldPosition(worldPos);
-    g.visible = highlighted || isSignVisible(mode, camera.position.distanceTo(worldPos));
-  });
-
   return (
-    <Billboard ref={ref} position={[0, s.centerY, 0]}>
+    <Billboard position={[0, s.centerY, 0]}>
       <mesh>
         <planeGeometry args={[s.plateWidth, s.plateHeight]} />
         <meshBasicMaterial color={highlighted ? PLATE_HIGHLIGHT_COLOR : PLATE_COLOR} />
@@ -58,6 +46,33 @@ export function Sign({ ticker, building, mode, highlighted = false }: SignProps)
       >
         {ticker}
       </Text>
+      {hiddenCount > 0 && <Badge sign={s} count={hiddenCount} />}
     </Billboard>
+  );
+}
+
+/** "+N" — 클러스터가 접혀 있을 때(멀리서)만 보인다 */
+function Badge({ sign, count }: { sign: ReturnType<typeof getSignDimensions>; count: number }) {
+  const ref = useRef<Group>(null);
+  const b = getBadgeLayout(sign, count);
+  useDistanceVisible(ref, (d) => !isExpanded(d));
+
+  return (
+    <group ref={ref} position={[b.x, b.y, 0.02]}>
+      <mesh>
+        <circleGeometry args={[b.radius, 32]} />
+        <meshBasicMaterial color={BADGE_COLOR} />
+      </mesh>
+      <Text
+        font={SIGN_FONT_URL}
+        fontSize={b.fontSize}
+        color="#ffffff"
+        anchorX="center"
+        anchorY="middle"
+        position={[0, 0, 0.01]}
+      >
+        {b.text}
+      </Text>
+    </group>
   );
 }
