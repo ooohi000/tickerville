@@ -27,7 +27,7 @@ export interface Headquarters {
 export interface Company {
   ticker: string; // 대문자, 고유 키
   name: string;
-  nameKo?: string;
+  nameKo?: string | null;
   sector: Sector;
   hq: Headquarters;
   /** 달러 단위 시총 스냅샷 (실시간 아님) */
@@ -38,7 +38,7 @@ export interface Company {
    */
   relativeVolume: number;
   /** 한 줄 메모. 상세 분석은 이후 단계 */
-  memo?: string;
+  memo?: string | null;
 }
 
 /** companies.json 파일 전체 형태 */
@@ -77,6 +77,52 @@ export interface RegionAssignment {
 export interface WorldPoint {
   x: number;
   z: number;
+}
+
+// ─── 서버 API 응답 (docs/api.md) ───────────────────────────────
+
+/** 분기 Q1~Q4, 연간 FY */
+export type FiscalPeriod = "Q1" | "Q2" | "Q3" | "Q4" | "FY";
+
+/** 재무제표 한 기간. 금액은 달러, 원본에 없으면 null */
+export interface FinancialStatement {
+  fiscalYear: number;
+  fiscalPeriod: FiscalPeriod;
+  periodEnd: string; // YYYY-MM-DD
+  filedAt: string | null; // 공시일
+  revenue: number | null;
+  grossProfit: number | null;
+  operatingIncome: number | null;
+  netIncome: number | null;
+  epsDiluted: number | null;
+  totalAssets: number | null;
+  totalLiabilities: number | null;
+  totalEquity: number | null;
+  operatingCashFlow: number | null;
+  capitalExpenditure: number | null;
+  /** operatingCashFlow − capitalExpenditure (서버 계산) */
+  freeCashFlow: number | null;
+}
+
+export interface CompanyProfile {
+  description: string | null;
+  website: string | null;
+  employees: number | null;
+  exchange: string | null;
+}
+
+/** GET /api/v1/companies/{ticker} */
+export interface CompanyDetail {
+  company: Company;
+  profile: CompanyProfile | null;
+  latestAnnual: FinancialStatement | null;
+  latestQuarter: FinancialStatement | null;
+}
+
+export type ApiErrorCode = "INVALID_PARAMETER" | "COMPANY_NOT_FOUND" | "INTERNAL_ERROR";
+
+export interface ApiError {
+  error: { code: ApiErrorCode; message: string };
 }
 
 /** CNN 공포·탐욕 지수 → 하늘 날씨 */

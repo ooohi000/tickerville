@@ -10,5 +10,6 @@ npm test
 
 - 작업 규칙: [`CLAUDE.md`](./CLAUDE.md)
 - 기획·데이터 계약·마일스톤: [`docs/spec.md`](./docs/spec.md)
+- 서버 API 계약: [`docs/api.md`](./docs/api.md)
 - 진행 체크리스트: [`docs/checklist.md`](./docs/checklist.md)
 - 이동 중 조각 요청 형식: [`docs/request-template.md`](./docs/request-template.md)

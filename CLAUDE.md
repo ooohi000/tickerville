@@ -2,6 +2,7 @@
 
 관심 있는 미국 기업의 본사를 **실제 미국 지도** 위에 3D 건물로 보여주는 Next.js 앱.
 기획 세부사항은 `docs/spec.md`, 공통 타입은 `src/types/index.ts`가 기준이다.
+서버(스프링부트, 별도 레포)와의 계약은 `docs/api.md` — 응답 모양을 바꾸면 이 문서·타입·`src/types/contract.test.ts`를 같이 고친다.
 
 @AGENTS.md
 
