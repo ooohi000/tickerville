@@ -54,6 +54,22 @@ export interface Region {
   radiusKm: number;
 }
 
+/** 지역 하나에 묶인 기업들. 기업이 1개 이상인 지역만 만들어진다. */
+export interface RegionGroup {
+  region: Region;
+  /** 시총 내림차순. [0]이 대표 건물 */
+  companies: Company[];
+  /** MIN_CLUSTER_SIZE 이상이면 true → 대표 건물 + "+N" 배지 + 목록 */
+  isCluster: boolean;
+}
+
+export interface RegionAssignment {
+  /** regions.json 순서 유지 */
+  groups: RegionGroup[];
+  /** 어느 지역 반경에도 안 들어간 기업 (시총 내림차순) */
+  standalone: Company[];
+}
+
 /** three.js 월드 좌표. y는 위쪽, 지도는 xz 평면에 눕는다. */
 export interface WorldPoint {
   x: number;

@@ -30,6 +30,8 @@
 |---|---|
 | 시총 등급 | mega ≥ $200B · large ≥ $10B · mid ≥ $2B · small 그 외 |
 | 투영 | `geoAlbersUsa().scale(140).translate([0,0])` → 본토 폭 약 100 단위 |
+| 지역 소속 | 본사–지역 중심 거리 ≤ `radiusKm` (경계 포함). 겹치면 더 가까운 지역 |
+| 클러스터 | 소속 기업 `MIN_CLUSTER_SIZE`(=2) 이상 → 대표 건물 + "+N" + 목록. 1개여도 지역 이름표는 표시 |
 | 날씨 | 0–24 storm · 25–44 rain · 45–55 cloudy · 56–75 partlyCloudy · 76–100 sunny |
 
 ## 단계
