@@ -4,6 +4,7 @@ import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { Building } from "@/components/building/Building";
+import { CompanyDetailPanel } from "@/components/detail/CompanyDetailPanel";
 import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
 import { Sky } from "@/components/scene/sky/Sky";
@@ -54,12 +55,27 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
 
   const openGroup = assignment.groups.find((g) => g.region.id === openRegionId) ?? null;
 
+  // 상세 패널: 건물·목록 어디서 눌러도 같은 패널. 지역에 속한 기업이면 "← 지역 목록"으로 돌아갈 수 있다
+  const [detailTicker, setDetailTicker] = useState<string | null>(null);
+  const detailGroup = detailTicker
+    ? (assignment.groups.find((g) => g.companies.some((c) => c.ticker === detailTicker)) ?? null)
+    : null;
+  const openDetail = (ticker: string) => {
+    setSelectedTicker(ticker);
+    setDetailTicker(ticker);
+    setOpenRegionId(null);
+  };
+  const openRegion = (regionId: string) => {
+    setDetailTicker(null);
+    setOpenRegionId(regionId);
+  };
+
   return (
     <>
       <Canvas
         camera={{ position: [0, 70, 70], fov: 45 }}
         shadows
-        // 빈 곳(바다·땅) 클릭하면 목록만 닫는다. 선택은 유지
+        // 빈 곳(바다·땅) 클릭하면 지역 목록만 닫는다. 상세 패널과 선택은 유지 (지도를 돌리다 닫히지 않게)
         onPointerMissed={() => setOpenRegionId(null)}
       >
         <Sky weatherIndex={marketWeather.value} />
@@ -83,7 +99,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
               visibilityMode={visibilityModes.get(c.ticker)}
               hiddenCount={hiddenCounts.get(c.ticker)}
               highlighted={selectedTicker === c.ticker}
-              onSelect={setSelectedTicker}
+              onSelect={openDetail}
             />
           );
         })}
@@ -92,8 +108,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           <RegionLabel
             key={g.region.id}
             group={g}
-            active={openRegionId === g.region.id}
-            onOpen={setOpenRegionId}
+            active={openRegionId === g.region.id || detailGroup?.region.id === g.region.id}
+            onOpen={openRegion}
           />
         ))}
 
@@ -106,15 +122,25 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         <MarketWeatherBadge data={marketWeather} />
         <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />
       </TopLeftHud>
-      {openGroup && (
-        <ClusterListPanel
-          key={openGroup.region.id}
-          group={openGroup}
-          sizeMetric={sizeMetric}
-          selectedTicker={selectedTicker}
-          onSelect={setSelectedTicker}
-          onClose={() => setOpenRegionId(null)}
+      {detailTicker ? (
+        <CompanyDetailPanel
+          key={detailTicker}
+          ticker={detailTicker}
+          onClose={() => setDetailTicker(null)}
+          onBack={detailGroup?.isCluster ? () => openRegion(detailGroup.region.id) : undefined}
+          backLabel={detailGroup ? `${detailGroup.region.label} 목록` : undefined}
         />
+      ) : (
+        openGroup && (
+          <ClusterListPanel
+            key={openGroup.region.id}
+            group={openGroup}
+            sizeMetric={sizeMetric}
+            selectedTicker={selectedTicker}
+            onSelect={openDetail}
+            onClose={() => setOpenRegionId(null)}
+          />
+        )
       )}
     </>
   );

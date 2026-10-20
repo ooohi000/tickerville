@@ -16,7 +16,7 @@ class RegionCatalogTest {
         var catalog = new RegionCatalog(JsonMapper.builder().build());
         assertThat(catalog.all())
             .extracting(Region::id)
-            .contains("silicon-valley", "seattle", "new-york");
+            .contains("silicon-valley", "seattle", "new-york", "austin", "atlanta", "chicago");
     }
 
     @Test

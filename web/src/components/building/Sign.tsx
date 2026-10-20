@@ -6,7 +6,7 @@ import type { Group } from "three";
 import { useDistanceVisible } from "@/components/scene/useDistanceVisible";
 import { isExpanded } from "@/lib/cluster/visibility";
 import type { BuildingDimensions } from "@/lib/company/buildingSpec";
-import { SIGN_FONT_URL, getBadgeLayout, getSignDimensions } from "@/lib/company/sign";
+import { SIGN_FONT_URL, SIGN_LINE_HEIGHT, getBadgeLayout, getSignDimensions } from "@/lib/company/sign";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
 const PLATE_COLOR = "#1b2430";
@@ -16,7 +16,8 @@ const TEXT_HIGHLIGHT_COLOR = "#1b2430";
 const BADGE_COLOR = "#e5484d";
 
 export interface SignProps {
-  ticker: string;
+  /** 간판 글자 (한글 이름, 없으면 영문 이름) */
+  label: string;
   building: BuildingDimensions;
   /** 클러스터 대표일 때 숨은 기업 수. 0이면 배지 없음 */
   hiddenCount?: number;
@@ -24,11 +25,11 @@ export interface SignProps {
 }
 
 /**
- * 옥상 간판. 항상 카메라를 향한다(Billboard).
+ * 옥상 간판 (한글 이름, 길면 두 줄). 항상 카메라를 향한다(Billboard).
  * 보이고 숨는 건 부모 Building이 정한다. 여기서는 "+N" 배지만 거리로 판단.
  */
-export function Sign({ ticker, building, hiddenCount = 0, highlighted = false }: SignProps) {
-  const s = getSignDimensions(ticker, building);
+export function Sign({ label, building, hiddenCount = 0, highlighted = false }: SignProps) {
+  const s = getSignDimensions(label, building);
 
   return (
     <Billboard position={[0, s.centerY, 0]}>
@@ -42,9 +43,11 @@ export function Sign({ ticker, building, hiddenCount = 0, highlighted = false }:
         color={highlighted ? TEXT_HIGHLIGHT_COLOR : TEXT_COLOR}
         anchorX="center"
         anchorY="middle"
+        textAlign="center"
+        lineHeight={SIGN_LINE_HEIGHT}
         position={[0, 0, 0.01]}
       >
-        {ticker}
+        {s.lines.join("\n")}
       </Text>
       {hiddenCount > 0 && <Badge sign={s} count={hiddenCount} />}
     </Billboard>

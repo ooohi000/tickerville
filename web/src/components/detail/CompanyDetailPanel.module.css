@@ -1,0 +1,171 @@
+/* 상세 패널 내용. 틀은 SidePanel. 색은 목록 패널과 같은 계열 */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+
+.meta {
+  color: #c3cad3;
+  font-size: 13px;
+}
+
+.description {
+  margin-top: -8px;
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: -8px;
+  color: #9aa7b8;
+  font-size: 12px;
+}
+
+.sectionTitle {
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sectionTitle .muted {
+  font-weight: 500;
+}
+
+.muted {
+  color: #9aa7b8;
+}
+
+.rows {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.rows dt {
+  color: #9aa7b8;
+}
+
+.rows dd {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.dday {
+  margin-left: 6px;
+  font-weight: 800;
+}
+
+.expected,
+.confirmed {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* "예상"은 추정치라 반드시 눈에 띄게 (계약 api.md) */
+.expected {
+  background: rgba(245, 197, 66, 0.18);
+  color: #f5c542;
+}
+
+.confirmed {
+  background: rgba(70, 194, 107, 0.18);
+  color: #46c26b;
+}
+
+.loss {
+  color: #ff7b7f;
+  font-weight: 700;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column;
+}
+
+.chartHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2px 8px;
+}
+
+.chartHead .sectionTitle {
+  margin-bottom: 4px;
+}
+
+.readout {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.svg g {
+  cursor: default;
+  outline: none;
+}
+
+.svg g:focus-visible rect {
+  stroke: #f5c542;
+  stroke-width: 1;
+}
+
+.baseline {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 1;
+}
+
+.axisLabel {
+  fill: #9aa7b8;
+  font-size: 9px;
+}
+
+.filings {
+  list-style: none;
+}
+
+.filings a {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 36px;
+  align-items: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.filings a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.more {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.source {
+  color: #6f7c8d;
+  font-size: 11px;
+}

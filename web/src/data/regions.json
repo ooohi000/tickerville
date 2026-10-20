@@ -1,5 +1,19 @@
 [
   { "id": "silicon-valley", "label": "실리콘밸리", "lat": 37.4, "lng": -122.05, "radiusKm": 40 },
+  { "id": "san-francisco", "label": "샌프란시스코", "lat": 37.77, "lng": -122.4, "radiusKm": 20 },
   { "id": "seattle", "label": "시애틀", "lat": 47.61, "lng": -122.25, "radiusKm": 30 },
-  { "id": "new-york", "label": "뉴욕", "lat": 40.75, "lng": -73.98, "radiusKm": 40 }
+  { "id": "los-angeles", "label": "로스앤젤레스", "lat": 34.05, "lng": -118.35, "radiusKm": 70 },
+  { "id": "new-york", "label": "뉴욕", "lat": 40.75, "lng": -73.98, "radiusKm": 70 },
+  { "id": "boston", "label": "보스턴", "lat": 42.36, "lng": -71.15, "radiusKm": 55 },
+  { "id": "washington-dc", "label": "워싱턴 D.C.", "lat": 38.9, "lng": -77.05, "radiusKm": 30 },
+  { "id": "chicago", "label": "시카고", "lat": 41.88, "lng": -87.75, "radiusKm": 60 },
+  { "id": "dallas", "label": "댈러스", "lat": 32.85, "lng": -96.95, "radiusKm": 40 },
+  { "id": "austin", "label": "오스틴", "lat": 30.35, "lng": -97.7, "radiusKm": 30 },
+  { "id": "houston", "label": "휴스턴", "lat": 29.85, "lng": -95.45, "radiusKm": 40 },
+  { "id": "atlanta", "label": "애틀랜타", "lat": 33.8, "lng": -84.4, "radiusKm": 30 },
+  { "id": "charlotte", "label": "샬럿", "lat": 35.35, "lng": -80.85, "radiusKm": 30 },
+  { "id": "detroit", "label": "디트로이트", "lat": 42.33, "lng": -83.13, "radiusKm": 20 },
+  { "id": "minneapolis", "label": "미니애폴리스", "lat": 44.92, "lng": -93.35, "radiusKm": 25 },
+  { "id": "omaha", "label": "오마하", "lat": 41.26, "lng": -95.95, "radiusKm": 15 },
+  { "id": "cincinnati", "label": "신시내티", "lat": 39.17, "lng": -84.47, "radiusKm": 20 }
 ]

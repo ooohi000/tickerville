@@ -72,7 +72,7 @@ describe("assignRegions", () => {
     expect(tickers(result.standalone)).toEqual(["X2", "X1"]);
   });
 
-  it("샘플 데이터: 실리콘밸리 4, 시애틀 2, 뉴욕 1", () => {
+  it("샘플 데이터: 실리콘밸리 4, 시애틀 2, 뉴욕·오스틴·애틀랜타 1, 팔란티어(플로리다)만 단독", () => {
     const { companies } = dataset as CompanyDataset;
     const result = assignRegions(companies, regionsData as Region[]);
     const byId = Object.fromEntries(result.groups.map((g) => [g.region.id, g]));
@@ -81,6 +81,8 @@ describe("assignRegions", () => {
     expect(byId["silicon-valley"].isCluster).toBe(true);
     expect(tickers(byId["seattle"].companies)).toEqual(["AMZN", "MSFT"]);
     expect(byId["new-york"].isCluster).toBe(false);
-    expect(tickers(result.standalone).sort()).toEqual(["KO", "PLTR", "TSLA"]);
+    expect(tickers(byId["austin"].companies)).toEqual(["TSLA"]);
+    expect(tickers(byId["atlanta"].companies)).toEqual(["KO"]);
+    expect(tickers(result.standalone)).toEqual(["PLTR"]);
   });
 });

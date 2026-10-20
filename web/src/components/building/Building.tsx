@@ -17,6 +17,7 @@ import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import type { Company, WorldPoint } from "@/types";
 import { Crane } from "./Crane";
 import { Sign } from "./Sign";
+import { displayName } from "@/lib/company/format";
 import { EventHeat } from "./EventHeat";
 
 /** 색은 초안 — 집에서 화면 보고 조정 */
@@ -82,7 +83,7 @@ export function Building({
       <Roof d={d} emissive={emissive} />
       {isHighGrowth(company.revenueGrowthYoy) && <Crane building={d} />}
       <Sign
-        ticker={company.ticker}
+        label={displayName(company)}
         building={d}
         hiddenCount={hiddenCount}
         highlighted={highlighted}

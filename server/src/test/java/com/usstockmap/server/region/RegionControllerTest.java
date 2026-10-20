@@ -22,12 +22,12 @@ class RegionControllerTest {
     @Test
     @DisplayName("지역 목록을 계약 모양으로 내려준다")
     void returnsRegionsInContractShape() {
-        assertThat(mvc.get().uri("/api/v1/regions"))
-            .hasStatusOk()
-            .bodyJson()
-            .isLenientlyEqualTo("""
-                [{ "id": "silicon-valley", "label": "실리콘밸리", "lat": 37.4, "lng": -122.05, "radiusKm": 40 }]
-                """.replace("}]", "}, {}, {}]"));
+        var res = assertThat(mvc.get().uri("/api/v1/regions")).hasStatusOk();
+        res.bodyJson().extractingPath("$[0].id").isEqualTo("silicon-valley");
+        res.bodyJson().extractingPath("$[0].label").isEqualTo("실리콘밸리");
+        res.bodyJson().extractingPath("$[0].lat").isEqualTo(37.4);
+        res.bodyJson().extractingPath("$[0].radiusKm").isEqualTo(40.0);
+        res.bodyJson().extractingPath("$[*].id").asArray().hasSize(17).contains("austin", "atlanta");
     }
 
     @Test
