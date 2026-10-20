@@ -13,14 +13,20 @@
 - 테스트: vitest 5
 - 새 패키지는 먼저 이유를 말하고 허락받은 뒤 추가한다.
 
-## 현재 단계: 1단계 (클라이언트 전용)
-- 서버, API 라우트, DB 없음. 데이터는 `src/data/*.json` 정적 파일.
-- 검색·스크리닝·재무제표·등락률 표시는 **만들지 않는다**.
+## 현재 단계: 2단계 (서버 API 연결)
+- 데이터는 Spring 서버 `GET /api/v1/*` 에서 받는다. `src/data/*.json`은 **서버가 꺼졌을 때의 샘플**로 남긴다.
+- 첫 화면: `app/page.tsx` → `app/_data/getMapData.ts`(`"use cache"` + `cacheLife('minutes')`) → `lib/api/loadMapData` → `MapScene` props.
+- 서버 주소: `TICKERVILLE_API_URL` (`.env.local`, 없으면 `http://localhost:8080`). Next 서버에서만 읽는다.
+- 브라우저에서 부를 땐 상대 주소 `/api/v1/...` — `next.config.ts` rewrites 가 서버로 넘긴다 (CORS 불필요).
+- API 호출은 `lib/api/endpoints.ts` 함수만 쓴다. 응답 모양은 `guards.ts`로 검사하고, 실패는 `ApiRequestError(code)`.
+- 대체 규칙: 기업·지역 실패 → 샘플 + "샘플 데이터" 안내, 시장 날씨 503 `DATA_NOT_READY` → 기본 하늘(흐림 50).
+- 주가·시총·거래량은 **표시하지 않는다**. 검색·스크리닝은 아직 만들지 않는다.
 
 ## 폴더 구조
 ```
 src/
   app/                 라우트 (page.tsx는 조립만)
+    _data/             서버 전용 데이터 함수 ("use cache")
   components/
     scene/             Canvas, 카메라, 공통 훅
       sky/             하늘 (조명, 구름, 비, 번개)
@@ -29,6 +35,7 @@ src/
     cluster/           클러스터 대표 건물, +N 배지, 지역 이름표
     ui/                2D 오버레이 (목록 패널 등)
   lib/                 순수 함수만 (React, three 객체 생성 금지)
+    api/               서버 주소·호출·응답 검사·대체 (fetch 는 주입받아 테스트)
     geo/               위경도 → 월드 좌표, 거리 계산
     company/           규모 등급(매출), 정렬, 공시 열기, 간판
     cluster/           지역 묶기

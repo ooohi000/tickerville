@@ -92,7 +92,8 @@
 - [x] 📱 상세·재무제표 API: `GET /companies/{ticker}` (기본 정보·최근 분기/연간·공시 20건 한글 이름·실적 지난/다음 예상), `GET /companies/{ticker}/financials?period&limit` (테스트 총 181개)
 - [ ] 📱 Redis 캐시 (상세·목록, 수집 끝나면 비우기)
 - [ ] 📱 방문자 익명 집계 `company_view_daily` + 수집 API (프론트 연결 때)
-- [ ] 🏠 프론트: 정적 JSON → API 호출로 교체 (응답 모양이 같아서 데이터 읽는 곳만). 시장 날씨 503이면 기본 하늘(흐림)로
+- [x] 📱 프론트 API 연결 뼈대: `web/src/lib/api/*` (주소 설정·호출·응답 모양 검사·대체), `page.tsx`가 서버에서 `"use cache"`+`cacheLife('minutes')`로 받아 `MapScene`에 props로. 서버 꺼짐 → 샘플 JSON + "샘플 데이터" 안내, 시장 날씨 503 → 기본 하늘(흐림 50). 브라우저 호출은 rewrites `/api/v1/*` → `TICKERVILLE_API_URL` (프론트 테스트 총 216개)
+- [ ] 🏠 실제 서버 켜고 지도 확인: `cp web/.env.example web/.env.local` → 서버 + `npm run dev` → 안내 문구가 사라지고 실제 기업·하늘이 보이는지
 - [ ] 🏠 배포 (서버·DB 호스팅 정하기)
 
 ## 3단계 이후 (지금은 안 함)

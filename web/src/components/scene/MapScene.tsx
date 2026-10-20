@@ -2,7 +2,7 @@
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useState, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { Building } from "@/components/building/Building";
 import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
@@ -10,59 +10,39 @@ import { Sky } from "@/components/scene/sky/Sky";
 import { ClusterListPanel } from "@/components/ui/ClusterListPanel";
 import { MarketClockBadge } from "@/components/ui/MarketClockBadge";
 import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
+import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
-import dataset from "@/data/companies.json";
-import marketWeatherData from "@/data/marketWeather.json";
-import regionsData from "@/data/regions.json";
-import { assignRegions } from "@/lib/cluster/assignRegions";
-import { getHiddenCounts, getVisibilityModes } from "@/lib/cluster/visibility";
-import {
-  DEFAULT_SIZE_METRIC,
-  SIZE_METRIC_ORDER,
-  type SizeMetricId,
-} from "@/lib/company/sizeMetric";
+import { buildSizeViews } from "@/lib/cluster/sizeViews";
+import { DEFAULT_SIZE_METRIC, type SizeMetricId } from "@/lib/company/sizeMetric";
 import { projectLatLng } from "@/lib/geo/project";
 import { parseWeatherOverride } from "@/lib/weather/weather";
-import type { CompanyDataset, MarketWeather, Region } from "@/types";
-
-const { companies } = dataset as CompanyDataset;
-
-/**
- * 건물 높이 기준마다 대표 건물(크기 1위)이 달라지므로, 기준별로 묶음 결과를 미리 계산해 둔다.
- * 정적 데이터라 모듈 로드 시 한 번만 (기준 4개 × 기업 수 정도라 가볍다).
- */
-const VIEWS = Object.fromEntries(
-  SIZE_METRIC_ORDER.map((id) => {
-    const assignment = assignRegions(companies, regionsData as Region[], { sizeMetric: id });
-    return [
-      id,
-      {
-        assignment,
-        visibilityModes: getVisibilityModes(assignment),
-        hiddenCounts: getHiddenCounts(assignment),
-      },
-    ];
-  }),
-) as Record<SizeMetricId, {
-  assignment: ReturnType<typeof assignRegions>;
-  visibilityModes: ReturnType<typeof getVisibilityModes>;
-  hiddenCounts: ReturnType<typeof getHiddenCounts>;
-}>;
+import type { Company, MarketWeather, Region } from "@/types";
 
 // 개발용 ?mw=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
 const noopSubscribe = () => () => {};
 const readWeatherOverride = () => parseWeatherOverride(window.location.search);
 const serverWeatherOverride = () => null;
 
+export interface MapSceneProps {
+  companies: Company[];
+  regions: Region[];
+  marketWeather: MarketWeather;
+  /** 서버 대신 번들 샘플을 보여주는 중이면 true → 왼쪽 위에 안내 */
+  usingSample: boolean;
+}
+
 /**
  * 하늘 + 바다 + 미국 지도 + 건물 + 지역 이름표, 그리고 화면 위 시장 날씨 표시·목록 패널.
+ * 데이터는 page.tsx(서버)가 API 에서 받아 넘긴다. 실패 시 대체는 lib/api/mapData.
  */
-export function MapScene() {
+export function MapScene({ companies, regions, marketWeather: apiWeather, usingSample }: MapSceneProps) {
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
-  const { assignment, visibilityModes, hiddenCounts } = VIEWS[sizeMetric];
+  // 높이 기준별 묶음 결과. 데이터가 바뀔 때만 다시 계산
+  const views = useMemo(() => buildSizeViews(companies, regions), [companies, regions]);
+  const { assignment, visibilityModes, hiddenCounts } = views[sizeMetric];
   // 서버에서는 null, 브라우저에서 주소를 읽는다 (hydration 어긋남 없음)
   const override = useSyncExternalStore(
     noopSubscribe,
@@ -70,7 +50,7 @@ export function MapScene() {
     serverWeatherOverride,
   );
   const marketWeather: MarketWeather =
-    override !== null ? { value: override, asOf: "미리보기" } : (marketWeatherData as MarketWeather);
+    override !== null ? { value: override, asOf: "미리보기" } : apiWeather;
 
   const openGroup = assignment.groups.find((g) => g.region.id === openRegionId) ?? null;
 
@@ -121,6 +101,7 @@ export function MapScene() {
       </Canvas>
 
       <TopLeftHud>
+        {usingSample && <SampleDataNotice />}
         <MarketClockBadge />
         <MarketWeatherBadge data={marketWeather} />
         <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />

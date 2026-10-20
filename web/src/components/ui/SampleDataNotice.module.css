@@ -1,0 +1,9 @@
+/* 색·모양은 MarketClockBadge 와 같은 계열. 위치는 TopLeftHud 가 정한다 */
+.notice {
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(27, 36, 48, 0.85);
+  color: #f5c542;
+  font-size: 12px;
+  pointer-events: none;
+}

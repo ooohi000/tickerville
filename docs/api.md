@@ -5,6 +5,7 @@
 
 ## 원칙
 - 1단계 정적 JSON(`src/data/*.json`)과 **응답 모양이 같다.** 프론트는 파일 읽기를 API 호출로 바꾸기만 한다.
+- 프론트 호출: Next 서버는 `TICKERVILLE_API_URL`(기본 `http://localhost:8080`)로 직접, 브라우저는 같은 주소 `/api/v1/*`를 부르고 Next rewrites 가 넘긴다. 호출 함수는 `web/src/lib/api/endpoints.ts`, 시간 제한 3초.
 - **공개 가능한 무료 데이터만 쓴다** (`docs/data-sources.md`): SEC EDGAR, FRED 공공 시리즈, 한국수출입은행. 주가·시총·거래량은 응답에 없다.
 - 읽기 전용 공개 API. 로그인 없음.
 - 경로 앞에 `/api/v1`.
