@@ -20,6 +20,7 @@ import { buildSizeViews } from "@/lib/cluster/sizeViews";
 import { DEFAULT_SIZE_METRIC, type SizeMetricId } from "@/lib/company/sizeMetric";
 import { projectLatLng } from "@/lib/geo/project";
 import { parseWeatherOverride } from "@/lib/weather/weather";
+import { panDelta } from "@/lib/camera/pan";
 import type { Company, MarketWeather, Region } from "@/types";
 
 // 개발용 ?mw=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
@@ -80,11 +81,11 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
     controls.update();
   };
 
-  const pan = (controls: OrbitControlsImpl, dx: number, dz: number) => {
-    controls.object.position.x += dx;
-    controls.object.position.z += dz;
-    controls.target.x += dx;
-    controls.target.z += dz;
+  // 화면 기준 이동: 위 = 지금 화면의 위쪽 (지도를 돌려도 같다). 계산은 lib/camera/pan
+  const pan = (controls: OrbitControlsImpl, screenRight: number, screenUp: number) => {
+    const delta = panDelta(controls.object.position, controls.target, screenRight, screenUp);
+    controls.object.position.add(delta);
+    controls.target.add(delta);
     controls.update();
   };
 
@@ -99,8 +100,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
       else if (e.key === "0") c.reset();
       else if (e.key === "ArrowLeft") pan(c, -step, 0);
       else if (e.key === "ArrowRight") pan(c, +step, 0);
-      else if (e.key === "ArrowUp") pan(c, 0, -step);
-      else if (e.key === "ArrowDown") pan(c, 0, +step);
+      else if (e.key === "ArrowUp") pan(c, 0, +step);
+      else if (e.key === "ArrowDown") pan(c, 0, -step);
     };
 
     // 처음 상태 저장: 이 effect 가 돌 때 controlRef 는 이미 채워져 있음
