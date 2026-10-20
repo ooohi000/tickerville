@@ -36,6 +36,37 @@ public class ZipCentroids {
         return p == null ? Optional.empty() : Optional.of(new GeoPoint(p[0], p[1], GeoPoint.Precision.ZIP));
     }
 
+    /**
+     * 회사 전용 우편번호(월마트 72716, 일라이 릴리 46285 등)·사서함 번호는 ZCTA 에 없다.
+     * 앞 3자리(같은 우편 지역)가 같은 번호 중 숫자로 가장 가까운 것 (같으면 작은 번호). 같은 도시 안에 들어온다.
+     */
+    public Optional<GeoPoint> findNearby(String zip) {
+        if (zip == null || zip.length() < 5 || !zip.substring(0, 5).chars().allMatch(Character::isDigit)) {
+            return Optional.empty();
+        }
+        String zip5 = zip.substring(0, 5);
+        int target = Integer.parseInt(zip5);
+        String prefix = zip5.substring(0, 3);
+        String best = null;
+        int bestGap = Integer.MAX_VALUE;
+        for (String candidate : byZip.keySet()) {
+            if (!candidate.startsWith(prefix)) {
+                continue;
+            }
+            int value = Integer.parseInt(candidate);
+            int gap = Math.abs(value - target);
+            if (gap < bestGap || (gap == bestGap && value < Integer.parseInt(best))) {
+                best = candidate;
+                bestGap = gap;
+            }
+        }
+        if (best == null) {
+            return Optional.empty();
+        }
+        double[] p = byZip.get(best);
+        return Optional.of(new GeoPoint(p[0], p[1], GeoPoint.Precision.NEARBY_ZIP));
+    }
+
     public int size() {
         return byZip.size();
     }

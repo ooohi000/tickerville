@@ -25,7 +25,7 @@ public final class SubmissionsParser {
         JsonNode business = root.path("addresses").path("business");
         SecSubmission.Address address = new SecSubmission.Address(
                 text(business, "street1"), text(business, "city"),
-                text(business, "stateOrCountry"), text(business, "zipCode"));
+                text(business, "stateOrCountry"), text(business, "zipCode"), text(business, "street2"));
         return new SecSubmission(
                 cik,
                 text(root, "name"),

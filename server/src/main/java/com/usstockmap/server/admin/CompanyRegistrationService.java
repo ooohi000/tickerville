@@ -65,7 +65,7 @@ public class CompanyRegistrationService {
         if (a.state() == null || a.state().length() != 2 || !a.state().matches("[A-Z]{2}")) {
             throw ApiException.invalid("ticker " + ticker + " has no US headquarters address in SEC (" + a.state() + ")");
         }
-        GeoPoint point = locator.locate(a.street(), a.city(), a.state(), a.zip())
+        GeoPoint point = locator.locate(java.util.Arrays.asList(a.street(), a.street2()), a.city(), a.state(), a.zip())
                 .orElseThrow(() -> ApiException.invalid("could not locate headquarters for " + ticker));
         Sector sector = req.sector() == null || req.sector().isBlank()
                 ? SectorGuess.fromSic(s.sicCode())

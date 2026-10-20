@@ -71,4 +71,49 @@ class GeoTest {
                 .get().extracting(GeoPoint::precision).isEqualTo(GeoPoint.Precision.ZIP);
         assertThat(notFound.locate("x", "y", "ZZ", null)).isEmpty();
     }
+
+    @Test
+    @DisplayName("회사 전용·사서함 우편번호는 같은 지역의 가장 가까운 번호로 (실제 본사에서 20km 이내)")
+    void nearbyZip() {
+        // 월마트 72716 (벤턴빌), 아멕스 10285 (맨해튼), J&J 08933 (뉴브런즈윅)
+        assertThat(ZIPS.find("72716")).isEmpty();
+        GeoPoint walmart = ZIPS.findNearby("72716").orElseThrow();
+        assertThat(walmart.precision()).isEqualTo(GeoPoint.Precision.NEARBY_ZIP);
+        assertThat(walmart.distanceKm(36.364, -94.217)).isLessThan(20);
+        assertThat(ZIPS.findNearby("10285").orElseThrow().distanceKm(40.714, -74.0145)).isLessThan(2);
+        assertThat(ZIPS.findNearby("08933").orElseThrow().distanceKm(40.497, -74.443)).isLessThan(5);
+        assertThat(ZIPS.findNearby("ABCDE")).isEmpty();
+        assertThat(ZIPS.findNearby(null)).isEmpty();
+    }
+
+    @Test
+    @DisplayName("사서함 줄은 건너뛰고, 번지가 둘째 줄에 있으면 그 줄로 주소 검색")
+    void locatorTriesEachStreetLine() {
+        java.util.List<String> asked = new java.util.ArrayList<>();
+        GeoPoint exact = new GeoPoint(35.2271, -80.8431, GeoPoint.Precision.ADDRESS);
+        HqLocator locator = new HqLocator((s, c, st, z) -> {
+            asked.add(s);
+            return s.startsWith("100 ") ? Optional.of(exact) : Optional.empty();
+        }, ZIPS);
+
+        // BAC: 첫 줄은 건물 이름, 둘째 줄이 번지
+        assertThat(locator.locate(java.util.List.of("BANK OF AMERICA CORPORATE CENTER", "100 N TRYON ST"),
+                "CHARLOTTE", "NC", "28255")).contains(exact);
+
+        asked.clear();
+        // TXN: 사서함뿐 → 주소 검색 없이 우편번호(근처)로
+        assertThat(locator.locate(java.util.Arrays.asList("P.O. BOX 660199", null), "DALLAS", "TX", "75266"))
+                .get().extracting(GeoPoint::precision).isEqualTo(GeoPoint.Precision.NEARBY_ZIP);
+        assertThat(asked).isEmpty();
+    }
+
+    @Test
+    @DisplayName("사서함 표기 여러 가지")
+    void poBox() {
+        assertThat(HqLocator.isPoBox("P.O. BOX 660199")).isTrue();
+        assertThat(HqLocator.isPoBox("P O BOX 34067")).isTrue();
+        assertThat(HqLocator.isPoBox("PO Box 1")).isTrue();
+        assertThat(HqLocator.isPoBox("1 POBOX WAY")).isFalse();
+        assertThat(HqLocator.isPoBox("ONE DELL WAY")).isFalse();
+    }
 }

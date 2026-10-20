@@ -14,6 +14,11 @@ public record SecSubmission(
         List<SecFiling> filings
 ) {
 
-    public record Address(String street, String city, String state, String zip) {
+    /** street2: 두 번째 줄 (BAC 처럼 첫 줄이 건물 이름이고 번지가 여기 있는 경우) */
+    public record Address(String street, String city, String state, String zip, String street2) {
+
+        public Address(String street, String city, String state, String zip) {
+            this(street, city, state, zip, null);
+        }
     }
 }
