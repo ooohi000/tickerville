@@ -124,7 +124,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
 
         {/* 바다 — 땅 아래에 깔린 넓은 판. 색은 초안 */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
-          <planeGeometry args={[400, 400]} />
+          {/* 안개가 카메라 거리를 따라가서 멀리까지 보인다 → 바다 끝이 안 보이게 넉넉히 */}
+          <planeGeometry args={[2000, 2000]} />
           <meshStandardMaterial color="#2a5a7a" />
         </mesh>
         <UsMap />

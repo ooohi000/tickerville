@@ -2,7 +2,8 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import type { AmbientLight } from "three";
+import { type AmbientLight, Fog, Vector3 } from "three";
+import { getFogRange } from "@/lib/camera/fog";
 import { getLightningIntensity } from "@/lib/weather/sky";
 import { getWeatherSpec } from "@/lib/weather/weather";
 import { Clouds } from "./Clouds";
@@ -28,6 +29,7 @@ export function Sky({ weatherIndex }: SkyProps) {
       <color attach="background" args={[spec.skyColor]} />
       {/* 먼 바다가 하늘색으로 자연스럽게 섞이게 */}
       <fog attach="fog" args={[spec.skyColor, 110, 260]} />
+      <FogFollow />
       <ambientLight intensity={spec.ambientIntensity} />
       <directionalLight
         position={[30, 60, 20]}
@@ -54,4 +56,18 @@ function LightningFlash() {
     if (ref.current) ref.current.intensity = getLightningIntensity(clock.elapsedTime);
   });
   return <ambientLight ref={ref} color="#dfe8ff" intensity={0} />;
+}
+
+const ORIGIN = new Vector3();
+
+/** 안개 범위를 매 프레임 카메라 ↔ 보는 점 거리에 맞춘다 (확대·축소해도 지도는 맑게). 계산은 lib/camera/fog */
+function FogFollow() {
+  useFrame(({ scene, camera, controls }) => {
+    if (!(scene.fog instanceof Fog)) return;
+    const target = (controls as { target?: Vector3 } | null)?.target ?? ORIGIN;
+    const { near, far } = getFogRange(camera.position.distanceTo(target));
+    scene.fog.near = near;
+    scene.fog.far = far;
+  });
+  return null;
 }
