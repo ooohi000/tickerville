@@ -2,7 +2,9 @@
 
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { Vector3 } from "three";
+import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Building } from "@/components/building/Building";
 import { CompanyDetailPanel } from "@/components/detail/CompanyDetailPanel";
 import { RegionLabel } from "@/components/cluster/RegionLabel";
@@ -38,6 +40,7 @@ export interface MapSceneProps {
  * 데이터는 page.tsx(서버)가 API 에서 받아 넘긴다. 실패 시 대체는 lib/api/mapData.
  */
 export function MapScene({ companies, regions, marketWeather: apiWeather, usingSample }: MapSceneProps) {
+  const controlsRef = useRef<OrbitControlsImpl>(null);
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
@@ -69,6 +72,43 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
     setDetailTicker(null);
     setOpenRegionId(regionId);
   };
+
+  const zoom = (controls: OrbitControlsImpl, factor: number) => {
+    const dir = new Vector3().subVectors(controls.object.position, controls.target);
+    dir.multiplyScalar(factor);
+    controls.object.position.copy(controls.target).add(dir);
+    controls.update();
+  };
+
+  const pan = (controls: OrbitControlsImpl, dx: number, dz: number) => {
+    controls.object.position.x += dx;
+    controls.object.position.z += dz;
+    controls.target.x += dx;
+    controls.target.z += dz;
+    controls.update();
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const c = controlsRef.current;
+      if (!c) return;
+
+      const step = 3;
+      if (e.key === "+" || e.key === "=") zoom(c, 1 / 1.15);
+      else if (e.key === "-" || e.key === "_") zoom(c, 1.15);
+      else if (e.key === "0") c.reset();
+      else if (e.key === "ArrowLeft") pan(c, -step, 0);
+      else if (e.key === "ArrowRight") pan(c, +step, 0);
+      else if (e.key === "ArrowUp") pan(c, 0, -step);
+      else if (e.key === "ArrowDown") pan(c, 0, +step);
+    };
+
+    // 처음 상태 저장: 이 effect 가 돌 때 controlRef 는 이미 채워져 있음
+    controlsRef.current?.saveState();
+
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <>
@@ -113,7 +153,13 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           />
         ))}
 
-        <OrbitControls makeDefault maxPolarAngle={Math.PI / 2.2} />
+        <OrbitControls
+          ref={controlsRef}
+          minDistance={20}
+          maxDistance={200}
+          makeDefault
+          maxPolarAngle={Math.PI / 2.2}
+        />
       </Canvas>
 
       <TopLeftHud>
