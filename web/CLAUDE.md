@@ -38,6 +38,7 @@ src/
     api/               서버 주소·호출·응답 검사·대체 (fetch 는 주입받아 테스트)
     geo/               위경도 → 월드 좌표, 거리 계산
     company/           규모 등급(매출), 정렬, 공시 열기, 간판
+    detail/            상세 패널 표시·계산 (한국식 금액, 비율, 분기 차트, 실적 발표 라벨)
     cluster/           지역 묶기
     weather/           시장 날씨 지수 → 날씨, 하늘 배치
     math/              시드 난수 등 범용
@@ -64,4 +65,4 @@ src/
 - 한 번에 기능 하나. 끝나면 테스트·빌드 통과 확인 → `../docs/checklist.md` 체크 → 커밋.
 - 커밋 메시지: `feat(map): ...`, `fix(cluster): ...`, `test(geo): ...`
 - 이동 중에 만든 조각은 `../docs/request-template.md` 형식으로 요청된다.
-- 테스트용 기업 목업은 `src/test/makeCompany.ts`만 쓴다 (필드가 늘면 여기만 고친다).
+- 테스트용 목업은 `src/test/makeCompany.ts`(기업)·`makeStatement.ts`(재무제표)만 쓴다 (필드가 늘면 여기만 고친다).
