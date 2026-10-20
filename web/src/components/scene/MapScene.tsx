@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "reac
 import { Vector3 } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Building } from "@/components/building/Building";
+import { CameraFit } from "@/components/scene/CameraFit";
 import { CompanyDetailPanel } from "@/components/detail/CompanyDetailPanel";
 import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
@@ -161,6 +162,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           makeDefault
           maxPolarAngle={Math.PI / 2.2}
         />
+        {/* 첫 화면 구도 (화면 비율에 맞춰 본토 전체) — 0 키가 여기로 돌아온다 */}
+        <CameraFit />
       </Canvas>
 
       <TopLeftHud>
