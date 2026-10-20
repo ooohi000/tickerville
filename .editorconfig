@@ -1,0 +1,17 @@
+# IntelliJ·VS Code 가 같은 들여쓰기를 쓰게 한다 (자동 정렬이 파일 전체를 바꿔 충돌 나는 것 방지)
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# 서버 Java·Gradle 은 4칸
+[*.{java,gradle}]
+indent_size = 4
+
+[*.md]
+trim_trailing_whitespace = false
