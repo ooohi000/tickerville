@@ -15,6 +15,14 @@ const TEXT_COLOR = "#ffffff";
 const TEXT_HIGHLIGHT_COLOR = "#1b2430";
 const BADGE_COLOR = "#e5484d";
 
+/**
+ * 간판은 건물·지붕·첨탑에 가려지지 않게 깊이 검사 없이 맨 마지막에 그린다 (지도 앱의 지명처럼).
+ * transparent 로 두면 three 가 먼 것부터 그려서, 간판끼리 겹치면 가까운 간판이 위에 온다.
+ * 판·글자·배지가 같은 순서값을 써야 "먼 간판 → 가까운 간판" 순서가 유지된다 (글자는 판보다 0.01 앞).
+ */
+const SIGN_RENDER_ORDER = 10;
+const ON_TOP = { transparent: true, depthTest: false, depthWrite: false } as const;
+
 export interface SignProps {
   /** 간판 글자 (한글 이름, 없으면 영문 이름) */
   label: string;
@@ -33,12 +41,15 @@ export function Sign({ label, building, hiddenCount = 0, highlighted = false }: 
 
   return (
     <Billboard position={[0, s.centerY, 0]}>
-      <mesh>
+      <mesh renderOrder={SIGN_RENDER_ORDER}>
         <planeGeometry args={[s.plateWidth, s.plateHeight]} />
-        <meshBasicMaterial color={highlighted ? PLATE_HIGHLIGHT_COLOR : PLATE_COLOR} />
+        <meshBasicMaterial color={highlighted ? PLATE_HIGHLIGHT_COLOR : PLATE_COLOR} {...ON_TOP} />
       </mesh>
       <Text
         font={SIGN_FONT_URL}
+        renderOrder={SIGN_RENDER_ORDER}
+        material-depthTest={false}
+        material-depthWrite={false}
         fontSize={s.fontSize}
         color={highlighted ? TEXT_HIGHLIGHT_COLOR : TEXT_COLOR}
         anchorX="center"
@@ -62,12 +73,15 @@ function Badge({ sign, count }: { sign: ReturnType<typeof getSignDimensions>; co
 
   return (
     <group ref={ref} position={[b.x, b.y, 0.02]}>
-      <mesh>
+      <mesh renderOrder={SIGN_RENDER_ORDER}>
         <circleGeometry args={[b.radius, 32]} />
-        <meshBasicMaterial color={BADGE_COLOR} />
+        <meshBasicMaterial color={BADGE_COLOR} {...ON_TOP} />
       </mesh>
       <Text
         font={SIGN_FONT_URL}
+        renderOrder={SIGN_RENDER_ORDER}
+        material-depthTest={false}
+        material-depthWrite={false}
         fontSize={b.fontSize}
         color="#ffffff"
         anchorX="center"
