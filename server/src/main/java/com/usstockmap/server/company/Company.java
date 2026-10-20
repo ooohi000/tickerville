@@ -127,4 +127,14 @@ public class Company {
     public void changeNameKo(String nameKo) {
         this.nameKo = nameKo;
     }
+
+    /** 한 줄 소개 (직접 관리, universe.csv) */
+    public void changeDescriptionKo(String descriptionKo) {
+        this.descriptionKo = descriptionKo;
+    }
+
+    /** 업종 (직접 관리, universe.csv 가 SIC 추정보다 우선) */
+    public void changeSector(Sector sector) {
+        this.sector = sector;
+    }
 }

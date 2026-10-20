@@ -1,9 +1,11 @@
 package com.usstockmap.server.collector;
 
+import com.usstockmap.server.admin.CompanyUniverseSync;
 import com.usstockmap.server.collector.fred.FredSyncResult;
 import com.usstockmap.server.collector.fred.FredSyncService;
 import com.usstockmap.server.collector.sec.SecSyncResult;
 import com.usstockmap.server.collector.sec.SecSyncService;
+import com.usstockmap.server.company.CompanyUniverse;
 import java.time.Clock;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -36,10 +38,21 @@ public class CollectorConfig {
     }
 
     @Bean
-    CollectorJob<SecSyncResult> secSyncJob(SecSyncService service, ExecutorService collectorExecutor, Clock clock) {
-        return new CollectorJob<>(SEC,
-                tickers -> tickers.isEmpty() ? service.syncAll() : service.syncTickers(tickers),
-                collectorExecutor, clock);
+    CollectorJob<SecSyncResult> secSyncJob(SecSyncService service, CompanyUniverseSync universe,
+                                           ExecutorService collectorExecutor, Clock clock) {
+        return new CollectorJob<>(SEC, tickers -> {
+            if (!tickers.isEmpty()) {
+                return service.syncTickers(tickers);
+            }
+            // 전체 수집: 먼저 universe.csv 로 기업 목록을 맞추고 (새 기업 등록) 전부 수집
+            CompanyUniverseSync.Result u = universe.apply();
+            return service.syncAll().withUniverse(u.registered(), u.failed());
+        }, collectorExecutor, clock);
+    }
+
+    @Bean
+    CompanyUniverse companyUniverse() {
+        return CompanyUniverse.load();
     }
 
     @Bean

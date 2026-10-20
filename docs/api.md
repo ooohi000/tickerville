@@ -180,7 +180,7 @@
 | 요청 | 하는 일 | 응답 |
 |---|---|---|
 | `POST /api/admin/collectors/{name}` (`sec`·`fred`) 본문 `{"targets":["AAPL"]}` (없으면 전체, fred 는 무시) | 수집 백그라운드 시작 | 202 + 상태. 이미 돌고 있으면 409, 모르는 이름 400 |
-| `GET /api/admin/collectors` · `GET /api/admin/collectors/{name}` | 수집 상태 `{name, running, trigger, targets, startedAt, finishedAt, result, error}`. sec result = `{succeeded, failed[{ticker, reason}]}`, fred result = `{seriesId, fetched, weatherWeeks, latestAsOf, latestValue, skippedReason}` | 200 |
+| `GET /api/admin/collectors` · `GET /api/admin/collectors/{name}` | 수집 상태 `{name, running, trigger, targets, startedAt, finishedAt, result, error}`. sec result = `{registered, succeeded, failed[{ticker, reason}]}` (`registered`: 전체 수집 때 `universe.csv`에서 새로 등록된 티커, 등록 실패는 `failed`에 "등록 실패: …"), fred result = `{seriesId, fetched, weatherWeeks, latestAsOf, latestValue, skippedReason}` | 200 |
 | `GET /api/admin/quality-issues` | 확인이 필요한 기업 `[{ticker, code, detail, calcVersion, detectedAt}]` | 200 |
 | `POST /api/admin/companies` 본문 `{"ticker":"COST","nameKo":"코스트코","sector":null}` | 티커로 등록: SEC 이름·본사 주소 → 좌표(인구조사국 지오코더, 안 되면 우편번호 중심), 섹터 없으면 SIC 로 추정 | 201 `{ticker, name, nameKo, sector, hqCity, hqState, lat, lng, locationPrecision}` |
 

@@ -3,6 +3,7 @@ package com.usstockmap.server.collector;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 
+import com.usstockmap.server.admin.CompanyUniverseSync;
 import com.usstockmap.server.collector.fred.FredSyncService;
 import com.usstockmap.server.collector.sec.SecSyncService;
 import java.time.Clock;
@@ -16,6 +17,7 @@ class CollectorScheduleTest {
     final ApplicationContextRunner runner = new ApplicationContextRunner()
             .withBean(SecSyncService.class, () -> mock(SecSyncService.class))
             .withBean(FredSyncService.class, () -> mock(FredSyncService.class))
+            .withBean(CompanyUniverseSync.class, () -> mock(CompanyUniverseSync.class))
             .withBean(Clock.class, Clock::systemUTC)
             .withPropertyValues("app.sec.sync-cron=0 15 22 * * MON-FRI", "app.fred.sync-cron=0 30 22 * * MON-FRI")
             .withUserConfiguration(CollectorConfig.class);

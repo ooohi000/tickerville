@@ -94,6 +94,8 @@
 - [ ] 📱 방문자 익명 집계 `company_view_daily` + 수집 API (프론트 연결 때)
 - [x] 📱 프론트 API 연결 뼈대: `web/src/lib/api/*` (주소 설정·호출·응답 모양 검사·대체), `page.tsx`가 서버에서 `"use cache"`+`cacheLife('minutes')`로 받아 `MapScene`에 props로. 서버 꺼짐 → 샘플 JSON + "샘플 데이터" 안내, 시장 날씨 503 → 기본 하늘(흐림 50). 브라우저 호출은 rewrites `/api/v1/*` → `TICKERVILLE_API_URL` (프론트 테스트 총 216개)
 - [x] 📱 상세 패널 계산 함수 `web/src/lib/detail/*`: 한국식 금액("4,668억 달러"), EPS·비율 표시, 이익률·부채비율·자기자본비율·FCF 마진, 분기 차트 데이터(YoY·세로 범위), 실적 발표 라벨(D-day·"예상" 필수·장 마감 후·한국 시간 안내), 회계연도 마감 안내 (프론트 테스트 총 255개)
+- [x] 📱 기업 목록 93개 `server/src/main/resources/companies/universe.csv` (티커·업종·한글 이름·한 줄 소개, 단일 원본). SEC 전체 수집 직전에 맞춘다: 없는 티커 등록(SEC 본사 → 좌표), 있으면 업종·한글 이름·소개 갱신 (서버 테스트 총 204개)
+- [ ] 🏠 SEC 수집 한 번 → `result.registered`·`failed` 확인 (본사가 해외로 등록된 기업은 실패가 정상, 목록에서 빼기)
 - [ ] 🏠 실제 서버 켜고 지도 확인: `cp web/.env.example web/.env.local` → 서버 + `npm run dev` → 안내 문구가 사라지고 실제 기업·하늘이 보이는지
 - [ ] 🏠 배포 (서버·DB 호스팅 정하기)
 

@@ -19,9 +19,9 @@ com.usstockmap.server
     time/       MarketDates (계약 날짜 = 미국 동부)
     geo/        GeoPoint(거리), ZipCentroids(우편번호 중심, 번들), CensusGeocoder, HqLocator(주소 → 좌표)
     admin/      AdminKeyInterceptor (/api/admin/** 는 X-Admin-Key)
-  admin/        관리자 API: 수집기 실행·상태(/api/admin/collectors/{sec|fred}), 품질 이상 목록, 티커로 기업 등록 (docs/api.md 관리자 API)
+  admin/        관리자 API: 수집기 실행·상태(/api/admin/collectors/{sec|fred}), 품질 이상 목록, 티커로 기업 등록 (docs/api.md 관리자 API), CompanyUniverseSync (universe.csv → 기업 목록 맞추기, SEC 전체 수집 직전)
   region/       지역 (classpath data/regions.json — 큐레이션 데이터라 DB 아님)
-  company/      기업(Company)·지도용 지표(CompanySnapshot), GET /companies, 상세 GET /companies/{ticker}·/financials (CompanyDetailService·CompanyDetailQueryRepository)
+  company/      기업(Company)·지도용 지표(CompanySnapshot)·기업 목록 CompanyUniverse(resources/companies/universe.csv), GET /companies, 상세 GET /companies/{ticker}·/financials (CompanyDetailService·CompanyDetailQueryRepository)
   filing/       공시(Filing 읽기 전용), 30일 집계(FilingActivityCalculator), 한글 이름(FilingLabels)
   earnings/     실적 발표(EarningsEvent 읽기 전용): 8-K 2.02 → 지난 발표·장전/장후, 다음 발표 예상(작년 같은 분기 + 52주)
   quality/      수집 결과 자동 점검 (DataQualityChecker → data_quality_issue)
@@ -73,3 +73,9 @@ com.usstockmap.server
 - `./gradlew test` 테스트
 - `./gradlew bootRun` 로컬 실행 (Docker로 PostgreSQL·Redis 자동)
 - `./gradlew build` 빌드
+
+## 기업 목록
+- 지도에 올릴 기업은 `src/main/resources/companies/universe.csv` 하나에서 관리한다 (ticker,sector,name_ko,description_ko — 소개에 쉼표 금지, `·` 사용).
+- 업종·한글 이름·소개는 이 파일이 원본이다 (DB 를 직접 고치면 다음 수집 때 파일 값으로 돌아간다). 기업을 빼도 DB 에서 지우지는 않는다.
+- 티커는 SEC 표기 (`BRK-B`). 본사가 미국 밖으로 등록된 기업은 등록되지 않는다.
+

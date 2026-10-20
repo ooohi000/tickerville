@@ -12,6 +12,7 @@ import com.usstockmap.server.company.Company;
 import com.usstockmap.server.company.CompanyRepository;
 import com.usstockmap.server.company.Sector;
 import com.usstockmap.server.company.SectorGuess;
+import java.util.Map;
 import org.springframework.stereotype.Service;
 
 /**
@@ -39,6 +40,14 @@ public class CompanyRegistrationService {
     }
 
     public Registered register(Request req) {
+        return register(req, null);
+    }
+
+    /**
+     * 여러 기업을 한 번에 등록할 때는 SEC 티커 목록(약 1MB)을 한 번만 받아 넘긴다.
+     * tickerToCik 가 null 이면 직접 받는다.
+     */
+    public Registered register(Request req, Map<String, String> tickerToCik) {
         if (req == null || req.ticker() == null || req.ticker().isBlank()) {
             throw ApiException.invalid("ticker is required");
         }
@@ -46,7 +55,8 @@ public class CompanyRegistrationService {
         if (companies.findByTicker(ticker).isPresent()) {
             throw ApiException.conflict("ticker " + ticker + " already registered");
         }
-        String cik = CompanyTickersParser.parse(sec.companyTickers()).get(ticker);
+        Map<String, String> ciks = tickerToCik != null ? tickerToCik : CompanyTickersParser.parse(sec.companyTickers());
+        String cik = ciks.get(ticker);
         if (cik == null) {
             throw ApiException.invalid("ticker " + ticker + " not found in SEC");
         }
