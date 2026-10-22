@@ -3,11 +3,13 @@
 import { Html } from "@react-three/drei";
 import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import { projectLatLng } from "@/lib/geo/project";
-import type { RegionGroup } from "@/types";
+import type { RegionGroup, WorldPoint } from "@/types";
 import styles from "./RegionLabel.module.css";
 
 export interface RegionLabelProps {
   group: RegionGroup;
+  /** 이름표 자리 (도시 블록 남쪽 끝 아래). 없으면 지역 중심 */
+  position?: WorldPoint;
   active: boolean;
   onOpen: (regionId: string) => void;
 }
@@ -20,8 +22,8 @@ const canHover = () =>
  * 지역 이름표 (부루마블 도시 칸 느낌). 한글이라 3D 글자 대신 HTML로 띄운다.
  * 데스크톱은 호버, 모바일은 탭으로 목록을 연다. 클러스터가 아니면(기업 1개) 이름만.
  */
-export function RegionLabel({ group, active, onOpen }: RegionLabelProps) {
-  const p = projectLatLng(group.region.lat, group.region.lng);
+export function RegionLabel({ group, position, active, onOpen }: RegionLabelProps) {
+  const p = position ?? projectLatLng(group.region.lat, group.region.lng);
   if (!p) return null;
 
   const count = group.companies.length;

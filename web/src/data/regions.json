@@ -1,6 +1,5 @@
 [
-  { "id": "silicon-valley", "label": "실리콘밸리", "lat": 37.4, "lng": -122.05, "radiusKm": 40 },
-  { "id": "san-francisco", "label": "샌프란시스코", "lat": 37.77, "lng": -122.4, "radiusKm": 20 },
+  { "id": "silicon-valley", "label": "실리콘밸리", "lat": 37.44, "lng": -122.14, "radiusKm": 70 },
   { "id": "seattle", "label": "시애틀", "lat": 47.61, "lng": -122.25, "radiusKm": 30 },
   { "id": "los-angeles", "label": "로스앤젤레스", "lat": 34.05, "lng": -118.35, "radiusKm": 70 },
   { "id": "new-york", "label": "뉴욕", "lat": 40.75, "lng": -73.98, "radiusKm": 70 },

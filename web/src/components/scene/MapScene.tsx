@@ -17,9 +17,9 @@ import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
 import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
+import { buildMapLayout } from "@/lib/cluster/cityBlock";
 import { buildSizeViews } from "@/lib/cluster/sizeViews";
 import { DEFAULT_SIZE_METRIC, type SizeMetricId } from "@/lib/company/sizeMetric";
-import { projectLatLng } from "@/lib/geo/project";
 import { parseWeatherOverride } from "@/lib/weather/weather";
 import { panDelta } from "@/lib/camera/pan";
 import type { Company, MarketWeather, Region } from "@/types";
@@ -48,6 +48,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
   // 높이 기준별 묶음 결과. 데이터가 바뀔 때만 다시 계산
   const views = useMemo(() => buildSizeViews(companies, regions), [companies, regions]);
+  // 건물 자리: 매출 순서로 한 번 정하고 높이 기준을 바꿔도 그대로
+  const layout = useMemo(() => buildMapLayout(companies, regions), [companies, regions]);
   const { assignment, visibilityModes, hiddenCounts } = views[sizeMetric];
   // 서버에서는 null, 브라우저에서 주소를 읽는다 (hydration 어긋남 없음)
   const override = useSyncExternalStore(
@@ -131,7 +133,8 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         <UsMap />
 
         {companies.map((c) => {
-          const p = projectLatLng(c.hq.lat, c.hq.lng);
+          // 지역 기업은 도시 블록 자리, 혼자 있는 기업은 실제 본사 위치 (lib/cluster/cityBlock)
+          const p = layout.positions.get(c.ticker);
           if (!p) return null;
           return (
             <Building
@@ -151,6 +154,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           <RegionLabel
             key={g.region.id}
             group={g}
+            position={layout.labelPositions.get(g.region.id)}
             active={openRegionId === g.region.id || detailGroup?.region.id === g.region.id}
             onOpen={openRegion}
           />
@@ -158,7 +162,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
 
         <OrbitControls
           ref={controlsRef}
-          minDistance={20}
+          minDistance={10}
           maxDistance={200}
           makeDefault
           maxPolarAngle={Math.PI / 2.2}

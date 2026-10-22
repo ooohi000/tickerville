@@ -25,9 +25,9 @@ class RegionControllerTest {
         var res = assertThat(mvc.get().uri("/api/v1/regions")).hasStatusOk();
         res.bodyJson().extractingPath("$[0].id").isEqualTo("silicon-valley");
         res.bodyJson().extractingPath("$[0].label").isEqualTo("실리콘밸리");
-        res.bodyJson().extractingPath("$[0].lat").isEqualTo(37.4);
-        res.bodyJson().extractingPath("$[0].radiusKm").isEqualTo(40.0);
-        res.bodyJson().extractingPath("$[*].id").asArray().hasSize(17).contains("austin", "atlanta");
+        res.bodyJson().extractingPath("$[0].lat").isEqualTo(37.44);
+        res.bodyJson().extractingPath("$[0].radiusKm").isEqualTo(70.0);
+        res.bodyJson().extractingPath("$[*].id").asArray().hasSize(16).contains("austin", "atlanta");
     }
 
     @Test
