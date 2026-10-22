@@ -3,106 +3,72 @@
 import { useState } from "react";
 import { formatGrowth } from "@/lib/company/growth";
 import { formatUsdKo } from "@/lib/detail/money";
-import { getChartRange, type QuarterPoint } from "@/lib/detail/quarterChart";
+import type { QuarterPoint } from "@/lib/detail/quarterChart";
 import styles from "./CompanyDetailPanel.module.css";
 
-const W = 288;
-const H = 96;
-const LABEL_H = 14;
-const GAP = 2;
-const RADIUS = 4;
-
-export interface QuarterBarsProps {
-  title: string;
-  points: QuarterPoint[];
-  field: "revenue" | "netIncome";
-  color: string;
-  /** 음수 막대 색 (적자). 없으면 color */
-  negativeColor?: string;
-}
-
 /**
- * 분기 막대 하나짜리 차트 (한 지표 = 한 차트, 축 하나). 0 기준선에서 위·아래로.
- * 막대에 마우스·포커스를 올리면 위 줄에 그 분기 값이 나온다 (기본은 최신 분기).
+ * 최근 분기 매출·순이익 막대 (같은 단위 = 같은 축). 0 기준선에서 위·아래(적자)로.
+ * 막대에 마우스·포커스를 올리면 위 줄에 그 분기 값 (기본은 최신 분기, 최신 분기는 밝게).
  */
-export function QuarterBars({ title, points, field, color, negativeColor = color }: QuarterBarsProps) {
+export function QuarterBars({ points }: { points: QuarterPoint[] }) {
   const [active, setActive] = useState<number | null>(null);
-  const range = getChartRange(points, field);
-  if (!range || points.length === 0) {
-    return (
-      <section className={styles.chart}>
-        <h3 className={styles.sectionTitle}>{title}</h3>
-        <p className={styles.muted}>데이터 없음</p>
-      </section>
-    );
+  const values = points.flatMap((p) => [p.revenue, p.netIncome]).filter((v): v is number => v !== null);
+  if (points.length === 0 || values.length === 0) {
+    return <p className={styles.muted}>분기 데이터 없음</p>;
   }
 
-  const shown = points[active ?? points.length - 1];
-  const plotH = H - LABEL_H;
-  const span = range.max - range.min || 1;
-  const y = (v: number) => ((range.max - v) / span) * plotH;
-  const zeroY = y(0);
-  const slot = W / points.length;
-  const barW = Math.max(4, slot - GAP * 2);
-  const value = shown[field];
+  const max = Math.max(0, ...values);
+  const min = Math.min(0, ...values);
+  const span = max - min || 1;
+  const pct = (v: number) => `${(Math.abs(v) / span) * 100}%`;
+  const zero = `${(max / span) * 100}%`;
+  const shownIndex = active ?? points.length - 1;
+  const shown = points[shownIndex];
 
   return (
-    <section className={styles.chart}>
-      <div className={styles.chartHead}>
-        <h3 className={styles.sectionTitle}>{title}</h3>
-        <p className={styles.readout} aria-live="polite">
-          <span className={styles.muted}>{shown.label}</span> <strong>{formatUsdKo(value)}</strong>
-          {field === "revenue" && shown.revenueYoy !== null && (
-            <span className={styles.muted}> · 전년 대비 {formatGrowth(shown.revenueYoy)}</span>
-          )}
-          {field === "netIncome" && value !== null && value < 0 && <span className={styles.loss}> 적자</span>}
-        </p>
+    <div className={styles.bars}>
+      <p className={styles.readout} aria-live="polite">
+        <span className={styles.faint}>{shown.label}</span> 매출 <b>{formatUsdKo(shown.revenue)}</b>
+        {shown.revenueYoy !== null && <span className={styles.up}> {formatGrowth(shown.revenueYoy)}</span>} · 순이익{" "}
+        <b className={shown.netIncome !== null && shown.netIncome < 0 ? styles.down : undefined}>
+          {formatUsdKo(shown.netIncome)}
+        </b>
+      </p>
+      <div className={styles.plot}>
+        <div className={styles.zeroLine} style={{ top: zero }} />
+        {points.map((p, i) => (
+          <button
+            type="button"
+            key={p.key}
+            className={i === shownIndex ? `${styles.col} ${styles.colActive}` : styles.col}
+            onPointerEnter={() => setActive(i)}
+            onPointerLeave={() => setActive(null)}
+            onFocus={() => setActive(i)}
+            onBlur={() => setActive(null)}
+            aria-label={`${p.label} 매출 ${formatUsdKo(p.revenue)}, 순이익 ${formatUsdKo(p.netIncome)}`}
+          >
+            {[p.revenue, p.netIncome].map((v, k) =>
+              v === null ? (
+                <span key={k} className={styles.barSlot} />
+              ) : (
+                <span key={k} className={styles.barSlot}>
+                  <span
+                    className={`${styles.bar} ${k === 0 ? styles.barRevenue : styles.barProfit} ${v < 0 ? styles.barLoss : ""}`}
+                    style={v >= 0 ? { bottom: `calc(100% - ${zero})`, height: pct(v) } : { top: zero, height: pct(v) }}
+                  />
+                </span>
+              ),
+            )}
+          </button>
+        ))}
       </div>
-      <svg viewBox={`0 0 ${W} ${H}`} className={styles.svg} role="img" aria-label={`${title} 최근 ${points.length}분기`}>
-        <line x1={0} x2={W} y1={zeroY} y2={zeroY} className={styles.baseline} />
-        {points.map((p, i) => {
-          const v = p[field];
-          const x = i * slot + GAP;
-          const isActive = (active ?? points.length - 1) === i;
-          const bar =
-            v === null ? null : (
-              <path
-                d={barPath(x, barW, zeroY, y(v), RADIUS)}
-                fill={v < 0 ? negativeColor : color}
-                opacity={isActive ? 1 : 0.55}
-              />
-            );
-          return (
-            <g
-              key={p.key}
-              tabIndex={0}
-              onPointerEnter={() => setActive(i)}
-              onFocus={() => setActive(i)}
-              onPointerLeave={() => setActive(null)}
-              onBlur={() => setActive(null)}
-              aria-label={`${p.label} ${formatUsdKo(v)}`}
-            >
-              {/* 막대보다 넓은 투명 영역 = 마우스 잡기 쉬운 칸 */}
-              <rect x={i * slot} y={0} width={slot} height={H} fill="transparent" />
-              {bar}
-              <text x={x + barW / 2} y={H - 3} textAnchor="middle" className={styles.axisLabel}>
-                {p.label.replace(/^FY(\d\d) /, "$1")}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-    </section>
+      <div className={styles.axis} aria-hidden="true">
+        {points.map((p, i) => (
+          <span key={p.key} className={i === shownIndex ? styles.axisActive : undefined}>
+            {p.label.replace(/^FY(\d\d) Q/, "$1Q")}
+          </span>
+        ))}
+      </div>
+    </div>
   );
-}
-
-/** 0 기준선에서 값 쪽 끝만 둥근 막대 (위로든 아래로든) */
-function barPath(x: number, w: number, zeroY: number, valueY: number, r: number): string {
-  const h = Math.abs(zeroY - valueY);
-  const rr = Math.min(r, h, w / 2);
-  if (valueY <= zeroY) {
-    // 위로: 위쪽 모서리 둥글게
-    return `M${x},${zeroY} V${valueY + rr} Q${x},${valueY} ${x + rr},${valueY} H${x + w - rr} Q${x + w},${valueY} ${x + w},${valueY + rr} V${zeroY} Z`;
-  }
-  return `M${x},${zeroY} V${valueY - rr} Q${x},${valueY} ${x + rr},${valueY} H${x + w - rr} Q${x + w},${valueY} ${x + w},${valueY - rr} V${zeroY} Z`;
 }

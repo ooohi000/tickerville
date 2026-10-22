@@ -47,3 +47,10 @@ a {
     color-scheme: dark;
   }
 }
+
+/* 간판과 같은 한글 굵은 글꼴 (public/fonts, SIL OFL) — HUD 패널의 티커·D-day */
+@font-face {
+  font-family: "Black Han Sans";
+  src: url("/fonts/BlackHanSans.woff") format("woff");
+  font-display: swap;
+}

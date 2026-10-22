@@ -24,6 +24,11 @@ import { parseWeatherOverride } from "@/lib/weather/weather";
 import { panDelta } from "@/lib/camera/pan";
 import type { Company, MarketWeather, Region } from "@/types";
 
+/** 캔버스 위에 띄운 HTML 버튼·링크(지역 이름표 등)에서 시작된 이벤트인가 */
+function isFromHtmlControl(target: EventTarget | null): boolean {
+  return target instanceof Element && target.closest("button, a") !== null;
+}
+
 // 개발용 ?mw=10 날씨 미리보기. 주소는 바뀌지 않으니 구독할 것이 없다
 const noopSubscribe = () => () => {};
 const readWeatherOverride = () => parseWeatherOverride(window.location.search);
@@ -118,9 +123,14 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
     <>
       <Canvas
         camera={{ position: [0, 70, 70], fov: 45 }}
-        shadows
+        // three 0.186 에서 PCFSoftShadowMap 이 빠져서 기본값(soft)이면 경고 → percentage(PCF)로 명시
+        shadows="percentage"
         // 빈 곳(바다·땅) 클릭하면 지역 목록만 닫는다. 상세 패널과 선택은 유지 (지도를 돌리다 닫히지 않게)
-        onPointerMissed={() => setOpenRegionId(null)}
+        // 지역 이름표(HTML 버튼) 클릭도 캔버스로 전달돼 "빈 곳"으로 잡힌다 → 버튼에서 온 클릭은 무시 (안 그러면 열자마자 닫힘)
+        onPointerMissed={(e) => {
+          if (isFromHtmlControl(e.target)) return;
+          setOpenRegionId(null);
+        }}
       >
         <Sky weatherIndex={marketWeather.value} />
 
