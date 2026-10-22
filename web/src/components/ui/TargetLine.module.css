@@ -1,0 +1,76 @@
+/* 조준선 HUD. 지도 위·패널 아래 (패널 z-index 30) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 25;
+  pointer-events: none;
+}
+
+/* 선이 건물에서 패널 쪽으로 그어진다 (pathLength=1 이라 길이와 상관없이 0.5초) */
+.line {
+  stroke: #4fd8ff;
+  stroke-width: 1.25;
+  stroke-opacity: 0.75;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 0.5s ease-out 0.1s forwards;
+}
+
+.outer {
+  fill: none;
+  stroke: rgba(79, 216, 255, 0.55);
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.inner {
+  fill: none;
+  stroke: #4fd8ff;
+  stroke-width: 2;
+}
+
+.dot {
+  fill: #4fd8ff;
+}
+
+.label {
+  fill: #4fd8ff;
+  font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  paint-order: stroke;
+  stroke: rgba(4, 7, 13, 0.85);
+  stroke-width: 3px;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .outer {
+    animation: none;
+  }
+}

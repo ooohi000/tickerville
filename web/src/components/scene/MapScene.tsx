@@ -7,6 +7,9 @@ import { Vector3 } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { Building } from "@/components/building/Building";
 import { CameraFit } from "@/components/scene/CameraFit";
+import { CameraFocus } from "@/components/scene/CameraFocus";
+import { TargetTracker, type TargetSink } from "@/components/scene/TargetTracker";
+import { TargetLine } from "@/components/ui/TargetLine";
 import { CompanyDetailPanel } from "@/components/detail/CompanyDetailPanel";
 import { RegionLabel } from "@/components/cluster/RegionLabel";
 import { UsMap } from "@/components/map/UsMap";
@@ -19,7 +22,10 @@ import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
 import { buildMapLayout } from "@/lib/cluster/cityBlock";
 import { buildSizeViews } from "@/lib/cluster/sizeViews";
-import { DEFAULT_SIZE_METRIC, type SizeMetricId } from "@/lib/company/sizeMetric";
+import { formatLatLng } from "@/lib/camera/targetLine";
+import { getBuildingDimensions } from "@/lib/company/buildingSpec";
+import { DEFAULT_SIZE_METRIC, SIZE_METRICS, getSizeValue, type SizeMetricId } from "@/lib/company/sizeMetric";
+import { MAP_HEIGHT } from "@/lib/geo/usStates";
 import { parseWeatherOverride } from "@/lib/weather/weather";
 import { panDelta } from "@/lib/camera/pan";
 import type { Company, MarketWeather, Region } from "@/types";
@@ -77,6 +83,19 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
     setDetailTicker(ticker);
     setOpenRegionId(null);
   };
+  // 조준선: 상세 패널이 열린 건물의 3D 위치(몸통 중간 높이) → TargetTracker 가 화면 좌표로 바꿔 TargetLine 에 넘긴다
+  const targetSinkRef = useRef<TargetSink | null>(null);
+  const detailCompany = detailTicker ? (companies.find((c) => c.ticker === detailTicker) ?? null) : null;
+  const detailPos = detailTicker ? layout.positions.get(detailTicker) : undefined;
+  const targetWorld: [number, number, number] | null =
+    detailCompany && detailPos
+      ? [
+          detailPos.x,
+          MAP_HEIGHT +
+            getBuildingDimensions(getSizeValue(detailCompany, sizeMetric), SIZE_METRICS[sizeMetric].ranges).bodyHeight * 0.6,
+          detailPos.z,
+        ]
+      : null;
   const openRegion = (regionId: string) => {
     setDetailTicker(null);
     setOpenRegionId(regionId);
@@ -179,6 +198,9 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         />
         {/* 첫 화면 구도 (화면 비율에 맞춰 본토 전체) — 0 키가 여기로 돌아온다 */}
         <CameraFit />
+        <TargetTracker world={targetWorld} sinkRef={targetSinkRef} />
+        {/* 상세 패널을 열면 그 건물로 날아가서 패널에 안 가리는 자리에 둔다 */}
+        <CameraFocus focusKey={detailTicker} building={targetWorld} />
       </Canvas>
 
       <TopLeftHud>
@@ -187,6 +209,13 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         <MarketWeatherBadge data={marketWeather} />
         <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />
       </TopLeftHud>
+      {detailCompany && (
+        <TargetLine
+          key={detailCompany.ticker}
+          label={`${detailCompany.ticker} · ${formatLatLng(detailCompany.hq.lat, detailCompany.hq.lng)}`}
+          sinkRef={targetSinkRef}
+        />
+      )}
       {detailTicker ? (
         <CompanyDetailPanel
           key={detailTicker}

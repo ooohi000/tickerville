@@ -54,6 +54,8 @@ export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: Compa
       onClose={onClose}
       onBack={onBack}
       backLabel={backLabel}
+      targetAnchor
+      targetReady={state.status !== "loading"}
     >
       {state.status === "loading" && <p className={styles.muted}>불러오는 중…</p>}
       {state.status === "error" && <p className={styles.muted}>{state.message}</p>}
