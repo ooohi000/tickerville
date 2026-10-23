@@ -87,3 +87,4 @@
   .eraGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .footer { flex-direction: column-reverse; align-items: stretch; text-align: center; }
 }
+.notice a { color: #9fb8cc; text-decoration: underline; }

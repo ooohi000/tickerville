@@ -21,6 +21,7 @@ import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
 import { WelcomeCard } from "@/components/ui/WelcomeCard";
+import { AboutLink } from "@/components/ui/AboutLink";
 import { EraPicker } from "@/components/era/EraPicker";
 import { EraRoot, useEra, useEraFade } from "@/components/era/useEra";
 import { isBeforeFounding } from "@/lib/era/eras";
@@ -212,6 +213,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
 
       <EraRoot />
       <WelcomeCard companyCount={companies.length} />
+      <AboutLink />
       <TopLeftHud>
         <EraPicker />
         {usingSample && <SampleDataNotice />}

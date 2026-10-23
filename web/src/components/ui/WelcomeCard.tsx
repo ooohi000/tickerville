@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { setEra, useEra } from "@/components/era/useEra";
 import { ERA_IDS, ERAS } from "@/lib/era/eras";
@@ -91,7 +92,12 @@ export function WelcomeCard({ companyCount }: { companyCount: number }) {
         </fieldset>
 
         <footer className={styles.footer}>
-          <p className={styles.notice}>주가·시가총액은 보여주지 않아요 · 투자 권유가 아니에요</p>
+          <p className={styles.notice}>
+            주가·시가총액은 보여주지 않아요 · 투자 권유가 아니에요 ·{" "}
+            <Link href="/about" onClick={() => welcomedStore.set(true)}>
+              소개·데이터 출처
+            </Link>
+          </p>
           <button ref={startRef} type="button" className={styles.start} onClick={() => welcomedStore.set(true)}>
             {era.year}년 {era.leader.ko}{era.id === "2026" ? "로" : " 자리에서"} 시작하기
           </button>

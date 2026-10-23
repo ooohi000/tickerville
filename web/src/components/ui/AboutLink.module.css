@@ -1,0 +1,18 @@
+.link {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 20;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(27, 36, 48, 0.75);
+  color: #c3cad3;
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 11px;
+}
+
+.link:hover {
+  color: #ffffff;
+  background: rgba(27, 36, 48, 0.95);
+}
+
