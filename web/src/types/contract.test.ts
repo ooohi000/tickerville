@@ -41,6 +41,7 @@ const dataset = {
       publicFloatAsOf: "2026-07-27",
       filings30d: { material: 3, insider: 14 },
       memo: null,
+      founded: { year: 1993, noteKo: null },
     },
   ],
 } satisfies CompanyDataset;

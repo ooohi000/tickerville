@@ -43,7 +43,7 @@ class CompanyUniverseSyncTest {
         @Bean
         CompanyUniverse universe() {
             return new CompanyUniverse(List.of(
-                    new CompanyUniverse.Entry("KO", Sector.CONSUMER, "코카콜라", "콜라 등 음료 원액과 브랜드를 파는 음료 기업"),
+                    new CompanyUniverse.Entry("KO", Sector.CONSUMER, "코카콜라", "콜라 등 음료 원액과 브랜드를 파는 음료 기업", 1886, null),
                     new CompanyUniverse.Entry("AAPL", Sector.TECH, "애플", "아이폰 기업"),
                     new CompanyUniverse.Entry("AMZN", Sector.CONSUMER, "아마존", "온라인 쇼핑과 AWS"),
                     new CompanyUniverse.Entry("ZZZZ", Sector.OTHER, "없는 회사", "SEC 에 없음")));
@@ -62,7 +62,7 @@ class CompanyUniverseSyncTest {
     }
 
     @Test
-    @DisplayName("없는 기업은 등록, 있는 기업은 한글 이름·소개 갱신, SEC 에 없는 티커는 실패 목록에 (나머지는 계속)")
+    @DisplayName("없는 기업은 등록, 있는 기업은 한글 이름·소개·설립연도 갱신, SEC 에 없는 티커는 실패 목록에 (나머지는 계속)")
     void appliesUniverse() {
         CompanyUniverseSync.Result r = sync.apply();
 
@@ -80,6 +80,8 @@ class CompanyUniverseSyncTest {
 
         assertThat(companies.findByTicker("KO").orElseThrow().getDescriptionKo())
                 .isEqualTo("콜라 등 음료 원액과 브랜드를 파는 음료 기업");
+        assertThat(companies.findByTicker("KO").orElseThrow().getFoundedYear()).isEqualTo(1886);
+        assertThat(amzn.getFoundedYear()).as("파일에 없으면 null").isNull();
         // 새 티커가 여러 개여도 SEC 티커 목록은 한 번만
         assertThat(sec.calls).filteredOn("tickers"::equals).hasSize(1);
     }

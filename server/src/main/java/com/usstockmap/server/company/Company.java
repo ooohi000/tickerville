@@ -71,6 +71,13 @@ public class Company {
     @Column(columnDefinition = "text")
     private String memo;
 
+    /** 설립연도 (직접 관리, universe.csv). 전신이 있으면 전신 기준 */
+    private Integer foundedYear;
+
+    /** 설립연도 메모 (예: "전신 맨해튼 컴퍼니") */
+    @Column(length = 40)
+    private String foundedNoteKo;
+
     @Column(length = 200)
     private String secStreet;
 
@@ -131,6 +138,12 @@ public class Company {
     /** 한 줄 소개 (직접 관리, universe.csv) */
     public void changeDescriptionKo(String descriptionKo) {
         this.descriptionKo = descriptionKo;
+    }
+
+    /** 설립연도·메모 (직접 관리, universe.csv) */
+    public void changeFounded(Integer year, String noteKo) {
+        this.foundedYear = year;
+        this.foundedNoteKo = noteKo;
     }
 
     /** 업종 (직접 관리, universe.csv 가 SIC 추정보다 우선) */

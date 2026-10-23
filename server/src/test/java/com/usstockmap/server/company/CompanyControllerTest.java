@@ -36,7 +36,8 @@ class CompanyControllerTest {
                         new CompanyResponse.Hq("New York", "NY", 40.7559, -73.9754),
                         270_000_000_000L, 58_000_000_000L, 4_000_000_000_000L,
                         null, 0.06, 650_000_000_000L, LocalDate.of(2026, 6, 30),
-                        new CompanyResponse.FilingActivity(6, 10), null))));
+                        new CompanyResponse.FilingActivity(6, 10), null,
+                        new CompanyResponse.Founded(1799, "전신 맨해튼 컴퍼니")))));
 
         assertThat(mvc.get().uri("/api/v1/companies"))
                 .hasStatusOk()
@@ -56,7 +57,8 @@ class CompanyControllerTest {
                             "publicFloatUsd": 650000000000,
                             "publicFloatAsOf": "2026-06-30",
                             "filings30d": { "material": 6, "insider": 10 },
-                            "memo": null
+                            "memo": null,
+                            "founded": { "year": 1799, "noteKo": "전신 맨해튼 컴퍼니" }
                           }]
                         }
                         """);
@@ -65,7 +67,7 @@ class CompanyControllerTest {
     static final CompanyResponse JPM = new CompanyResponse("JPM", "JPMorgan Chase", "JP모건", "finance",
             new CompanyResponse.Hq("New York", "NY", 40.7559, -73.9754),
             270_000_000_000L, 58_000_000_000L, 4_000_000_000_000L, null, 0.06, 650_000_000_000L,
-            java.time.LocalDate.of(2026, 6, 30), new CompanyResponse.FilingActivity(6, 10), null);
+            java.time.LocalDate.of(2026, 6, 30), new CompanyResponse.FilingActivity(6, 10), null, null);
 
     @Test
     @DisplayName("상세 계약 모양: 없는 값도 null 로 남기고, 실적 요약까지")

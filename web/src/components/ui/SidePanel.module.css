@@ -252,3 +252,47 @@
   padding-bottom: 8px;
   border-bottom: 3px double #141210;
 }
+
+/* 1795 양피지: 누런 얼룩 + 가장자리 그을림 */
+:global(html[data-era="1795"]) .panel {
+  background:
+    radial-gradient(ellipse at 20% 15%, rgba(255, 248, 225, 0.55), transparent 45%),
+    radial-gradient(ellipse at 85% 90%, rgba(150, 110, 60, 0.18), transparent 50%),
+    radial-gradient(ellipse at center, transparent 55%, rgba(110, 75, 35, 0.28) 100%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.45  0 0 0 0 0.32  0 0 0 0 0.15  0 0 0 0.12 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    #efe2c4;
+  box-shadow: 0 8px 24px rgba(40, 25, 10, 0.4);
+}
+
+:global(html[data-era="1795"]) .header {
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(122, 90, 52, 0.6);
+  box-shadow: 0 3px 0 -2px rgba(122, 90, 52, 0.6);
+}
+
+/* 1863 전보 용지: 옅은 종이 + 위 파란 띠 + 줄 */
+:global(html[data-era="1863"]) .panel {
+  background:
+    repeating-linear-gradient(transparent 0 27px, rgba(31, 58, 90, 0.07) 27px 28px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3  0 0 0 0 0.3  0 0 0 0 0.25  0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    #f3ebd3;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+:global(html[data-era="1863"]) .header {
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(31, 58, 90, 0.6);
+}
+
+/* 1935 아르데코: 금색 꺾쇠를 크게, 제목 아래 금빛 줄 */
+:global(html[data-era="1935"]) .corner {
+  width: 22px;
+  height: 22px;
+  border-color: #d4af37;
+}
+
+:global(html[data-era="1935"]) .header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #d4af37 20%, #f5d97a 50%, #d4af37 80%, transparent) 1;
+}

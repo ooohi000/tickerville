@@ -52,6 +52,41 @@ export function useEra(): EraSpec {
   return getEra(id);
 }
 
+/** "그 시대에 없던 기업 흐리게" 켜기·끄기 (기본 켜짐). 같은 방식으로 이 브라우저에만 */
+const FADE_KEY = "tickerville.eraFade";
+const fadeListeners = new Set<() => void>();
+let fadeMemory: boolean | null = null;
+
+function readFade(): boolean {
+  if (fadeMemory !== null) return fadeMemory;
+  try {
+    return window.localStorage.getItem(FADE_KEY) !== "off";
+  } catch {
+    return true;
+  }
+}
+
+function subscribeFade(listener: () => void) {
+  fadeListeners.add(listener);
+  return () => {
+    fadeListeners.delete(listener);
+  };
+}
+
+export function setEraFade(on: boolean) {
+  fadeMemory = on;
+  try {
+    window.localStorage.setItem(FADE_KEY, on ? "on" : "off");
+  } catch {
+    // 기억 못 해도 이번 방문 동안은 유지
+  }
+  for (const l of fadeListeners) l();
+}
+
+export function useEraFade(): boolean {
+  return useSyncExternalStore(subscribeFade, readFade, () => true);
+}
+
 /** <html data-era="1905"> — 패널 스킨 CSS 가 이 값을 본다 */
 export function EraRoot() {
   const era = useEra();

@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import { ERA_IDS, ERAS } from "@/lib/era/eras";
 import styles from "./EraPicker.module.css";
-import { setEra, useEra } from "./useEra";
+import { setEra, setEraFade, useEra, useEraFade } from "./useEra";
 
 /** 왼쪽 위 "시대 고르기". 누르면 대통령 4명 + 현재 애널리스트 목록이 펼쳐진다 */
 export function EraPicker() {
   const era = useEra();
+  const fade = useEraFade();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -65,6 +66,10 @@ export function EraPicker() {
               </button>
             );
           })}
+          <label className={styles.fade}>
+            <input type="checkbox" checked={fade} onChange={(e) => setEraFade(e.target.checked)} />
+            그 해에 없던 기업은 흐리게 (눌러서 볼 수는 있어요)
+          </label>
         </div>
       )}
     </div>

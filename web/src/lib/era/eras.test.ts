@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BASE_SCENE, DEFAULT_ERA, ERAS, ERA_IDS, describeFounding, eraSkyColor, formatBriefing, getEra, isEraId } from "./eras";
+import { BASE_SCENE, DEFAULT_ERA, ERAS, ERA_IDS, describeFounding, eraSkyColor, formatBriefing, getEra, isBeforeFounding, isEraId } from "./eras";
 
 const HEX = /^#[0-9a-f]{6}$/i;
 
@@ -43,6 +43,15 @@ describe("isEraId", () => {
     expect(isEraId("1906")).toBe(false);
     expect(isEraId(1905)).toBe(false);
     expect(isEraId(null)).toBe(false);
+  });
+});
+
+describe("isBeforeFounding", () => {
+  it("설립 전이면 true, 같은 해·이후·모름은 false", () => {
+    expect(isBeforeFounding(1993, 1905)).toBe(true);
+    expect(isBeforeFounding(1905, 1905)).toBe(false);
+    expect(isBeforeFounding(1892, 1905)).toBe(false);
+    expect(isBeforeFounding(null, 1905)).toBe(false);
   });
 });
 

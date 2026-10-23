@@ -103,3 +103,19 @@
 @media (max-width: 719px) {
   :global(html[data-era="1905"]) .eyebrow { font-size: 15px; }
 }
+
+/* 시대 테마: 그 해에 있던 회사인지 */
+.founding { padding: 6px 10px; border: 1px solid var(--hud-line); color: var(--hud-text); font-size: 12px; font-weight: 700; }
+.founding span { color: var(--hud-muted); font-weight: 400; }
+.foundingLater { border-style: dashed; color: var(--hud-muted); }
+
+/* 1795 장부 · 1863 전보 · 1935 노변 보고: 안쪽 칸 모양 */
+:global(html[data-era="1795"]) .tileValue,
+:global(html[data-era="1795"]) .ticker { font-family: "Nanum Myeongjo", "Old Standard TT", serif; font-weight: 700; }
+:global(html[data-era="1795"]) .tile { border-style: solid; border-width: 0 0 1px; border-color: rgba(122, 90, 52, 0.4); }
+:global(html[data-era="1795"]) .sectionTitle { font-style: italic; letter-spacing: 0.04em; }
+:global(html[data-era="1863"]) .ticker { font-family: "Courier New", ui-monospace, monospace; font-weight: 700; letter-spacing: 0.08em; }
+:global(html[data-era="1863"]) .tile { border-style: dashed; }
+:global(html[data-era="1863"]) .tileValue { font-family: "Courier New", ui-monospace, monospace; }
+:global(html[data-era="1935"]) .tile { border-color: rgba(212, 175, 55, 0.3); background: linear-gradient(180deg, rgba(212, 175, 55, 0.06), transparent); }
+:global(html[data-era="1935"]) .sectionTitle { letter-spacing: 0.24em; }

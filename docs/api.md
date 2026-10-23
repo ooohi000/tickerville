@@ -59,7 +59,8 @@
       "publicFloatUsd": 2900000000000,
       "publicFloatAsOf": "2026-07-27",
       "filings30d": { "material": 3, "insider": 14 },
-      "memo": null
+      "memo": null,
+      "founded": { "year": 1993, "noteKo": null }
     }
   ]
 }
@@ -80,6 +81,9 @@
 - `publicFloatUsd` / `publicFloatAsOf`: 10-K 표지의 `dei:EntityPublicFloat`(내부자 지분 제외 시가총액)와 그 기준일. **연 1회, 반기 말 기준**이라 현재 시총과 다를 수 있다. 화면에 기준일과 함께 표시
 - `filings30d`: 최근 30일 공시 건수 (SEC `submissions`의 최근 공시 목록, 서버 계산)
   - `material` = 폼 `8-K`·`8-K/A` 건수, `insider` = 폼 `4`·`4/A` 건수
+- `founded`: 설립연도 (`universe.csv` 직접 관리 — 회사가 스스로 밝히는 연도, 전신이 있으면 전신 기준, 분사는 분사 연도). 모르면 `founded` 자체가 `null`
+  - `noteKo`: 전신 이름 같은 20자 이내 메모 (`"전신 맨해튼 컴퍼니"`), 없으면 `null`
+  - 쓰임: 시대 테마에서 그 해에 없던 기업을 흐리게 + "N년 설립" 문구
 
 ### `GET /api/v1/regions`
 → 타입 `Region[]`. `regions.json`과 같은 모양.

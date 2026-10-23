@@ -24,6 +24,9 @@ import { EventHeat } from "./EventHeat";
 const BODY_COLOR = "#e8e2d4";
 const ROOF_COLOR = "#c0503a";
 const HIGHLIGHT_EMISSIVE = "#f5c542";
+/** 시대 테마: 그 해에 아직 없던 기업 — 색을 빼고 반투명 (누를 수는 있다) */
+const FADED_COLOR = "#d6d2c6";
+const FADED_OPACITY = 0.5;
 
 export interface BuildingProps {
   company: Company;
@@ -35,6 +38,8 @@ export interface BuildingProps {
   /** 클러스터 대표일 때 숨은 기업 수 → 간판 "+N" (getHiddenCounts) */
   hiddenCount?: number;
   highlighted?: boolean;
+  /** 고른 시대에 아직 없던 기업 (lib/era/eras isBeforeFounding) */
+  faded?: boolean;
   onSelect?: (ticker: string) => void;
 }
 
@@ -49,6 +54,7 @@ export function Building({
   visibilityMode = "always",
   hiddenCount = 0,
   highlighted = false,
+  faded = false,
   onSelect,
 }: BuildingProps) {
   const ref = useRef<Group>(null);
@@ -57,6 +63,9 @@ export function Building({
     SIZE_METRICS[sizeMetric].ranges,
   );
   const emissive = highlighted ? HIGHLIGHT_EMISSIVE : "#000000";
+  const look: SurfaceLook = faded
+    ? { body: FADED_COLOR, roof: FADED_COLOR, emissive, transparent: true, opacity: FADED_OPACITY }
+    : { body: BODY_COLOR, roof: ROOF_COLOR, emissive, transparent: false, opacity: 1 };
 
   // 선택된 건물은 거리와 상관없이 보인다
   useDistanceVisible(ref, (dist) => highlighted || isVisibleAt(visibilityMode, dist));
@@ -75,12 +84,21 @@ export function Building({
       onClick={handleClick}
       name={company.ticker}
     >
-      <mesh position={[0, d.bodyHeight / 2, 0]} castShadow receiveShadow>
+      <mesh position={[0, d.bodyHeight / 2, 0]} castShadow={!faded} receiveShadow>
         <boxGeometry args={[d.width, d.bodyHeight, d.depth]} />
-        <meshStandardMaterial color={BODY_COLOR} emissive={emissive} emissiveIntensity={0.4} />
+        {/* transparent 는 재질을 새로 만들어야 반영된다 (three needsUpdate) → key 로 바꿔 끼운다 */}
+        <meshStandardMaterial
+          key={look.transparent ? "faded" : "solid"}
+          color={look.body}
+          emissive={look.emissive}
+          emissiveIntensity={0.4}
+          transparent={look.transparent}
+          opacity={look.opacity}
+          depthWrite={!look.transparent}
+        />
       </mesh>
       <EventHeat filings={company.filings30d} />
-      <Roof d={d} emissive={emissive} />
+      <Roof d={d} look={look} />
       {isHighGrowth(company.revenueGrowthYoy) && <Crane building={d} />}
       <Sign
         label={displayName(company)}
@@ -92,10 +110,26 @@ export function Building({
   );
 }
 
-function Roof({ d, emissive }: { d: BuildingDimensions; emissive: string }) {
+interface SurfaceLook {
+  body: string;
+  roof: string;
+  emissive: string;
+  transparent: boolean;
+  opacity: number;
+}
+
+function Roof({ d, look }: { d: BuildingDimensions; look: SurfaceLook }) {
   const y = d.bodyHeight + d.roofHeight / 2;
   const material = (
-    <meshStandardMaterial color={ROOF_COLOR} emissive={emissive} emissiveIntensity={0.4} />
+    <meshStandardMaterial
+      key={look.transparent ? "faded" : "solid"}
+      color={look.roof}
+      emissive={look.emissive}
+      emissiveIntensity={0.4}
+      transparent={look.transparent}
+      opacity={look.opacity}
+      depthWrite={!look.transparent}
+    />
   );
 
   switch (d.roof) {
@@ -104,21 +138,21 @@ function Roof({ d, emissive }: { d: BuildingDimensions; emissive: string }) {
     case "gable":
       // 4면 피라미드를 45° 돌려 상자 모서리에 맞춘다
       return (
-        <mesh position={[0, y, 0]} rotation={[0, Math.PI / 4, 0]} castShadow>
+        <mesh position={[0, y, 0]} rotation={[0, Math.PI / 4, 0]} castShadow={!look.transparent}>
           <coneGeometry args={[(d.width / 2) * Math.SQRT2, d.roofHeight, 4]} />
           {material}
         </mesh>
       );
     case "antenna":
       return (
-        <mesh position={[0, y, 0]} castShadow>
+        <mesh position={[0, y, 0]} castShadow={!look.transparent}>
           <cylinderGeometry args={[0.03, 0.03, d.roofHeight, 6]} />
           {material}
         </mesh>
       );
     case "spire":
       return (
-        <mesh position={[0, y, 0]} castShadow>
+        <mesh position={[0, y, 0]} castShadow={!look.transparent}>
           <coneGeometry args={[d.width * 0.3, d.roofHeight, 12]} />
           {material}
         </mesh>

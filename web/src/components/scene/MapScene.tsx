@@ -21,7 +21,8 @@ import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
 import { EraPicker } from "@/components/era/EraPicker";
-import { EraRoot, useEra } from "@/components/era/useEra";
+import { EraRoot, useEra, useEraFade } from "@/components/era/useEra";
+import { isBeforeFounding } from "@/lib/era/eras";
 import { buildMapLayout } from "@/lib/cluster/cityBlock";
 import { buildSizeViews } from "@/lib/cluster/sizeViews";
 import { formatLatLng } from "@/lib/camera/targetLine";
@@ -57,6 +58,7 @@ export interface MapSceneProps {
 export function MapScene({ companies, regions, marketWeather: apiWeather, usingSample }: MapSceneProps) {
   const controlsRef = useRef<OrbitControlsImpl>(null);
   const era = useEra();
+  const eraFade = useEraFade();
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
@@ -177,6 +179,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
               visibilityMode={visibilityModes.get(c.ticker)}
               hiddenCount={hiddenCounts.get(c.ticker)}
               highlighted={selectedTicker === c.ticker}
+              faded={eraFade && isBeforeFounding(c.founded?.year, era.year)}
               onSelect={openDetail}
             />
           );

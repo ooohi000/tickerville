@@ -75,7 +75,7 @@ com.usstockmap.server
 - `./gradlew build` 빌드
 
 ## 기업 목록
-- 지도에 올릴 기업은 `src/main/resources/companies/universe.csv` 하나에서 관리한다 (ticker,sector,name_ko,description_ko — 소개에 쉼표 금지, `·` 사용).
-- 업종·한글 이름·소개는 이 파일이 원본이다 (DB 를 직접 고치면 다음 수집 때 파일 값으로 돌아간다). 기업을 빼도 DB 에서 지우지는 않는다.
+- 지도에 올릴 기업은 `src/main/resources/companies/universe.csv` 하나에서 관리한다 (ticker,sector,name_ko,description_ko,founded_year,founded_note_ko — 소개에 쉼표 금지, `·` 사용).
+- 업종·한글 이름·소개·설립연도는 이 파일이 원본이다 (DB 를 직접 고치면 다음 수집 때 파일 값으로 돌아간다). 기업을 빼도 DB 에서 지우지는 않는다.
 - 티커는 SEC 표기 (`BRK-B`). 본사가 미국 밖으로 등록된 기업은 등록되지 않는다.
 

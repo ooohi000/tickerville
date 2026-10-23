@@ -136,6 +136,11 @@ export function formatBriefing(era: EraSpec, name: string): string {
   return era.briefingKo.replace("{name}", name);
 }
 
+/** 그 시대에 아직 없던 기업인가 (흐리게). 설립연도를 모르면 false */
+export function isBeforeFounding(founded: number | null | undefined, eraYear: number): boolean {
+  return founded != null && founded > eraYear;
+}
+
 /** 기업이 그 시대에 있었는가 — 설립연도를 모르면 null (흐리게 하지 않는다) */
 export function describeFounding(founded: number | null | undefined, eraYear: number): { existed: boolean; text: string } | null {
   if (founded == null) return null;

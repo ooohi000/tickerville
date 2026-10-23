@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 /**
  * universe.csv → DB 기업 목록 맞추기. SEC 전체 수집 직전에 돈다.
  * - 없는 티커: 등록 (SEC 이름·본사 → 좌표). SEC 티커 목록은 새 티커가 있을 때만 한 번 받는다.
- * - 있는 티커: 업종·한글 이름·소개를 파일 값으로 (바뀐 것만 저장)
+ * - 있는 티커: 업종·한글 이름·소개·설립연도를 파일 값으로 (바뀐 것만 저장)
  * - 파일에 없는 기업은 건드리지 않는다 (관리자 API 로 따로 등록한 기업)
  * 한 기업이 실패해도 나머지는 계속한다.
  */
@@ -74,7 +74,7 @@ public class CompanyUniverseSync {
         return new Result(registered, updated, failed);
     }
 
-    /** 직접 관리하는 값(업종·한글 이름·소개)을 파일 값으로. 바뀌었으면 true */
+    /** 직접 관리하는 값(업종·한글 이름·소개·설립연도)을 파일 값으로. 바뀌었으면 true */
     static boolean applyManagedFields(Company c, CompanyUniverse.Entry e) {
         boolean changed = false;
         if (c.getSector() != e.sector()) {
@@ -87,6 +87,10 @@ public class CompanyUniverseSync {
         }
         if (!Objects.equals(c.getDescriptionKo(), e.descriptionKo())) {
             c.changeDescriptionKo(e.descriptionKo());
+            changed = true;
+        }
+        if (!Objects.equals(c.getFoundedYear(), e.foundedYear()) || !Objects.equals(c.getFoundedNoteKo(), e.foundedNoteKo())) {
+            c.changeFounded(e.foundedYear(), e.foundedNoteKo());
             changed = true;
         }
         return changed;

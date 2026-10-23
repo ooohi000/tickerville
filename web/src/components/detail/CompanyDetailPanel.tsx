@@ -14,7 +14,7 @@ import { formatPerShare, formatRatio, formatUsdKo } from "@/lib/detail/money";
 import { buildQuarterPoints } from "@/lib/detail/quarterChart";
 import { getStatementRatios, isNegativeEquity } from "@/lib/detail/ratios";
 import { getYoyChanges } from "@/lib/detail/yoy";
-import { formatBriefing, type EraSpec } from "@/lib/era/eras";
+import { DEFAULT_ERA, describeFounding, formatBriefing, type EraSpec } from "@/lib/era/eras";
 import type { CompanyDetail, FinancialStatement } from "@/types";
 import styles from "./CompanyDetailPanel.module.css";
 import { QuarterBars } from "./QuarterBars";
@@ -83,6 +83,8 @@ function DetailBody({ detail, quarters, era }: { detail: CompanyDetail; quarters
   const next = nowDate && describeNextEarnings(earnings.next, nowDate);
   const last = nowDate && describeLastEarnings(earnings.lastReported, nowDate);
   const points = buildQuarterPoints(quarters, 8);
+  // 현재(2026) 테마에선 굳이 말하지 않는다
+  const founding = era.id === DEFAULT_ERA ? null : describeFounding(company.founded?.year, era.year);
 
   return (
     <div className={styles.body}>
@@ -91,6 +93,12 @@ function DetailBody({ detail, quarters, era }: { detail: CompanyDetail; quarters
         {profile?.exchange && ` · ${profile.exchange}`}
         {fiscal && ` · ${fiscal}`}
       </p>
+      {founding && (
+        <p className={founding.existed ? styles.founding : `${styles.founding} ${styles.foundingLater}`}>
+          {founding.text}
+          {company.founded?.noteKo && <span> ({company.founded.noteKo})</span>}
+        </p>
+      )}
       {profile?.descriptionKo && <p className={styles.description}>{profile.descriptionKo}</p>}
 
       {(next || last) && (

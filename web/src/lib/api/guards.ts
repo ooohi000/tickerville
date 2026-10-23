@@ -18,7 +18,8 @@ function isCompany(v: unknown): v is Company {
     !!c.hq &&
     Number.isFinite(c.hq.lat) &&
     Number.isFinite(c.hq.lng) &&
-    !!c.filings30d
+    !!c.filings30d &&
+    (c.founded == null || Number.isInteger(c.founded.year))
   );
 }
 

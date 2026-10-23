@@ -17,8 +17,16 @@ public record CompanyResponse(
         Long publicFloatUsd,
         LocalDate publicFloatAsOf,
         FilingActivity filings30d,
-        String memo
+        String memo,
+        Founded founded
 ) {
+
+    /** 설립연도 (universe.csv). 모르면 founded 자체가 null */
+    public record Founded(int year, String noteKo) {
+        static Founded of(Company c) {
+            return c.getFoundedYear() == null ? null : new Founded(c.getFoundedYear(), c.getFoundedNoteKo());
+        }
+    }
 
     public record Hq(String city, String state, double lat, double lng) {
     }
@@ -33,13 +41,13 @@ public record CompanyResponse(
         Hq hq = new Hq(c.getHqCity(), c.getHqState(), c.getHqLat(), c.getHqLng());
         if (s == null) {
             return new CompanyResponse(c.getTicker(), c.getName(), c.getNameKo(), c.getSector().value(), hq,
-                    null, null, null, null, null, null, null, FilingActivity.NONE, c.getMemo());
+                    null, null, null, null, null, null, null, FilingActivity.NONE, c.getMemo(), Founded.of(c));
         }
         return new CompanyResponse(c.getTicker(), c.getName(), c.getNameKo(), c.getSector().value(), hq,
                 s.getRevenueTtmUsd(), s.getNetIncomeTtmUsd(), s.getTotalAssetsUsd(),
                 s.getOperatingMarginTtm(), s.getRevenueGrowthYoy(),
                 s.getPublicFloatUsd(), s.getPublicFloatAsOf(),
                 new FilingActivity(s.getFilingsMaterial30d(), s.getFilingsInsider30d()),
-                c.getMemo());
+                c.getMemo(), Founded.of(c));
     }
 }

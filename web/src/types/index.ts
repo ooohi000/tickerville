@@ -51,6 +51,15 @@ export interface Company {
   filings30d: FilingActivity;
   /** 한 줄 메모. 상세 분석은 이후 단계 */
   memo?: string | null;
+  /** 설립연도 (서버 universe.csv). 모르면 null. 시대 테마에서 그 해에 없던 기업을 흐리게 */
+  founded?: Founded | null;
+}
+
+export interface Founded {
+  /** 회사가 스스로 밝히는 설립연도 (전신이 있으면 전신 기준) */
+  year: number;
+  /** "전신 맨해튼 컴퍼니" 같은 짧은 메모 */
+  noteKo: string | null;
 }
 
 /** 최근 공시 건수 (SEC submissions 기준) */

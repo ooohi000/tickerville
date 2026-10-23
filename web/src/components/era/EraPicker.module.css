@@ -96,3 +96,21 @@
   color: #9aa7b8;
   font-size: 11px;
 }
+
+.fade {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 8px 6px 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #c3cad3;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.fade input {
+  width: 16px;
+  height: 16px;
+  accent-color: #f5c542;
+}
