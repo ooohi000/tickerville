@@ -82,3 +82,10 @@ describe("parseWeatherOverride", () => {
     expect(parseWeatherOverride(search)).toBeNull();
   });
 });
+
+describe("WEATHER_ICON", () => {
+  it("모든 날씨에 그림이 있다", async () => {
+    const { WEATHER_ICON, WEATHER_THRESHOLDS } = await import("./weather");
+    for (const [w] of WEATHER_THRESHOLDS) expect(WEATHER_ICON[w]).toBeTruthy();
+  });
+});

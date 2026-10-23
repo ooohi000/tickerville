@@ -20,6 +20,7 @@ import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
 import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
+import { MarketSummary } from "@/components/ui/MarketSummary";
 import { WelcomeCard } from "@/components/ui/WelcomeCard";
 import { AboutLink } from "@/components/ui/AboutLink";
 import { EraPicker } from "@/components/era/EraPicker";
@@ -214,9 +215,12 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
       <EraRoot />
       <WelcomeCard companyCount={companies.length} />
       <AboutLink />
-      <TopLeftHud>
-        <EraPicker />
-        {usingSample && <SampleDataNotice />}
+      <TopLeftHud
+        lead={<EraPicker />}
+        summary={<MarketSummary weather={marketWeather} />}
+        notice={usingSample ? <SampleDataNotice /> : null}
+        hiddenOnSmall={detailTicker !== null || openGroup !== null}
+      >
         <MarketClockBadge />
         <MarketWeatherBadge data={marketWeather} />
         <SizeMetricToggle value={sizeMetric} onChange={setSizeMetric} />

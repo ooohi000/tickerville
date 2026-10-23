@@ -117,3 +117,11 @@
 
 .analyst { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; padding: 8px 6px 2px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
 .analyst p { color: #9aa7b8; font-size: 11px; }
+
+.who { white-space: nowrap; }
+
+/* 작은 화면: 얼굴 + 연도만 (이름은 메뉴에서) */
+@media (max-width: 719px) {
+  .who { display: none; }
+  .current { padding-right: 10px; }
+}

@@ -108,3 +108,12 @@ export function parseWeatherOverride(search: string): number | null {
   const v = Number(raw);
   return Number.isFinite(v) && v >= 0 && v <= 100 ? v : null;
 }
+
+/** 작은 화면 한 줄 요약용 날씨 그림 */
+export const WEATHER_ICON: Readonly<Record<Weather, string>> = {
+  sunny: "☀️",
+  partlyCloudy: "⛅",
+  cloudy: "☁️",
+  rain: "🌧️",
+  storm: "⛈️",
+};
