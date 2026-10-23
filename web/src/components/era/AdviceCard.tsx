@@ -3,8 +3,11 @@
 import { useState } from "react";
 import { formatAdviceSource, loadAdviceBook, type Advice, type AdviceBook, type Advisor } from "@/lib/era/advice";
 import { createDeck, draw, type Deck } from "@/lib/era/deck";
-import type { EraSpec } from "@/lib/era/eras";
+import { ERAS, type EraSpec } from "@/lib/era/eras";
+import { AFFINITIES, affinityFor, applyRead, readByAdvisor, untilNext, withJosa, type Affinity, type Rank } from "@/lib/era/progress";
 import styles from "./AdviceCard.module.css";
+import { Stamp } from "./Stamp";
+import { setReadingLog, useReadingLog } from "./useEra";
 
 /** 받은 묶음은 시대별로 한 번만 (패널을 닫았다 열어도 다시 받지 않는다) */
 const books = new Map<string, Promise<AdviceBook>>();
@@ -20,6 +23,9 @@ function getBook(era: EraSpec) {
 interface Shown {
   advice: Advice;
   advisor: Advisor;
+  /** 이번에 읽어서 오른 것 (없으면 null) */
+  promoted: Rank | null;
+  closer: Affinity | null;
 }
 
 /**
@@ -31,6 +37,7 @@ export function AdviceCard({ era }: { era: EraSpec }) {
   const [deck, setDeck] = useState<Deck | null>(null);
   const [failed, setFailed] = useState(false);
   const [showOriginal, setShowOriginal] = useState(false);
+  const log = useReadingLog();
 
   const next = async () => {
     try {
@@ -40,8 +47,10 @@ export function AdviceCard({ era }: { era: EraSpec }) {
       const advice = book.quotes[r.index];
       const advisor = book.advisors.find((a) => a.id === advice.advisor);
       if (!advisor) throw new Error(advice.advisor);
+      const outcome = applyRead(log, advice.id, advisor.id);
+      if (outcome.log !== log) setReadingLog(outcome.log);
       setDeck(r.deck);
-      setShown({ advice, advisor });
+      setShown({ advice, advisor, promoted: outcome.promoted, closer: outcome.closer });
       setShowOriginal(false);
       setFailed(false);
     } catch {
@@ -60,7 +69,21 @@ export function AdviceCard({ era }: { era: EraSpec }) {
           <figcaption className={styles.who}>
             <b>{shown.advisor.name.ko}</b>
             <span>{shown.advisor.role.ko}</span>
+            <AffinityLine count={readByAdvisor(log, shown.advisor.id)} />
           </figcaption>
+          {shown.closer && (
+            <p className={styles.closer}>
+              {withJosa(shown.advisor.name.ko, "과", "와")} 더 가까워졌어요 — <b>{shown.closer.ko}</b>
+            </p>
+          )}
+          {shown.promoted && era.id === "2026" && (
+            <div className={styles.promoted}>
+              <Stamp stamp={ERAS["2026"].stamp} label="PROMOTED" sub={`${shown.promoted.en} ANALYST`} placement="inline" />
+              <p>
+                승진했어요! 이제 <b>{shown.promoted.ko} 애널리스트</b>예요.
+              </p>
+            </div>
+          )}
           <blockquote className={styles.quote}>“{shown.advice.text.ko}”</blockquote>
           {showOriginal && (
             <blockquote className={styles.original} lang="en">
@@ -85,5 +108,17 @@ export function AdviceCard({ era }: { era: EraSpec }) {
         </figure>
       )}
     </section>
+  );
+}
+
+/** 친밀도: ♥ 3칸 + 단계 이름 + 다음 단계까지 */
+function AffinityLine({ count }: { count: number }) {
+  const a = affinityFor(count);
+  const left = untilNext(AFFINITIES, count);
+  return (
+    <span className={styles.affinity} aria-label={`친밀도 ${a.ko}, 이 참모의 조언 ${count}개 읽음`}>
+      <i aria-hidden="true">{"♥".repeat(a.hearts)}{"♡".repeat(3 - a.hearts)}</i> {a.ko} · 조언 {count}개 읽음
+      {left !== null && ` · ${left}개 더 읽으면 다음 단계`}
+    </span>
   );
 }

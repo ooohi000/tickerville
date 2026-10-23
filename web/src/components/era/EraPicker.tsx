@@ -1,14 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ERA_IDS, ERAS } from "@/lib/era/eras";
+import { ADVICE_TOTAL, DEFAULT_ERA, ERA_IDS, ERAS } from "@/lib/era/eras";
+import { RANKS, rankFor, totalRead, untilNext } from "@/lib/era/progress";
 import styles from "./EraPicker.module.css";
-import { setEra, setEraFade, useEra, useEraFade } from "./useEra";
+import { AnalystNameField } from "./AnalystNameField";
+import { setEra, setEraFade, useAnalystName, useEra, useEraFade, useReadingLog } from "./useEra";
 
 /** 왼쪽 위 "시대 고르기". 누르면 대통령 4명 + 현재 애널리스트 목록이 펼쳐진다 */
 export function EraPicker() {
   const era = useEra();
   const fade = useEraFade();
+  const analystName = useAnalystName();
+  const read = totalRead(useReadingLog());
+  const rank = rankFor(read);
+  const left = untilNext(RANKS, read);
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +38,7 @@ export function EraPicker() {
         {/* eslint-disable-next-line @next/next/no-img-element -- 작은 고정 이미지라 next/image 최적화가 필요 없다 */}
         <img src={`/personas/${era.image}-face.webp`} alt="" width={28} height={28} className={styles.face} />
         <span className={styles.year}>{era.year}</span>
-        <span className={styles.who}>{era.leader.ko}</span>
+        <span className={styles.who}>{era.id === DEFAULT_ERA && analystName ? analystName : era.leader.ko}</span>
         <span aria-hidden="true">▾</span>
       </button>
       {open && (
@@ -66,6 +72,13 @@ export function EraPicker() {
               </button>
             );
           })}
+          <div className={styles.analyst}>
+            <AnalystNameField />
+            <p>
+              {rank.ko} 애널리스트 · 읽은 조언 {read}/{ADVICE_TOTAL}
+              {left !== null && ` · ${left}개 더 읽으면 승진`}
+            </p>
+          </div>
           <label className={styles.fade}>
             <input type="checkbox" checked={fade} onChange={(e) => setEraFade(e.target.checked)} />
             그 해에 없던 기업은 흐리게 (눌러서 볼 수는 있어요)

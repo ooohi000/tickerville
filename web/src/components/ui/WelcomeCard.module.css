@@ -88,3 +88,4 @@
   .footer { flex-direction: column-reverse; align-items: stretch; text-align: center; }
 }
 .notice a { color: #9fb8cc; text-decoration: underline; }
+.name { max-width: 360px; margin-top: 6px; }

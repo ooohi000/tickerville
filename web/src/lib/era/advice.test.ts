@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ERA_IDS } from "./eras";
+import { ERA_IDS, ADVICE_TOTAL } from "./eras";
 import { formatAdviceSource, loadAdviceBook, validateAdviceBook, type AdviceBook } from "./advice";
 
 describe("조언 데이터 (src/data/advice)", () => {
@@ -8,6 +8,12 @@ describe("조언 데이터 (src/data/advice)", () => {
     expect(book.era).toBe(era);
     expect(validateAdviceBook(book)).toEqual([]);
     expect(book.quotes.length).toBeGreaterThanOrEqual(40);
+  });
+
+  it("전체 조언 수가 ADVICE_TOTAL 과 같다", async () => {
+    let n = 0;
+    for (const era of ERA_IDS) n += (await loadAdviceBook(era)).quotes.length;
+    expect(n).toBe(ADVICE_TOTAL);
   });
 
   it("모든 참모가 조언을 하나 이상 갖는다", async () => {

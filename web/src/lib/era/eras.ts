@@ -1,4 +1,5 @@
 import { mixHex } from "./color";
+import { analystTitle } from "./progress";
 
 /**
  * 시대 테마: 대통령(또는 애널리스트)을 고르면 그 시대 참모가 기업을 보고하고 조언한다.
@@ -41,7 +42,16 @@ export interface EraSpec {
   adviceLabelKo: string;
   /** public/personas 이미지 이름 (전신 .webp, 얼굴 -face.webp) */
   image: string;
+  /** 보고서 도장 (상세 패널을 열 때 찍힌다) */
+  stamp: EraStamp;
   scene: EraScene;
+}
+
+export interface EraStamp {
+  label: string;
+  /** seal = 밀랍 동그라미, rect = 사각 고무도장, round = 동그란 금박 */
+  shape: "seal" | "rect" | "round";
+  color: string;
 }
 
 /** 지금 지도 색 (UsMap · 바다) — 2026 은 이것 그대로 */
@@ -66,6 +76,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     adviceButtonKo: "참모의 조언 듣기",
     adviceLabelKo: "참모의 조언",
     image: "washington",
+    stamp: { label: "SEALED", shape: "seal", color: "#9b2a1f" },
     scene: { sky: "#e9dcc0", skyMix: 0.55, land: "#a9a46c", border: "#6b5a34", sea: "#6f8f8a" },
   },
   "1863": {
@@ -80,6 +91,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     adviceButtonKo: "참모 전보 받기",
     adviceLabelKo: "참모의 조언",
     image: "lincoln",
+    stamp: { label: "RECEIVED", shape: "rect", color: "#1f3a5a" },
     scene: { sky: "#cfc6ad", skyMix: 0.45, land: "#98966a", border: "#4a4036", sea: "#4c6672" },
   },
   "1905": {
@@ -94,6 +106,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     adviceButtonKo: "오늘의 사설 한 줄",
     adviceLabelKo: "거물들의 조언",
     image: "t-roosevelt",
+    stamp: { label: "APPROVED", shape: "rect", color: "#8b1e1e" },
     scene: { sky: "#9a968c", skyMix: 0.6, land: "#8c8a73", border: "#4a473d", sea: "#4f5f66" },
   },
   "1935": {
@@ -108,6 +121,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     adviceButtonKo: "라디오 한마디",
     adviceLabelKo: "참모의 조언",
     image: "fdr",
+    stamp: { label: "FIRESIDE", shape: "round", color: "#d4af37" },
     scene: { sky: "#0e0d0b", skyMix: 0.7, land: "#3a3a2c", border: "#d4af37", sea: "#1c2a33" },
   },
   "2026": {
@@ -122,6 +136,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     adviceButtonKo: "멘토의 한마디",
     adviceLabelKo: "멘토의 한마디",
     image: "analyst",
+    stamp: { label: "VERIFIED · SEC", shape: "rect", color: "#4fd8ff" },
     scene: BASE_SCENE,
   },
 };
@@ -130,6 +145,9 @@ export const ERAS: Record<EraId, EraSpec> = {
 export function eraSkyColor(weatherSky: string, scene: EraScene): string {
   return scene.sky === null ? weatherSky : mixHex(weatherSky, scene.sky, scene.skyMix);
 }
+
+/** 조언 전체 수 (src/data/advice 합계, advice.test 가 맞는지 확인) — 직급 안내 "읽은 조언 12/385" */
+export const ADVICE_TOTAL = 385;
 
 export function isEraId(value: unknown): value is EraId {
   return typeof value === "string" && (ERA_IDS as readonly string[]).includes(value);
@@ -140,8 +158,9 @@ export function getEra(id: EraId): EraSpec {
 }
 
 /** 첫 화면 제목: "링컨 대통령님, 보고드립니다" */
-export function formatGreeting(era: EraSpec): string {
-  return `${era.addressKo}, 보고드립니다`;
+export function formatGreeting(era: EraSpec, analystName: string | null = null): string {
+  const who = era.id === DEFAULT_ERA ? `${analystTitle(analystName)}님` : era.addressKo;
+  return `${who}, 보고드립니다`;
 }
 
 /** 서비스 대표 문구 (소개 페이지·링크 미리보기처럼 캐릭터가 없는 곳) */

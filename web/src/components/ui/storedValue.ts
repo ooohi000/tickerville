@@ -19,11 +19,17 @@ export function createStoredValue<T>(
 ): StoredValue<T> {
   const listeners = new Set<() => void>();
   let memory: { value: T } | null = null;
+  // 같은 저장 문자열이면 같은 객체를 돌려준다 (useSyncExternalStore 는 매번 새 객체면 무한 렌더)
+  let cache: { raw: string | null; value: T } | null = null;
 
   const read = (): T => {
     if (memory) return memory.value;
     try {
-      return options.parse(window.localStorage.getItem(key));
+      const raw = window.localStorage.getItem(key);
+      if (cache && cache.raw === raw) return cache.value;
+      const value = options.parse(raw);
+      cache = { raw, value };
+      return value;
     } catch {
       return options.fallback;
     }

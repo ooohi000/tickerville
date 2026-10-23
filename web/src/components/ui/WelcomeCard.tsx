@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { setEra, useEra } from "@/components/era/useEra";
-import { ERA_IDS, ERAS, formatGreeting } from "@/lib/era/eras";
+import { AnalystNameField } from "@/components/era/AnalystNameField";
+import { setEra, useAnalystName, useEra } from "@/components/era/useEra";
+import { DEFAULT_ERA, ERA_IDS, ERAS, formatGreeting } from "@/lib/era/eras";
+import { analystTitle } from "@/lib/era/progress";
 import { createStoredValue } from "./storedValue";
 import styles from "./WelcomeCard.module.css";
 
@@ -29,6 +31,7 @@ const HOW_TO = [
 export function WelcomeCard({ companyCount }: { companyCount: number }) {
   const welcomed = welcomedStore.use();
   const era = useEra();
+  const analystName = useAnalystName();
   const startRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -48,7 +51,7 @@ export function WelcomeCard({ companyCount }: { companyCount: number }) {
         <header className={styles.header}>
           <p className={styles.eyebrow}>TICKERVILLE</p>
           <h1 id="welcome-title" className={styles.title}>
-            {formatGreeting(era)}
+            {formatGreeting(era, analystName)}
           </h1>
           <p className={styles.lead}>
             미국 기업 {companyCount}곳의 공시를 지도 위에 펼쳐 놨습니다. 건물은 실제 본사 자리, 숫자는 모두 SEC 공시 원본이에요.
@@ -89,6 +92,11 @@ export function WelcomeCard({ companyCount }: { companyCount: number }) {
               );
             })}
           </div>
+          {era.id === DEFAULT_ERA && (
+            <div className={styles.name}>
+              <AnalystNameField />
+            </div>
+          )}
         </fieldset>
 
         <footer className={styles.footer}>
@@ -99,7 +107,7 @@ export function WelcomeCard({ companyCount }: { companyCount: number }) {
             </Link>
           </p>
           <button ref={startRef} type="button" className={styles.start} onClick={() => welcomedStore.set(true)}>
-            {era.year}년 {era.leader.ko}{era.id === "2026" ? "로" : " 자리에서"} 시작하기
+            {era.id === DEFAULT_ERA ? `${analystTitle(analystName)}로 시작하기` : `${era.year}년 ${era.leader.ko} 자리에서 시작하기`}
           </button>
         </footer>
       </section>

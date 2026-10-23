@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { AdviceCard } from "@/components/era/AdviceCard";
-import { useEra } from "@/components/era/useEra";
+import { Stamp } from "@/components/era/Stamp";
+import { useAnalystName, useEra, useReadingLog } from "@/components/era/useEra";
 import { SidePanel } from "@/components/ui/SidePanel";
 import { useNow } from "@/components/ui/useNow";
 import { displayName } from "@/lib/company/format";
@@ -15,6 +16,7 @@ import { buildQuarterPoints } from "@/lib/detail/quarterChart";
 import { getStatementRatios, isNegativeEquity } from "@/lib/detail/ratios";
 import { getYoyChanges } from "@/lib/detail/yoy";
 import { DEFAULT_ERA, describeFounding, formatBriefing, type EraSpec } from "@/lib/era/eras";
+import { analystTitle, rankFor, totalRead } from "@/lib/era/progress";
 import type { CompanyDetail, FinancialStatement } from "@/types";
 import styles from "./CompanyDetailPanel.module.css";
 import { QuarterBars } from "./QuarterBars";
@@ -40,6 +42,10 @@ export interface CompanyDetailPanelProps {
 export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: CompanyDetailPanelProps) {
   const state = useCompanyDetail(ticker);
   const era = useEra();
+  const analystName = useAnalystName();
+  const rank = rankFor(totalRead(useReadingLog()));
+  // 2026 리서치 노트엔 작성자: "작성 · 주니어 화이트 애널리스트"
+  const byline = era.id === DEFAULT_ERA ? ` · 작성 ${rank.ko} ${analystTitle(analystName)}` : "";
   const name = state.status === "ready" ? displayName(state.detail.company) : null;
   const title = (
     <span className={styles.head}>
@@ -52,7 +58,10 @@ export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: Compa
             <span className={styles.ticker}>{ticker}</span>
             {name && <span className={styles.name}>{name}</span>}
           </span>
-          <span className={styles.briefing}>{formatBriefing(era, name ?? ticker)}</span>
+          <span className={styles.briefing}>
+            {formatBriefing(era, name ?? ticker)}
+            {byline}
+          </span>
         </span>
       </span>
     </span>
@@ -70,6 +79,8 @@ export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: Compa
     >
       {state.status === "loading" && <p className={styles.muted}>불러오는 중…</p>}
       {state.status === "error" && <p className={styles.muted}>{state.message}</p>}
+      {/* 보고서 도장: 내용이 다 들어오면 쾅 (시대가 바뀌면 다시 찍힌다) */}
+      {state.status === "ready" && <Stamp key={era.id} stamp={era.stamp} sub={String(era.year)} />}
       {state.status === "ready" && <DetailBody detail={state.detail} quarters={state.quarters} era={era} />}
     </SidePanel>
   );

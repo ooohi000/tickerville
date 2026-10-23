@@ -9,6 +9,10 @@ describe("ERAS", () => {
     for (const id of ERA_IDS) expect(String(ERAS[id].year)).toBe(id);
   });
 
+  it("도장 색도 #rrggbb", () => {
+    for (const id of ERA_IDS) expect(ERAS[id].stamp.color).toMatch(HEX);
+  });
+
   it("장면 색이 모두 #rrggbb 이고 섞는 비율은 0~1", () => {
     for (const id of ERA_IDS) {
       const s = ERAS[id].scene;
@@ -34,6 +38,8 @@ describe("formatGreeting", () => {
   it("고른 캐릭터를 부르며 보고", () => {
     expect(formatGreeting(ERAS["1863"])).toBe("링컨 대통령님, 보고드립니다");
     expect(formatGreeting(ERAS["2026"])).toBe("애널리스트님, 보고드립니다");
+    expect(formatGreeting(ERAS["2026"], "화이트")).toBe("화이트 애널리스트님, 보고드립니다");
+    expect(formatGreeting(ERAS["1863"], "화이트")).toBe("링컨 대통령님, 보고드립니다");
   });
 });
 

@@ -114,3 +114,6 @@
   height: 16px;
   accent-color: #f5c542;
 }
+
+.analyst { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; padding: 8px 6px 2px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+.analyst p { color: #9aa7b8; font-size: 11px; }

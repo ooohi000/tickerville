@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { createStoredValue } from "@/components/ui/storedValue";
 import { DEFAULT_ERA, getEra, isEraId, type EraId, type EraSpec } from "@/lib/era/eras";
+import { EMPTY_LOG, parseLog, sanitizeName, type ReadingLog } from "@/lib/era/progress";
 
 /** 고른 시대 테마. 이 브라우저에만 기억한다 (없거나 이상하면 기본값) */
 const eraStore = createStoredValue<EraId>("tickerville.era", {
@@ -34,3 +35,22 @@ export function EraRoot() {
   }, [era.id]);
   return null;
 }
+
+/** 애널리스트 이름 (선택, 12자) */
+const nameStore = createStoredValue<string | null>("tickerville.analystName", {
+  fallback: null,
+  parse: (raw) => sanitizeName(raw),
+  serialize: (name) => name ?? "",
+});
+
+/** 읽은 조언 기록 → 직급·친밀도 (lib/era/progress) */
+const logStore = createStoredValue<ReadingLog>("tickerville.readingLog", {
+  fallback: EMPTY_LOG,
+  parse: parseLog,
+  serialize: (log) => JSON.stringify(log),
+});
+
+export const useAnalystName = nameStore.use;
+export const setAnalystName = (raw: string) => nameStore.set(sanitizeName(raw));
+export const useReadingLog = logStore.use;
+export const setReadingLog = logStore.set;

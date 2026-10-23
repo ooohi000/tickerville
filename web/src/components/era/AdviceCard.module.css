@@ -28,3 +28,10 @@
 .tag { margin-left: 6px; padding: 0 5px; border: 1px solid var(--hud-line); font-size: 10px; }
 .link { align-self: flex-start; padding: 0; border: 0; background: none; color: var(--hud-muted); font: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; }
 .muted { color: var(--hud-muted); font-size: 12px; }
+
+/* 친밀도 · 승진 */
+.affinity { color: var(--hud-muted); font-size: 11px; }
+.affinity i { color: var(--hud-down); font-style: normal; letter-spacing: 1px; }
+.closer { color: var(--hud-text); font-size: 12px; }
+.promoted { display: flex; align-items: center; gap: 12px; padding: 8px 0; }
+.promoted p { font-size: 13px; }
