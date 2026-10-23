@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { setEra, useEra } from "@/components/era/useEra";
-import { ERA_IDS, ERAS } from "@/lib/era/eras";
+import { ERA_IDS, ERAS, formatGreeting } from "@/lib/era/eras";
 import { createStoredValue } from "./storedValue";
 import styles from "./WelcomeCard.module.css";
 
@@ -48,10 +48,10 @@ export function WelcomeCard({ companyCount }: { companyCount: number }) {
         <header className={styles.header}>
           <p className={styles.eyebrow}>TICKERVILLE</p>
           <h1 id="welcome-title" className={styles.title}>
-            미국 기업 본사를 3D 도시로
+            {formatGreeting(era)}
           </h1>
           <p className={styles.lead}>
-            {companyCount}개 미국 기업의 실제 본사 자리에 건물을 세웠어요. 숫자는 모두 SEC 공시에서 가져온 공개 데이터예요.
+            미국 기업 {companyCount}곳의 공시를 지도 위에 펼쳐 놨습니다. 건물은 실제 본사 자리, 숫자는 모두 SEC 공시 원본이에요.
           </p>
         </header>
 

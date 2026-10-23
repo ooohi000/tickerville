@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "US Stock Map",
-  description: "미국 기업 본사 3D 지도",
+  title: "티커빌 — 미국 기업 3D 지도",
+  description: "대통령님, 보고드립니다. 미국 기업 본사를 실제 지도 위 3D 건물로 — SEC 공시로 보는 실적과 재무 상태",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

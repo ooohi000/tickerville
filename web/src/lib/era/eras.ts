@@ -28,6 +28,8 @@ export interface EraSpec {
   year: number;
   /** 고르는 사람이 맡는 역할 — 대통령 4명 + 현재 애널리스트 */
   leader: { ko: string; en: string };
+  /** 첫 화면 인사에서 부르는 호칭: "링컨 대통령님" */
+  addressKo: string;
   roleKo: string;
   periodKo: string;
   /** 패널 머리 위 작은 글씨 (스킨마다 다르다) */
@@ -56,6 +58,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     id: "1795",
     year: 1795,
     leader: { ko: "조지 워싱턴", en: "George Washington" },
+    addressKo: "워싱턴 대통령님",
     roleKo: "초대 대통령",
     periodKo: "건국기",
     eyebrow: "LEDGER OF COMPANIES · 1795",
@@ -69,6 +72,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     id: "1863",
     year: 1863,
     leader: { ko: "에이브러햄 링컨", en: "Abraham Lincoln" },
+    addressKo: "링컨 대통령님",
     roleKo: "16대 대통령",
     periodKo: "철도와 전신",
     eyebrow: "TELEGRAM · 1863",
@@ -82,6 +86,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     id: "1905",
     year: 1905,
     leader: { ko: "시어도어 루스벨트", en: "Theodore Roosevelt" },
+    addressKo: "시어도어 루스벨트 대통령님",
     roleKo: "26대 대통령",
     periodKo: "산업혁명",
     eyebrow: "THE TICKERVILLE GAZETTE",
@@ -95,6 +100,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     id: "1935",
     year: 1935,
     leader: { ko: "프랭클린 루스벨트", en: "Franklin D. Roosevelt" },
+    addressKo: "프랭클린 루스벨트 대통령님",
     roleKo: "32대 대통령",
     periodKo: "대공황과 뉴딜",
     eyebrow: "◆ FIRESIDE REPORT ◆",
@@ -108,6 +114,7 @@ export const ERAS: Record<EraId, EraSpec> = {
     id: "2026",
     year: 2026,
     leader: { ko: "애널리스트", en: "Analyst" },
+    addressKo: "애널리스트님",
     roleKo: "당신",
     periodKo: "현재",
     eyebrow: "TARGET LOCKED",
@@ -131,6 +138,14 @@ export function isEraId(value: unknown): value is EraId {
 export function getEra(id: EraId): EraSpec {
   return ERAS[id];
 }
+
+/** 첫 화면 제목: "링컨 대통령님, 보고드립니다" */
+export function formatGreeting(era: EraSpec): string {
+  return `${era.addressKo}, 보고드립니다`;
+}
+
+/** 서비스 대표 문구 (소개 페이지·링크 미리보기처럼 캐릭터가 없는 곳) */
+export const TAGLINE_KO = "대통령님, 보고드립니다";
 
 export function formatBriefing(era: EraSpec, name: string): string {
   return era.briefingKo.replace("{name}", name);

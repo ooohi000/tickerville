@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { BASE_SCENE, DEFAULT_ERA, ERAS, ERA_IDS, describeFounding, eraSkyColor, formatBriefing, getEra, isBeforeFounding, isEraId } from "./eras";
+import { BASE_SCENE, DEFAULT_ERA, ERAS, ERA_IDS, describeFounding, eraSkyColor, formatBriefing, formatGreeting, getEra, isBeforeFounding, isEraId } from "./eras";
 
 const HEX = /^#[0-9a-f]{6}$/i;
 
@@ -27,6 +27,13 @@ describe("ERAS", () => {
   it("보고 문구에 {name} 자리가 있다", () => {
     for (const id of ERA_IDS) expect(ERAS[id].briefingKo).toContain("{name}");
     expect(formatBriefing(ERAS["1863"], "GE")).toBe("링컨 대통령께 드리는 전보 — GE");
+  });
+});
+
+describe("formatGreeting", () => {
+  it("고른 캐릭터를 부르며 보고", () => {
+    expect(formatGreeting(ERAS["1863"])).toBe("링컨 대통령님, 보고드립니다");
+    expect(formatGreeting(ERAS["2026"])).toBe("애널리스트님, 보고드립니다");
   });
 });
 
