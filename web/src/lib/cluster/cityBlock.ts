@@ -128,3 +128,18 @@ export function landSpots(
   }
   return spots;
 }
+
+/** 지역 건물들의 가운데 (지역 이름표를 누르면 카메라가 여기로). 자리를 아무것도 모르면 null */
+export function getBlockCenter(positions: ReadonlyMap<string, WorldPoint>, tickers: readonly string[]): WorldPoint | null {
+  let x = 0;
+  let z = 0;
+  let n = 0;
+  for (const t of tickers) {
+    const p = positions.get(t);
+    if (!p) continue;
+    x += p.x;
+    z += p.z;
+    n++;
+  }
+  return n === 0 ? null : { x: x / n, z: z / n };
+}

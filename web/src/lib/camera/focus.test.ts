@@ -55,3 +55,20 @@ describe("computeFocusView", () => {
     expect(view.position.distanceTo(view.target)).toBeCloseTo(Math.hypot(20, 20));
   });
 });
+
+describe("aimBelow", () => {
+  it("겨누는 점을 화면 아래로 내린다", async () => {
+    const { computeFocusView } = await import("./focus");
+    const { Vector3 } = await import("three");
+    const base = {
+      building: new Vector3(0, 0, 0),
+      cameraPosition: new Vector3(0, 40, 40),
+      target: new Vector3(0, 0, 0),
+      fovDeg: 45,
+      viewport: { width: 1000, height: 800 },
+      panel: null,
+    };
+    expect(computeFocusView(base).screen.y).toBe(400);
+    expect(computeFocusView({ ...base, aimBelow: 90 }).screen.y).toBe(490);
+  });
+});

@@ -10,6 +10,8 @@ import {
   isExpanded,
   isVisibleAt,
 } from "./visibility";
+import { SIGN_ALL_DISTANCE, SIGN_TOP_N, getSignRanks, isSignVisibleAt } from "./visibility";
+import { makeCompany } from "@/test/makeCompany";
 
 const { companies } = dataset as CompanyDataset;
 const assignment = assignRegions(companies, regionsData as Region[]);
@@ -61,5 +63,34 @@ describe("getHiddenCounts", () => {
     expect(counts.has("NVDA")).toBe(false);
     expect(counts.has("TSLA")).toBe(false);
     expect(counts.has("JPM")).toBe(false);
+  });
+});
+
+describe("간판 단계", () => {
+  it("혼자 있는 기업은 늘 보인다", () => {
+    expect(isSignVisibleAt(null, 999)).toBe(true);
+  });
+
+  it("멀리선 지역 기업 간판을 숨긴다 (이름표가 대신)", () => {
+    expect(isSignVisibleAt(0, DETAIL_DISTANCE + 1)).toBe(false);
+  });
+
+  it("중간 거리에선 지역 상위 N개만, 아주 가까이선 전부", () => {
+    expect(isSignVisibleAt(SIGN_TOP_N - 1, DETAIL_DISTANCE)).toBe(true);
+    expect(isSignVisibleAt(SIGN_TOP_N, DETAIL_DISTANCE)).toBe(false);
+    expect(isSignVisibleAt(SIGN_TOP_N + 5, SIGN_ALL_DISTANCE)).toBe(true);
+  });
+
+  it("순위는 지역 안 순서, 혼자면 null", () => {
+    const a = makeCompany({ ticker: "A" });
+    const b = makeCompany({ ticker: "B" });
+    const c = makeCompany({ ticker: "C" });
+    const ranks = getSignRanks({
+      standalone: [c],
+      groups: [{ region: { id: "r", label: "R", lat: 0, lng: 0, radiusKm: 1 }, companies: [a, b], isCluster: true }],
+    });
+    expect(ranks.get("A")).toBe(0);
+    expect(ranks.get("B")).toBe(1);
+    expect(ranks.get("C")).toBeNull();
   });
 });

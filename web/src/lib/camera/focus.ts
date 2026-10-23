@@ -10,6 +10,10 @@ import type { ScreenRect } from "./targetLine";
  * - 휴대폰(아래 시트): 시트 위 남은 화면의 가운데
  */
 export const FOCUS_DISTANCE = 45;
+/** 지역 이름표를 누르면 이 거리까지 당긴다 (DETAIL_DISTANCE 안이라 지역이 펼쳐지고 간판이 보인다) */
+export const REGION_FOCUS_DISTANCE = 28;
+/** 지역 비행 때 땅 점을 화면 가운데보다 이만큼 아래에 (건물이 위로 솟으니까) */
+export const REGION_AIM_BELOW = 90;
 
 export interface FocusInput {
   building: Vector3;
@@ -20,6 +24,10 @@ export interface FocusInput {
   panel: ScreenRect | null;
   /** 화면 위쪽 표시의 아래 끝 (px). visibleCenter 참고 */
   topInset?: number;
+  /** 가장 멀리 둘 거리 (기본 FOCUS_DISTANCE) */
+  maxDistance?: number;
+  /** 겨누는 땅 점을 화면에서 이만큼(px) 아래에 둔다 — 키 큰 건물·간판이 위로 잘리지 않게 */
+  aimBelow?: number;
 }
 
 export interface FocusView {
@@ -57,16 +65,21 @@ export function computeFocusView({
   viewport,
   panel,
   topInset = 0,
+  maxDistance = FOCUS_DISTANCE,
+  aimBelow = 0,
 }: FocusInput): FocusView {
   const offset = new Vector3().subVectors(cameraPosition, target);
   const currentDistance = offset.length();
-  const distance = Math.min(currentDistance, FOCUS_DISTANCE);
+  const distance = Math.min(currentDistance, maxDistance);
   const back = offset.clone().normalize();
   const sinPitch = Math.max(0.2, back.y);
 
   // 보는 점 거리에서 화면 1px = 몇 월드 단위인가
   const worldPerPx = (2 * distance * Math.tan(((fovDeg / 2) * Math.PI) / 180)) / viewport.height;
-  const want = visibleCenter(viewport, panel, topInset);
+  const center = visibleCenter(viewport, panel, topInset);
+  // 아래로 내려도 아래 시트(휴대폰) 위 가운데와 끝의 중간까지만
+  const bottom = panel && panel.top > viewport.height / 3 ? panel.top : viewport.height;
+  const want = { x: center.x, y: Math.min(center.y + aimBelow, (center.y + bottom) / 2) };
   const ox = want.x - viewport.width / 2; // + 면 건물이 화면 오른쪽에
   const oy = want.y - viewport.height / 2; // + 면 건물이 화면 아래에
 

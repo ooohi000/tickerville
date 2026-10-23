@@ -42,6 +42,9 @@ export function ClusterListPanel({
         </>
       }
       onClose={onClose}
+      // 지역 이름표를 누르면 카메라가 그 지역으로 날아가며 이 패널을 피한다 (CameraFocus)
+      targetAnchor
+      targetReady
     >
       <ol className={styles.list}>
         {view.items.map((c) => (

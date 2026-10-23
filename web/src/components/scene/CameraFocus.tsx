@@ -35,17 +35,27 @@ const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 
 export function CameraFocus({
   focusKey,
   building,
+  maxDistance,
+  aimBelow,
 }: {
   focusKey: string | null;
   building: readonly [number, number, number] | null;
+  /** 가장 멀리 둘 거리 (없으면 lib/camera/focus 기본값) */
+  maxDistance?: number;
+  /** 겨누는 점을 화면 아래로 (px) */
+  aimBelow?: number;
 }) {
   const pendingRef = useRef<{ waited: number } | null>(null);
   const flightRef = useRef<Flight | null>(null);
   const buildingRef = useRef(building);
+  const maxDistanceRef = useRef(maxDistance);
+  const aimBelowRef = useRef(aimBelow);
 
   useEffect(() => {
     buildingRef.current = building;
-  }, [building]);
+    maxDistanceRef.current = maxDistance;
+    aimBelowRef.current = aimBelow;
+  }, [building, maxDistance, aimBelow]);
 
   useEffect(() => {
     flightRef.current = null;
@@ -75,6 +85,8 @@ export function CameraFocus({
         panel: panelEl?.getBoundingClientRect() ?? null,
         // 휴대폰: 위쪽 표시(시계·날씨·높이 기준)에도 안 가리게
         topInset: document.querySelector("[data-hud-top]")?.getBoundingClientRect().bottom ?? 0,
+        maxDistance: maxDistanceRef.current,
+        aimBelow: aimBelowRef.current,
       });
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) {

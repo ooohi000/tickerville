@@ -4,7 +4,7 @@ import regions from "@/data/regions.json";
 import { projectLatLng } from "@/lib/geo/project";
 import { makeCompany } from "@/test/makeCompany";
 import type { CompanyDataset, Region } from "@/types";
-import { CITY_BLOCK_CELL, buildMapLayout, landSpots, pushClear, spiralCells } from "./cityBlock";
+import { CITY_BLOCK_CELL, buildMapLayout, getBlockCenter, landSpots, pushClear, spiralCells } from "./cityBlock";
 import { findStateAt } from "@/lib/geo/usStates";
 
 const { companies } = dataset as CompanyDataset;
@@ -104,5 +104,13 @@ describe("landSpots", () => {
   it("이미 놓인 다른 지역 건물 근처는 피한다", () => {
     const spots = landSpots({ x: 0, z: 0 }, 2, 1, [{ x: 0, z: 0 }], () => true);
     for (const p of spots) expect(Math.hypot(p.x, p.z)).toBeGreaterThanOrEqual(1 - 1e-9);
+  });
+});
+
+describe("getBlockCenter", () => {
+  it("아는 자리들의 평균, 모르면 null", () => {
+    const pos = new Map([["A", { x: 0, z: 0 }], ["B", { x: 2, z: 4 }]]);
+    expect(getBlockCenter(pos, ["A", "B", "Z"])).toEqual({ x: 1, z: 2 });
+    expect(getBlockCenter(pos, ["Z"])).toBeNull();
   });
 });

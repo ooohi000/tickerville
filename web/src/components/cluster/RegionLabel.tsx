@@ -11,7 +11,8 @@ export interface RegionLabelProps {
   /** 이름표 자리 (도시 블록 남쪽 끝 아래). 없으면 지역 중심 */
   position?: WorldPoint;
   active: boolean;
-  onOpen: (regionId: string) => void;
+  /** fly: 눌렀을 때만 true (호버로 열 땐 카메라를 움직이지 않는다) */
+  onOpen: (regionId: string, fly: boolean) => void;
 }
 
 /** 마우스가 있는 기기(데스크톱)인가 — 호버로 열지 판단 */
@@ -27,15 +28,14 @@ export function RegionLabel({ group, position, active, onOpen }: RegionLabelProp
   if (!p) return null;
 
   const count = group.companies.length;
-  const open = () => onOpen(group.region.id);
 
   return (
     <Html position={[p.x, MAP_HEIGHT, p.z]} center zIndexRange={[20, 0]}>
       <button
         type="button"
         className={`${styles.label} ${active ? styles.active : ""}`}
-        onClick={open}
-        onPointerEnter={() => canHover() && open()}
+        onClick={() => onOpen(group.region.id, true)}
+        onPointerEnter={() => canHover() && onOpen(group.region.id, false)}
         aria-label={`${group.region.label} 기업 ${count}개 목록 열기`}
       >
         <span>{group.region.label}</span>

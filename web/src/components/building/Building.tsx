@@ -4,7 +4,7 @@ import type { ThreeEvent } from "@react-three/fiber";
 import { useRef } from "react";
 import type { Group } from "three";
 import { useDistanceVisible } from "@/components/scene/useDistanceVisible";
-import { isVisibleAt, type VisibilityMode } from "@/lib/cluster/visibility";
+import { isSignVisibleAt, isVisibleAt, type VisibilityMode } from "@/lib/cluster/visibility";
 import { getBuildingDimensions, type BuildingDimensions } from "@/lib/company/buildingSpec";
 import { isHighGrowth } from "@/lib/company/growth";
 import {
@@ -38,6 +38,8 @@ export interface BuildingProps {
   /** 클러스터 대표일 때 숨은 기업 수 → 간판 "+N" (getHiddenCounts) */
   hiddenCount?: number;
   highlighted?: boolean;
+  /** 지역 안 순위 (getSignRanks). null = 혼자 있는 기업. 간판을 거리별로 보일지 정한다 */
+  signRank?: number | null;
   /** 고른 시대에 아직 없던 기업 (lib/era/eras isBeforeFounding) */
   faded?: boolean;
   onSelect?: (ticker: string) => void;
@@ -55,9 +57,11 @@ export function Building({
   hiddenCount = 0,
   highlighted = false,
   faded = false,
+  signRank = null,
   onSelect,
 }: BuildingProps) {
   const ref = useRef<Group>(null);
+  const signRef = useRef<Group>(null);
   const d = getBuildingDimensions(
     getSizeValue(company, sizeMetric),
     SIZE_METRICS[sizeMetric].ranges,
@@ -69,6 +73,8 @@ export function Building({
 
   // 선택된 건물은 거리와 상관없이 보인다
   useDistanceVisible(ref, (dist) => highlighted || isVisibleAt(visibilityMode, dist));
+  // 간판 단계: 멀리선 지역 이름표만, 가까이 가면 큰 기업부터 (lib/cluster/visibility)
+  useDistanceVisible(signRef, (dist) => highlighted || isSignVisibleAt(signRank, dist));
 
   const handleClick = (e: ThreeEvent<MouseEvent>) => {
     // 숨은 건물은 클릭을 가로채지 않고 뒤(대표 건물)로 넘긴다
@@ -100,12 +106,14 @@ export function Building({
       <EventHeat filings={company.filings30d} />
       <Roof d={d} look={look} />
       {isHighGrowth(company.revenueGrowthYoy) && <Crane building={d} />}
-      <Sign
-        label={displayName(company)}
-        building={d}
-        hiddenCount={hiddenCount}
-        highlighted={highlighted}
-      />
+      <group ref={signRef}>
+        <Sign
+          label={displayName(company)}
+          building={d}
+          hiddenCount={hiddenCount}
+          highlighted={highlighted}
+        />
+      </group>
     </group>
   );
 }

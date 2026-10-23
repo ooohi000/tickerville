@@ -26,7 +26,9 @@ import { AboutLink } from "@/components/ui/AboutLink";
 import { EraPicker } from "@/components/era/EraPicker";
 import { EraRoot, useEra, useEraFade } from "@/components/era/useEra";
 import { isBeforeFounding } from "@/lib/era/eras";
-import { buildMapLayout } from "@/lib/cluster/cityBlock";
+import { buildMapLayout, getBlockCenter } from "@/lib/cluster/cityBlock";
+import { getSignRanks } from "@/lib/cluster/visibility";
+import { REGION_AIM_BELOW, REGION_FOCUS_DISTANCE } from "@/lib/camera/focus";
 import { buildSizeViews } from "@/lib/cluster/sizeViews";
 import { formatLatLng } from "@/lib/camera/targetLine";
 import { getBuildingDimensions } from "@/lib/company/buildingSpec";
@@ -64,12 +66,14 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
   const eraFade = useEraFade();
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
+  const [flyRegion, setFlyRegion] = useState<string | null>(null);
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
   // 높이 기준별 묶음 결과. 데이터가 바뀔 때만 다시 계산
   const views = useMemo(() => buildSizeViews(companies, regions), [companies, regions]);
   // 건물 자리: 매출 순서로 한 번 정하고 높이 기준을 바꿔도 그대로
   const layout = useMemo(() => buildMapLayout(companies, regions), [companies, regions]);
   const { assignment, visibilityModes, hiddenCounts } = views[sizeMetric];
+  const signRanks = useMemo(() => getSignRanks(assignment), [assignment]);
   // 서버에서는 null, 브라우저에서 주소를 읽는다 (hydration 어긋남 없음)
   const override = useSyncExternalStore(
     noopSubscribe,
@@ -104,9 +108,18 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           detailPos.z,
         ]
       : null;
-  const openRegion = (regionId: string) => {
+  // 카메라 비행: 상세 패널이면 그 건물, 지역 목록이면 그 지역 가운데(이름표 자리)
+  // 지역은 이름표를 "눌렀을" 때만 날아간다 (호버·"← 목록"으로 열 땐 그대로)
+  const flyRegionId = flyRegion && flyRegion === openRegionId ? flyRegion : null;
+  const flyGroup = flyRegionId ? assignment.groups.find((g) => g.region.id === flyRegionId) : undefined;
+  const regionPos = flyGroup ? getBlockCenter(layout.positions, flyGroup.companies.map((c) => c.ticker)) : null;
+  const focusKey = detailTicker ?? (flyRegionId ? `region:${flyRegionId}` : null);
+  const focusPoint: [number, number, number] | null =
+    targetWorld ?? (regionPos ? [regionPos.x, MAP_HEIGHT, regionPos.z] : null);
+  const openRegion = (regionId: string, fly = false) => {
     setDetailTicker(null);
     setOpenRegionId(regionId);
+    setFlyRegion(fly ? regionId : null);
   };
 
   const zoom = (controls: OrbitControlsImpl, factor: number) => {
@@ -180,6 +193,7 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
               position={p}
               sizeMetric={sizeMetric}
               visibilityMode={visibilityModes.get(c.ticker)}
+              signRank={signRanks.get(c.ticker) ?? null}
               hiddenCount={hiddenCounts.get(c.ticker)}
               highlighted={selectedTicker === c.ticker}
               faded={eraFade && isBeforeFounding(c.founded?.year, era.year)}
@@ -209,7 +223,9 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         <CameraFit />
         <TargetTracker world={targetWorld} sinkRef={targetSinkRef} />
         {/* 상세 패널을 열면 그 건물로 날아가서 패널에 안 가리는 자리에 둔다 */}
-        <CameraFocus focusKey={detailTicker} building={targetWorld} />
+        <CameraFocus focusKey={focusKey} building={focusPoint} maxDistance={detailTicker ? undefined : REGION_FOCUS_DISTANCE}
+          aimBelow={detailTicker ? 0 : REGION_AIM_BELOW}
+        />
       </Canvas>
 
       <EraRoot />

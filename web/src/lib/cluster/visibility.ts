@@ -24,6 +24,30 @@ export function getVisibilityModes(assignment: RegionAssignment): Map<string, Vi
   return modes;
 }
 
+/**
+ * 간판 단계 (8-2b): 멀리선 지역 이름표만, 가까이 가면 간판.
+ * - DETAIL_DISTANCE 밖: 지역에 속한 기업 간판은 숨김 (이름표가 대신). 혼자 있는 기업은 보임
+ * - SIGN_ALL_DISTANCE 밖 ~ DETAIL_DISTANCE: 지역마다 큰 기업 SIGN_TOP_N 개만 (간판끼리 겹치지 않게)
+ * - SIGN_ALL_DISTANCE 안: 전부
+ */
+export const SIGN_ALL_DISTANCE = 16;
+export const SIGN_TOP_N = 3;
+
+/** 기업별 지역 안 순위 (현재 높이 기준 순서, 0 = 1위). 지역에 안 속하면 null */
+export function getSignRanks(assignment: RegionAssignment): Map<string, number | null> {
+  const ranks = new Map<string, number | null>();
+  for (const c of assignment.standalone) ranks.set(c.ticker, null);
+  for (const group of assignment.groups) group.companies.forEach((c, i) => ranks.set(c.ticker, i));
+  return ranks;
+}
+
+export function isSignVisibleAt(rank: number | null, cameraDistance: number): boolean {
+  if (rank === null) return true;
+  if (cameraDistance > DETAIL_DISTANCE) return false;
+  if (cameraDistance > SIGN_ALL_DISTANCE) return rank < SIGN_TOP_N;
+  return true;
+}
+
 /** 펼쳐진 상태인가 (경계 포함) */
 export function isExpanded(cameraDistance: number): boolean {
   return cameraDistance <= DETAIL_DISTANCE;
