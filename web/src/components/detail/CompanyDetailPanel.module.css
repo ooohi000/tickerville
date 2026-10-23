@@ -2,7 +2,7 @@
 .head { display: flex; flex-direction: column; gap: 2px; }
 .eyebrow { color: var(--hud-accent); font-family: var(--hud-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.24em; }
 .headRow { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
-.ticker { color: #ffffff; font-family: var(--hud-display); font-size: 30px; font-weight: 400; letter-spacing: 0.04em; line-height: 1; }
+.ticker { color: var(--hud-ticker); font-family: var(--hud-display); font-size: 30px; font-weight: 400; letter-spacing: 0.04em; line-height: 1; }
 .name { color: var(--hud-text); font-size: 16px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 .body { display: flex; flex-direction: column; gap: 12px; font-size: 13px; }
@@ -14,12 +14,12 @@
 .up { color: var(--hud-up); font-family: var(--hud-mono); font-size: 11px; }
 .down { color: var(--hud-down) !important; }
 
-.countdown { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid rgba(255, 196, 77, 0.35); background: rgba(255, 196, 77, 0.06); }
+.countdown { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border: 1px solid var(--hud-warn-line); background: var(--hud-warn-bg); }
 .dday { color: var(--hud-warn); font-family: var(--hud-display); font-size: 26px; line-height: 1; white-space: nowrap; }
 .countdownText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .countdownText b { font-size: 13px; }
 .expected,
-.confirmed { margin-left: 6px; padding: 1px 6px; font-size: 10px; font-weight: 700; color: #04070d; }
+.confirmed { margin-left: 6px; padding: 1px 6px; font-size: 10px; font-weight: 700; color: var(--hud-on-accent); }
 /* "예상"은 추정치라 반드시 눈에 띄게 (계약 api.md) */
 .expected { background: var(--hud-warn); }
 .confirmed { background: var(--hud-up); }
@@ -36,7 +36,7 @@
 .gauge { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 .gaugeRing { position: relative; width: 64px; height: 64px; }
 .gaugeRing svg { width: 100%; height: 100%; }
-.gaugeTrack { fill: none; stroke: rgba(79, 216, 255, 0.14); stroke-width: 6; }
+.gaugeTrack { fill: none; stroke: var(--hud-line-soft); stroke-width: 6; }
 .gaugeFill { fill: none; stroke: var(--hud-accent); stroke-width: 6; }
 .gaugeValue { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--hud-mono); font-size: 13px; font-weight: 600; }
 
@@ -54,7 +54,7 @@
 .readout { font-size: 12px; font-variant-numeric: tabular-nums; }
 .readout b { font-family: var(--hud-mono); font-weight: 600; }
 .plot { position: relative; display: flex; gap: 6px; height: 90px; }
-.zeroLine { position: absolute; left: 0; right: 0; height: 1px; background: rgba(79, 216, 255, 0.35); }
+.zeroLine { position: absolute; left: 0; right: 0; height: 1px; background: var(--hud-line); }
 .col { flex: 1; display: flex; gap: 2px; padding: 0; border: 0; background: transparent; cursor: default; opacity: 0.55; }
 .colActive { opacity: 1; }
 .col:focus-visible { outline: 1px solid var(--hud-accent); }
@@ -62,7 +62,7 @@
 .bar { position: absolute; left: 0; right: 0; }
 .barRevenue { background: var(--hud-accent); }
 .barProfit { background: var(--hud-accent-dim); }
-.colActive .barProfit { background: #3f9fc4; }
+.colActive .barProfit { background: var(--hud-accent-mid); }
 .barLoss { background: var(--hud-down) !important; }
 .axis { display: flex; gap: 6px; color: var(--hud-faint); font-family: var(--hud-mono); font-size: 10px; }
 .axis span { flex: 1; text-align: center; }
@@ -80,3 +80,26 @@
 .expand:disabled { cursor: not-allowed; opacity: 0.55; }
 
 .source { color: var(--hud-faint); font-family: var(--hud-mono); font-size: 10px; letter-spacing: 0.06em; }
+
+/* 패널 머리: 시대 캐릭터 얼굴 + 보고 문구 */
+.headTop { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.avatar { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--hud-line); object-fit: cover; }
+.briefing { color: var(--hud-muted); font-size: 12px; font-weight: 500; }
+
+/* 1905 신문 제호 · 1795 장부 · 1935 아르데코 머리 글씨 */
+:global(html[data-era="1905"]) .eyebrow { color: #141210; font-family: "Old Standard TT", serif; font-size: 20px; font-weight: 700; letter-spacing: 0.02em; text-align: center; }
+:global(html[data-era="1905"]) .head > .eyebrow { padding-bottom: 6px; margin-bottom: 4px; border-bottom: 1px solid #141210; }
+:global(html[data-era="1905"]) .ticker { font-weight: 700; }
+:global(html[data-era="1905"]) .avatar { filter: grayscale(1) contrast(1.1); border-color: #141210; }
+:global(html[data-era="1905"]) .tile,
+:global(html[data-era="1905"]) .balance { border-style: solid; border-width: 1px 0 0; padding-left: 0; padding-right: 0; }
+:global(html[data-era="1905"]) .sectionTitle { color: #141210; font-weight: 700; letter-spacing: 0.04em; border-bottom: 1px solid rgba(20, 18, 16, 0.35); padding-bottom: 3px; }
+:global(html[data-era="1905"]) .tileValue { font-family: "Nanum Myeongjo", "Old Standard TT", serif; font-weight: 700; font-size: 18px; }
+:global(html[data-era="1795"]) .eyebrow { color: #7a2e22; font-family: "Old Standard TT", serif; font-style: italic; font-size: 12px; letter-spacing: 0.08em; }
+:global(html[data-era="1795"]) .avatar { border-color: #7a5a34; }
+:global(html[data-era="1863"]) .eyebrow { color: #1f3a5a; font-size: 12px; letter-spacing: 0.3em; }
+:global(html[data-era="1935"]) .eyebrow { color: #d4af37; letter-spacing: 0.32em; }
+:global(html[data-era="1935"]) .avatar { border-color: #d4af37; }
+@media (max-width: 719px) {
+  :global(html[data-era="1905"]) .eyebrow { font-size: 15px; }
+}

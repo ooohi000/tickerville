@@ -1,0 +1,1889 @@
+{
+ "era": "1935",
+ "advisors": [
+  {
+   "id": "keynes",
+   "name": {
+    "ko": "존 메이너드 케인스",
+    "en": "John Maynard Keynes"
+   },
+   "years": "1883–1946",
+   "role": {
+    "ko": "영국 경제학자이자 케임브리지 킹스칼리지 기금을 직접 굴린 투자자"
+   },
+   "relation": {
+    "ko": "1933년 12월 뉴욕타임스에 루스벨트에게 보내는 공개서한을 실었고, 1934년에는 루스벨트를 직접 만나 경기 회복책을 조언했다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/John_Maynard_Keynes"
+  },
+  {
+   "id": "kennedy",
+   "name": {
+    "ko": "조지프 P. 케네디",
+    "en": "Joseph P. Kennedy"
+   },
+   "years": "1888–1969",
+   "role": {
+    "ko": "월가 출신 사업가로 초대 증권거래위원회(SEC) 위원장을 맡은 인물"
+   },
+   "relation": {
+    "ko": "루스벨트 대통령 아래에서 1934년 6월 30일부터 미국 증권거래위원회(SEC)의 초대 위원장을 지냈다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Joseph_P._Kennedy_Sr."
+  },
+  {
+   "id": "baruch",
+   "name": {
+    "ko": "버나드 바루크",
+    "en": "Bernard Baruch"
+   },
+   "years": "1870–1965",
+   "role": {
+    "ko": "월가 투기로 큰돈을 번 금융가이자 여러 대통령의 경제 고문"
+   },
+   "relation": {
+    "ko": "루스벨트가 대통령에 당선된 뒤 국제 금융과 외교 정책 등에 대해 자주 조언했고, 제2차 세계대전 중에는 전시동원국장의 특별고문으로 임명됐다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Bernard_Baruch"
+  },
+  {
+   "id": "graham",
+   "name": {
+    "ko": "벤저민 그레이엄",
+    "en": "Benjamin Graham"
+   },
+   "years": "1894–1976",
+   "role": {
+    "ko": "컬럼비아대에서 가르친 증권 분석가이자 가치투자의 아버지"
+   },
+   "relation": {
+    "ko": "루스벨트의 참모는 아니었지만, SEC가 출범한 1934년에 데이비드 도드와 함께 『증권분석(Security Analysis)』을 펴낸 같은 시대의 분석가다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Security_Analysis_(book)"
+  }
+ ],
+ "quotes": [
+  {
+   "id": "keynes-01",
+   "advisor": "keynes",
+   "text": {
+    "en": "The outstanding fact is the extreme precariousness of the basis of knowledge on which our estimates of prospective yield have to be made.",
+    "ko": "가장 두드러진 사실은, 우리가 미래 수익을 추정할 때 기대는 지식의 기반이 극도로 불안정하다는 점이다."
+   },
+   "plain": {
+    "ko": "몇 년 뒤 회사 실적을 정확히 안다고 믿지 말고, 예측이 틀릴 수 있다는 전제로 투자하라는 뜻이다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. III",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-02",
+   "advisor": "keynes",
+   "text": {
+    "en": "The essence of this convention … lies in assuming that the existing state of affairs will continue indefinitely, except in so far as we have specific reasons to expect a change.",
+    "ko": "이 관행의 핵심은, 변화를 예상할 구체적인 이유가 없는 한 지금 상태가 무한히 이어진다고 가정하는 데 있다."
+   },
+   "plain": {
+    "ko": "시장 가격은 '지금이 계속된다'는 가정 위에 서 있으니, 그 가정이 깨질 때 가격이 크게 흔들릴 수 있다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. IV",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-03",
+   "advisor": "keynes",
+   "text": {
+    "en": "A conventional valuation which is established as the outcome of the mass psychology of a large number of ignorant individuals is liable to change violently …",
+    "ko": "잘 모르는 다수 개인의 군중 심리로 만들어진 관행적 평가는 격렬하게 바뀌기 쉽다."
+   },
+   "plain": {
+    "ko": "많은 사람이 분위기로 정한 가격은 작은 뉴스에도 크게 출렁이니, 군중이 매긴 값과 기업의 실제 가치를 구분해야 한다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(3)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-04",
+   "advisor": "keynes",
+   "text": {
+    "en": "They are concerned, not with what an investment is really worth to a man who buys it \"for keeps\", but with what the market will value it at, under the influence of mass psychology, three months or a year hence.",
+    "ko": "그들은 '평생 갖고 갈' 사람에게 그 투자가 실제로 얼마의 가치가 있는지가 아니라, 군중 심리의 영향 아래 시장이 석 달이나 1년 뒤에 얼마로 쳐줄지에 관심을 둔다."
+   },
+   "plain": {
+    "ko": "주식을 살 때 '몇 달 뒤 남들이 얼마에 사 줄까'보다 '이 회사를 계속 들고 있으면 얼마 가치가 있을까'를 먼저 물어보라."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(4)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-05",
+   "advisor": "keynes",
+   "text": {
+    "en": "The actual, private object of the most skilled investment to-day is \"to beat the gun\", as the Americans so well express it, to outwit the crowd, and to pass the bad, or depreciating, half-crown to the other fellow.",
+    "ko": "오늘날 가장 노련한 투자의 실제 목적은, 미국인들 표현대로 '총성보다 먼저 뛰는 것', 즉 군중을 앞질러 가치가 떨어지는 나쁜 동전을 남에게 떠넘기는 것이다."
+   },
+   "plain": {
+    "ko": "남보다 빨리 사고팔아 폭탄을 넘기는 게임은 투자가 아니라 눈치 싸움이라는 점을 기억하라."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(4)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-06",
+   "advisor": "keynes",
+   "text": {
+    "en": "We have reached the third degree where we devote our intelligences to anticipating what average opinion expects the average opinion to be.",
+    "ko": "우리는 평균적인 의견이 평균적인 의견을 무엇이라고 예상할지를 맞히는 데 지성을 쏟는 세 번째 단계에 이르렀다."
+   },
+   "plain": {
+    "ko": "'남들이 좋다고 생각할 것 같은 종목'만 좇다 보면 정작 회사 자체는 보지 않게 된다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(4) (beauty-contest passage)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-07",
+   "advisor": "keynes",
+   "text": {
+    "en": "… a pastime in which he is victor who says Snap neither too soon nor too late, who passes the Old Maid to his neighbour before the game is over, who secures a chair for himself when the music stops.",
+    "ko": "이것은 너무 이르지도 늦지도 않게 '스냅'을 외치고, 게임이 끝나기 전에 도둑잡기의 조커를 옆 사람에게 넘기고, 음악이 멈출 때 자기 의자를 차지하는 사람이 이기는 놀이다."
+   },
+   "plain": {
+    "ko": "단기 매매는 마지막에 누군가는 의자를 잃는 의자 뺏기 놀이와 같아서, 내가 그 사람이 될 수도 있다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(4)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-08",
+   "advisor": "keynes",
+   "text": {
+    "en": "Worldly wisdom teaches that it is better for reputation to fail conventionally than to succeed unconventionally.",
+    "ko": "세상의 지혜는 평판을 위해서라면 관습을 벗어나 성공하기보다 관습대로 실패하는 편이 낫다고 가르친다."
+   },
+   "plain": {
+    "ko": "남들과 같이 틀리면 덜 욕먹기 때문에 사람들은 군중을 따르니, 독립적으로 판단하려면 그 압력을 견딜 각오가 필요하다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. V(4)",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-09",
+   "advisor": "keynes",
+   "text": {
+    "en": "Speculators may do no harm as bubbles on a steady stream of enterprise. But the position is serious when enterprise becomes the bubble on a whirlpool of speculation.",
+    "ko": "투기꾼은 꾸준한 사업의 흐름 위에 뜬 거품일 때는 해가 없을지 모른다. 그러나 사업이 투기의 소용돌이 위에 뜬 거품이 되면 사태는 심각해진다."
+   },
+   "plain": {
+    "ko": "회사의 실제 사업보다 주가 이야기가 더 커졌다면 거품을 의심해 볼 때다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. VI",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-10",
+   "advisor": "keynes",
+   "text": {
+    "en": "When the capital development of a country becomes a by-product of the activities of a casino, the job is likely to be ill-done.",
+    "ko": "한 나라의 자본 형성이 카지노 활동의 부산물이 되면, 그 일은 엉망이 되기 쉽다."
+   },
+   "plain": {
+    "ko": "시장이 도박장처럼 움직이면 좋은 회사에 돈이 가지 않으니, 내 돈이 사업에 쓰이는지 도박에 쓰이는지 따져 보라."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. VI",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-11",
+   "advisor": "keynes",
+   "text": {
+    "en": "… speculation for the activity of forecasting the psychology of the market, and the term enterprise for the activity of forecasting the prospective yield of assets over their whole life …",
+    "ko": "시장의 심리를 예측하는 활동을 '투기'라 하고, 자산이 전 생애에 걸쳐 낼 수익을 예측하는 활동을 '기업(투자)'이라 부르자."
+   },
+   "plain": {
+    "ko": "투기는 사람들 마음을 맞히는 것이고, 투자는 회사가 평생 벌어들일 돈을 가늠하는 것이다."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. VI",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-12",
+   "advisor": "keynes",
+   "text": {
+    "en": "… can only be taken as a result of animal spirits — of a spontaneous urge to action rather than inaction, and not as the outcome of a weighted average of quantitative benefits multiplied by quantitative probabilities.",
+    "ko": "그런 결정은 수량화된 이익에 확률을 곱한 가중평균의 결과가 아니라, 가만히 있기보다 행동하려는 자발적 충동, 곧 '야성적 충동'의 결과로만 내려질 수 있다."
+   },
+   "plain": {
+    "ko": "기업가와 투자자의 결정은 계산만큼이나 기분과 자신감에 좌우되니, 경기와 시장 분위기가 갑자기 꺾일 수 있음을 염두에 두라."
+   },
+   "source": {
+    "title": "The General Theory of Employment, Interest and Money, ch. 12 \"The State of Long-Term Expectation\"",
+    "year": 1936,
+    "type": "book",
+    "locator": "ch. 12, sec. VII",
+    "url": "https://www.marxists.org/reference/subject/economics/keynes/general-theory/ch12.htm"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-13",
+   "advisor": "keynes",
+   "text": {
+    "en": "As time goes on, I get more and more convinced that the right method in investment is to put fairly large sums into enterprises which one thinks one knows something about and in the management of which one thoroughly believes.",
+    "ko": "시간이 갈수록 나는 올바른 투자 방법이란, 자신이 어느 정도 안다고 생각하고 경영진을 철저히 믿는 기업에 꽤 큰 금액을 넣는 것이라고 더욱 확신하게 된다."
+   },
+   "plain": {
+    "ko": "잘 아는 회사, 믿을 수 있는 경영진에게 집중하는 편이 모르는 회사 여러 곳에 조금씩 넣는 것보다 낫다는 뜻이다."
+   },
+   "source": {
+    "title": "Letter to F. C. Scott, 15 August 1934 (Collected Writings, vol. XII); quoted in Warren Buffett's 1991 Berkshire Hathaway shareholder letter",
+    "year": 1934,
+    "type": "letter",
+    "locator": "Letter of 15 Aug 1934, as quoted by Buffett (1991)",
+    "url": "https://www.berkshirehathaway.com/letters/1991.html"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "keynes-14",
+   "advisor": "keynes",
+   "text": {
+    "en": "It is a mistake to think that one limits one's risk by spreading too much between enterprises about which one knows little and has no reason for special confidence.",
+    "ko": "잘 알지도 못하고 특별히 믿을 이유도 없는 기업들에 너무 넓게 흩어 놓으면 위험이 줄어든다고 생각하는 것은 착각이다."
+   },
+   "plain": {
+    "ko": "분산투자는 '아는 것 안에서' 해야 위험을 줄이며, 모르는 종목을 늘리는 건 위험을 숨길 뿐이다."
+   },
+   "source": {
+    "title": "Letter to F. C. Scott, 15 August 1934 (Collected Writings, vol. XII); quoted in Warren Buffett's 1991 Berkshire Hathaway shareholder letter",
+    "year": 1934,
+    "type": "letter",
+    "locator": "Letter of 15 Aug 1934, as quoted by Buffett (1991)",
+    "url": "https://www.berkshirehathaway.com/letters/1991.html"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "keynes-15",
+   "advisor": "keynes",
+   "text": {
+    "en": "… a careful selection of a few investments (or a few types of investment) having regard to their cheapness in relation to their probable actual and potential intrinsic value over a period of years ahead …",
+    "ko": "앞으로 몇 년에 걸친 실제적·잠재적 내재가치에 비해 얼마나 싼지를 기준으로, 소수의 투자(또는 소수 유형의 투자)를 신중하게 고르는 것."
+   },
+   "plain": {
+    "ko": "주가가 회사의 몇 년 뒤 가치보다 충분히 싼지를 따져 몇 개만 골라라."
+   },
+   "source": {
+    "title": "Memorandum on investment policy for the Estates Committee, King's College, Cambridge, 8 May 1938 (Collected Writings, vol. XII)",
+    "year": 1938,
+    "type": "memo",
+    "locator": "Principle (1) of three investment principles",
+    "url": "https://novelinvestor.com/john-maynard-keyness-investment-policy/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "keynes-16",
+   "advisor": "keynes",
+   "text": {
+    "en": "… a steadfast holding of these in fairly large units through thick and thin, perhaps for several years, until either they have fulfilled their promise …",
+    "ko": "그렇게 고른 것을 꽤 큰 단위로, 좋을 때나 나쁠 때나 꿋꿋이, 아마 몇 년 동안 그 약속이 실현될 때까지 보유하는 것."
+   },
+   "plain": {
+    "ko": "좋은 회사를 샀다면 주가가 흔들려도 그 가치가 드러날 때까지 기다리는 인내가 필요하다."
+   },
+   "source": {
+    "title": "Memorandum on investment policy for the Estates Committee, King's College, Cambridge, 8 May 1938 (Collected Writings, vol. XII)",
+    "year": 1938,
+    "type": "memo",
+    "locator": "Principle (2) of three investment principles",
+    "url": "https://www.valuewalk.com/john-maynard-keynes-3-guiding-principles-1938-stood-test-time/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "keynes-17",
+   "advisor": "keynes",
+   "text": {
+    "en": "I do not believe that selling at very low prices is a remedy for having failed to sell at high ones.",
+    "ko": "높을 때 팔지 못했다고 해서 아주 낮은 가격에 파는 것이 해결책이 된다고는 생각하지 않는다."
+   },
+   "plain": {
+    "ko": "폭락장에서 겁에 질려 파는 것은 지난 실수를 만회하는 게 아니라 손실을 확정하는 일일 수 있다."
+   },
+   "source": {
+    "title": "Letter to F. N. Curzon (National Mutual Life Assurance Society), March 1938 (Collected Writings, vol. XII)",
+    "year": 1938,
+    "type": "letter",
+    "locator": "Reply to Curzon's criticism of investment policy, March 1938",
+    "url": "https://novelinvestor.com/lessons-in-a-1938-letter-from-keynes/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "keynes-18",
+   "advisor": "keynes",
+   "text": {
+    "en": "A \"sound\" banker, alas! is not one who foresees danger and avoids it, but one who, when he is ruined, is ruined in a conventional and orthodox way along with his fellows …",
+    "ko": "아아, '건전한' 은행가란 위험을 내다보고 피하는 사람이 아니라, 망할 때 동료들과 함께 관습적이고 정통적인 방식으로 망하는 사람이다."
+   },
+   "plain": {
+    "ko": "다 같이 하는 선택이 안전해 보여도 실제로 안전하다는 보장은 없으니, 위기를 스스로 판단하라."
+   },
+   "source": {
+    "title": "Essays in Persuasion — \"The Consequences to the Banks of the Collapse of Money Values\" (Aug. 1931)",
+    "year": 1931,
+    "type": "essay",
+    "locator": "Part II, essay 7",
+    "url": "https://www.gutenberg.ca/ebooks/keynes-essaysinpersuasion/keynes-essaysinpersuasion-00-h.html"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-19",
+   "advisor": "keynes",
+   "text": {
+    "en": "But because we have magneto trouble, we need not assume that we shall soon be back in a rumbling waggon and that motoring is over.",
+    "ko": "점화 장치에 고장이 났다고 해서, 곧 덜컹거리는 마차 시대로 돌아가고 자동차 시대가 끝났다고 여길 필요는 없다."
+   },
+   "plain": {
+    "ko": "불황은 경제라는 엔진의 일시적 고장일 수 있으니, 위기 한복판에서도 기업의 장기 생산력을 함께 보라."
+   },
+   "source": {
+    "title": "Essays in Persuasion — \"The Great Slump of 1930\" (Dec. 1930)",
+    "year": 1930,
+    "type": "essay",
+    "locator": "Part II, essay 5, end of sec. I",
+    "url": "https://www.gutenberg.ca/ebooks/keynes-essaysinpersuasion/keynes-essaysinpersuasion-00-h.html"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "keynes-20",
+   "advisor": "keynes",
+   "text": {
+    "en": "This game of blind man's buff with exchange speculators serves no useful purpose and is extremely undignified.",
+    "ko": "환율 투기꾼들과 벌이는 이 술래잡기 놀이는 아무 쓸모도 없고 몹시 품위 없는 일이다."
+   },
+   "plain": {
+    "ko": "정책이 오락가락하면 투기만 부추기고 기업은 계획을 세우지 못하니, 불확실성 자체가 비용이라는 점을 기억하라."
+   },
+   "source": {
+    "title": "An Open Letter to President Roosevelt (New York Times, 31 Dec. 1933)",
+    "year": 1933,
+    "type": "letter",
+    "locator": "Section on gold-devaluation and exchange policy",
+    "url": "https://www.la.utexas.edu/users/hcleaver/368/368KeynesOpenLetFDRtable.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-01",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Everybody says that what business needs is confidence. I agree.",
+    "ko": "모두가 기업에 필요한 것은 신뢰라고 말한다. 나도 동의한다."
+   },
+   "plain": {
+    "ko": "시장은 숫자만큼이나 신뢰로 움직이니, 투자자가 믿을 수 있는 회사인지부터 살펴라."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 1",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-02",
+   "advisor": "kennedy",
+   "text": {
+    "en": "We of the Securities and Exchange Commission do not regard ourselves as coroners sitting on the corpse of financial enterprise.",
+    "ko": "우리 증권거래위원회는 스스로를 금융업의 시체를 검시하는 검시관으로 여기지 않는다."
+   },
+   "plain": {
+    "ko": "규제의 목적은 시장을 죽이는 것이 아니라 건강하게 되살리는 것이다."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 2",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-03",
+   "advisor": "kennedy",
+   "text": {
+    "en": "… in any time of change capital, always notoriously timid, shrinks from taking new positions. There is nothing unusual in this; it is caution born of experience.",
+    "ko": "변화의 시기에는 원래부터 소심하기로 악명 높은 자본이 새 자리를 잡기를 꺼린다는 것이다. 이상한 일이 아니다. 경험에서 나온 조심성이다."
+   },
+   "plain": {
+    "ko": "격변기에 돈이 움츠러드는 건 자연스러운 일이니, 그 두려움이 과도한지 따져 보는 것이 분석가의 몫이다."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 2",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-04",
+   "advisor": "kennedy",
+   "text": {
+    "en": "It is difficult for a man to be a prophet. There have been too many prophets already in and around the stock exchange …",
+    "ko": "사람이 예언자가 되기는 어렵다. 증권거래소 안팎에는 이미 예언자가 너무 많았다."
+   },
+   "plain": {
+    "ko": "시장을 예언한다는 사람은 넘쳐나니, 예언보다 사실과 숫자를 믿어라."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 2",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-05",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Such a market should be truly barometric. It should reflect the actual economic conditions …",
+    "ko": "그런 시장은 진정한 기압계여야 한다. 실제 경제 상황을 반영해야 한다."
+   },
+   "plain": {
+    "ko": "건전한 주식시장은 경제의 실제 날씨를 보여 주는 계기판이어야 한다."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 3",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-06",
+   "advisor": "kennedy",
+   "text": {
+    "en": "The earning power of a nation should be the controlling factor in establishing security levels …",
+    "ko": "증권 가격 수준을 정하는 데 결정적인 요인은 한 나라의 수익 창출력이어야 한다."
+   },
+   "plain": {
+    "ko": "주가는 결국 기업이 벌어들이는 돈을 따라가야 하니, 이익을 먼저 보라."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 3",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-07",
+   "advisor": "kennedy",
+   "text": {
+    "en": "The greater the publicity, the more protected the public will be and the more corrective the influence upon the financiers.",
+    "ko": "공개가 많을수록 대중은 더 보호받고, 금융가들에게는 더 큰 교정 효과가 생긴다."
+   },
+   "plain": {
+    "ko": "정보를 투명하게 공개하는 회사일수록 투자자가 판단하기 쉽고, 경영진도 함부로 하지 못한다."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 4",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-08",
+   "advisor": "kennedy",
+   "text": {
+    "en": "… no body of men, no government, no nation, is sufficiently wise to define the perfect investment, or to guarantee it, or to eliminate the risks of speculation.",
+    "ko": "어떤 집단도, 어떤 정부도, 어떤 나라도 완벽한 투자를 정의하거나 보장하거나 투기의 위험을 없앨 만큼 지혜롭지는 않다."
+   },
+   "plain": {
+    "ko": "규제가 있어도 위험은 사라지지 않으니, 위험을 감당하는 것은 결국 투자자 자신이다."
+   },
+   "source": {
+    "title": "Address at the National Press Club, Washington (radio address), 25 July 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 4",
+    "url": "https://www.sec.gov/files/news/speech/1934/072534kennedy.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-09",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Now, gentlemen, the Securities Act does not put the Government into business as a judge of values. It does not advise; it does not approve.",
+    "ko": "여러분, 증권법은 정부를 가치를 판정하는 사업에 끌어들이지 않습니다. 조언하지도 않고, 승인하지도 않습니다."
+   },
+   "plain": {
+    "ko": "공시 제도는 정보를 내놓게 할 뿐이고, 그 회사가 좋은지 판단하는 일은 투자자에게 남아 있다."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 3",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-10",
+   "advisor": "kennedy",
+   "text": {
+    "en": "The truth of these facts cannot be guaranteed. There will always be people to whom an oath is meaningless. There will always be problems of bad management.",
+    "ko": "이 사실들의 진실성은 보장될 수 없다. 맹세가 아무 의미 없는 사람은 언제나 있을 것이고, 나쁜 경영의 문제도 언제나 있을 것이다."
+   },
+   "plain": {
+    "ko": "공시 자료도 의심하며 읽고, 경영진의 정직성과 능력을 따로 확인하라."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 3",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-11",
+   "advisor": "kennedy",
+   "text": {
+    "en": "… he is being sold a piece of paper and that if he is to assure himself that he gets more than its intrinsic value as paper, he should ask himself, Who sells me this …?",
+    "ko": "그는 종잇조각 하나를 사고 있으며, 종이 이상의 가치를 얻으려면 스스로 물어야 한다. 누가 내게 이것을 파는가?"
+   },
+   "plain": {
+    "ko": "주식은 회사에 대한 권리가 담긴 종이이니, 누가 왜 그것을 권하는지부터 확인하라."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 9",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-12",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Speed in itself is not a virtue. … We don't want the staccato tempo of much of the frenzied financing of the late twenties.",
+    "ko": "속도 자체는 미덕이 아니다. 우리는 1920년대 후반의 광적인 자금 조달이 보여 준 다급한 박자를 원하지 않는다."
+   },
+   "plain": {
+    "ko": "서둘러 상장하거나 급하게 돈을 끌어모으는 회사는 한 번 더 의심해 보라."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 7",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-13",
+   "advisor": "kennedy",
+   "text": {
+    "en": "We are seeking to re-create, rebuild, restore confidence. Confidence is an outgrowth of character.",
+    "ko": "우리는 신뢰를 다시 만들고, 다시 세우고, 되살리려 한다. 신뢰는 인격에서 자라난다."
+   },
+   "plain": {
+    "ko": "회사에 대한 신뢰는 숫자보다 경영진의 정직함에서 나온다."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 10",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-14",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Success is not the success of one; it is the success of all. No man can live off the pack without being lived off by the pack.",
+    "ko": "성공은 한 사람의 성공이 아니라 모두의 성공이다. 무리를 등쳐 먹고 살면서 무리에게 등쳐 먹히지 않을 사람은 없다."
+   },
+   "plain": {
+    "ko": "남을 속여 버는 돈은 결국 시장 전체의 신뢰를 깎아 자신에게도 돌아온다."
+   },
+   "source": {
+    "title": "Address at the Boston Chamber of Commerce, 15 November 1934",
+    "year": 1934,
+    "type": "speech",
+    "locator": "p. 10",
+    "url": "https://www.sec.gov/news/speech/1934/111534kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-15",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Directors and officers are the agents of shareholders who, in many cases, because of their small holdings, are powerless to investigate or to supervise.",
+    "ko": "이사와 임원은 주주의 대리인이며, 주주들은 대개 보유 주식이 적어서 조사하거나 감독할 힘이 없다."
+   },
+   "plain": {
+    "ko": "소액주주는 경영진을 직접 감시하기 어려우니, 경영진의 지분 변동과 이해관계 공시를 꼭 확인하라."
+   },
+   "source": {
+    "title": "Address at the Union League Club of Chicago, 8 February 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "p. 5",
+    "url": "https://www.sec.gov/news/speech/1935/020835kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-16",
+   "advisor": "kennedy",
+   "text": {
+    "en": "A close examination convinced us that the only truth in the whole prospectus was the address to which you are invited to send your money.",
+    "ko": "자세히 살펴본 결과, 그 투자설명서 전체에서 유일한 진실은 돈을 보내라는 주소뿐이었다."
+   },
+   "plain": {
+    "ko": "투자설명서가 화려할수록 사실 하나하나를 직접 확인해야 한다."
+   },
+   "source": {
+    "title": "Address before the American Arbitration Association, New York, 19 March 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "potash-company prospectus example",
+    "url": "https://www.sec.gov/news/speech/1935/031935kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-17",
+   "advisor": "kennedy",
+   "text": {
+    "en": "With a remarkable, almost psychic sense of what the public is likely to \"fall for\", these racketeers constantly shift their wares and their technique.",
+    "ko": "대중이 무엇에 '넘어갈지'에 대한 놀랍고도 거의 초능력 같은 감각으로, 이 사기꾼들은 끊임없이 상품과 수법을 바꾼다."
+   },
+   "plain": {
+    "ko": "새로운 유행 테마가 뜰 때마다 그것을 이용한 엉터리 종목도 함께 나타난다는 점을 경계하라."
+   },
+   "source": {
+    "title": "Address before the American Arbitration Association, New York, 19 March 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "section on security swindles",
+    "url": "https://www.sec.gov/news/speech/1935/031935kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-18",
+   "advisor": "kennedy",
+   "text": {
+    "en": "We seek assurance against the unforeseen, forgetting that risk and uncertainty have always been the ordinary incidents of business.",
+    "ko": "우리는 예상치 못한 일에 대한 보장을 구하면서, 위험과 불확실성이 언제나 사업의 평범한 일부였다는 사실을 잊는다."
+   },
+   "plain": {
+    "ko": "불확실성이 없는 투자는 없으니, 완벽한 확신을 기다리다 기회를 놓치지 말라."
+   },
+   "source": {
+    "title": "Address before the American Arbitration Association, New York, 19 March 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "closing section on business confidence",
+    "url": "https://www.sec.gov/news/speech/1935/031935kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-19",
+   "advisor": "kennedy",
+   "text": {
+    "en": "Things never are quite as hopeless as they are made to appear by fear …",
+    "ko": "상황은 결코 두려움이 보여 주는 만큼 절망적이지 않다."
+   },
+   "plain": {
+    "ko": "공포가 시장을 덮을 때 실제 숫자는 생각보다 나쁘지 않은 경우가 많다."
+   },
+   "source": {
+    "title": "Address before the American Arbitration Association, New York, 19 March 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "closing section on business confidence",
+    "url": "https://www.sec.gov/news/speech/1935/031935kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "kennedy-20",
+   "advisor": "kennedy",
+   "text": {
+    "en": "The cheapest thing in the world today is money. Cheap money and lack of business confidence are synonymous.",
+    "ko": "오늘날 세상에서 가장 싼 것은 돈이다. 싼 돈과 기업 신뢰의 부족은 같은 말이다."
+   },
+   "plain": {
+    "ko": "금리가 아주 낮다는 건 돈을 쓰려는 기업이 없다는 신호일 수 있으니, 금리를 경기 심리와 함께 읽어라."
+   },
+   "source": {
+    "title": "Address before the American Arbitration Association, New York, 19 March 1935",
+    "year": 1935,
+    "type": "speech",
+    "locator": "section on new financing",
+    "url": "https://www.sec.gov/news/speech/1935/031935kennedy-1.pdf"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-01",
+   "advisor": "baruch",
+   "text": {
+    "en": "All economic movements, by their very nature, are motivated by crowd psychology.",
+    "ko": "모든 경제적 움직임은 본질적으로 군중 심리에 의해 움직인다."
+   },
+   "plain": {
+    "ko": "경기와 주가의 큰 흐름 뒤에는 늘 사람들의 집단 심리가 있다는 걸 기억하라."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiii (first sentence)",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-02",
+   "advisor": "baruch",
+   "text": {
+    "en": "Graphs and business ratios are, of course, indispensable in our groping efforts to find dependable rules to guide us in our present world of alarms.",
+    "ko": "그래프와 경영 지표는 물론, 경보가 끊이지 않는 지금 세상에서 믿을 만한 규칙을 더듬어 찾으려는 우리의 노력에 없어서는 안 된다."
+   },
+   "plain": {
+    "ko": "재무 지표와 차트는 꼭 필요하지만, 그것만으로 시장을 다 설명할 수는 없다."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiii",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-03",
+   "advisor": "baruch",
+   "text": {
+    "en": "Without due recognition of crowd-thinking (which often seems crowd-madness) our theories of economics leave much to be desired.",
+    "ko": "군중의 사고(종종 군중의 광기처럼 보이는)를 제대로 인정하지 않으면, 우리의 경제 이론은 아쉬운 점이 많다."
+   },
+   "plain": {
+    "ko": "숫자 분석에 '사람들이 지금 어떤 분위기인가'를 더해야 시장을 제대로 읽을 수 있다."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiii",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-04",
+   "advisor": "baruch",
+   "text": {
+    "en": "It is a force wholly impalpable — perhaps little amenable to analysis and less to guidance — and yet, knowledge of it is necessary to right judgments on passing events.",
+    "ko": "그것은 전혀 손에 잡히지 않는 힘이어서 분석하기도 어렵고 이끌기는 더 어렵지만, 지나가는 사건을 올바로 판단하려면 그것을 알아야 한다."
+   },
+   "plain": {
+    "ko": "군중 심리는 측정하기 어렵지만, 무시하면 판단을 그르친다."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiii",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-05",
+   "advisor": "baruch",
+   "text": {
+    "en": "No preventive is anywhere suggested, but accurate knowledge and popular recognition of them and their early symptoms should lighten and may even avoid the more harmful of their full effects.",
+    "ko": "어디에도 예방책은 제시돼 있지 않지만, 그것과 그 초기 증상을 정확히 알고 널리 인식한다면 더 해로운 결과를 줄이고 어쩌면 피할 수도 있을 것이다."
+   },
+   "plain": {
+    "ko": "거품을 막을 수는 없어도, 초기 신호를 알아보면 큰 피해는 피할 수 있다."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiv",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-06",
+   "advisor": "baruch",
+   "text": {
+    "en": "… if, in the lamentable era of the \"New Economics,\" culminating in 1929, … we had all continuously repeated, \"two and two still make four\" much of the evil might have been averted.",
+    "ko": "1929년에 정점을 찍은 한심한 '신경제' 시대에 우리 모두가 '2 더하기 2는 여전히 4'라고 계속 되뇌었다면, 그 해악의 상당 부분을 피할 수 있었을 것이다."
+   },
+   "plain": {
+    "ko": "'이번엔 다르다'는 말이 나올 때일수록 기본 산수와 상식으로 돌아가라."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiv",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-07",
+   "advisor": "baruch",
+   "text": {
+    "en": "… when many begin to wonder if declines will never halt, the appropriate abracadabra may be: \"They always did.\"",
+    "ko": "하락이 영영 멈추지 않을까 많은 이들이 걱정하기 시작할 때, 알맞은 주문은 아마 이것일 것이다. '언제나 멈췄다.'"
+   },
+   "plain": {
+    "ko": "폭락장에서도 역사적으로 하락은 결국 멈췄다는 사실이 공포를 다스리는 데 도움이 된다."
+   },
+   "source": {
+    "title": "Foreword to Charles Mackay, Extraordinary Popular Delusions and the Madness of Crowds (L. C. Page, 1932 ed.)",
+    "year": 1932,
+    "type": "essay",
+    "locator": "Foreword, p. xiv",
+    "url": "https://archive.org/details/in.ernet.dli.2015.58938"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "baruch-08",
+   "advisor": "baruch",
+   "text": {
+    "en": "When beggars and shoeshine boys, barbers and beauticians can tell you how to get rich it is time to remind yourself that there is no more dangerous illusion than the belief that one can get something for nothing.",
+    "ko": "거지와 구두닦이 소년, 이발사와 미용사까지 부자 되는 법을 알려 줄 때는, 공짜로 무언가를 얻을 수 있다는 믿음보다 위험한 환상은 없다는 사실을 스스로 상기할 때다."
+   },
+   "plain": {
+    "ko": "주변 모두가 주식으로 쉽게 돈 번다고 말할 때가 오히려 조심해야 할 때다."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "1929 crash chapter (Wikiquote sourced section)",
+    "url": "https://en.wikiquote.org/wiki/Bernard_Baruch"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-09",
+   "advisor": "baruch",
+   "text": {
+    "en": "I have defined a speculator as a man who observes the future and acts before it occurs.",
+    "ko": "나는 투기꾼을 미래를 관찰하고 그것이 일어나기 전에 행동하는 사람이라고 정의해 왔다."
+   },
+   "plain": {
+    "ko": "좋은 투기란 남보다 먼저 사실을 관찰하고 준비하는 것이지, 막연히 운에 거는 것이 아니다."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Book notes on My Own Story; Wikiquote gives a variant (\"A speculator is a man who observes the future, and acts before it occurs\") from The Public Years (1960), p. 31",
+    "url": "https://novelinvestor.com/notes/baruch-my-own-story/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-10",
+   "advisor": "baruch",
+   "text": {
+    "en": "In the stock market the facts of any situation come to us through a curtain of human emotions.",
+    "ko": "주식시장에서 어떤 상황의 사실은 인간 감정이라는 커튼을 통과해서 우리에게 온다."
+   },
+   "plain": {
+    "ko": "뉴스와 주가에는 사람들의 감정이 섞여 있으니, 감정을 걷어 내고 사실만 골라내라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Book notes on My Own Story",
+    "url": "https://novelinvestor.com/notes/baruch-my-own-story/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-11",
+   "advisor": "baruch",
+   "text": {
+    "en": "Don't speculate unless you can make it a full-time job.",
+    "ko": "투기를 전업으로 할 수 없다면 하지 마라."
+   },
+   "plain": {
+    "ko": "단타나 투기는 시간과 노력을 전부 쏟을 각오가 없다면 손대지 않는 게 낫다."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 1",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-12",
+   "advisor": "baruch",
+   "text": {
+    "en": "Beware of barbers, beauticians, waiters — of anyone — bringing gifts of \"inside\" information or \"tips.\"",
+    "ko": "'내부' 정보나 '팁'을 선물처럼 가져오는 이발사, 미용사, 웨이터, 그 누구든 경계하라."
+   },
+   "plain": {
+    "ko": "누군가 귀띔해 주는 '확실한 정보'일수록 의심하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 2",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-13",
+   "advisor": "baruch",
+   "text": {
+    "en": "Before you buy a security, find out everything you can about the company, its management and competitors, its earnings, and possibilities for growth.",
+    "ko": "증권을 사기 전에, 그 회사와 경영진, 경쟁사, 이익, 성장 가능성에 대해 알아낼 수 있는 모든 것을 알아내라."
+   },
+   "plain": {
+    "ko": "주식을 사기 전에 회사의 사업, 경영진, 경쟁 상황, 실적을 직접 공부하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 3",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-14",
+   "advisor": "baruch",
+   "text": {
+    "en": "Don't try to buy at the bottom and sell at the top. This can't be done — except by liars.",
+    "ko": "바닥에서 사서 꼭대기에서 팔려고 하지 마라. 그건 불가능하다. 거짓말쟁이가 아니라면."
+   },
+   "plain": {
+    "ko": "최저가 매수와 최고가 매도를 노리기보다 충분히 싼 가격에 사는 데 집중하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 4",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-15",
+   "advisor": "baruch",
+   "text": {
+    "en": "Learn how to take your losses quickly and cleanly. Don't expect to be right all the time. If you have made a mistake, cut your losses as quickly as possible.",
+    "ko": "손실을 빠르고 깔끔하게 받아들이는 법을 배워라. 늘 옳기를 기대하지 마라. 실수했다면 가능한 한 빨리 손실을 끊어라."
+   },
+   "plain": {
+    "ko": "판단이 틀렸다는 게 확인되면 고집 부리지 말고 손실을 인정하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 5",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-16",
+   "advisor": "baruch",
+   "text": {
+    "en": "Don't buy too many different securities. Better to have only a few investments that can be watched.",
+    "ko": "너무 많은 종류의 증권을 사지 마라. 지켜볼 수 있는 몇 개의 투자만 갖는 편이 낫다."
+   },
+   "plain": {
+    "ko": "내가 꾸준히 확인할 수 있는 만큼만 종목을 보유하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 6",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-17",
+   "advisor": "baruch",
+   "text": {
+    "en": "Always keep a good part of your capital in a cash reserve. Never invest all your funds.",
+    "ko": "자본의 상당 부분은 늘 현금으로 남겨 두라. 절대 모든 돈을 투자하지 마라."
+   },
+   "plain": {
+    "ko": "현금을 남겨 두면 폭락장에서 버틸 수 있고 싸게 살 기회도 잡을 수 있다."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Ten investment rules, rule 9",
+    "url": "https://www.fool.com/investing/general/2014/12/04/10-rules-for-smart-investing-from-one-of-americas.aspx"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "baruch-18",
+   "advisor": "baruch",
+   "text": {
+    "en": "There is something about inside information which seems to paralyze a man's reasoning powers.",
+    "ko": "내부 정보에는 사람의 추론 능력을 마비시키는 무언가가 있는 듯하다."
+   },
+   "plain": {
+    "ko": "'나만 아는 정보'라는 느낌이 들면 오히려 냉정한 분석을 멈추게 되니 조심하라."
+   },
+   "source": {
+    "title": "Baruch: My Own Story",
+    "year": 1957,
+    "type": "book",
+    "locator": "Passage on inside information (as quoted in Novel Investor)",
+    "url": "https://novelinvestor.com/bernard-baruchs-biggest-mistake/"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "graham-01",
+   "advisor": "graham",
+   "text": {
+    "en": "The investor's chief problem—and even his worst enemy—is likely to be himself.",
+    "ko": "투자자의 가장 큰 문제, 아니 최악의 적은 아마 자기 자신일 것이다."
+   },
+   "plain": {
+    "ko": "시장보다 내 감정과 습관이 손실의 더 큰 원인이 되기 쉽다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-02",
+   "advisor": "graham",
+   "text": {
+    "en": "We have seen much more money made and kept by \"ordinary people\" who were temperamentally well suited for the investment process than by those who lacked this quality, even though they had an extensive knowledge of finance, accounting, and stock-market lore.",
+    "ko": "금융·회계·주식시장 지식이 아무리 해박해도 투자에 맞는 기질이 없는 사람보다, 기질이 투자에 잘 맞는 '평범한 사람들'이 훨씬 더 많은 돈을 벌고 또 지켜내는 것을 우리는 보아 왔다."
+   },
+   "plain": {
+    "ko": "투자에서는 많이 아는 것보다 차분하게 버티는 성격이 더 중요할 때가 많다는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-03",
+   "advisor": "graham",
+   "text": {
+    "en": "Obvious prospects for physical growth in a business do not translate into obvious profits for investors.",
+    "ko": "사업이 눈에 띄게 성장할 전망이 있다고 해서 투자자에게도 눈에 띄는 수익이 돌아오는 것은 아니다."
+   },
+   "plain": {
+    "ko": "잘나가는 산업의 회사라도 비싸게 사면 돈을 못 벌 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-04",
+   "advisor": "graham",
+   "text": {
+    "en": "While enthusiasm may be necessary for great accomplishments elsewhere, on Wall Street it almost invariably leads to disaster.",
+    "ko": "열정은 다른 분야에서 큰일을 이루는 데 필요할지 몰라도, 월스트리트에서는 거의 언제나 재앙으로 이어진다."
+   },
+   "plain": {
+    "ko": "주식에 너무 들뜨면 판단이 흐려져 크게 잃기 쉽다는 경고예요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-05",
+   "advisor": "graham",
+   "text": {
+    "en": "The habit of relating what is paid to what is being offered is an invaluable trait in investment.",
+    "ko": "내가 치르는 값과 그 대가로 얻는 것을 늘 견주어 보는 습관은 투자에서 더없이 귀한 자질이다."
+   },
+   "plain": {
+    "ko": "좋은 회사인지뿐 아니라 그 가격이 적당한지를 항상 따져 보라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-06",
+   "advisor": "graham",
+   "text": {
+    "en": "We advised the readers to buy their stocks as they bought their groceries, not as they bought their perfume.",
+    "ko": "우리는 독자들에게 주식을 향수 사듯 사지 말고 장보듯 사라고 권했다."
+   },
+   "plain": {
+    "ko": "분위기나 이미지에 끌려 사지 말고, 장 볼 때처럼 가격과 품질을 꼼꼼히 비교하라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish (recalling his earlier article in a women's magazine)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-07",
+   "advisor": "graham",
+   "text": {
+    "en": "The defensive (or passive) investor will place his chief emphasis on the avoidance of serious mistakes or losses.",
+    "ko": "방어적(소극적) 투자자는 무엇보다 심각한 실수나 손실을 피하는 데 중점을 둔다."
+   },
+   "plain": {
+    "ko": "초보라면 큰돈을 버는 것보다 크게 잃지 않는 것을 먼저 목표로 삼으라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Introduction: What This Book Expects to Accomplish"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-08",
+   "advisor": "graham",
+   "text": {
+    "en": "An investment operation is one which, upon thorough analysis promises safety of principal and an adequate return. Operations not meeting these requirements are speculative.",
+    "ko": "투자란 철저한 분석을 바탕으로 원금의 안전과 적절한 수익을 약속하는 행위다. 이 조건을 충족하지 못하면 투기다."
+   },
+   "plain": {
+    "ko": "꼼꼼히 분석했고 원금을 지킬 수 있으면서 적당한 수익이 기대될 때만 '투자'라고 부를 수 있다는 정의예요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 1, Investment versus Speculation: Results to Be Expected by the Intelligent Investor (Graham quoting his own definition from Security Analysis, 1934)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-09",
+   "advisor": "graham",
+   "text": {
+    "en": "Outright speculation is neither illegal, immoral, nor (for most people) fattening to the pocketbook.",
+    "ko": "노골적인 투기는 불법도 아니고 비도덕적인 것도 아니지만, (대부분의 사람에게) 지갑을 불려 주지도 않는다."
+   },
+   "plain": {
+    "ko": "투기가 나쁜 짓은 아니지만 대부분은 결국 돈을 잃는다는 현실적인 조언이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 1, Investment versus Speculation: Results to Be Expected by the Intelligent Investor"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-10",
+   "advisor": "graham",
+   "text": {
+    "en": "Never mingle your speculative and investment operations in the same account, nor in any part of your thinking.",
+    "ko": "투기와 투자를 같은 계좌에서 섞지 말고, 생각 속에서도 결코 섞지 마라."
+   },
+   "plain": {
+    "ko": "재미로 하는 단타 돈과 오래 묻어 둘 투자 돈은 계좌도 마음가짐도 따로 관리하라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 1, Investment versus Speculation: Results to Be Expected by the Intelligent Investor"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-11",
+   "advisor": "graham",
+   "text": {
+    "en": "The rate of return sought should be dependent, rather, on the amount of intelligent effort the investor is willing and able to bring to bear on his task.",
+    "ko": "기대하는 수익률은 오히려 투자자가 그 일에 기꺼이, 그리고 실제로 쏟을 수 있는 지적인 노력의 양에 따라 정해져야 한다."
+   },
+   "plain": {
+    "ko": "위험을 더 지는 게 아니라 공부와 노력을 더 해야 더 높은 수익을 바랄 자격이 생긴다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 4, General Portfolio Policy: The Defensive Investor"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-12",
+   "advisor": "graham",
+   "text": {
+    "en": "These copybook maxims have always been easy to enunciate and always difficult to follow—because they go against that very human nature which produces the excesses of bull and bear markets.",
+    "ko": "이런 교과서 같은 격언은 말하기는 늘 쉽고 따르기는 늘 어렵다. 강세장과 약세장의 지나침을 만들어 내는 바로 그 인간 본성을 거스르기 때문이다."
+   },
+   "plain": {
+    "ko": "'쌀 때 사고 비쌀 때 팔라'는 말은 쉽지만, 사람의 본능과 반대라서 실천이 어렵다는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 4, General Portfolio Policy: The Defensive Investor"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-13",
+   "advisor": "graham",
+   "text": {
+    "en": "There should be adequate though not excessive diversification. This might mean a minimum of ten different issues and a maximum of about thirty.",
+    "ko": "분산 투자는 충분하되 지나치지 않아야 한다. 대략 최소 10개, 최대 30개 정도의 종목을 뜻한다."
+   },
+   "plain": {
+    "ko": "한두 종목에 몰빵하지도, 너무 많이 쪼개지도 말고 적당히 나눠 담으라는 기준이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 5, The Defensive Investor and Common Stocks (rule 1 for the defensive investor)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-14",
+   "advisor": "graham",
+   "text": {
+    "en": "Even the intelligent investor is likely to need considerable will power to keep from following the crowd.",
+    "ko": "현명한 투자자조차 군중을 따라가지 않으려면 상당한 의지력이 필요할 것이다."
+   },
+   "plain": {
+    "ko": "남들이 다 살 때 같이 사고 싶은 마음을 참는 건 누구에게나 어렵다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-15",
+   "advisor": "graham",
+   "text": {
+    "en": "Imagine that in some private business you own a small share that cost you $1,000. One of your partners, named Mr. Market, is very obliging indeed.",
+    "ko": "어떤 비상장 사업에 1,000달러를 주고 작은 지분을 갖고 있다고 상상해 보라. 동업자 가운데 '미스터 마켓'이라는 사람이 있는데, 그는 무척이나 친절하다."
+   },
+   "plain": {
+    "ko": "주식시장을 매일 가격을 불러 주는 변덕스러운 동업자로 생각해 보라는 유명한 비유의 시작이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations (Mr. Market parable)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-16",
+   "advisor": "graham",
+   "text": {
+    "en": "Often, on the other hand, Mr. Market lets his enthusiasm or his fears run away with him, and the value he proposes seems to you a little short of silly.",
+    "ko": "반면 미스터 마켓은 종종 열광이나 두려움에 휩쓸려, 그가 제시하는 가격이 당신에게는 거의 어처구니없어 보이기도 한다."
+   },
+   "plain": {
+    "ko": "시장 가격은 감정에 따라 터무니없이 높거나 낮아질 수 있으니 그대로 믿지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations (Mr. Market parable)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-17",
+   "advisor": "graham",
+   "text": {
+    "en": "Basically, price fluctuations have only one significant meaning for the true investor. They provide him with an opportunity to buy wisely when prices fall sharply and to sell wisely when they advance a great deal.",
+    "ko": "근본적으로 가격 변동은 진정한 투자자에게 단 하나의 의미만 있다. 가격이 급락할 때 현명하게 사고, 크게 올랐을 때 현명하게 팔 기회를 준다는 것이다."
+   },
+   "plain": {
+    "ko": "주가가 출렁이는 건 겁낼 일이 아니라 싸게 사고 비싸게 팔 기회라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-18",
+   "advisor": "graham",
+   "text": {
+    "en": "The true investor scarcely ever is forced to sell his shares, and at all other times he is free to disregard the current price quotation.",
+    "ko": "진정한 투자자는 주식을 억지로 팔아야 하는 일이 거의 없으며, 그 밖의 모든 때에는 현재 시세를 무시해도 된다."
+   },
+   "plain": {
+    "ko": "급하게 쓸 돈으로 투자하지 않으면, 매일의 주가에 휘둘릴 필요가 없다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-19",
+   "advisor": "graham",
+   "text": {
+    "en": "The investor who permits himself to be stampeded or unduly worried by unjustified market declines in his holdings is perversely transforming his basic advantage into a basic disadvantage.",
+    "ko": "근거 없는 시장 하락에 휩쓸려 허둥대거나 지나치게 걱정하는 투자자는 자신의 기본적인 강점을 어리석게도 기본적인 약점으로 바꾸고 있는 것이다."
+   },
+   "plain": {
+    "ko": "팔지 않고 기다릴 수 있다는 게 개인 투자자의 강점인데, 겁먹고 팔면 그 강점을 스스로 버리는 셈이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-20",
+   "advisor": "graham",
+   "text": {
+    "en": "The speculator's primary interest lies in anticipating and profiting from market fluctuations. The investor's primary interest lies in acquiring and holding suitable securities at suitable prices.",
+    "ko": "투기자의 주된 관심은 시장 변동을 예측해 이익을 얻는 데 있다. 투자자의 주된 관심은 적절한 증권을 적절한 가격에 사서 보유하는 데 있다."
+   },
+   "plain": {
+    "ko": "오르내림을 맞히려 하면 투기, 좋은 것을 알맞은 값에 사서 갖고 있으면 투자라는 구분이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations (Summary)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-21",
+   "advisor": "graham",
+   "text": {
+    "en": "The investor with a portfolio of sound stocks should expect their prices to fluctuate and should neither be concerned by sizable declines nor become excited by sizable advances.",
+    "ko": "건전한 주식으로 포트폴리오를 꾸린 투자자는 가격이 오르내릴 것을 예상해야 하며, 큰 폭의 하락에 걱정하지도, 큰 폭의 상승에 들뜨지도 말아야 한다."
+   },
+   "plain": {
+    "ko": "좋은 주식을 샀다면 주가가 크게 떨어지거나 올라도 담담하게 지켜보라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 8, The Investor and Market Fluctuations"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-22",
+   "advisor": "graham",
+   "text": {
+    "en": "Wall Street has a few prudent principles; the trouble is that they are always forgotten when they are most needed.",
+    "ko": "월스트리트에도 신중한 원칙이 몇 가지 있다. 문제는 그 원칙들이 가장 필요할 때 늘 잊힌다는 것이다."
+   },
+   "plain": {
+    "ko": "시장이 과열되거나 공포에 빠질 때일수록 기본 원칙을 더 붙잡아야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 16, Convertible Issues and Warrants, p. 225"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-23",
+   "advisor": "graham",
+   "text": {
+    "en": "The speculative public is incorrigible. In financial terms it cannot count beyond 3.",
+    "ko": "투기하는 대중은 구제 불능이다. 돈 문제에 관해서라면 셋 너머로는 셀 줄을 모른다."
+   },
+   "plain": {
+    "ko": "유행과 분위기만 쫓는 사람들은 기본적인 계산조차 하지 않는다는 꼬집음이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 17, Four Extremely Instructive Case Histories"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-24",
+   "advisor": "graham",
+   "text": {
+    "en": "Confronted with a like challenge to distill the secret of sound investment into three words, we venture the motto, MARGIN OF SAFETY.",
+    "ko": "건전한 투자의 비결을 세 단어로 압축해 보라는 같은 과제를 받는다면, 우리는 감히 이 표어를 내놓겠다. '안전마진(MARGIN OF SAFETY)'."
+   },
+   "plain": {
+    "ko": "투자의 핵심은 실제 가치보다 충분히 싸게 사서 실수할 여유를 남겨 두는 것이라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment (opening paragraph)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-25",
+   "advisor": "graham",
+   "text": {
+    "en": "The function of the margin of safety is, in essence, that of rendering unnecessary an accurate estimate of the future.",
+    "ko": "안전마진의 역할은 본질적으로 미래를 정확히 예측할 필요가 없게 만드는 것이다."
+   },
+   "plain": {
+    "ko": "충분히 싸게 사 두면 미래를 정확히 맞히지 못해도 크게 다치지 않는다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-26",
+   "advisor": "graham",
+   "text": {
+    "en": "The margin of safety is always dependent on the price paid. It will be large at one price, small at some higher price, nonexistent at some still higher price.",
+    "ko": "안전마진은 언제나 지불한 가격에 달려 있다. 어떤 가격에서는 크고, 그보다 높은 가격에서는 작으며, 더 높은 가격에서는 아예 없다."
+   },
+   "plain": {
+    "ko": "같은 좋은 회사라도 얼마에 사느냐에 따라 안전한 투자가 될 수도, 위험한 투자가 될 수도 있어요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-27",
+   "advisor": "graham",
+   "text": {
+    "en": "Observation over many years has taught us that the chief losses to investors come from the purchase of low-quality securities at times of favorable business conditions.",
+    "ko": "오랜 관찰로 우리가 배운 것은, 투자자의 주된 손실이 경기가 좋을 때 질 낮은 증권을 사들이는 데서 생긴다는 점이다."
+   },
+   "plain": {
+    "ko": "경기가 좋아 보일 때 부실한 회사 주식까지 덥석 사는 것이 가장 흔한 손실 원인이라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment, p. 280"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-28",
+   "advisor": "graham",
+   "text": {
+    "en": "For the margin guarantees only that he has a better chance for profit than for loss—not that loss is impossible.",
+    "ko": "안전마진이 보장하는 것은 손실보다 이익의 가능성이 더 크다는 것뿐이지, 손실이 불가능하다는 것이 아니다."
+   },
+   "plain": {
+    "ko": "싸게 사도 한 종목은 실패할 수 있으니 여러 종목에 나눠 담아야 한다는 분산 투자의 이유예요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment (section \"Theory of Diversification\")"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-29",
+   "advisor": "graham",
+   "text": {
+    "en": "Investment is most intelligent when it is most businesslike.",
+    "ko": "투자는 가장 사업가답게 할 때 가장 현명하다."
+   },
+   "plain": {
+    "ko": "주식을 살 때 그 회사를 직접 운영하는 사장처럼 따져 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment, p. 286"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-30",
+   "advisor": "graham",
+   "text": {
+    "en": "You are neither right nor wrong because the crowd disagrees with you. You are right because your data and reasoning are right.",
+    "ko": "군중이 당신과 의견이 다르다고 해서 당신이 옳거나 그른 것은 아니다. 당신이 옳은 것은 당신의 자료와 추론이 옳기 때문이다."
+   },
+   "plain": {
+    "ko": "다수결이 아니라 근거와 논리가 맞는지로 판단하라는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment (fourth business principle)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-31",
+   "advisor": "graham",
+   "text": {
+    "en": "To achieve satisfactory investment results is easier than most people realize; to achieve superior results is harder than it looks.",
+    "ko": "만족스러운 투자 성과를 내는 것은 대부분의 생각보다 쉽다. 남보다 뛰어난 성과를 내는 것은 보기보다 어렵다."
+   },
+   "plain": {
+    "ko": "무리하지 않으면 괜찮은 수익은 충분히 가능하지만, 시장을 이기려는 건 훨씬 어렵다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Ch. 20, \"Margin of Safety\" as the Central Concept of Investment, p. 287"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-32",
+   "advisor": "graham",
+   "text": {
+    "en": "One lucky break, or one supremely shrewd decision—can we tell them apart?—may count for more than a lifetime of journeyman efforts.",
+    "ko": "한 번의 행운, 혹은 한 번의 탁월한 판단이 — 둘을 구별할 수나 있을까? — 평생의 성실한 노력보다 더 큰 몫을 할 수도 있다."
+   },
+   "plain": {
+    "ko": "큰 성공에는 운이 섞여 있을 수 있으니, 결과만 보고 실력이라고 단정하지 말라는 겸손한 조언이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (4th rev. ed.)",
+    "year": 1973,
+    "type": "book",
+    "locator": "Postscript (on the GEICO investment)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-33",
+   "advisor": "graham",
+   "text": {
+    "en": "Mathematics is ordinarily considered as producing precise and dependable results; but in the stock market the more elaborate and abstruse the mathematics the more uncertain and speculative are the conclusions we draw therefrom.",
+    "ko": "수학은 보통 정확하고 믿을 만한 결과를 낸다고 여겨진다. 그러나 주식시장에서는 수학이 정교하고 난해할수록 거기서 끌어낸 결론은 더 불확실하고 투기적이 된다."
+   },
+   "plain": {
+    "ko": "복잡한 공식이 그럴듯해 보여도 주식에서는 오히려 판단을 흐릴 수 있다는 말이에요."
+   },
+   "source": {
+    "title": "The New Speculation in Common Stocks",
+    "year": 1958,
+    "type": "speech",
+    "locator": "Address to a meeting of financial analysts, 1958; text reprinted as Appendix 4 in The Intelligent Investor (rev. ed., 2003)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-34",
+   "advisor": "graham",
+   "text": {
+    "en": "In other words, the market is not a weighing machine... Rather should we say that the market is a voting machine, whereon countless individuals register choices which are the product partly of reason and partly of emotion.",
+    "ko": "다시 말해 시장은 저울이 아니다… 차라리 시장은 투표 기계라고 해야 한다. 수많은 사람이 일부는 이성으로, 일부는 감정으로 내린 선택을 그 위에 던진다."
+   },
+   "plain": {
+    "ko": "주가는 회사의 진짜 무게가 아니라 사람들의 생각과 기분이 모인 투표 결과라는 뜻이에요."
+   },
+   "source": {
+    "title": "Security Analysis (1st ed., with David L. Dodd)",
+    "year": 1934,
+    "type": "book",
+    "locator": "Ch. 1 (The Scope and Limitations of Security Analysis)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "graham-35",
+   "advisor": "graham",
+   "text": {
+    "en": "Most of the time common stocks are subject to irrational and excessive price fluctuations in both directions, as the consequence of the ingrained tendency of most people to speculate or gamble.",
+    "ko": "대부분의 시간 동안 보통주는 위아래 양쪽으로 비이성적이고 지나친 가격 변동을 겪는다. 투기하거나 도박하려는, 사람들 대부분의 뿌리 깊은 성향 때문이다."
+   },
+   "plain": {
+    "ko": "주가가 지나치게 오르내리는 건 회사보다 사람들의 욕심과 두려움 때문인 경우가 많다는 말이에요."
+   },
+   "source": {
+    "title": "A Conversation with Benjamin Graham",
+    "year": 1976,
+    "type": "interview",
+    "locator": "Financial Analysts Journal, Sept./Oct. 1976 (as quoted in Kahn & Milne, Benjamin Graham: The Father of Financial Analysis, 1977, p. 48)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "graham-36",
+   "advisor": "graham",
+   "text": {
+    "en": "The main point is to have the right general principles and the character to stick to them.",
+    "ko": "핵심은 올바른 일반 원칙을 갖는 것, 그리고 그 원칙을 지켜 나갈 성품을 갖는 것이다."
+   },
+   "plain": {
+    "ko": "복잡한 기법보다 바른 원칙을 정하고 꾸준히 지키는 태도가 더 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "An Hour with Mr. Graham",
+    "year": 1976,
+    "type": "interview",
+    "locator": "\"An Hour with Mr. Graham\" (interview by Hartman L. Butler Jr., La Jolla, March 6, 1976), in Kahn & Milne, Benjamin Graham: The Father of Financial Analysis (1977), p. 36"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-37",
+   "advisor": "graham",
+   "text": {
+    "en": "There are two requirements for success in Wall Street. One, you have to think correctly; and secondly, you have to think independently.",
+    "ko": "월스트리트에서 성공하려면 두 가지가 필요하다. 첫째, 올바르게 생각해야 한다. 둘째, 독립적으로 생각해야 한다."
+   },
+   "plain": {
+    "ko": "맞게 생각하는 것과 남을 따라 하지 않고 스스로 생각하는 것, 둘 다 있어야 한다는 말이에요."
+   },
+   "source": {
+    "title": "An Hour with Mr. Graham",
+    "year": 1976,
+    "type": "interview",
+    "locator": "\"An Hour with Mr. Graham\" (interview by Hartman L. Butler Jr., La Jolla, March 6, 1976), in Kahn & Milne, Benjamin Graham: The Father of Financial Analysis (1977), p. 41"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "graham-38",
+   "advisor": "graham",
+   "text": {
+    "en": "Intelligent investment is more a matter of mental approach than it is of technique.",
+    "ko": "현명한 투자는 기법의 문제라기보다 마음가짐의 문제다."
+   },
+   "plain": {
+    "ko": "어떤 기술을 쓰느냐보다 시장을 대하는 태도가 더 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (1st ed.)",
+    "year": 1949,
+    "type": "book",
+    "locator": "Ch. II, The Investor and Stock-Market Fluctuations, p. 21"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "graham-39",
+   "advisor": "graham",
+   "text": {
+    "en": "Though business conditions may change, corporations and securities may change, and financial institutions and regulations may change, human nature remains the same.",
+    "ko": "경기도 바뀌고, 기업과 증권도 바뀌고, 금융 기관과 규제도 바뀔 수 있지만, 인간의 본성은 그대로다."
+   },
+   "plain": {
+    "ko": "시대가 달라져도 욕심과 두려움은 같으니, 과거의 교훈이 여전히 쓸모 있다는 말이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (1st ed.)",
+    "year": 1949,
+    "type": "book",
+    "locator": "Introduction, p. xxiv"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "graham-40",
+   "advisor": "graham",
+   "text": {
+    "en": "His role is not that of a prophet but of a businessman seizing clearly evident investment opportunities.",
+    "ko": "그의 역할은 예언자가 아니라, 분명히 드러난 투자 기회를 붙잡는 사업가의 역할이다."
+   },
+   "plain": {
+    "ko": "시장을 맞히려 하지 말고, 눈에 보이게 싸진 기회를 차분히 잡으라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Intelligent Investor (1st ed.)",
+    "year": 1949,
+    "type": "book",
+    "locator": "Ch. II, The Investor and Stock-Market Fluctuations, p. 31"
+   },
+   "confidence": "secondary"
+  }
+ ]
+}

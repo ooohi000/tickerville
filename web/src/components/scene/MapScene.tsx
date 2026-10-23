@@ -20,6 +20,8 @@ import { MarketWeatherBadge } from "@/components/ui/MarketWeatherBadge";
 import { SampleDataNotice } from "@/components/ui/SampleDataNotice";
 import { SizeMetricToggle } from "@/components/ui/SizeMetricToggle";
 import { TopLeftHud } from "@/components/ui/TopLeftHud";
+import { EraPicker } from "@/components/era/EraPicker";
+import { EraRoot, useEra } from "@/components/era/useEra";
 import { buildMapLayout } from "@/lib/cluster/cityBlock";
 import { buildSizeViews } from "@/lib/cluster/sizeViews";
 import { formatLatLng } from "@/lib/camera/targetLine";
@@ -54,6 +56,7 @@ export interface MapSceneProps {
  */
 export function MapScene({ companies, regions, marketWeather: apiWeather, usingSample }: MapSceneProps) {
   const controlsRef = useRef<OrbitControlsImpl>(null);
+  const era = useEra();
   const [openRegionId, setOpenRegionId] = useState<string | null>(null);
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null);
   const [sizeMetric, setSizeMetric] = useState<SizeMetricId>(DEFAULT_SIZE_METRIC);
@@ -151,15 +154,15 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
           setOpenRegionId(null);
         }}
       >
-        <Sky weatherIndex={marketWeather.value} />
+        <Sky weatherIndex={marketWeather.value} scene={era.scene} />
 
         {/* 바다 — 땅 아래에 깔린 넓은 판. 색은 초안 */}
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]} receiveShadow>
           {/* 안개가 카메라 거리를 따라가서 멀리까지 보인다 → 바다 끝이 안 보이게 넉넉히 */}
           <planeGeometry args={[2000, 2000]} />
-          <meshStandardMaterial color="#2a5a7a" />
+          <meshStandardMaterial color={era.scene.sea} />
         </mesh>
-        <UsMap />
+        <UsMap landColor={era.scene.land} borderColor={era.scene.border} />
 
         {companies.map((c) => {
           // 지역 기업은 도시 블록 자리, 혼자 있는 기업은 실제 본사 위치 (lib/cluster/cityBlock)
@@ -203,7 +206,9 @@ export function MapScene({ companies, regions, marketWeather: apiWeather, usingS
         <CameraFocus focusKey={detailTicker} building={targetWorld} />
       </Canvas>
 
+      <EraRoot />
       <TopLeftHud>
+        <EraPicker />
         {usingSample && <SampleDataNotice />}
         <MarketClockBadge />
         <MarketWeatherBadge data={marketWeather} />

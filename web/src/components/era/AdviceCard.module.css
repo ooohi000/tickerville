@@ -1,0 +1,30 @@
+/* 상세 패널 안. 색은 패널 변수(--hud-*)만 써서 시대 스킨을 그대로 따른다 */
+.card { display: flex; flex-direction: column; gap: 8px; }
+
+.button {
+  align-self: flex-start;
+  min-height: 40px;
+  padding: 6px 14px;
+  border: 1px solid var(--hud-accent);
+  background: var(--hud-button-bg, transparent);
+  color: var(--hud-button-text, var(--hud-accent));
+  font: inherit;
+  font-family: var(--hud-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.button:hover { filter: brightness(1.15); }
+
+.figure { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 10px 12px; border-left: 3px solid var(--hud-accent); background: var(--hud-quote-bg, rgba(79, 216, 255, 0.05)); }
+.who { display: flex; flex-direction: column; gap: 1px; }
+.who b { font-size: 13px; }
+.who span { color: var(--hud-muted); font-size: 11px; }
+.quote { margin: 0; font-family: var(--hud-quote-font, inherit); font-size: 15px; line-height: 1.6; }
+.original { margin: 0; color: var(--hud-muted); font-size: 12px; font-style: italic; line-height: 1.5; }
+.plain { color: var(--hud-text-soft); font-size: 12px; line-height: 1.6; }
+.source { color: var(--hud-faint); font-size: 11px; line-height: 1.5; }
+.source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.tag { margin-left: 6px; padding: 0 5px; border: 1px solid var(--hud-line); font-size: 10px; }
+.link { align-self: flex-start; padding: 0; border: 0; background: none; color: var(--hud-muted); font: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; }
+.muted { color: var(--hud-muted); font-size: 12px; }

@@ -1,0 +1,98 @@
+/* 왼쪽 위 (TopLeftHud 안). 다른 표시들과 같은 어두운 칩 */
+.root {
+  position: relative;
+}
+
+.current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 4px 12px 4px 4px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(27, 36, 48, 0.85);
+  color: #ffffff;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.current:hover {
+  background: rgba(27, 36, 48, 0.95);
+}
+
+.face {
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a3442;
+}
+
+.year {
+  color: #f5c542;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.who {
+  font-weight: 600;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 260px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(20, 27, 37, 0.97);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hint {
+  padding: 2px 6px 6px;
+  color: #9aa7b8;
+  font-size: 12px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 6px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.active,
+.active:hover {
+  background: rgba(245, 197, 66, 0.16);
+  box-shadow: inset 0 0 0 1px #f5c542;
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.optionText span {
+  color: #9aa7b8;
+  font-size: 11px;
+}

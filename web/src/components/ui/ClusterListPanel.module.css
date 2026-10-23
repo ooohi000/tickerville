@@ -21,12 +21,12 @@
 }
 
 .item:hover {
-  background: rgba(79, 216, 255, 0.08);
+  background: var(--hud-hover-bg);
 }
 
 .selected,
 .selected:hover {
-  background: rgba(79, 216, 255, 0.16);
+  background: var(--hud-active-bg);
   color: var(--hud-text);
   outline: 1px solid var(--hud-accent);
 }
@@ -59,7 +59,7 @@
   padding: 10px;
   border: 1px solid var(--hud-line);
   background: transparent;
-  color: #ffffff;
+  color: var(--hud-text);
   font: inherit;
   font-size: 14px;
   cursor: pointer;

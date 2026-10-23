@@ -16,11 +16,9 @@ import {
   toShapeXY,
   type StatePolygon,
 } from "@/lib/geo/usStates";
+import { BASE_SCENE } from "@/lib/era/eras";
 import type { WorldPoint } from "@/types";
 
-/** 색은 초안 — 집에서 화면 보고 조정 */
-const LAND_COLOR = "#7fae6a";
-const BORDER_COLOR = "#4f7a45";
 /** 경계선이 땅 윗면과 겹쳐 깜빡이지(z-fighting) 않게 살짝 띄운다 */
 const BORDER_LIFT = 0.01;
 
@@ -36,7 +34,13 @@ function toShape(poly: StatePolygon): Shape {
  * 미국 50개 주 + DC를 하나의 지오메트리로 extrude한 땅 + 주 경계선.
  * 땅 윗면 높이는 MAP_HEIGHT (건물이 그 위에 선다).
  */
-export function UsMap() {
+export interface UsMapProps {
+  /** 땅·주 경계 색 — 시대 테마가 바꾼다 (lib/era/eras) */
+  landColor?: string;
+  borderColor?: string;
+}
+
+export function UsMap({ landColor = BASE_SCENE.land, borderColor = BASE_SCENE.border }: UsMapProps) {
   const states = getUsStates();
 
   const land = useMemo(() => {
@@ -65,10 +69,10 @@ export function UsMap() {
     <group>
       {/* xy 평면 Shape를 눕혀서 xz 평면으로. 두께는 +y 방향 */}
       <mesh geometry={land} rotation={[-Math.PI / 2, 0, 0]} castShadow receiveShadow>
-        <meshStandardMaterial color={LAND_COLOR} />
+        <meshStandardMaterial color={landColor} />
       </mesh>
       <lineSegments geometry={borders}>
-        <lineBasicMaterial color={BORDER_COLOR} />
+        <lineBasicMaterial color={borderColor} />
       </lineSegments>
     </group>
   );

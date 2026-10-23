@@ -1,0 +1,983 @@
+{
+ "era": "1863",
+ "advisors": [
+  {
+   "id": "barnum",
+   "name": {
+    "ko": "P. T. 바넘",
+    "en": "P. T. Barnum"
+   },
+   "years": "1810–1891",
+   "role": {
+    "ko": "쇼 비즈니스로 큰돈을 벌고 파산도 겪은 흥행사이자 『돈 버는 기술』(1880)의 저자"
+   },
+   "relation": {
+    "ko": "바넘은 자서전에서 1862년 링컨 대통령의 초청으로 코모도어 너트와 함께 백악관을 방문해 링컨과 재무장관 체이스 등 각료들을 만났다고 기록했다."
+   },
+   "relationSource": "https://www.gutenberg.org/ebooks/50115"
+  },
+  {
+   "id": "cooke",
+   "name": {
+    "ko": "제이 쿡",
+    "en": "Jay Cooke"
+   },
+   "years": "1821–1905",
+   "role": {
+    "ko": "남북전쟁 국채를 일반 시민에게 직접 팔아 북부의 전비를 마련한 필라델피아의 은행가"
+   },
+   "relation": {
+    "ko": "링컨 행정부의 재무장관 체이스는 쿡을 특별 대리인으로 삼아 1862년 승인된 5억 달러 규모의 '5-20 국채' 판매를 맡겼다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Jay_Cooke"
+  },
+  {
+   "id": "chase",
+   "name": {
+    "ko": "새먼 P. 체이스",
+    "en": "Salmon P. Chase"
+   },
+   "years": "1808–1873",
+   "role": {
+    "ko": "남북전쟁 전비 조달과 국법은행 제도를 설계한 링컨 행정부의 재무장관"
+   },
+   "relation": {
+    "ko": "체이스는 1861년부터 1864년까지 링컨 행정부의 재무장관을 지냈고, 사임한 같은 해 링컨에 의해 연방대법원장으로 임명되었다."
+   },
+   "relationSource": "https://home.treasury.gov/about/history/prior-secretaries/salmon-p-chase-1861-1864"
+  }
+ ],
+ "quotes": [
+  {
+   "id": "barnum-01",
+   "advisor": "barnum",
+   "text": {
+    "en": "True economy consists in always making the income exceed the out-go.",
+    "ko": "진정한 절약이란 언제나 들어오는 돈이 나가는 돈보다 많게 하는 것이다."
+   },
+   "plain": {
+    "ko": "기업이든 개인이든 버는 돈보다 쓰는 돈이 적어야, 즉 현금흐름이 플러스여야 오래 버틴다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Opening section (before 'Don't Mistake Your Vocation')",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-02",
+   "advisor": "barnum",
+   "text": {
+    "en": "Prosperity is a more severe ordeal than adversity, especially sudden prosperity.",
+    "ko": "번영은 역경보다 더 혹독한 시험이다. 갑작스러운 번영이라면 더욱 그렇다."
+   },
+   "plain": {
+    "ko": "갑자기 실적이 폭발한 회사가 그 돈을 어떻게 쓰는지가 위기 때보다 더 중요한 관전 포인트다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Opening section (before 'Don't Mistake Your Vocation')",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-03",
+   "advisor": "barnum",
+   "text": {
+    "en": "Young men starting in life should avoid running into debt. There is scarcely anything that drags a person down like debt.",
+    "ko": "이제 막 사회에 나선 젊은이는 빚을 지지 말아야 한다. 빚만큼 사람을 끌어내리는 것은 거의 없다."
+   },
+   "plain": {
+    "ko": "부채가 많은 기업은 작은 충격에도 쉽게 무너지니, 재무제표에서 부채 규모부터 확인하자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Avoid Debt'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-04",
+   "advisor": "barnum",
+   "text": {
+    "en": "Money is in some respects like fire; it is a very excellent servant but a terrible master.",
+    "ko": "돈은 어떤 면에서 불과 같다. 아주 훌륭한 하인이지만 끔찍한 주인이다."
+   },
+   "plain": {
+    "ko": "돈을 내가 부리면 자산이 되고, 빚과 이자가 나를 부리면 족쇄가 된다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Avoid Debt'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-05",
+   "advisor": "barnum",
+   "text": {
+    "en": "There is nothing animate or inanimate that will work so faithfully as money when placed at interest, well secured. It works night and day, and in wet or dry weather.",
+    "ko": "안전하게 이자를 받도록 맡겨 둔 돈만큼 충실하게 일하는 것은 살아 있든 아니든 세상에 없다. 돈은 밤낮없이, 비가 오나 날이 개나 일한다."
+   },
+   "plain": {
+    "ko": "복리는 쉬지 않고 일하니, 믿을 만한 곳에 일찍 맡겨 둘수록 유리하다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Avoid Debt'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-06",
+   "advisor": "barnum",
+   "text": {
+    "en": "A man who is all caution, will never dare to take hold and be successful; and a man who is all boldness, is merely reckless, and must eventually fail.",
+    "ko": "조심성만 있는 사람은 끝내 기회를 붙잡아 성공하지 못하고, 대담함만 있는 사람은 그저 무모할 뿐이어서 결국 실패한다."
+   },
+   "plain": {
+    "ko": "투자 계획은 신중하게 세우되, 정한 원칙은 과감하게 실행하는 균형이 필요하다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Depend Upon Your Own Personal Exertions' (on the Rothschild maxim 'Be cautious and bold')",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-07",
+   "advisor": "barnum",
+   "text": {
+    "en": "But if he has simple boldness without caution, it is mere chance, and what he gains to-day he will lose to-morrow.",
+    "ko": "그러나 신중함 없이 대담하기만 하다면 그것은 순전히 운일 뿐이고, 오늘 번 것을 내일 잃게 된다."
+   },
+   "plain": {
+    "ko": "한 번의 주식 투기로 번 돈은 실력이 아니라 운일 수 있으니, 같은 방식으로 다시 걸기 전에 의심해 보자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Depend Upon Your Own Personal Exertions' (on speculating in stocks)",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-08",
+   "advisor": "barnum",
+   "text": {
+    "en": "No man has a right to expect to succeed in life unless he understands his business, and nobody can understand his business thoroughly unless he learns it by personal application and experience.",
+    "ko": "자기 일을 이해하지 못하는 사람은 성공을 기대할 자격이 없다. 그리고 몸소 부딪쳐 경험으로 배우지 않으면 누구도 자기 일을 철저히 이해할 수 없다."
+   },
+   "plain": {
+    "ko": "내가 사업 구조를 제대로 이해하는 기업에 투자해야 하고, 그 이해는 직접 공부해서 얻어야 한다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Depend Upon Your Own Personal Exertions'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-09",
+   "advisor": "barnum",
+   "text": {
+    "en": "There is no greater mistake than when a young man believes he will succeed with borrowed money.",
+    "ko": "빌린 돈으로 성공할 수 있다고 믿는 것만큼 젊은이가 저지르는 큰 실수는 없다."
+   },
+   "plain": {
+    "ko": "빚을 내서 하는 투자(레버리지)는 수익만큼 손실도 키운다는 점을 잊지 말자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Don't Get Above Your Business'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-10",
+   "advisor": "barnum",
+   "text": {
+    "en": "Many persons are always kept poor, because they are too visionary. Every project looks to them like certain success, and therefore they keep changing from one business to another.",
+    "ko": "많은 사람이 늘 가난한 것은 너무 공상적이기 때문이다. 그들 눈에는 모든 계획이 확실한 성공처럼 보여서, 이 사업에서 저 사업으로 계속 옮겨 다닌다."
+   },
+   "plain": {
+    "ko": "새로 뜨는 테마마다 갈아타는 투자는 수수료와 손실만 쌓기 쉽다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Let Hope Predominate, But Be Not Too Visionary'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-11",
+   "advisor": "barnum",
+   "text": {
+    "en": "Engage in one kind of business only, and stick to it faithfully until you succeed, or until your experience shows that you should abandon it.",
+    "ko": "한 가지 사업에만 매달려 성공할 때까지, 혹은 경험이 그만두라고 말해 줄 때까지 충실히 붙들고 있어라."
+   },
+   "plain": {
+    "ko": "기업도 핵심 사업에 집중하는 곳이 강하다. 다만 '그만둘 때'를 판단하는 기준도 함께 세워 두자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Do Not Scatter Your Powers'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-12",
+   "advisor": "barnum",
+   "text": {
+    "en": "Never let a man foolishly jeopardize a fortune that he has earned in a legitimate way, by investing it in things in which he has had no experience.",
+    "ko": "정당하게 번 재산을 자기가 전혀 경험해 보지 못한 일에 투자해 어리석게 위험에 빠뜨려서는 안 된다."
+   },
+   "plain": {
+    "ko": "잘 모르는 분야에 큰돈을 넣지 말고, 넣더라도 잃어도 괜찮은 금액만 넣자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Beware of \"Outside Operations\"'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-13",
+   "advisor": "barnum",
+   "text": {
+    "en": "It is a very dangerous thing, therefore, at any time, to let people get possession of money too easily; it tempts them to hazardous speculations, if nothing more.",
+    "ko": "그러므로 사람들이 너무 쉽게 돈을 손에 넣게 하는 것은 언제나 매우 위험하다. 적어도 위험한 투기의 유혹에 빠뜨리기 때문이다."
+   },
+   "plain": {
+    "ko": "돈이 쉽게 풀리는 시기(저금리·쉬운 대출)에는 투기적 거품이 생기기 쉽다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Don't Indorse Without Security'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-14",
+   "advisor": "barnum",
+   "text": {
+    "en": "The spirit of speculation has seized him; he sees others making large sums in this way (we seldom hear of the losers), and, like other speculators, he \"looks for his money where he loses it.\"",
+    "ko": "투기의 기운이 그를 사로잡았다. 그는 남들이 이런 식으로 큰돈을 버는 것을 본다(잃은 사람 이야기는 좀처럼 들리지 않는다). 그리고 다른 투기꾼들처럼 \"잃은 곳에서 돈을 되찾으려\" 한다."
+   },
+   "plain": {
+    "ko": "성공담만 들리고 실패담은 묻히니(생존 편향), 잃은 돈을 같은 곳에서 만회하려는 마음을 경계하자."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Don't Indorse Without Security'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-15",
+   "advisor": "barnum",
+   "text": {
+    "en": "Men who drive sharp bargains with their customers, acting as if they never expected to see them again, will not be mistaken. They will never see them again as customers.",
+    "ko": "다시는 안 볼 사람처럼 고객에게 야박하게 흥정하는 사람의 예상은 틀리지 않는다. 그 고객들을 다시는 손님으로 보지 못할 테니까."
+   },
+   "plain": {
+    "ko": "고객을 쥐어짜 단기 이익을 내는 기업은 재구매율과 충성 고객을 잃는다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Be Polite and Kind to Your Customers'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-16",
+   "advisor": "barnum",
+   "text": {
+    "en": "You may advertise a spurious article, and induce many people to call and buy it once, but they will denounce you as an impostor and swindler, and your business will gradually die out and leave you poor.",
+    "ko": "가짜 물건을 광고해 많은 사람이 한 번쯤 사게 만들 수는 있다. 하지만 그들은 당신을 사기꾼이라 비난할 것이고, 사업은 서서히 죽어 결국 당신은 가난해질 것이다."
+   },
+   "plain": {
+    "ko": "광고로 끌어올린 매출보다 제품이 좋아서 다시 사는 고객이 기업 가치의 진짜 바탕이다."
+   },
+   "source": {
+    "title": "The Art of Money Getting, or Golden Rules for Making Money",
+    "year": 1880,
+    "type": "book",
+    "locator": "Section 'Advertise Your Business'",
+    "url": "https://www.gutenberg.org/ebooks/8581"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-17",
+   "advisor": "barnum",
+   "text": {
+    "en": "The serpent that beguiled me was any plausible proposition that promised prosperity to East Bridgeport.",
+    "ko": "나를 꾀어낸 뱀은 이스트 브리지포트에 번영을 약속하는 그럴듯한 제안이라면 무엇이든이었다."
+   },
+   "plain": {
+    "ko": "내가 이미 믿고 싶은 이야기를 해 주는 제안일수록 더 깐깐하게 따져 봐야 한다."
+   },
+   "source": {
+    "title": "Struggles and Triumphs: or, Forty Years' Recollections of P. T. Barnum (Author's Edition)",
+    "year": 1872,
+    "type": "book",
+    "locator": "Chapter XXV, 'The Jerome Clock Company Entanglement'",
+    "url": "https://www.gutenberg.org/ebooks/50115"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-18",
+   "advisor": "barnum",
+   "text": {
+    "en": "My confidence in the company became so established that I did not ask to see the notes that had been taken up, but furnished new accommodation paper as it was called for.",
+    "ko": "그 회사에 대한 내 신뢰가 너무 굳어져서, 상환되었다는 어음을 확인하지도 않고 요구하는 대로 새 융통어음을 내주었다."
+   },
+   "plain": {
+    "ko": "믿는 회사라도 공시와 숫자를 계속 확인해야 한다. 확인을 멈추는 순간 위험이 커진다."
+   },
+   "source": {
+    "title": "Struggles and Triumphs: or, Forty Years' Recollections of P. T. Barnum (Author's Edition)",
+    "year": 1872,
+    "type": "book",
+    "locator": "Chapter XXV, 'The Jerome Clock Company Entanglement'",
+    "url": "https://www.gutenberg.org/ebooks/50115"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "barnum-19",
+   "advisor": "barnum",
+   "text": {
+    "en": "What a dupe had I been! Here was a great company pretending to be worth $587,000, asking temporary assistance to the amount of $110,000, coming down with a crash, so soon as my helping hand was removed.",
+    "ko": "나는 얼마나 바보였던가! 58만 7천 달러의 가치가 있다던 대기업이 11만 달러의 일시적 지원을 청하더니, 내가 돕던 손을 떼자마자 와르르 무너졌다."
+   },
+   "plain": {
+    "ko": "장부상 자산이 커 보여도 계속 외부 자금에 기대야 굴러가는 회사라면 위험 신호다."
+   },
+   "source": {
+    "title": "Struggles and Triumphs: or, Forty Years' Recollections of P. T. Barnum (Author's Edition)",
+    "year": 1872,
+    "type": "book",
+    "locator": "Chapter XXV, 'The Jerome Clock Company Entanglement'",
+    "url": "https://www.gutenberg.org/ebooks/50115"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-01",
+   "advisor": "cooke",
+   "text": {
+    "en": "I have got on the right side of fortune in Philadelphia and if prudence, punctuality, and good behavior, as far as in my power, can keep me there, I shall remain statu quo, as you say, forevermore.",
+    "ko": "나는 필라델피아에서 운의 좋은 쪽에 올라섰다. 신중함과 시간 엄수, 바른 처신으로 이 자리를 지킬 수 있다면, 네 말대로 언제까지나 이대로 머물 것이다."
+   },
+   "plain": {
+    "ko": "좋은 출발보다 중요한 건 신중함과 약속을 지키는 습관으로 그 자리를 지키는 것이다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1839,
+    "type": "letter",
+    "locator": "p. 53, letter to his brother Pitt Cooke, spring 1839",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-02",
+   "advisor": "cooke",
+   "text": {
+    "en": "They crept along honestly and honorably with what they had.",
+    "ko": "그들은 가진 것만으로 정직하고 떳떳하게 한 걸음씩 나아갔다."
+   },
+   "plain": {
+    "ko": "작은 자본으로 정직하게 신용을 쌓은 회사가 결국 큰 신뢰와 거래를 얻는다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1839,
+    "type": "letter",
+    "locator": "p. 57, letter to Pitt Cooke, Nov. 17, 1839, on his employers E. W. Clark & Co.",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-03",
+   "advisor": "cooke",
+   "text": {
+    "en": "I am a little extravagant and am about square so far, but shall be more saving in future.",
+    "ko": "나는 좀 헤픈 편이라 지금까지는 겨우 본전이지만, 앞으로는 더 아끼려고 한다."
+   },
+   "plain": {
+    "ko": "수입이 늘어도 남는 게 없다면 지출 습관부터 점검해야 투자할 종잣돈이 생긴다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1840,
+    "type": "letter",
+    "locator": "p. 59, letter to Pitt Cooke, Nov. 24, 1840",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-04",
+   "advisor": "cooke",
+   "text": {
+    "en": "Let us hold it all here. We are able to do so and had better not put a whip into the hands of foreigners to punish us whenever they see fit to go to war with us.",
+    "ko": "그 빚은 전부 우리 안에서 갖고 있자. 우리는 그럴 능력이 있고, 외국인들이 우리와 싸우고 싶을 때마다 우리를 때릴 채찍을 그들 손에 쥐여 주지 않는 편이 낫다."
+   },
+   "plain": {
+    "ko": "돈을 빌려준 쪽은 힘을 갖는다. 기업이 누구에게 얼마나 빚졌는지가 그 회사의 자유를 좌우한다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1863,
+    "type": "letter",
+    "locator": "pp. 286–287, reply to George Manly of New York, March 1863",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-05",
+   "advisor": "cooke",
+   "text": {
+    "en": "This speculation and the rise in the price of specie were so persistent and continuous that even many good citizens thoughtlessly entered the trade.",
+    "ko": "이 투기와 금값 상승이 너무 끈질기게 이어지자, 선량한 시민들마저 생각 없이 그 거래에 뛰어들었다."
+   },
+   "plain": {
+    "ko": "가격이 계속 오르면 평범한 사람까지 휩쓸려 들어간다. 모두가 뛰어들 때가 가장 조심할 때다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1907,
+    "type": "book",
+    "locator": "p. 396, quoting Cooke's unpublished Memoirs on wartime gold speculation in New York",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-06",
+   "advisor": "cooke",
+   "text": {
+    "en": "Not one out of twenty of the 'respectable' oil companies are really worth the paper they are printed on.",
+    "ko": "'번듯하다'는 석유 회사들 중 스무 곳에 한 곳도 그 주권 종이값만큼의 가치가 없다."
+   },
+   "plain": {
+    "ko": "유행 업종이 뜨면 이름만 그럴듯한 회사가 쏟아지니, 실제로 돈을 버는지 확인해야 한다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1864,
+    "type": "letter",
+    "locator": "p. 441, rebuking his junior partners during the 1864 oil-stock craze",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-07",
+   "advisor": "cooke",
+   "text": {
+    "en": "The Treasury is still following the old policy of saving at the spigot and letting out of a big bung hole.",
+    "ko": "재무부는 여전히 꼭지에서 몇 방울 아끼면서 큰 마개 구멍으로는 줄줄 새게 두는 옛 방식을 따르고 있다."
+   },
+   "plain": {
+    "ko": "작은 비용은 깎으면서 큰 낭비를 방치하는 경영진은 '푼돈 아끼고 큰돈 잃는' 회사를 만든다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1864,
+    "type": "letter",
+    "locator": "p. 460, letter to Morris Ketchum, Nov. 26, 1864",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-08",
+   "advisor": "cooke",
+   "text": {
+    "en": "The times require a sanguine man and not one who is always croaking and expecting a breakdown.",
+    "ko": "이 시대에는 늘 투덜대며 붕괴만 기다리는 사람이 아니라 낙관적인 사람이 필요하다."
+   },
+   "plain": {
+    "ko": "비관만으로는 기회를 놓치지만, 쿡 자신이 1873년 낙관 끝에 파산했다는 점도 함께 기억하자."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1865,
+    "type": "letter",
+    "locator": "p. 468, letter of early 1865 opposing McCulloch as Treasury Secretary",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-09",
+   "advisor": "cooke",
+   "text": {
+    "en": "Being guaranteed by us all, the rate would be a fair return, and much better for this class of investors than a larger rate derived from greater risks, which latter ought only to be taken by the capitalists and active business men of the country.",
+    "ko": "우리 모두가 보증하는 만큼 그 이율은 정당한 수익이며, 이런 투자자들에게는 더 큰 위험에서 나오는 더 높은 이율보다 훨씬 낫다. 그런 위험은 자본가와 현역 사업가들만 져야 한다."
+   },
+   "plain": {
+    "ko": "생활비가 걸린 돈은 안전한 곳에, 고위험 고수익은 잃어도 버틸 수 있는 사람만 감당해야 한다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1868,
+    "type": "letter",
+    "locator": "p. 50, public letter to the Philadelphia Inquirer, published March 21, 1868",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-10",
+   "advisor": "cooke",
+   "text": {
+    "en": "The business people of this land must have stability or we will become a nation of gamblers.",
+    "ko": "이 나라의 사업가들에게는 안정이 있어야 한다. 그렇지 않으면 우리는 도박꾼의 나라가 될 것이다."
+   },
+   "plain": {
+    "ko": "가격이 매일 크게 출렁이는 환경에서는 사업보다 투기가 이득이 되니, 변동성이 큰 시장일수록 조심하자."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1869,
+    "type": "letter",
+    "locator": "p. 142, letter to Henry D. Cooke, Sept. 24, 1869",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-11",
+   "advisor": "cooke",
+   "text": {
+    "en": "I did not open our house in New York until three years after we first thought it almost a necessity. One great reason was my aversion to an enlargement of risks and responsibilities.",
+    "ko": "뉴욕 지점이 거의 필수라고 처음 생각한 뒤에도 3년이 지나서야 문을 열었다. 큰 이유 하나는 위험과 책임이 커지는 것을 싫어했기 때문이다."
+   },
+   "plain": {
+    "ko": "확장은 좋아 보여도 위험도 함께 키운다. 무리한 확장을 서두르지 않는 경영이 오래 간다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1870,
+    "type": "letter",
+    "locator": "p. 205, letter to Hugh McCulloch, July 15, 1870",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-12",
+   "advisor": "cooke",
+   "text": {
+    "en": "The whole history of mining is so full of fraud, deceit and mismanagement, even with the fairest prospects at first, that we cannot afford to identify ourselves with these enterprises.",
+    "ko": "광산의 역사 전체가 처음 전망이 아무리 좋아 보여도 사기와 속임수, 부실 경영으로 가득하기에, 우리는 그런 사업에 이름을 걸 수 없다."
+   },
+   "plain": {
+    "ko": "처음 전망이 화려한 업종일수록 과거에 사기와 실패가 많았는지부터 살펴보자."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1871,
+    "type": "letter",
+    "locator": "p. 290, letter to Hugh McCulloch, Nov. 23, 1871, on the Emma Mining Co.",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-13",
+   "advisor": "cooke",
+   "text": {
+    "en": "This Chicago panic is a senseless one but nevertheless it hurts badly, and it won't answer to create liabilities before we have the money on hand.",
+    "ko": "이번 시카고 공황은 터무니없지만 그래도 타격이 크다. 손에 돈이 들어오기도 전에 부채부터 만드는 것은 안 될 일이다."
+   },
+   "plain": {
+    "ko": "시장 공포가 근거 없어 보여도 자금줄은 실제로 마르니, 현금이 확보되기 전에 지출을 약속하지 말자."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1871,
+    "type": "letter",
+    "locator": "p. 261, letter to Gov. J. Gregory Smith of the Northern Pacific, Oct. 19, 1871",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-14",
+   "advisor": "cooke",
+   "text": {
+    "en": "Our idea is that no person ought to put everything he has into one thing, but to divide it up into two or three, if possible, equally good things.",
+    "ko": "우리 생각은, 누구도 가진 것 전부를 한 곳에 넣어서는 안 되며, 가능하면 똑같이 좋은 두세 곳에 나눠야 한다는 것이다."
+   },
+   "plain": {
+    "ko": "아무리 확신해도 한 종목에 전 재산을 걸지 말고 분산하자. 쿡은 이 조언 몇 달 뒤 한 사업 때문에 파산했다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1873,
+    "type": "letter",
+    "locator": "p. 413, letter to an investor, March 7, 1873",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-15",
+   "advisor": "cooke",
+   "text": {
+    "en": "I myself have been too long accustomed to navigate in the world of finance and railroads to be willing to conjure up beforehand bugaboos of this kind.",
+    "ko": "나는 금융과 철도의 세계를 너무 오래 항해해 와서, 이런 도깨비 같은 걱정을 미리 지어낼 생각이 없다."
+   },
+   "plain": {
+    "ko": "경험 많은 전문가의 자신감도 위험을 대신 막아 주지 않는다. 이 편지를 쓴 지 넉 달 뒤 그의 회사는 지급을 중단했다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1873,
+    "type": "letter",
+    "locator": "pp. 412–413, letter to M. C. Hazard, May 31, 1873",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "cooke-16",
+   "advisor": "cooke",
+   "text": {
+    "en": "We regret to be obliged to announce that, owing to unexpected demands on us, our firm has been obliged to suspend payment. ... We believe our assets to be largely in excess of our liabilities.",
+    "ko": "예상치 못한 지급 요구 때문에 우리 회사가 지급을 중단하게 되었음을 알리게 되어 유감이다. ... 우리는 자산이 부채를 크게 웃돈다고 믿는다."
+   },
+   "plain": {
+    "ko": "자산이 부채보다 많아도 당장 줄 현금이 없으면 무너진다. 유동성은 지급 능력만큼 중요하다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1873,
+    "type": "article",
+    "locator": "p. 424, public notice posted by Jay Cooke & Co., Sept. 18, 1873",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-01",
+   "advisor": "chase",
+   "text": {
+    "en": "Retrenchment and reform are among the indispensable duties of the hour.",
+    "ko": "지출 삭감과 개혁은 지금 이 시기에 빠뜨릴 수 없는 의무다."
+   },
+   "plain": {
+    "ko": "위기 때 비용 구조부터 손보는 경영진인지가 회사의 체력을 보여 준다."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 12",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-02",
+   "advisor": "chase",
+   "text": {
+    "en": "The idea of perpetual debt is not of American nativity, and should not be naturalized.",
+    "ko": "영원히 갚지 않는 빚이라는 발상은 미국에서 태어난 것이 아니며, 미국에 귀화시켜서도 안 된다."
+   },
+   "plain": {
+    "ko": "빚은 갚을 계획이 있어야 한다. 차입금을 줄여 나갈 계획이 없는 기업은 조심하자."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 13",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-03",
+   "advisor": "chase",
+   "text": {
+    "en": "Circulation, commonly, is in the inverse ratio of solvency. Well-founded institutions, of large and solid capital, have, in general, comparatively little circulation; while weak corporations almost invariably seek to sustain themselves by obtaining from the people the largest possible credit in this form.",
+    "ko": "발행된 은행권의 양은 대개 지급 능력과 반비례한다. 자본이 크고 튼튼한 기관은 대체로 발행량이 적은 반면, 약한 회사들은 거의 언제나 이런 식으로 대중에게서 최대한 많은 신용을 끌어다 버티려 한다."
+   },
+   "plain": {
+    "ko": "자본이 약한 회사일수록 남의 돈을 더 많이 끌어 쓰려 한다. 빚과 자기자본의 비율을 보자."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 17 (on state bank-note circulation)",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-04",
+   "advisor": "chase",
+   "text": {
+    "en": "The Secretary, believing that the frankest is the wisest policy for nations as well as individuals, has thought it his duty to submit to Congress this plain statement of the financial condition of the country.",
+    "ko": "장관은 가장 솔직한 것이 개인에게나 나라에게나 가장 현명한 방책이라고 믿기에, 나라의 재정 상태를 있는 그대로 의회에 보고하는 것을 자신의 의무로 여겼다."
+   },
+   "plain": {
+    "ko": "재무 상황을 숨김없이 공개하는 기업이 장기적으로 더 신뢰받는다."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 23",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-05",
+   "advisor": "chase",
+   "text": {
+    "en": "Nothing more certainly enhances credit and improves resources than the reduction of wants and wise energy in administration.",
+    "ko": "필요를 줄이고 운영에 지혜로운 활력을 불어넣는 것만큼 확실하게 신용을 높이고 자원을 늘리는 것은 없다."
+   },
+   "plain": {
+    "ko": "씀씀이를 줄이고 운영을 효율화하는 회사는 돈을 더 싸게 빌리고 더 많이 남긴다."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 23",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-06",
+   "advisor": "chase",
+   "text": {
+    "en": "Claims are easily allowed when payment is to be made otherwise than in money, and bonds issued for claims are apt to come into the market in competition with bonds issued for loans, to the serious prejudice of the public credit.",
+    "ko": "현금이 아닌 다른 것으로 지급하게 되면 청구는 쉽게 승인된다. 그렇게 청구 대가로 발행된 채권은 시장에 나와 차입용 채권과 경쟁하며 공공 신용을 크게 해친다."
+   },
+   "plain": {
+    "ko": "현금 대신 주식이나 채권으로 대가를 치르면 비용이 쉽게 커지고 기존 투자자의 몫이 희석된다."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 9, 1861)",
+    "year": 1861,
+    "type": "report",
+    "locator": "p. 26",
+    "url": "https://archive.org/details/annualreportsec01treagoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-07",
+   "advisor": "chase",
+   "text": {
+    "en": "He has sought to avoid exaggeration on both sides, but he has thought it more prudent to excite a little too much apprehension than to encourage too sanguine hopes.",
+    "ko": "그는 어느 쪽으로든 과장을 피하려 했지만, 지나치게 낙관적인 희망을 부추기기보다는 약간 지나친 우려를 일으키는 편이 더 신중하다고 생각했다."
+   },
+   "plain": {
+    "ko": "전망은 조금 보수적으로 잡는 편이 안전하다. 장밋빛 가이던스만 내는 회사는 경계하자."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 10, 1863)",
+    "year": 1863,
+    "type": "report",
+    "locator": "p. 7",
+    "url": "https://archive.org/details/annualreportsec12unkngoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-08",
+   "advisor": "chase",
+   "text": {
+    "en": "No prudent man will recommend economy at the expense of efficiency. Such nominal economy is real extravagance.",
+    "ko": "신중한 사람이라면 효율을 희생하는 절약을 권하지 않는다. 그런 이름뿐인 절약은 사실상 낭비다."
+   },
+   "plain": {
+    "ko": "꼭 필요한 투자까지 깎아서 만든 이익은 오래가지 않는다."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 10, 1863)",
+    "year": 1863,
+    "type": "report",
+    "locator": "p. 12",
+    "url": "https://archive.org/details/annualreportsec12unkngoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-09",
+   "advisor": "chase",
+   "text": {
+    "en": "The burdens of debt, always heaviest when loans are held by few, and especially by foreigners, diminish in proportion as the receivers of interest become identified with the payers of taxes.",
+    "ko": "빚의 부담은 소수, 특히 외국인이 채권을 쥐고 있을 때 가장 무겁고, 이자를 받는 사람과 세금을 내는 사람이 같아질수록 줄어든다."
+   },
+   "plain": {
+    "ko": "채권자가 한두 곳에 몰려 있으면 위험하다. 자금 조달처가 고르게 퍼져 있는지 보자."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 10, 1863)",
+    "year": 1863,
+    "type": "report",
+    "locator": "pp. 15–16",
+    "url": "https://archive.org/details/annualreportsec12unkngoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-10",
+   "advisor": "chase",
+   "text": {
+    "en": "Nor can a condition of affairs in which excessive prices prevail, or national notes command less than par in coin, be regarded as of permanent duration. While it lasts, it must be borne with patience, and made tolerable by economy.",
+    "ko": "물가가 지나치게 높거나 국가 지폐가 금화 대비 액면가에 못 미치는 상태가 영원히 계속된다고 볼 수는 없다. 그런 상태가 이어지는 동안에는 인내로 견디고 절약으로 버텨야 한다."
+   },
+   "plain": {
+    "ko": "비정상적인 가격은 언젠가 제자리로 돌아오니, 그때까지 버틸 수 있도록 지출을 관리하자."
+   },
+   "source": {
+    "title": "Report of the Secretary of the Treasury on the State of the Finances (Dec. 10, 1863)",
+    "year": 1863,
+    "type": "report",
+    "locator": "p. 20",
+    "url": "https://archive.org/details/annualreportsec12unkngoog"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-11",
+   "advisor": "chase",
+   "text": {
+    "en": "You must not think me parsimonious because I keep an eye on outgoes. I am ready to share my own with any deserving man but I hate to be lavish where the public is concerned.",
+    "ko": "내가 지출을 지켜본다고 해서 인색하다고 생각하지 말게. 내 것이라면 받을 만한 사람과 기꺼이 나누겠지만, 공적인 돈에 대해서는 헤프게 쓰는 것이 싫다네."
+   },
+   "plain": {
+    "ko": "남의 돈(주주의 돈)을 맡은 경영진은 자기 돈보다 더 아껴 써야 한다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1862,
+    "type": "letter",
+    "locator": "p. 222, letter from Chase to Jay Cooke, Nov. 13, 1862",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-12",
+   "advisor": "chase",
+   "text": {
+    "en": "As I had not paid for the stock and did not contemplate purchase with any view to resale I cannot regard the profit as mine and therefore return the check for $4,200.",
+    "ko": "나는 그 주식 대금을 치르지 않았고 되팔 생각으로 산 것도 아니므로, 그 이익을 내 것으로 볼 수 없어 4,200달러 수표를 돌려보낸다."
+   },
+   "plain": {
+    "ko": "정보와 권한을 가진 사람이 공짜 이익을 받으면 이해 상충이다. 경영진의 내부자 거래 여부를 살피자."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1863,
+    "type": "letter",
+    "locator": "p. 274, letter from Chase to Jay Cooke, June 2, 1863",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-13",
+   "advisor": "chase",
+   "text": {
+    "en": "I laid down for myself the rule ... that I would have nothing to do, directly or indirectly, with speculation or transactions in gold or securities of any sort for my own or anybody's private benefit.",
+    "ko": "나는 스스로 규칙을 정했다. ... 나 자신이든 누구든 사적인 이익을 위해 금이나 어떤 증권의 투기나 거래에도 직접이든 간접이든 관여하지 않겠다고."
+   },
+   "plain": {
+    "ko": "시장을 움직일 힘이 있는 사람은 스스로 거래를 금해야 한다. 그런 원칙이 있는 경영진이 믿을 만하다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. II (1907)",
+    "year": 1868,
+    "type": "letter",
+    "locator": "pp. 73–74, letter from Chase to Jay Cooke, Nov. 17, 1868, recalling his rule as Treasury Secretary",
+    "url": "https://archive.org/details/jaycookefinancie02ober"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "chase-14",
+   "advisor": "chase",
+   "text": {
+    "en": "I wish I could get all my little property into productive form and my debts paid. I should then feel quite independent.",
+    "ko": "내 작은 재산을 모두 수익을 내는 형태로 바꾸고 빚도 다 갚을 수 있으면 좋겠다. 그러면 꽤 자유롭다고 느낄 텐데."
+   },
+   "plain": {
+    "ko": "놀고 있는 자산을 일하게 하고 빚을 없애는 것이 경제적 독립의 두 기둥이다."
+   },
+   "source": {
+    "title": "Ellis Paxson Oberholtzer, Jay Cooke: Financier of the Civil War, Vol. I (1907)",
+    "year": 1862,
+    "type": "letter",
+    "locator": "p. 188, letter from Chase to Jay Cooke, May 31, 1862",
+    "url": "https://archive.org/details/jaycookefinancie01ober"
+   },
+   "confidence": "primary"
+  }
+ ]
+}

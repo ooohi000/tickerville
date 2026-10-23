@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { AdviceCard } from "@/components/era/AdviceCard";
+import { useEra } from "@/components/era/useEra";
 import { SidePanel } from "@/components/ui/SidePanel";
 import { useNow } from "@/components/ui/useNow";
 import { displayName } from "@/lib/company/format";
@@ -12,6 +14,7 @@ import { formatPerShare, formatRatio, formatUsdKo } from "@/lib/detail/money";
 import { buildQuarterPoints } from "@/lib/detail/quarterChart";
 import { getStatementRatios, isNegativeEquity } from "@/lib/detail/ratios";
 import { getYoyChanges } from "@/lib/detail/yoy";
+import { formatBriefing, type EraSpec } from "@/lib/era/eras";
 import type { CompanyDetail, FinancialStatement } from "@/types";
 import styles from "./CompanyDetailPanel.module.css";
 import { QuarterBars } from "./QuarterBars";
@@ -36,13 +39,21 @@ export interface CompanyDetailPanelProps {
  */
 export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: CompanyDetailPanelProps) {
   const state = useCompanyDetail(ticker);
+  const era = useEra();
   const name = state.status === "ready" ? displayName(state.detail.company) : null;
   const title = (
     <span className={styles.head}>
-      <span className={styles.eyebrow}>TARGET LOCKED</span>
-      <span className={styles.headRow}>
-        <span className={styles.ticker}>{ticker}</span>
-        {name && <span className={styles.name}>{name}</span>}
+      <span className={styles.eyebrow}>{era.eyebrow}</span>
+      <span className={styles.headTop}>
+        {/* eslint-disable-next-line @next/next/no-img-element -- 작은 고정 이미지 */}
+        <img src={`/personas/${era.image}-face.webp`} alt={`${era.leader.ko} 캐릭터`} width={44} height={44} className={styles.avatar} />
+        <span className={styles.head}>
+          <span className={styles.headRow}>
+            <span className={styles.ticker}>{ticker}</span>
+            {name && <span className={styles.name}>{name}</span>}
+          </span>
+          <span className={styles.briefing}>{formatBriefing(era, name ?? ticker)}</span>
+        </span>
       </span>
     </span>
   );
@@ -59,12 +70,12 @@ export function CompanyDetailPanel({ ticker, onClose, onBack, backLabel }: Compa
     >
       {state.status === "loading" && <p className={styles.muted}>불러오는 중…</p>}
       {state.status === "error" && <p className={styles.muted}>{state.message}</p>}
-      {state.status === "ready" && <DetailBody detail={state.detail} quarters={state.quarters} />}
+      {state.status === "ready" && <DetailBody detail={state.detail} quarters={state.quarters} era={era} />}
     </SidePanel>
   );
 }
 
-function DetailBody({ detail, quarters }: { detail: CompanyDetail; quarters: FinancialStatement[] }) {
+function DetailBody({ detail, quarters, era }: { detail: CompanyDetail; quarters: FinancialStatement[]; era: EraSpec }) {
   const now = useNow();
   const nowDate = now === null ? null : new Date(now);
   const { company, profile, latestQuarter: q, latestAnnual: a, earnings } = detail;
@@ -130,6 +141,9 @@ function DetailBody({ detail, quarters }: { detail: CompanyDetail; quarters: Fin
       </section>
 
       <Filings filings={detail.recentFilings} nowDate={nowDate} />
+
+      {/* 시대가 바뀌면 그 시대 참모로 처음부터 */}
+      <AdviceCard key={era.id} era={era} />
 
       <button type="button" className={styles.expand} disabled title="크게 보기 화면은 준비 중이에요">
         크게 보기 · 준비 중

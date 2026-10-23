@@ -1,0 +1,987 @@
+{
+ "era": "1795",
+ "advisors": [
+  {
+   "id": "hamilton",
+   "name": {
+    "ko": "알렉산더 해밀턴",
+    "en": "Alexander Hamilton"
+   },
+   "years": "1755(또는 1757)–1804",
+   "role": {
+    "ko": "초대 재무장관 · 미국 국채와 국립은행을 설계"
+   },
+   "relation": {
+    "ko": "독립전쟁 때 워싱턴의 부관(aide-de-camp)으로 일했고, 워싱턴 정부에서 초대 재무장관을 지낸 핵심 참모다."
+   },
+   "relationSource": "https://www.mountvernon.org/george-washington/alexander-hamilton/"
+  },
+  {
+   "id": "franklin",
+   "name": {
+    "ko": "벤저민 프랭클린",
+    "en": "Benjamin Franklin"
+   },
+   "years": "1706–1790",
+   "role": {
+    "ko": "인쇄업자 · 『가난한 리처드의 달력』 발행인 · 외교관"
+   },
+   "relation": {
+    "ko": "1787년 제헌회의에 펜실베이니아 대표로 참석한 최고령 대표로, 워싱턴과 함께 헌법을 만든 동료 건국자다."
+   },
+   "relationSource": "https://www.battlefields.org/node/293"
+  }
+ ],
+ "quotes": [
+  {
+   "id": "hamilton-01",
+   "advisor": "hamilton",
+   "text": {
+    "en": "For when the credit of a country is in any degree questionable, it never fails to give an extravagant premium, in one shape or another, upon all the loans it has occasion to make.",
+    "ko": "한 나라의 신용이 조금이라도 의심받으면, 그 나라는 빌리는 모든 돈에 어떤 형태로든 터무니없는 웃돈을 치르게 된다."
+   },
+   "plain": {
+    "ko": "신용이 흔들리는 기업은 돈을 빌릴 때마다 더 높은 이자를 내야 하므로, 신용등급과 차입 금리를 함께 보세요."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "opening section, on the necessity of public credit",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-02",
+   "advisor": "hamilton",
+   "text": {
+    "en": "If the maintenance of public credit, then, be truly so important, the next enquiry which suggests itself is, by what means it is to be effected? The ready answer to which question is, by good faith, by a punctual performance of contracts.",
+    "ko": "공공 신용을 지키는 일이 그토록 중요하다면, 다음 질문은 '어떻게 지키는가'이다. 답은 바로 나온다. 신의를 지키고, 약속을 제때 이행하는 것이다."
+   },
+   "plain": {
+    "ko": "신용은 거창한 전략보다 이자와 약속을 꼬박꼬박 지키는 기록에서 나옵니다."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "opening section",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-03",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Every breach of the public engagements, whether from choice or necessity, is in different degrees hurtful to public credit.",
+    "ko": "공적인 약속을 어기는 일은, 고의든 어쩔 수 없어서든, 정도의 차이만 있을 뿐 모두 공공 신용을 해친다."
+   },
+   "plain": {
+    "ko": "배당 삭감이나 가이던스 철회처럼 약속을 어긴 기록은 이유가 무엇이든 신뢰를 깎습니다."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "opening section",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-04",
+   "advisor": "hamilton",
+   "text": {
+    "en": "In nothing are appearances of greater moment, than in whatever regards credit. Opinion is the soul of it, and this is affected by appearances, as well as realities.",
+    "ko": "신용에 관한 일만큼 겉으로 보이는 모습이 중요한 것은 없다. 신용의 혼은 사람들의 평판이며, 평판은 실제뿐 아니라 겉모습에도 좌우된다."
+   },
+   "plain": {
+    "ko": "시장의 신뢰는 실제 실적과 함께 공시와 소통 방식에도 흔들리니, 둘을 구분해서 보세요."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "section on the plan of funding",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-05",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Probabilities are always a rational ground of contract.",
+    "ko": "확률은 언제나 계약의 합리적인 근거가 된다."
+   },
+   "plain": {
+    "ko": "미래는 확실하지 않으니, 투자 판단은 '확실한가'가 아니라 '얼마나 그럴듯한가'로 세우세요."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "section on modifying the terms of the debt",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-06",
+   "advisor": "hamilton",
+   "text": {
+    "en": "…he ardently wishes to see it incorporated, as a fundamental maxim, in the system of public credit of the United States, that the creation of debt should always be accompanied with the means of extinguishment.",
+    "ko": "…그는 '빚을 만들 때는 언제나 그 빚을 갚을 수단도 함께 마련해야 한다'는 원칙이 미국 공공 신용 제도의 근본 원칙으로 자리 잡기를 간절히 바란다."
+   },
+   "plain": {
+    "ko": "부채가 늘어나는 기업이라면 그 빚을 갚을 현금흐름이 같이 늘고 있는지 확인하세요."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "concluding section, on the sinking fund",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-07",
+   "advisor": "hamilton",
+   "text": {
+    "en": "…he is so far from acceding to the position, in the latitude in which it is sometimes laid down, that “public debts are public benefits,” a position inviting to prodigality, and liable to dangerous abuse…",
+    "ko": "…그는 흔히 넓게 주장되는 '공공 부채는 공공의 이익'이라는 견해에 전혀 동의하지 않는다. 그런 견해는 낭비를 부추기고 위험하게 남용되기 쉽다…"
+   },
+   "plain": {
+    "ko": "'빚은 성장의 도구'라는 말이 맞을 때도 있지만, 그 말을 핑계로 과도하게 빌리는 기업은 경계하세요."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "concluding section",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-08",
+   "advisor": "hamilton",
+   "text": {
+    "en": "It is a well known fact, that in countries in which the national debt is properly funded, and an object of established confidence, it answers most of the purposes of money.",
+    "ko": "국채가 제대로 상환 재원을 갖추고 확고한 신뢰를 얻은 나라에서는, 그 국채가 돈의 역할 대부분을 해낸다는 것은 잘 알려진 사실이다."
+   },
+   "plain": {
+    "ko": "믿을 수 있는 채권은 현금처럼 쓰이니, 안전자산이 왜 담보와 유동성의 기준이 되는지 이해하는 데 도움이 됩니다."
+   },
+   "source": {
+    "title": "Report Relative to a Provision for the Support of Public Credit",
+    "year": 1790,
+    "type": "report",
+    "locator": "section on the benefits of funding the debt",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-06-02-0076-0002-0001"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-09",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Experience teaches, that men are often so much governed by what they are accustomed to see and practice, that the simplest and most obvious improvements, in the [most] ordinary occupations, are adopted with hesitation, reluctance and by slow gradations.",
+    "ko": "경험이 가르쳐 주듯, 사람들은 늘 보고 해 오던 것에 크게 지배되기 때문에, 가장 평범한 일에서조차 가장 단순하고 뻔한 개선책을 망설이고 꺼리며 아주 천천히 받아들인다."
+   },
+   "plain": {
+    "ko": "좋은 신기술도 시장에 퍼지는 데는 시간이 걸리니, 채택 속도를 너무 낙관하지 마세요."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on obstacles: habit and the fear of untried enterprise",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-10",
+   "advisor": "hamilton",
+   "text": {
+    "en": "There are dispositions apt to be attracted by the mere novelty of an undertaking—but these are not always those best calculated to give it success.",
+    "ko": "어떤 사업이 그저 새롭다는 이유만으로 끌리는 사람들이 있다. 그러나 그런 사람들이 사업을 성공시키기에 가장 알맞은 사람들은 아니다."
+   },
+   "plain": {
+    "ko": "'새롭다'는 이유만으로 몰리는 돈은 성공을 보장하지 않으니, 유행보다 실행 능력을 보세요."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on obstacles to new enterprises",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-11",
+   "advisor": "hamilton",
+   "text": {
+    "en": "To this, it is of importance that the confidence of cautious sagacious capitalists both citizens and foreigners, should be excited.",
+    "ko": "이를 위해서는 신중하고 현명한 자본가들, 곧 자국민과 외국인 모두의 신뢰를 이끌어 내는 것이 중요하다."
+   },
+   "plain": {
+    "ko": "꼼꼼한 장기 투자자들이 믿고 돈을 넣는 기업인지가 사업의 지속력을 가늠하는 신호가 됩니다."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on obstacles to new enterprises",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-12",
+   "advisor": "hamilton",
+   "text": {
+    "en": "It has justly been observed, that there is scarcely any thing of greater moment in the œconomy of a nation, than the proper division of labour.",
+    "ko": "한 나라의 경제에서 적절한 분업보다 더 중요한 것은 거의 없다는 지적은 옳다."
+   },
+   "plain": {
+    "ko": "기업이 무엇을 직접 하고 무엇을 맡기는지, 분업 구조를 보면 효율의 원천이 보입니다."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on the advantages of manufactures: division of labour",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-13",
+   "advisor": "hamilton",
+   "text": {
+    "en": "To cherish and stimulate the activity of the human mind, by multiplying the objects of enterprise, is not among the least considerable of the expedients, by which the wealth of a nation may be promoted.",
+    "ko": "도전할 거리를 늘려 사람의 정신 활동을 북돋우고 자극하는 것은, 나라의 부를 늘리는 수단 가운데 결코 작지 않은 것이다."
+   },
+   "plain": {
+    "ko": "새 사업이 많이 생기는 경제와 산업일수록 성장의 기회도 많아집니다."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on the advantages of manufactures: field for enterprise",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-14",
+   "advisor": "hamilton",
+   "text": {
+    "en": "The superiority antecedently enjoyed by nations, who have preoccupied and perfected a branch of industry, constitutes a more formidable obstacle…",
+    "ko": "어떤 산업을 먼저 차지하고 완성해 둔 나라가 앞서 누리는 우위는, 더 무서운 장애물이 된다…"
+   },
+   "plain": {
+    "ko": "먼저 시장을 차지하고 기술을 다듬은 선두 기업의 우위, 곧 해자는 후발 주자에게 가장 큰 벽입니다."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on obstacles: competition from established nations",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-15",
+   "advisor": "hamilton",
+   "text": {
+    "en": "If the Revenue, in the mean time, should be less, the Capital, in the event, must be greater.",
+    "ko": "당장은 수입이 줄더라도, 결국에는 자본이 더 커질 것이다."
+   },
+   "plain": {
+    "ko": "지금 이익을 줄여 재투자하는 기업은 나중에 더 큰 자산을 만들 수 있으니, 단기 실적만으로 판단하지 마세요."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section answering the objection from agriculture",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-16",
+   "advisor": "hamilton",
+   "text": {
+    "en": "So far as the dearness of labour may be a consequence of the greatness of profits in any branch of business, it is no obstacle to its success.",
+    "ko": "어떤 사업에서 인건비가 비싼 것이 이익이 크기 때문이라면, 그것은 그 사업의 성공에 장애가 되지 않는다."
+   },
+   "plain": {
+    "ko": "인건비가 높아도 이익률이 그보다 높다면 문제가 아니니, 비용은 이익률과 함께 보세요."
+   },
+   "source": {
+    "title": "Final Version of the Report on the Subject of Manufactures",
+    "year": 1791,
+    "type": "report",
+    "locator": "section on the dearness of labour",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-10-02-0001-0007"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-17",
+   "advisor": "hamilton",
+   "text": {
+    "en": "The prosperity of commerce is now perceived and acknowledged by all enlightened statesmen to be the most useful as well as the most productive source of national wealth…",
+    "ko": "상업의 번영이 나라의 부를 낳는 가장 유용하고도 가장 생산적인 원천이라는 것을, 이제 깨어 있는 정치가라면 모두 알고 인정한다…"
+   },
+   "plain": {
+    "ko": "기업 활동이 활발한 경제가 부를 만든다는 점에서, 거래와 유통이 살아 있는 산업을 눈여겨보세요."
+   },
+   "source": {
+    "title": "The Federalist No. 12",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 12, opening paragraph",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-18",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Is private credit the friend and patron of industry? That most useful kind which relates to borrowing and lending is reduced within the narrowest limits, and this still more from an opinion of insecurity than from the scarcity of money.",
+    "ko": "민간 신용은 산업의 친구이자 후원자인가? 그런데 빌리고 빌려주는 가장 유용한 신용이 극도로 줄어들었다. 돈이 부족해서라기보다 불안하다는 생각 때문이다."
+   },
+   "plain": {
+    "ko": "신용 경색은 돈이 없어서보다 불안 심리 때문에 오는 경우가 많으니, 시장 심리 지표를 함께 보세요."
+   },
+   "source": {
+    "title": "The Federalist No. 15",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 15",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-19",
+   "advisor": "hamilton",
+   "text": {
+    "en": "The wealth of nations depends upon an infinite variety of causes.",
+    "ko": "나라의 부는 셀 수 없이 다양한 원인에 달려 있다."
+   },
+   "plain": {
+    "ko": "기업 가치도 한 가지 지표로 설명되지 않으니, 여러 요인을 함께 보세요."
+   },
+   "source": {
+    "title": "The Federalist No. 21",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 21",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-20",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Money is, with propriety, considered as the vital principle of the body politic; as that which sustains its life and motion, and enables it to perform its most essential functions.",
+    "ko": "돈은 정치 공동체의 생명 원리로 여겨지는데, 그럴 만하다. 돈이 그 생명과 움직임을 지탱하고, 가장 중요한 기능을 해낼 수 있게 하기 때문이다."
+   },
+   "plain": {
+    "ko": "기업에게 현금은 피와 같으니, 이익보다 현금흐름이 먼저 마르는지 살피세요."
+   },
+   "source": {
+    "title": "The Federalist No. 30",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 30",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-21",
+   "advisor": "hamilton",
+   "text": {
+    "en": "They would be made upon the same principles that usurers commonly lend to bankrupt and fraudulent debtors, with a sparing hand and at enormous premiums.",
+    "ko": "그런 대출은 고리대금업자가 파산했거나 믿을 수 없는 채무자에게 빌려줄 때와 같은 원칙으로, 인색하게, 엄청난 웃돈을 붙여 이루어질 것이다."
+   },
+   "plain": {
+    "ko": "신용이 나쁜 차입자는 적게, 비싸게 빌릴 수밖에 없으니, 높은 이자를 내는 기업은 그 이유를 확인하세요."
+   },
+   "source": {
+    "title": "The Federalist No. 30",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 30 (on loans to a government without adequate revenue)",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-22",
+   "advisor": "hamilton",
+   "text": {
+    "en": "For it is an observation, as true as it is trite, that there is nothing men differ so readily about as the payment of money.",
+    "ko": "흔한 말이지만 맞는 말이다. 사람들이 돈 갚는 문제만큼 쉽게 다투는 일은 없다."
+   },
+   "plain": {
+    "ko": "돈이 걸린 계약은 다툼이 생기기 쉬우니, 소송과 분쟁 리스크도 기업 분석에 넣으세요."
+   },
+   "source": {
+    "title": "The Federalist No. 7",
+    "year": 1787,
+    "type": "essay",
+    "locator": "Federalist No. 7 (on the public debt)",
+    "url": "https://www.gutenberg.org/ebooks/1404"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-23",
+   "advisor": "hamilton",
+   "text": {
+    "en": "A national debt if it is not excessive will be to us a national blessing; it will be powerfull cement of our union.",
+    "ko": "국가 부채는 지나치지만 않다면 우리에게 국가적 축복이 될 것이다. 그것은 우리 연합을 묶는 강력한 접착제가 될 것이다."
+   },
+   "plain": {
+    "ko": "부채 자체가 나쁜 것이 아니라 '지나치지 않은가'가 핵심이니, 부채 비율을 확인하세요."
+   },
+   "source": {
+    "title": "Letter to Robert Morris, 30 April 1781",
+    "year": 1781,
+    "type": "letter",
+    "locator": "letter proposing a national bank",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-02-02-1167"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-24",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Paper credit depends much on opinion and opinion is often guided by outside appearances.",
+    "ko": "종이 신용은 평판에 크게 좌우되고, 평판은 흔히 겉모습에 이끌린다."
+   },
+   "plain": {
+    "ko": "신뢰에 기대는 금융 자산일수록 겉으로 보이는 인상에 흔들리기 쉬우니, 실제 숫자로 확인하세요."
+   },
+   "source": {
+    "title": "Letter to Robert Morris, 30 April 1781",
+    "year": 1781,
+    "type": "letter",
+    "locator": "letter proposing a national bank",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-02-02-1167"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "hamilton-25",
+   "advisor": "hamilton",
+   "text": {
+    "en": "Whatever serves to increase the apparent wealth of the bank will enhance its credit!",
+    "ko": "은행이 겉보기에 더 부유해 보이게 만드는 것은 무엇이든 그 은행의 신용을 높일 것이다!"
+   },
+   "plain": {
+    "ko": "겉보기 자산이 신용을 높인다는 말은, 반대로 보면 장부를 부풀리고 싶은 유혹이 있다는 뜻이니 회계를 꼼꼼히 보세요."
+   },
+   "source": {
+    "title": "Letter to Robert Morris, 30 April 1781",
+    "year": 1781,
+    "type": "letter",
+    "locator": "letter proposing a national bank",
+    "url": "https://founders.archives.gov/documents/Hamilton/01-02-02-1167"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-01",
+   "advisor": "franklin",
+   "text": {
+    "en": "Sloth, like Rust, consumes faster than Labour wears, while the used Key is always bright,",
+    "ko": "게으름은 녹과 같아서, 일해서 닳는 것보다 더 빨리 사람을 갉아먹는다. 늘 쓰는 열쇠는 언제나 반짝인다."
+   },
+   "plain": {
+    "ko": "꾸준히 연구개발하고 설비를 돌리는 기업이 녹슬지 않으니, 투자를 멈춘 기업은 경계하세요."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on industry",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-02",
+   "advisor": "franklin",
+   "text": {
+    "en": "Industry need not wish, as Poor Richard says, and He that lives upon Hope will die fasting.",
+    "ko": "부지런한 사람은 바랄 필요가 없다. 희망만 먹고 사는 사람은 굶어 죽는다."
+   },
+   "plain": {
+    "ko": "'언젠가 좋아지겠지'라는 기대만으로 버티는 기업보다 지금 실적을 내는 기업을 보세요."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on industry",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-03",
+   "advisor": "franklin",
+   "text": {
+    "en": "Want of Care does us more Damage than Want of Knowledge;",
+    "ko": "지식이 부족한 것보다 주의가 부족한 것이 우리에게 더 큰 피해를 준다."
+   },
+   "plain": {
+    "ko": "어려운 분석보다 공시와 숫자를 꼼꼼히 확인하는 습관이 손실을 더 많이 막아 줍니다."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on overseeing one's own affairs",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-04",
+   "advisor": "franklin",
+   "text": {
+    "en": "If you would be wealthy, says he, in another Almanack, think of Saving as well as of Getting:",
+    "ko": "부자가 되고 싶다면 버는 것만큼 아끼는 것도 생각하라."
+   },
+   "plain": {
+    "ko": "매출 성장만 보지 말고 비용을 얼마나 잘 관리하는지도 함께 보세요."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on frugality",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-05",
+   "advisor": "franklin",
+   "text": {
+    "en": "Beware of little Expences; a small Leak will sink a great Ship;",
+    "ko": "작은 지출을 조심하라. 작은 구멍 하나가 큰 배를 가라앉힌다."
+   },
+   "plain": {
+    "ko": "작은 비용과 수수료도 오래 쌓이면 수익을 크게 갉아먹습니다."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on frugality",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-06",
+   "advisor": "franklin",
+   "text": {
+    "en": "Great Estates may venture more, But little Boats should keep near Shore.",
+    "ko": "큰 재산은 더 많이 모험할 수 있지만, 작은 배는 해안 가까이 머물러야 한다."
+   },
+   "plain": {
+    "ko": "감당할 수 있는 위험의 크기는 자산 규모에 따라 다르니, 내 형편에 맞게 위험을 정하세요."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on pride and debt (later editions read 'Vessels large')",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-07",
+   "advisor": "franklin",
+   "text": {
+    "en": "Gain may be temporary and uncertain, but ever while you live, Expence is constant and certain;",
+    "ko": "이익은 잠깐이고 불확실할 수 있지만, 살아 있는 한 지출은 늘 꾸준하고 확실하다."
+   },
+   "plain": {
+    "ko": "매출은 들쭉날쭉해도 고정비는 매달 나가니, 고정비 비중이 큰 기업은 불황에 약합니다."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "Father Abraham's speech, on debt",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-08",
+   "advisor": "franklin",
+   "text": {
+    "en": "Experience keeps a dear School, but Fools will learn in no other, and scarce in that;",
+    "ko": "경험은 수업료가 비싼 학교다. 그런데 어리석은 사람은 그 학교에서밖에 배우지 못하고, 그곳에서조차 잘 배우지 못한다."
+   },
+   "plain": {
+    "ko": "손실을 겪고 나서야 배우지 말고, 다른 사람의 실패 사례로 미리 배우세요."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1758 (Father Abraham's speech, later 'The Way to Wealth')",
+    "year": 1758,
+    "type": "almanac",
+    "locator": "conclusion of Father Abraham's speech",
+    "url": "https://founders.archives.gov/documents/Franklin/01-07-02-0146"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-09",
+   "advisor": "franklin",
+   "text": {
+    "en": "Remember that Time is Money.",
+    "ko": "시간이 곧 돈이라는 것을 기억하라."
+   },
+   "plain": {
+    "ko": "기다리는 시간에도 기회비용이 있으니, 같은 돈이 다른 곳에서 얼마를 벌 수 있었는지 따져 보세요."
+   },
+   "source": {
+    "title": "Advice to a Young Tradesman, Written by an Old One",
+    "year": 1748,
+    "type": "essay",
+    "locator": "first maxim",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0130"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-10",
+   "advisor": "franklin",
+   "text": {
+    "en": "Remember that Credit is Money.",
+    "ko": "신용이 곧 돈이라는 것을 기억하라."
+   },
+   "plain": {
+    "ko": "신용이 좋은 기업은 싸게 빌릴 수 있으니, 신용 그 자체가 자산입니다."
+   },
+   "source": {
+    "title": "Advice to a Young Tradesman, Written by an Old One",
+    "year": 1748,
+    "type": "essay",
+    "locator": "second maxim",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0130"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-11",
+   "advisor": "franklin",
+   "text": {
+    "en": "Remember that Money is of a prolific generating Nature. Money can beget Money, and its Offspring can beget more, and so on.",
+    "ko": "돈은 번식하고 불어나는 성질이 있다는 것을 기억하라. 돈은 돈을 낳고, 그 새끼는 또 더 많은 돈을 낳는다."
+   },
+   "plain": {
+    "ko": "복리의 힘이 바로 이것이니, 일찍 시작해 오래 굴리는 것이 중요합니다."
+   },
+   "source": {
+    "title": "Advice to a Young Tradesman, Written by an Old One",
+    "year": 1748,
+    "type": "essay",
+    "locator": "third maxim",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0130"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-12",
+   "advisor": "franklin",
+   "text": {
+    "en": "The most trifling Actions that affect a Man’s Credit, are to be regarded.",
+    "ko": "사람의 신용에 영향을 주는 일이라면 아무리 사소한 행동이라도 신경 써야 한다."
+   },
+   "plain": {
+    "ko": "경영진의 작은 말실수나 공시 지연도 신뢰를 흔드니, 사소한 신호를 놓치지 마세요."
+   },
+   "source": {
+    "title": "Advice to a Young Tradesman, Written by an Old One",
+    "year": 1748,
+    "type": "essay",
+    "locator": "on credit and appearances",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0130"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-13",
+   "advisor": "franklin",
+   "text": {
+    "en": "In short, the Way to Wealth, if you desire it, is as plain as the Way to Market. It depends chiefly on two Words, Industry and Frugality.",
+    "ko": "한마디로, 부자가 되는 길은 원하기만 하면 시장 가는 길만큼 분명하다. 그 길은 주로 두 단어, 근면과 절약에 달려 있다."
+   },
+   "plain": {
+    "ko": "부를 쌓는 원리는 단순합니다. 꾸준히 벌고, 아껴서, 그 차이를 모으세요."
+   },
+   "source": {
+    "title": "Advice to a Young Tradesman, Written by an Old One",
+    "year": 1748,
+    "type": "essay",
+    "locator": "closing paragraph",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0130"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-14",
+   "advisor": "franklin",
+   "text": {
+    "en": "If you know how to spend less than you get, you have the Philosophers-Stone.",
+    "ko": "버는 것보다 덜 쓸 줄 안다면, 당신은 현자의 돌을 가진 것이다."
+   },
+   "plain": {
+    "ko": "버는 것보다 적게 쓰는 기업, 곧 꾸준히 흑자를 내는 기업이 가장 확실한 연금술사입니다."
+   },
+   "source": {
+    "title": "Poor Richard, 1736",
+    "year": 1736,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-02-02-0019"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-15",
+   "advisor": "franklin",
+   "text": {
+    "en": "He that can have Patience, can have what he will.",
+    "ko": "인내할 수 있는 사람은 원하는 것을 가질 수 있다."
+   },
+   "plain": {
+    "ko": "좋은 기업을 사서 오래 기다리는 인내가 장기 투자의 가장 큰 무기입니다."
+   },
+   "source": {
+    "title": "Poor Richard, 1736",
+    "year": 1736,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-02-02-0019"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-16",
+   "advisor": "franklin",
+   "text": {
+    "en": "Industry, Perseverance, and Frugality, make Fortune yield.",
+    "ko": "근면과 끈기와 절약은 운명조차 굴복시킨다."
+   },
+   "plain": {
+    "ko": "운에 기대기보다 꾸준함과 비용 관리로 성과를 내는 기업을 고르세요."
+   },
+   "source": {
+    "title": "Poor Richard, 1744",
+    "year": 1744,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-02-02-0100"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-17",
+   "advisor": "franklin",
+   "text": {
+    "en": "I'll warrant ye, goes before Rashness; Who'd-a-tho't-it? comes sneaking after.",
+    "ko": "'내가 장담하지'는 무모함보다 앞서 가고, '누가 그럴 줄 알았겠어?'는 그 뒤를 슬금슬금 따라온다."
+   },
+   "plain": {
+    "ko": "'확실하다'고 장담하는 투자일수록 나중에 '이럴 줄 몰랐다'로 끝나기 쉬우니 과신을 경계하세요."
+   },
+   "source": {
+    "title": "Poor Richard, 1744",
+    "year": 1744,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-02-02-0100"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-18",
+   "advisor": "franklin",
+   "text": {
+    "en": "Pay what you owe, and what you’re worth you’ll know.",
+    "ko": "빚진 것을 갚아 보라. 그러면 당신의 진짜 가치를 알게 될 것이다."
+   },
+   "plain": {
+    "ko": "자산에서 부채를 뺀 순자산이 기업의 진짜 몸집입니다."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1750",
+    "year": 1750,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-03-02-0176"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-19",
+   "advisor": "franklin",
+   "text": {
+    "en": "Bad Gains are truly Losses.",
+    "ko": "나쁜 방법으로 얻은 이익은 사실 손실이다."
+   },
+   "plain": {
+    "ko": "회계 꼼수나 무리한 방법으로 낸 이익은 결국 더 큰 손실로 돌아옵니다."
+   },
+   "source": {
+    "title": "Poor Richard Improved, 1755",
+    "year": 1755,
+    "type": "almanac",
+    "locator": "proverbs printed in the calendar pages",
+    "url": "https://founders.archives.gov/documents/Franklin/01-05-02-0136"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-20",
+   "advisor": "franklin",
+   "text": {
+    "en": "Consider then when you are tempted to buy any unnecessary Householdstuff, or any superfluous thing, whether you will be willing to pay Interest, and Interest upon Interest for it as long as you live; and more if it grows worse by using.",
+    "ko": "필요 없는 살림살이나 쓸데없는 물건을 사고 싶어질 때 생각해 보라. 평생 그 물건에 이자를, 그것도 이자에 이자까지 붙여 낼 생각이 있는지. 쓸수록 낡는 물건이라면 더 말할 것도 없다."
+   },
+   "plain": {
+    "ko": "지금 쓰는 돈은 미래에 불어났을 돈까지 포기하는 것이니, 소비도 복리로 계산해 보세요."
+   },
+   "source": {
+    "title": "Hints for Those That Would Be Rich (printed in Poor Richard, 1737)",
+    "year": 1737,
+    "type": "almanac",
+    "locator": "Poor Richard, 1737; reprinted in Benjamin Franklin: Representative Selections (1936)",
+    "url": "https://www.gutenberg.org/ebooks/35508"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-21",
+   "advisor": "franklin",
+   "text": {
+    "en": "This man continued to live in this decaying place… refusing for many years to buy a house there, because all was going to destruction; and at last I had the pleasure of seeing him give five times as much for one…",
+    "ko": "이 사람은 '몰락해 가는' 이 도시에 계속 살면서… 모든 것이 망해 간다며 몇 년 동안이나 집을 사지 않았다. 결국 나는 그가 (처음 불평을 시작했을 때보다) 다섯 배나 비싸게 집을 사는 모습을 보는 즐거움을 누렸다…"
+   },
+   "plain": {
+    "ko": "비관론만 듣고 계속 기다리다가는 훨씬 비싼 값을 치를 수 있으니, 공포 뉴스와 실제 흐름을 구분하세요."
+   },
+   "source": {
+    "title": "Autobiography of Benjamin Franklin (F. W. Pine ed., 1916)",
+    "year": 1771,
+    "type": "book",
+    "locator": "Part One; Pine ed. ch. VII 'Beginning Business in Philadelphia' (Samuel Mickle anecdote)",
+    "url": "https://www.gutenberg.org/ebooks/20203"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-22",
+   "advisor": "franklin",
+   "text": {
+    "en": "So convenient a thing is it to be a reasonable creature, since it enables one to find or make a reason for everything one has a mind to do.",
+    "ko": "합리적인 존재라는 건 참 편리한 일이다. 하고 싶은 일이라면 무엇이든 그 이유를 찾아내거나 만들어 낼 수 있으니까."
+   },
+   "plain": {
+    "ko": "이미 사고 싶은 종목이 있으면 그럴듯한 이유는 얼마든지 만들 수 있으니, 내 판단의 근거를 의심해 보세요."
+   },
+   "source": {
+    "title": "Autobiography of Benjamin Franklin (F. W. Pine ed., 1916)",
+    "year": 1771,
+    "type": "book",
+    "locator": "Part One; Pine ed. ch. IV 'First Visit to Boston'",
+    "url": "https://www.gutenberg.org/ebooks/20203"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-23",
+   "advisor": "franklin",
+   "text": {
+    "en": "In order to secure my credit and character as a tradesman, I took care not only to be in reality industrious and frugal, but to avoid all appearances to the contrary.",
+    "ko": "상인으로서 신용과 평판을 지키기 위해, 나는 실제로 부지런하고 검소하게 살았을 뿐 아니라 그 반대로 보일 만한 모습도 모두 피하려 애썼다."
+   },
+   "plain": {
+    "ko": "좋은 기업은 실제 성과와 함께 투명한 공시와 소통으로 신뢰를 지킵니다."
+   },
+   "source": {
+    "title": "Autobiography of Benjamin Franklin (F. W. Pine ed., 1916)",
+    "year": 1771,
+    "type": "book",
+    "locator": "Part One; Pine ed. ch. VIII 'Business Success and First Public Service'",
+    "url": "https://www.gutenberg.org/ebooks/20203"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-24",
+   "advisor": "franklin",
+   "text": {
+    "en": "Human felicity is produced not so much by great pieces of good fortune that seldom happen, as by little advantages that occur every day.",
+    "ko": "사람의 행복은 어쩌다 한 번 찾아오는 큰 행운보다, 날마다 생기는 작은 이득에서 더 많이 나온다."
+   },
+   "plain": {
+    "ko": "한 번의 대박보다 매일 쌓이는 작은 개선과 꾸준한 수익이 결국 더 큰 차이를 만듭니다."
+   },
+   "source": {
+    "title": "Autobiography of Benjamin Franklin (F. W. Pine ed., 1916)",
+    "year": 1788,
+    "type": "book",
+    "locator": "Part Three; Pine ed. ch. X 'Poor Richard's Almanac and Other Activities' (on street cleaning)",
+    "url": "https://www.gutenberg.org/ebooks/20203"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "franklin-25",
+   "advisor": "franklin",
+   "text": {
+    "en": "'Tis however some Comfort to reflect that upon the whole the Quantity of Industry and Prudence among Mankind exceeds the Quantity of Idleness and Folly.",
+    "ko": "그래도 전체로 보면 인류의 근면과 신중함이 게으름과 어리석음보다 많다는 생각을 하면 조금은 위안이 된다."
+   },
+   "plain": {
+    "ko": "단기적으로는 어리석은 일이 많아 보여도, 길게 보면 경제는 성장해 왔다는 점을 기억하세요."
+   },
+   "source": {
+    "title": "Letter to Benjamin Vaughan, 26 July 1784",
+    "year": 1784,
+    "type": "letter",
+    "locator": "letter on luxury, idleness and industry",
+    "url": "https://founders.archives.gov/documents/Franklin/01-42-02-0280"
+   },
+   "confidence": "primary"
+  }
+ ]
+}

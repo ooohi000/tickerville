@@ -1,0 +1,1374 @@
+{
+ "era": "1905",
+ "advisors": [
+  {
+   "id": "carnegie",
+   "name": {
+    "ko": "앤드루 카네기",
+    "en": "Andrew Carnegie"
+   },
+   "years": "1835–1919",
+   "role": {
+    "ko": "카네기 스틸을 일군 철강왕이자, 부의 사회 환원을 주장한 자선가"
+   },
+   "relation": {
+    "ko": "카네기가 1906년 자금을 대 세운 간이철자위원회(Simplified Spelling Board)의 개혁 철자를, 루스벨트 대통령은 같은 해 8월 행정명령으로 자신의 공식 문서에 쓰도록 했다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Simplified_Spelling_Board"
+  },
+  {
+   "id": "morgan",
+   "name": {
+    "ko": "J. P. 모건",
+    "en": "J. P. Morgan"
+   },
+   "years": "1837–1913",
+   "role": {
+    "ko": "월가를 대표한 투자은행가, U.S. 스틸과 대형 철도 합병을 주도한 금융가"
+   },
+   "relation": {
+    "ko": "1907년 공황 때 모건이 은행가들을 모아 구제를 지휘했고, 그 과정에서 루스벨트 대통령은 모건이 세운 U.S. 스틸의 테네시 석탄·철강(TC&I) 인수를 승인했다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Panic_of_1907"
+  },
+  {
+   "id": "rockefeller",
+   "name": {
+    "ko": "존 D. 록펠러",
+    "en": "John D. Rockefeller"
+   },
+   "years": "1839–1937",
+   "role": {
+    "ko": "스탠더드 오일을 세워 미국 석유 산업을 장악한 석유왕"
+   },
+   "relation": {
+    "ko": "루스벨트 행정부의 법무부가 1906년 11월 스탠더드 오일을 셔먼 반독점법 위반으로 제소했고, 1911년 대법원이 해체를 명령했다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Standard_Oil_Co._of_New_Jersey_v._United_States"
+  },
+  {
+   "id": "livermore",
+   "name": {
+    "ko": "제시 리버모어",
+    "en": "Jesse Livermore"
+   },
+   "years": "1877–1940",
+   "role": {
+    "ko": "\"보이 플런저\"로 불린 전설적인 주식·상품 투기자"
+   },
+   "relation": {
+    "ko": "루스벨트 재임 중이던 1907년 공황 때 대규모 공매도 포지션으로 하루에 100만 달러를 벌었다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Jesse_Livermore"
+  },
+  {
+   "id": "livermore-lefevre",
+   "name": {
+    "ko": "에드윈 르페브르 (리버모어를 모델로 한 화자)",
+    "en": "Edwin Lefèvre (narrator based on Livermore)"
+   },
+   "years": "1871–1943",
+   "role": {
+    "ko": "리버모어를 모델로 한 가상 인물 \"래리 리빙스턴\"의 이야기 『어느 주식 투자자의 회상』(1923)을 쓴 금융 저널리스트"
+   },
+   "relation": {
+    "ko": "『어느 주식 투자자의 회상』은 리빙스턴이라는 이름으로 리버모어의 1907년 공황 당시 거래 경험을 소설 형식으로 다룬다."
+   },
+   "relationSource": "https://www.gutenberg.org/ebooks/60979"
+  }
+ ],
+ "quotes": [
+  {
+   "id": "carnegie-01",
+   "advisor": "carnegie",
+   "text": {
+    "en": "While the law [of competition] may be sometimes hard for the individual, it is best for the race, because it insures the survival of the fittest in every department.",
+    "ko": "경쟁의 법칙은 개인에게는 때로 가혹할지 몰라도 인류 전체에는 최선이다. 모든 분야에서 가장 적합한 자가 살아남게 해 주기 때문이다."
+   },
+   "plain": {
+    "ko": "경쟁이 치열한 업종에서는 결국 가장 효율적인 기업만 남으니, 그 업종의 승자가 누구인지부터 따져 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Wealth (\"The Gospel of Wealth\"), North American Review vol. 148, no. 391",
+    "year": 1889,
+    "type": "essay",
+    "locator": "paragraph on the law of competition",
+    "url": "https://en.wikisource.org/wiki/The_North_American_Review/Volume_148/Issue_391/Wealth"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-02",
+   "advisor": "carnegie",
+   "text": {
+    "en": "…such men soon create capital; while, without the special talent required, capital soon takes wings.",
+    "ko": "…그런 사람들은 곧 자본을 만들어 낸다. 반면 필요한 재능이 없으면 자본은 금세 날개 달린 듯 사라진다."
+   },
+   "plain": {
+    "ko": "돈이 많은 회사보다 돈을 불릴 줄 아는 경영진이 있는 회사가 더 중요하다는 말이에요."
+   },
+   "source": {
+    "title": "Wealth (\"The Gospel of Wealth\"), North American Review vol. 148, no. 391",
+    "year": 1889,
+    "type": "essay",
+    "locator": "paragraph on the talent for organization and management",
+    "url": "https://en.wikisource.org/wiki/The_North_American_Review/Volume_148/Issue_391/Wealth"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-03",
+   "advisor": "carnegie",
+   "text": {
+    "en": "The great manufacturing or commercial concern which does not earn at least interest upon its capital soon becomes bankrupt. It must either go forward or fall behind: to stand still is impossible.",
+    "ko": "자본에 대한 이자만큼도 벌지 못하는 대규모 제조·상업 기업은 곧 파산한다. 기업은 전진하거나 뒤처질 뿐, 제자리에 머무는 것은 불가능하다."
+   },
+   "plain": {
+    "ko": "기업이 투자한 자본 대비 이자 이상을 버는지(자본수익률)를 꼭 확인하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Wealth (\"The Gospel of Wealth\"), North American Review vol. 148, no. 391",
+    "year": 1889,
+    "type": "essay",
+    "locator": "paragraph on the law of accumulation of wealth",
+    "url": "https://en.wikisource.org/wiki/The_North_American_Review/Volume_148/Issue_391/Wealth"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-04",
+   "advisor": "carnegie",
+   "text": {
+    "en": "The man who dies thus rich dies disgraced.",
+    "ko": "부자인 채로 죽는 사람은 불명예스럽게 죽는 것이다."
+   },
+   "plain": {
+    "ko": "돈을 모으는 것만큼 그 돈을 어디에 쓰는지도 사람과 기업을 평가하는 기준이 된다는 말이에요."
+   },
+   "source": {
+    "title": "Wealth (\"The Gospel of Wealth\"), North American Review vol. 148, no. 391",
+    "year": 1889,
+    "type": "essay",
+    "locator": "closing paragraph",
+    "url": "https://en.wikisource.org/wiki/The_North_American_Review/Volume_148/Issue_391/Wealth"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-05",
+   "advisor": "carnegie",
+   "text": {
+    "en": "\"Don't put all your eggs in one basket\" is all wrong. I tell you \"put all your eggs in one basket, and then watch that basket.\"",
+    "ko": "\"달걀을 한 바구니에 담지 말라\"는 말은 완전히 틀렸다. 나는 이렇게 말한다. \"달걀을 모두 한 바구니에 담고, 그 바구니를 지켜보라.\""
+   },
+   "plain": {
+    "ko": "카네기는 자기 사업에 집중하라는 뜻으로 한 말이에요. 잘 아는 곳에 집중하되, 그만큼 꼼꼼히 지켜봐야 한다는 조건이 붙어요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 17",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-06",
+   "advisor": "carnegie",
+   "text": {
+    "en": "The concerns which fail are those which have scattered their capital, which means that they have scattered their brains also.",
+    "ko": "실패하는 회사는 자본을 여기저기 흩어 놓은 회사이고, 그것은 곧 머리도 흩어 놓았다는 뜻이다."
+   },
+   "plain": {
+    "ko": "본업과 상관없는 투자를 이것저것 벌이는 회사는 경영진의 집중력도 흩어진다는 신호예요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 17",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-07",
+   "advisor": "carnegie",
+   "text": {
+    "en": "And here is the prime condition of success, the great secret: concentrate your energy, thought, and capital exclusively upon the business in which you are engaged.",
+    "ko": "성공의 첫째 조건이자 큰 비밀은 이것이다. 당신의 에너지와 생각과 자본을 오직 지금 하고 있는 사업에만 쏟아라."
+   },
+   "plain": {
+    "ko": "핵심 사업 하나에 힘을 모으는 회사가 오래 강하다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 17",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-08",
+   "advisor": "carnegie",
+   "text": {
+    "en": "The speculator and the business man tread diverging lines. The former depends upon the sudden turn of fortune's wheel; he is a millionnaire to-day, a bankrupt to-morrow.",
+    "ko": "투기꾼과 사업가는 서로 다른 길을 걷는다. 투기꾼은 운명의 수레바퀴가 갑자기 도는 것에 기대니, 오늘은 백만장자요 내일은 파산자다."
+   },
+   "plain": {
+    "ko": "운에 기대는 단기 베팅은 한 번에 크게 벌 수도 있지만 한 번에 다 잃을 수도 있다는 경고예요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 7",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-09",
+   "advisor": "carnegie",
+   "text": {
+    "en": "But the man of business knows that only by years of patient, unremitting attention to affairs can he earn his reward, which is the result, not of chance, but of well-devised means for the attainment of ends.",
+    "ko": "그러나 사업가는 안다. 오랜 세월 끈기 있게 쉬지 않고 일에 몰두해야만 보상을 얻을 수 있고, 그 보상은 우연이 아니라 목표를 위해 잘 짜인 수단의 결과라는 것을."
+   },
+   "plain": {
+    "ko": "좋은 기업의 성과는 하루아침에 나오지 않으니, 투자도 몇 년 단위로 지켜봐야 한다는 말이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 7",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-10",
+   "advisor": "carnegie",
+   "text": {
+    "en": "The moment a man is known to speculate, his credit is impaired, and soon thereafter it is gone.",
+    "ko": "어떤 사람이 투기를 한다고 알려지는 순간 그의 신용은 손상되고, 곧 사라져 버린다."
+   },
+   "plain": {
+    "ko": "경영진이 본업보다 투기성 거래에 관심을 보이면 회사의 신뢰도가 떨어진다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 8",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-11",
+   "advisor": "carnegie",
+   "text": {
+    "en": "There is one sure mark of the coming partner, the future millionnaire; his revenues always exceed his expenditures.",
+    "ko": "장래의 동업자, 미래의 백만장자에게는 확실한 표시가 하나 있다. 그의 수입은 언제나 지출보다 많다."
+   },
+   "plain": {
+    "ko": "사람이든 회사든 버는 돈이 쓰는 돈보다 꾸준히 많은지(흑자 구조)를 먼저 보라는 말이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 13",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-12",
+   "advisor": "carnegie",
+   "text": {
+    "en": "Gentlemen, it is the first hundred dollars saved which tells.",
+    "ko": "여러분, 결정적인 것은 처음 모은 100달러입니다."
+   },
+   "plain": {
+    "ko": "투자의 출발점은 큰돈이 아니라 처음 모으는 작은 종잣돈이라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"The Road to Business Success: A Talk to Young Men\", p. 14",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-13",
+   "advisor": "carnegie",
+   "text": {
+    "en": "It is a poor business which will not yield better returns for increased capital than any outside investment.",
+    "ko": "늘어난 자본에 대해 어떤 바깥 투자보다도 더 나은 수익을 내지 못하는 사업이라면 형편없는 사업이다."
+   },
+   "plain": {
+    "ko": "회사가 번 돈을 다시 사업에 넣었을 때 다른 투자보다 수익이 높은지 확인하라는 말이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"How to Win Fortune\", p. 121",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-14",
+   "advisor": "carnegie",
+   "text": {
+    "en": "All pure coins have their counterfeits; the counterfeit of business is speculation. … Speculation, on the contrary, is a parasite fastened upon the labour of business men. It creates nothing and supplies no want.",
+    "ko": "모든 진짜 동전에는 위조품이 있다. 사업의 위조품은 투기다. … 투기는 사업가들의 노동에 달라붙은 기생충이다. 아무것도 만들지 않고 어떤 필요도 채워 주지 않는다."
+   },
+   "plain": {
+    "ko": "가치를 만드는 사업에 투자하는 것과 가격 변동에만 거는 것은 전혀 다르다는 말이에요."
+   },
+   "source": {
+    "title": "The Empire of Business",
+    "year": 1902,
+    "type": "book",
+    "locator": "\"Business\", section \"Business Men and Speculators\", p. 208",
+    "url": "https://archive.org/details/empireofbusiness00carn"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-15",
+   "advisor": "carnegie",
+   "text": {
+    "en": "I have adhered to the rule never to purchase what I did not pay for, and never to sell what I did not own.",
+    "ko": "나는 값을 치르지 않은 것은 사지 않고, 갖고 있지 않은 것은 팔지 않는다는 원칙을 지켜 왔다."
+   },
+   "plain": {
+    "ko": "빚을 내서 사거나(신용매수) 없는 주식을 파는(공매도) 거래는 위험이 크니 조심하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Autobiography of Andrew Carnegie",
+    "year": 1920,
+    "type": "book",
+    "locator": "Chapter XI, \"New York as Headquarters\"",
+    "url": "https://www.gutenberg.org/ebooks/17976"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-16",
+   "advisor": "carnegie",
+   "text": {
+    "en": "His mind is upon the stock quotations and not upon the points that require calm thought. Speculation is a parasite feeding upon values, creating none.",
+    "ko": "그의 마음은 주가 시세에 가 있고, 차분한 생각이 필요한 문제에는 가 있지 않다. 투기는 가치를 갉아먹을 뿐 아무 가치도 만들지 않는 기생충이다."
+   },
+   "plain": {
+    "ko": "매일 주가만 들여다보면 정작 중요한 회사의 본질을 생각할 여유가 없어진다는 말이에요."
+   },
+   "source": {
+    "title": "Autobiography of Andrew Carnegie",
+    "year": 1920,
+    "type": "book",
+    "locator": "Chapter XI, \"New York as Headquarters\"",
+    "url": "https://www.gutenberg.org/ebooks/17976"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-17",
+   "advisor": "carnegie",
+   "text": {
+    "en": "One of the chief sources of success in manufacturing is the introduction and strict maintenance of a perfect system of accounting so that responsibility for money or materials can be brought home to every man.",
+    "ko": "제조업 성공의 주된 원천 중 하나는 완벽한 회계 체계를 도입하고 엄격히 유지해, 돈과 자재에 대한 책임을 한 사람 한 사람에게 분명히 묻는 것이다."
+   },
+   "plain": {
+    "ko": "원가와 책임을 정확히 관리하는 회사가 경쟁에서 이긴다는 뜻이에요. 재무제표가 투명한지 보세요."
+   },
+   "source": {
+    "title": "Autobiography of Andrew Carnegie",
+    "year": 1920,
+    "type": "book",
+    "locator": "Chapter X, \"The Iron Works\"",
+    "url": "https://www.gutenberg.org/ebooks/17976"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-18",
+   "advisor": "carnegie",
+   "text": {
+    "en": "A rule which we adopted and adhered to has given greater returns than one would believe possible, namely: always give the other party the benefit of the doubt.",
+    "ko": "우리가 정하고 지켜 온 규칙 하나가 믿기 어려울 만큼 큰 보답을 주었다. 바로 '애매할 때는 언제나 상대방에게 유리하게 해석해 주라'는 것이다."
+   },
+   "plain": {
+    "ko": "거래처와 신뢰를 쌓는 회사가 장기적으로 더 큰 이익을 얻는다는 말이에요."
+   },
+   "source": {
+    "title": "Autobiography of Andrew Carnegie",
+    "year": 1920,
+    "type": "book",
+    "locator": "Chapter XII, \"Business Negotiations\"",
+    "url": "https://www.gutenberg.org/ebooks/17976"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "carnegie-19",
+   "advisor": "carnegie",
+   "text": {
+    "en": "I resolved to stop accumulating and begin the infinitely more serious and difficult task of wise distribution.",
+    "ko": "나는 축적을 멈추고, 그보다 훨씬 더 진지하고 어려운 일인 '현명한 분배'를 시작하기로 결심했다."
+   },
+   "plain": {
+    "ko": "돈을 버는 것만큼 번 돈을 잘 쓰는 것(배당·재투자·기부)도 어렵고 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "Autobiography of Andrew Carnegie",
+    "year": 1920,
+    "type": "book",
+    "locator": "Chapter XIX, \"The 'Gospel of Wealth'\"",
+    "url": "https://www.gutenberg.org/ebooks/17976"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-01",
+   "advisor": "morgan",
+   "text": {
+    "en": "No, sir; the first thing is character. … Before money or anything else. Money can not buy it.",
+    "ko": "아닙니다. 첫째는 인격입니다. … 돈이나 그 무엇보다도 먼저입니다. 돈으로는 그것을 살 수 없습니다."
+   },
+   "plain": {
+    "ko": "기업을 볼 때 숫자만큼이나 경영진이 믿을 만한 사람인지가 중요하다는 말이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1084 (answers to Samuel Untermyer on whether commercial credit is based on money or property)",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-02",
+   "advisor": "morgan",
+   "text": {
+    "en": "Because a man I do not trust could not get money from me on all the bonds in Christendom.",
+    "ko": "내가 믿지 못하는 사람이라면, 세상의 모든 채권을 담보로 내놓아도 나에게서 돈을 빌릴 수 없기 때문입니다."
+   },
+   "plain": {
+    "ko": "담보가 아무리 좋아도 신뢰할 수 없는 상대라면 거래하지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1084",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-03",
+   "advisor": "morgan",
+   "text": {
+    "en": "I know lots of men, business men, too, who can borrow any amount, whose credit is unquestioned. … it is because people believe in the man.",
+    "ko": "얼마든지 돈을 빌릴 수 있고 신용을 의심받지 않는 사람들, 사업가들도 많이 압니다. … 그건 사람들이 그 사람을 믿기 때문입니다."
+   },
+   "plain": {
+    "ko": "신용은 결국 쌓아 온 평판에서 나온다는 말이에요. 경영진의 과거 약속 이행 기록을 확인해 보세요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1083",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-04",
+   "advisor": "morgan",
+   "text": {
+    "en": "I have known a man to come into my office, and I have given him a check for a million dollars when I knew he had not a cent in the world.",
+    "ko": "내 사무실에 찾아온 사람에게, 그가 세상에 한 푼도 없다는 걸 알면서도 100만 달러짜리 수표를 써 준 적이 있습니다."
+   },
+   "plain": {
+    "ko": "모건은 돈보다 사람을 보고 돈을 빌려줬다고 말했어요. 그만큼 사람을 보는 눈이 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1084",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-05",
+   "advisor": "morgan",
+   "text": {
+    "en": "I do not object to competition, either. I like a little competition.",
+    "ko": "나는 경쟁에도 반대하지 않습니다. 약간의 경쟁은 좋아합니다."
+   },
+   "plain": {
+    "ko": "모건은 결합(독점)을 더 선호한다고도 답했어요. 경쟁이 약한 산업일수록 가격 결정력이 누구에게 있는지 보라는 힌트예요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1050 (exchange with Untermyer on combination versus competition)",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-06",
+   "advisor": "morgan",
+   "text": {
+    "en": "Without you have control, you can not do anything.",
+    "ko": "통제권을 갖지 못하면 아무것도 할 수 없습니다."
+   },
+   "plain": {
+    "ko": "회사를 실제로 누가 지배하는지(대주주·의결권 구조)를 알아야 그 회사의 방향을 읽을 수 있다는 말이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1050",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-07",
+   "advisor": "morgan",
+   "text": {
+    "en": "[Asked whether a man who abuses such power loses it:] Yes; and he never gets it back again, either.",
+    "ko": "[그런 힘을 남용한 사람은 그 힘을 잃느냐는 질문에] 그렇습니다. 그리고 다시는 되찾지 못합니다."
+   },
+   "plain": {
+    "ko": "신뢰를 남용한 기업이나 경영자는 한 번 잃은 신뢰를 회복하기 어렵다는 뜻이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1052",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "morgan-08",
+   "advisor": "morgan",
+   "text": {
+    "en": "There always is a competition in the end.",
+    "ko": "결국에는 언제나 경쟁이 있습니다."
+   },
+   "plain": {
+    "ko": "지금 독점처럼 보이는 회사도 언젠가는 경쟁자를 만나게 된다는 점을 잊지 말라는 말이에요."
+   },
+   "source": {
+    "title": "Money Trust Investigation (Pujo Committee), Part 15, testimony of J. Pierpont Morgan, Dec. 19, 1912",
+    "year": 1912,
+    "type": "testimony",
+    "locator": "p. 1020 (on whether corporate securities should be sold by competitive bidding)",
+    "url": "https://archive.org/details/aeu8665.0015.001.umich.edu"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-01",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "It was a friendship founded on business, which Mr. Flagler used to say was a good deal better than a business founded on friendship, and my experience leads me to agree with him.",
+    "ko": "그것은 사업 위에 세운 우정이었다. 플래글러 씨는 그것이 우정 위에 세운 사업보다 훨씬 낫다고 말하곤 했는데, 내 경험도 그 말에 동의하게 만든다."
+   },
+   "plain": {
+    "ko": "친분보다 원칙과 계약으로 맺은 사업 관계가 더 오래간다는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter I, \"Some Old Friends\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-02",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "I know of nothing more despicable and pathetic than a man who devotes all the waking hours of the day to making money for money's sake.",
+    "ko": "깨어 있는 모든 시간을 오로지 돈을 위해 돈 버는 데 바치는 사람보다 더 비열하고 딱한 사람을 나는 알지 못한다."
+   },
+   "plain": {
+    "ko": "돈 자체가 목적이 되면 판단이 흐려지니, 투자에도 분명한 목적이 있어야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter I, \"Some Old Friends\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-03",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "The men who have been very successful are correspondingly conservative, since they have much to lose in case of disaster.",
+    "ko": "크게 성공한 사람들은 그만큼 보수적이다. 재앙이 닥치면 잃을 것이 많기 때문이다."
+   },
+   "plain": {
+    "ko": "자산이 커질수록 수익보다 큰 손실을 피하는 쪽이 더 중요해진다는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter I, \"Some Old Friends\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-04",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "It has always been our policy to hear patiently and discuss frankly until the last shred of evidence is on the table, before trying to reach a conclusion and to decide finally upon a course of action.",
+    "ko": "결론을 내리고 행동 방침을 최종 결정하기 전에, 마지막 증거 한 조각까지 테이블에 올라올 때까지 참을성 있게 듣고 솔직하게 토론하는 것이 우리의 방침이었다."
+   },
+   "plain": {
+    "ko": "투자 결정 전에는 반대 의견과 불리한 자료까지 모두 살펴보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter I, \"Some Old Friends\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-05",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Because you have got a start, you think you are quite a merchant; look out, or you will lose your head--go steady.",
+    "ko": "조금 시작했다고 해서 네가 대단한 상인이라도 된 줄 아는구나. 조심해라, 안 그러면 정신을 잃는다. 차분하게 가라."
+   },
+   "plain": {
+    "ko": "젊은 록펠러가 밤마다 스스로에게 한 말이에요. 초반 수익에 들뜨지 말고 침착하게 가라는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter II, \"The Difficult Art of Getting\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-06",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Sometimes I feel that we Americans think we can find a short road to success, and it may appear that often this feat is accomplished; but real efficiency in work comes from knowing your facts and building upon that sure foundation.",
+    "ko": "우리 미국인들은 성공으로 가는 지름길을 찾을 수 있다고 생각하는 듯하고, 실제로 그런 일이 자주 이뤄지는 것처럼 보이기도 한다. 그러나 진짜 효율은 사실을 알고 그 확실한 토대 위에 쌓아 올리는 데서 나온다."
+   },
+   "plain": {
+    "ko": "지름길 같은 정보보다 회사에 대한 사실(실적·재무)을 꼼꼼히 아는 것이 기본이라는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter III, \"The Standard Oil Company\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-07",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "It has and always has had, and always will have, hundreds of active competitors; it has lived only because it has managed its affairs well and economically and with great vigour.",
+    "ko": "이 회사에는 지금도, 과거에도, 앞으로도 수백의 활발한 경쟁자가 있다. 회사가 살아남은 것은 오직 일을 잘, 경제적으로, 그리고 매우 힘차게 관리했기 때문이다."
+   },
+   "plain": {
+    "ko": "록펠러 자신의 주장이며, 정부는 이후 스탠더드 오일을 독점으로 보고 해체했어요. 회사가 하는 말과 실제 시장 구조를 함께 확인하라는 교훈이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter III, \"The Standard Oil Company\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-08",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "The dangers are that the power conferred by combination may be abused, that combinations may be formed for speculation in stocks rather than for conducting business, and that for this purpose prices may be temporarily raised instead of being lowered.",
+    "ko": "위험은 결합이 주는 힘이 남용될 수 있고, 사업이 아니라 주식 투기를 위해 결합이 만들어질 수 있으며, 그 목적으로 가격이 내려가는 대신 일시적으로 올라갈 수 있다는 점이다."
+   },
+   "plain": {
+    "ko": "인수합병이 사업을 위한 것인지 주가를 띄우기 위한 것인지 구분해서 보라는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter III, \"The Standard Oil Company\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-09",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "The oil business itself is speculative enough, and its successful administration requires a firm hand and a cool head.",
+    "ko": "석유 사업은 그 자체로 충분히 투기적이며, 이를 성공적으로 운영하려면 단호한 손과 냉철한 머리가 필요하다."
+   },
+   "plain": {
+    "ko": "변동이 큰 업종일수록 경영진의 침착함과 규율이 더 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter IV, \"Some Experiences in the Oil Business\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-10",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "We preferred to have the attention of the owners and administrators of the business directed wholly to the legitimate development of the enterprise rather than to speculation in its shares.",
+    "ko": "우리는 소유주와 경영자들의 관심이 주식 투기가 아니라 오로지 기업의 정당한 발전에 쏠리기를 바랐다."
+   },
+   "plain": {
+    "ko": "경영진이 주가보다 사업 자체에 집중하는 회사가 건강하다는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter IV, \"Some Experiences in the Oil Business\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-11",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Now, these dividends run up to 40 per cent. on the capital stock of $100,000,000, but that does not mean that the profit is 40 per cent. on the capital invested.",
+    "ko": "이 배당은 자본금 1억 달러에 대해 40퍼센트에 이르지만, 그것이 투자된 자본에 대한 이익이 40퍼센트라는 뜻은 아니다."
+   },
+   "plain": {
+    "ko": "액면 기준 배당률과 실제 투자 자본 대비 수익률은 다르니, 숫자의 기준이 무엇인지 확인하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter IV, \"Some Experiences in the Oil Business\", section \"Why the Standard Pays Large Dividends\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-12",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "It is surprising how many bright business men go into important undertakings with little or no study of the controlling conditions they risk their all upon.",
+    "ko": "똑똑한 사업가들이 자기 전부를 거는 일의 핵심 조건을 거의 또는 전혀 연구하지 않고 중요한 사업에 뛰어드는 경우가 얼마나 많은지 놀라울 정도다."
+   },
+   "plain": {
+    "ko": "큰돈을 넣기 전에 그 사업을 좌우하는 핵심 조건부터 공부하라는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, \"Other Business Experiences and Business Principles\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-13",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Study diligently your capital requirements, and fortify yourself fully to cover possible set-backs, because you can absolutely count on meeting set-backs.",
+    "ko": "필요한 자본을 부지런히 따져 보고, 있을 수 있는 차질에 충분히 대비하라. 차질은 반드시 만나게 되어 있기 때문이다."
+   },
+   "plain": {
+    "ko": "현금 여유와 대비책이 있는 회사(그리고 투자자)가 위기를 버틴다는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, \"Other Business Experiences and Business Principles\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-14",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Be sure that you are not deceiving yourself at any time about actual conditions.",
+    "ko": "실제 상황에 대해 어느 때라도 스스로를 속이고 있지 않은지 확인하라."
+   },
+   "plain": {
+    "ko": "보고 싶은 것만 보지 말고, 내 투자의 불리한 사실도 솔직하게 인정하라는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, \"Other Business Experiences and Business Principles\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-15",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "…there can be no permanent success without fair dealing that leads to wide-spread confidence in the man himself, and that is the real capital we all prize and work for.",
+    "ko": "…공정한 거래로 그 사람 자체에 대한 폭넓은 신뢰를 얻지 않고서는 지속적인 성공이 있을 수 없다. 그것이야말로 우리 모두가 소중히 여기고 얻으려 애쓰는 진짜 자본이다."
+   },
+   "plain": {
+    "ko": "신뢰는 재무제표에 안 나오지만 기업의 가장 중요한 자산이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, \"Other Business Experiences and Business Principles\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-16",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "In the Standard we continued to make progress even through all these panic years, as we had large reserves of cash on account of our very conservative methods of financing.",
+    "ko": "스탠더드는 그 모든 공황의 해에도 계속 전진했다. 매우 보수적인 자금 운용 덕분에 많은 현금을 비축해 두었기 때문이다."
+   },
+   "plain": {
+    "ko": "현금이 넉넉하고 빚이 적은 회사가 불황기에 오히려 앞서 나간다는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, section \"Panic Experiences\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-17",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "A gradual recovery will only tend to make the future all the more secure, and patience is a virtue in business affairs as in other things.",
+    "ko": "점진적인 회복은 미래를 더욱 단단하게 만들 뿐이며, 인내는 다른 일에서와 마찬가지로 사업에서도 미덕이다."
+   },
+   "plain": {
+    "ko": "1907년 공황 뒤에 한 말이에요. 시장 회복이 느려도 조급해하지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter V, section \"Panic Experiences\" (on recovery from the panic of October 1907)",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-18",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "Commercial enterprises that are needed by the public will pay. Commercial enterprises that are not needed fail, and ought to fail.",
+    "ko": "대중에게 필요한 사업은 수익을 낸다. 필요하지 않은 사업은 실패하며, 실패하는 것이 마땅하다."
+   },
+   "plain": {
+    "ko": "그 회사의 제품이 정말 사람들에게 필요한지가 장기 수익의 출발점이라는 말이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter VI, \"The Difficult Art of Giving\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "rockefeller-19",
+   "advisor": "rockefeller",
+   "text": {
+    "en": "That is the principal objection to speculation--it is not because more lose than gain, though that is true--but it is because those who gain are apt to receive more injury from their success than they would have received from failure.",
+    "ko": "투기에 반대하는 주된 이유는 이것이다. 잃는 사람이 따는 사람보다 많아서가 아니라(그것도 사실이지만), 따는 사람이 실패했을 때보다 성공으로 더 큰 해를 입기 쉽기 때문이다."
+   },
+   "plain": {
+    "ko": "쉽게 번 돈은 잘못된 습관과 과신을 남겨, 나중에 더 크게 잃게 만든다는 뜻이에요."
+   },
+   "source": {
+    "title": "Random Reminiscences of Men and Events",
+    "year": 1909,
+    "type": "book",
+    "locator": "Chapter VI, \"The Difficult Art of Giving\", section \"The Fundamental Thing in All Help\"",
+    "url": "https://www.gutenberg.org/ebooks/17090"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-01",
+   "advisor": "livermore",
+   "text": {
+    "en": "The game of speculation is the most uniformly fascinating game in the world. But it is not a game for the stupid, the mentally lazy, the man of inferior emotional balance, nor for the get-rich-quick adventurer.",
+    "ko": "투기라는 게임은 세상에서 가장 한결같이 매혹적인 게임이다. 그러나 어리석은 사람, 머리 쓰기를 게을리하는 사람, 감정의 균형이 약한 사람, 벼락부자를 꿈꾸는 모험가를 위한 게임은 아니다."
+   },
+   "plain": {
+    "ko": "시장은 공부하지 않거나 감정에 휘둘리는 사람에게 가장 가혹하다는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", opening paragraph (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-02",
+   "advisor": "livermore",
+   "text": {
+    "en": "Anyone who is inclined to speculate should look at speculation as a business and treat it as such and not regard it as a pure gamble as so many people are apt to do.",
+    "ko": "투기를 하려는 사람은 그것을 하나의 사업으로 보고 그렇게 다뤄야 한다. 많은 사람이 그러듯 순전한 도박으로 여겨서는 안 된다."
+   },
+   "plain": {
+    "ko": "투자도 사업처럼 원칙, 기록, 손익 관리가 필요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 4 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-03",
+   "advisor": "livermore",
+   "text": {
+    "en": "Markets are never wrong—opinions often are.",
+    "ko": "시장은 결코 틀리지 않는다. 틀리는 것은 대개 의견이다."
+   },
+   "plain": {
+    "ko": "내 생각과 시장 움직임이 다를 때는 고집보다 내 판단을 다시 점검하라는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 7 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-04",
+   "advisor": "livermore",
+   "text": {
+    "en": "Profits always take care of themselves, but losses never do.",
+    "ko": "이익은 언제나 스스로를 돌보지만, 손실은 결코 그렇지 않다."
+   },
+   "plain": {
+    "ko": "손실은 내버려 두면 커지기만 하니 손실 관리에 먼저 신경 쓰라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 12 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-05",
+   "advisor": "livermore",
+   "text": {
+    "en": "The speculator has to insure himself against considerable losses by taking the first small loss.",
+    "ko": "투기자는 처음의 작은 손실을 받아들임으로써 큰 손실에 대비한 보험을 들어야 한다."
+   },
+   "plain": {
+    "ko": "작은 손절이 큰 손실을 막는 보험이라는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 12 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-06",
+   "advisor": "livermore",
+   "text": {
+    "en": "One of the primary rules is that one should never permit speculative ventures to run into investments.",
+    "ko": "가장 기본적인 규칙 가운데 하나는, 투기로 시작한 거래가 어느새 장기 투자로 바뀌게 두어서는 안 된다는 것이다."
+   },
+   "plain": {
+    "ko": "단기로 샀다가 손실이 나자 '장기 투자'라며 버티는 습관을 경계하라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 15 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-07",
+   "advisor": "livermore",
+   "text": {
+    "en": "…the money lost by speculation alone is small compared with the gigantic sums lost by so-called investors who have let their investments ride.",
+    "ko": "…투기만으로 잃은 돈은, 이른바 투자자들이 투자를 방치해 두었다가 잃은 막대한 돈에 비하면 적다."
+   },
+   "plain": {
+    "ko": "'투자'라는 이름으로 사 놓고 점검하지 않는 것도 큰 위험이라는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. I, \"The Challenge of Speculation\", p. 18 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-08",
+   "advisor": "livermore",
+   "text": {
+    "en": "After attaining a goodly profit, you must have patience, but don't let patience create a frame of mind that ignores the danger signals.",
+    "ko": "상당한 이익을 얻은 뒤에는 인내심을 가져야 한다. 그러나 그 인내심 때문에 위험 신호를 무시하는 마음가짐이 생겨서는 안 된다."
+   },
+   "plain": {
+    "ko": "오래 보유하되, 회사나 시장의 경고 신호는 계속 확인하라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. II, \"When Does a Stock Act Right?\", p. 22 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-09",
+   "advisor": "livermore",
+   "text": {
+    "en": "Remember this: When you are doing nothing, those speculators who feel they must trade day in and day out, are laying the foundation for your next venture.",
+    "ko": "이것을 기억하라. 당신이 아무것도 하지 않는 동안, 매일같이 거래해야 한다고 느끼는 투기자들이 당신의 다음 기회를 위한 토대를 깔고 있다."
+   },
+   "plain": {
+    "ko": "기회가 없을 때 쉬는 것도 실력이라는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. II, \"When Does a Stock Act Right?\", p. 26 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-10",
+   "advisor": "livermore",
+   "text": {
+    "en": "If you cannot make money out of the leading active issues, you are not going to make money out of the stock market as a whole.",
+    "ko": "선도하는 활발한 종목으로 돈을 벌 수 없다면, 주식시장 전체에서도 돈을 벌 수 없을 것이다."
+   },
+   "plain": {
+    "ko": "시장을 이끄는 대표 기업과 업종부터 이해하라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. III, \"Follow the Leaders\", p. 32 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-11",
+   "advisor": "livermore",
+   "text": {
+    "en": "When you are handling surplus income do not delegate the task to anyone.",
+    "ko": "여유 자금을 다룰 때는 그 일을 누구에게도 맡기지 마라."
+   },
+   "plain": {
+    "ko": "내 돈의 최종 판단과 책임은 내가 져야 한다는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. IV, \"Money in the Hand\", opening sentence, p. 36 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-12",
+   "advisor": "livermore",
+   "text": {
+    "en": "Just so, a person engaged in the business of speculation should risk only a limited amount of capital on any one venture. Cash to the speculator is as merchandise on the shelves of the merchant.",
+    "ko": "마찬가지로 투기를 업으로 하는 사람은 한 거래에 제한된 자본만 걸어야 한다. 투기자에게 현금은 상인의 진열대 위 상품과 같다."
+   },
+   "plain": {
+    "ko": "한 종목에 너무 많이 걸지 말고, 현금을 '팔 물건'처럼 소중히 남겨 두라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. IV, \"Money in the Hand\", p. 38 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-13",
+   "advisor": "livermore",
+   "text": {
+    "en": "One major mistake of all speculators is the urge to enrich themselves in too short a time.",
+    "ko": "모든 투기자가 저지르는 큰 실수 하나는 너무 짧은 시간에 부자가 되려는 충동이다."
+   },
+   "plain": {
+    "ko": "빨리 큰돈을 벌려고 할수록 무리한 위험을 지게 된다는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. IV, \"Money in the Hand\", p. 38 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-14",
+   "advisor": "livermore",
+   "text": {
+    "en": "Never make any trade unless you know you can do so with financial safety.",
+    "ko": "재정적으로 안전하게 할 수 있다는 확신이 없다면 어떤 거래도 하지 마라."
+   },
+   "plain": {
+    "ko": "잃어도 생활이 흔들리지 않는 돈으로만 투자하라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. IV, \"Money in the Hand\", p. 43 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-15",
+   "advisor": "livermore",
+   "text": {
+    "en": "Few people ever make money by trading on the occasional tips or recommendations of others.",
+    "ko": "남이 이따금 건네는 귀띔이나 추천으로 거래해서 돈을 버는 사람은 거의 없다."
+   },
+   "plain": {
+    "ko": "남의 추천 종목보다 내가 직접 공부한 판단이 낫다는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. V, \"The Pivotal Point\", p. 54 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-16",
+   "advisor": "livermore",
+   "text": {
+    "en": "I have long since learned, as all should learn, not to make excuses when wrong. Just admit it and try to profit by it.",
+    "ko": "나는 오래전에 배웠다. 누구나 배워야 하듯, 틀렸을 때 변명하지 않는 법을. 그냥 인정하고 그것에서 이득을 얻으려 노력하라."
+   },
+   "plain": {
+    "ko": "투자 실수는 남 탓하지 말고 기록하고 배우라는 뜻이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. VI, \"The Million Dollar Blunder\", pp. 62-63 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-17",
+   "advisor": "livermore",
+   "text": {
+    "en": "It cannot be said too often that in speculation and investment, success comes only to those who work for it. No one is going to hand you a lot of easy money.",
+    "ko": "아무리 말해도 지나치지 않다. 투기와 투자에서 성공은 그것을 위해 일하는 사람에게만 온다. 누구도 당신에게 쉬운 돈을 쥐여 주지 않는다."
+   },
+   "plain": {
+    "ko": "공짜 정보나 쉬운 수익은 없으니 스스로 공부해야 한다는 말이에요."
+   },
+   "source": {
+    "title": "How to Trade in Stocks",
+    "year": 1940,
+    "type": "book",
+    "locator": "Ch. VI, \"The Million Dollar Blunder\", p. 68 (1st ed., Duell, Sloan & Pearce, 1940)",
+    "url": "https://archive.org/details/howtotradeinstoc0000live"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-lefevre-01",
+   "advisor": "livermore-lefevre",
+   "text": {
+    "en": "There is nothing new in Wall Street. There can't be because speculation is as old as the hills. Whatever happens in the stock market to-day has happened before and will happen again.",
+    "ko": "월가에 새로운 것은 없다. 있을 수가 없다. 투기는 언덕만큼이나 오래된 것이기 때문이다. 오늘 주식시장에서 일어나는 일은 전에도 일어났고 앞으로도 다시 일어날 것이다."
+   },
+   "plain": {
+    "ko": "거품과 공황은 모양만 바뀌어 반복되니, 과거 사례를 공부하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Edwin Lefèvre, Reminiscences of a Stock Operator (1923), narrator based on Livermore",
+    "year": 1923,
+    "type": "book",
+    "locator": "Chapter I",
+    "url": "https://www.gutenberg.org/ebooks/60979"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-lefevre-02",
+   "advisor": "livermore-lefevre",
+   "text": {
+    "en": "There is the plain fool, who does the wrong thing at all times everywhere, but there is the Wall Street fool, who thinks he must trade all the time.",
+    "ko": "언제 어디서나 틀린 짓을 하는 평범한 바보가 있고, 늘 거래해야만 한다고 생각하는 월가의 바보가 있다."
+   },
+   "plain": {
+    "ko": "너무 자주 사고팔면 판단 근거 없이 거래하게 된다는 경고예요."
+   },
+   "source": {
+    "title": "Edwin Lefèvre, Reminiscences of a Stock Operator (1923), narrator based on Livermore",
+    "year": 1923,
+    "type": "book",
+    "locator": "Chapter II",
+    "url": "https://www.gutenberg.org/ebooks/60979"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-lefevre-03",
+   "advisor": "livermore-lefevre",
+   "text": {
+    "en": "It never was my thinking that made the big money for me. It was always my sitting. Got that? My sitting tight!",
+    "ko": "나에게 큰돈을 벌어 준 것은 결코 내 생각이 아니었다. 언제나 내가 버틴 것이었다. 알겠나? 꿈쩍 않고 버틴 것!"
+   },
+   "plain": {
+    "ko": "좋은 판단을 했다면 흔들리지 않고 기다리는 것이 수익을 만든다는 말이에요."
+   },
+   "source": {
+    "title": "Edwin Lefèvre, Reminiscences of a Stock Operator (1923), narrator based on Livermore",
+    "year": 1923,
+    "type": "book",
+    "locator": "Chapter V",
+    "url": "https://www.gutenberg.org/ebooks/60979"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-lefevre-04",
+   "advisor": "livermore-lefevre",
+   "text": {
+    "en": "Men who can both be right and sit tight are uncommon. I found it one of the hardest things to learn.",
+    "ko": "옳으면서 동시에 꿈쩍 않고 버틸 수 있는 사람은 드물다. 나는 그것이 배우기 가장 어려운 일 중 하나라는 걸 알았다."
+   },
+   "plain": {
+    "ko": "맞는 판단보다 그 판단을 끝까지 지키는 것이 더 어렵다는 뜻이에요."
+   },
+   "source": {
+    "title": "Edwin Lefèvre, Reminiscences of a Stock Operator (1923), narrator based on Livermore",
+    "year": 1923,
+    "type": "book",
+    "locator": "Chapter V",
+    "url": "https://www.gutenberg.org/ebooks/60979"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "livermore-lefevre-05",
+   "advisor": "livermore-lefevre",
+   "text": {
+    "en": "The speculator's chief enemies are always boring from within. It is inseparable from human nature to hope and to fear.",
+    "ko": "투기자의 주적은 언제나 안에서 파고든다. 희망하고 두려워하는 것은 인간 본성과 떼려야 뗄 수 없다."
+   },
+   "plain": {
+    "ko": "가장 큰 적은 시장이 아니라 내 안의 희망과 두려움이라는 말이에요."
+   },
+   "source": {
+    "title": "Edwin Lefèvre, Reminiscences of a Stock Operator (1923), narrator based on Livermore",
+    "year": 1923,
+    "type": "book",
+    "locator": "Chapter X",
+    "url": "https://www.gutenberg.org/ebooks/60979"
+   },
+   "confidence": "primary"
+  }
+ ]
+}

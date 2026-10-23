@@ -4,6 +4,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { type AmbientLight, Fog, Vector3 } from "three";
 import { getFogRange } from "@/lib/camera/fog";
+import { BASE_SCENE, eraSkyColor, type EraScene } from "@/lib/era/eras";
 import { getLightningIntensity } from "@/lib/weather/sky";
 import { getWeatherSpec } from "@/lib/weather/weather";
 import { Clouds } from "./Clouds";
@@ -15,20 +16,23 @@ const SHADOW_EXTENT = 70;
 export interface SkyProps {
   /** 시장 날씨 지수 0~100 */
   weatherIndex: number;
+  /** 시대 테마 장면 색 (하늘은 날씨 색과 섞는다) */
+  scene?: EraScene;
 }
 
 /**
  * 시장 날씨 지수 → 하늘 전체 (배경색, 안개, 햇빛·주변광, 구름, 비, 번개).
  * 모든 값은 WEATHER_SPECS에서 오고, 여기서는 그리기만 한다.
  */
-export function Sky({ weatherIndex }: SkyProps) {
+export function Sky({ weatherIndex, scene = BASE_SCENE }: SkyProps) {
   const spec = getWeatherSpec(weatherIndex);
+  const skyColor = eraSkyColor(spec.skyColor, scene);
 
   return (
     <>
-      <color attach="background" args={[spec.skyColor]} />
+      <color attach="background" args={[skyColor]} />
       {/* 먼 바다가 하늘색으로 자연스럽게 섞이게 */}
-      <fog attach="fog" args={[spec.skyColor, 110, 260]} />
+      <fog attach="fog" args={[skyColor, 110, 260]} />
       <FogFollow />
       <ambientLight intensity={spec.ambientIntensity} />
       <directionalLight

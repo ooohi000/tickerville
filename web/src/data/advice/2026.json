@@ -1,0 +1,2213 @@
+{
+ "era": "2026",
+ "advisors": [
+  {
+   "id": "bogle",
+   "name": {
+    "ko": "존 보글",
+    "en": "John C. Bogle"
+   },
+   "years": "1929–2019",
+   "role": {
+    "ko": "뱅가드 창업자 · 세계 첫 개인용 인덱스 펀드를 만든 사람"
+   },
+   "relation": {
+    "ko": "회사 이름 '뱅가드'를 넬슨 제독의 기함 이름에서 따왔다고 직접 밝혔다."
+   },
+   "relationSource": "https://www.johncbogle.com/"
+  },
+  {
+   "id": "munger",
+   "name": {
+    "ko": "찰리 멍거",
+    "en": "Charlie Munger"
+   },
+   "years": "1924–2023",
+   "role": {
+    "ko": "버크셔 해서웨이 부회장 · '정신 모델'로 생각하는 법을 강조한 투자자"
+   },
+   "relation": {
+    "ko": "워런 버핏과 60년 가까이 버크셔 해서웨이를 함께 이끌었다."
+   },
+   "relationSource": "https://www.stripe.press/poor-charlies-almanack"
+  },
+  {
+   "id": "fisher",
+   "name": {
+    "ko": "필립 피셔",
+    "en": "Philip A. Fisher"
+   },
+   "years": "1907–2004",
+   "role": {
+    "ko": "성장주 투자의 아버지 · 『위대한 기업에 투자하라』(1958)의 저자"
+   },
+   "relation": {
+    "ko": "발품을 팔아 회사를 직접 조사하는 '스커틀버트' 방법을 처음 정리했다."
+   },
+   "relationSource": "https://en.wikipedia.org/wiki/Philip_Arthur_Fisher"
+  }
+ ],
+ "quotes": [
+  {
+   "id": "bogle-01",
+   "advisor": "bogle",
+   "text": {
+    "en": "Don’t do something. Just stand there.",
+    "ko": "뭔가 하려 들지 말고, 그냥 가만히 있어라."
+   },
+   "plain": {
+    "ko": "자꾸 사고팔기보다 사 둔 걸 그대로 두는 게 대부분의 투자자에게 더 낫다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2007,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2007), Ch. 1 “A Parable”, p. 5 — Bogle inverts the industry’s “Don’t just stand there. Do something.”"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-02",
+   "advisor": "bogle",
+   "text": {
+    "en": "The lower the costs that investors as a group incur, the higher rewards that they reap.",
+    "ko": "투자자들이 치르는 비용이 낮을수록, 그들이 거두는 보상은 커진다."
+   },
+   "plain": {
+    "ko": "수수료를 적게 낼수록 내 손에 남는 수익이 커진다는 말이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2007,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2007), Ch. 1 “A Parable”, p. 6"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-03",
+   "advisor": "bogle",
+   "text": {
+    "en": "Successful investing is all about common sense.",
+    "ko": "성공하는 투자는 결국 상식의 문제다."
+   },
+   "plain": {
+    "ko": "투자에 대단한 비법이 필요한 게 아니라, 상식대로만 해도 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2017,
+    "type": "book",
+    "locator": "10th Anniversary ed. (Wiley, 2017), Introduction to the 10th Anniversary Edition, p. xv (opening sentence)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-04",
+   "advisor": "bogle",
+   "text": {
+    "en": "The index fund eliminates the risks of individual stocks, market sectors, and manager selection. Only stock market risk remains.",
+    "ko": "인덱스펀드는 개별 종목, 특정 업종, 펀드매니저 선택에 따른 위험을 없애 준다. 남는 것은 시장 전체의 위험뿐이다."
+   },
+   "plain": {
+    "ko": "시장 전체를 사면 '종목을 잘못 고를 위험'은 사라지고, 시장이 오르내리는 위험만 남는다는 거예요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2017,
+    "type": "book",
+    "locator": "10th Anniversary ed. (Wiley, 2017), Introduction, p. xvi"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-05",
+   "advisor": "bogle",
+   "text": {
+    "en": "The magic of compounding is little short of a miracle.",
+    "ko": "복리의 마법은 거의 기적에 가깝다."
+   },
+   "plain": {
+    "ko": "수익에 다시 수익이 붙는 복리는 오래 둘수록 놀랄 만큼 돈을 불려 준다는 말이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2017,
+    "type": "book",
+    "locator": "10th Anniversary ed. (Wiley, 2017), Introduction, p. xviii"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-06",
+   "advisor": "bogle",
+   "text": {
+    "en": "In the casino, the house always wins. In horse racing, the track always wins. In the Powerball lottery, the state always wins. Investing is no different.",
+    "ko": "카지노에서는 언제나 카지노가 이긴다. 경마에서는 경마장이, 복권에서는 주최하는 정부가 이긴다. 투자도 다르지 않다."
+   },
+   "plain": {
+    "ko": "사고팔 때마다 떼이는 수수료 때문에, 결국 확실히 돈을 버는 쪽은 중개하는 사람들이라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2017,
+    "type": "book",
+    "locator": "10th Anniversary ed. (Wiley, 2017), Introduction, p. xx (section “A loser’s game.”)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-07",
+   "advisor": "bogle",
+   "text": {
+    "en": "Fund investors are confident that they can consistently select superior fund managers. They are wrong.",
+    "ko": "펀드 투자자들은 뛰어난 펀드매니저를 꾸준히 골라낼 수 있다고 자신한다. 그들은 틀렸다."
+   },
+   "plain": {
+    "ko": "앞으로 잘할 펀드매니저를 미리 알아보는 건 생각보다 훨씬 어렵다는 말이에요."
+   },
+   "source": {
+    "title": "The Little Book of Common Sense Investing",
+    "year": 2017,
+    "type": "book",
+    "locator": "10th Anniversary ed. (Wiley, 2017), Introduction, p. xxii"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-08",
+   "advisor": "bogle",
+   "text": {
+    "en": "Never forget that time is your friend. Take advantage of it, and enjoy the miracle that is compound interest.",
+    "ko": "시간은 당신의 친구라는 걸 잊지 마라. 시간을 활용하고, 복리라는 기적을 누려라."
+   },
+   "plain": {
+    "ko": "일찍 시작해서 오래 두는 것만으로도 복리 덕분에 돈이 크게 불어난다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9 “Ten Simple Rules for Investors and a Warning for Speculators”, Rule 2 “Time Is Your Friend, Impulse Is Your Enemy”, p. 312"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-09",
+   "advisor": "bogle",
+   "text": {
+    "en": "Market timing is impossible. … One correct decision is tough enough. Two correct decisions in a row are nigh on impossible.",
+    "ko": "시장 타이밍을 맞추는 건 불가능하다. 한 번 맞히기도 어렵다. 두 번 연달아 맞히는 건 거의 불가능하다."
+   },
+   "plain": {
+    "ko": "팔 때와 다시 살 때를 둘 다 맞혀야 하니, 타이밍으로 돈 벌기는 거의 불가능하다는 말이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 2 “Time Is Your Friend, Impulse Is Your Enemy”, p. 312"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-10",
+   "advisor": "bogle",
+   "text": {
+    "en": "Once you get your balance right, then just hold tight, no matter how high a greedy stock market flies, nor how low a frightened market plunges.",
+    "ko": "자산 배분을 제대로 맞췄다면, 탐욕스러운 시장이 아무리 치솟든 겁먹은 시장이 아무리 곤두박질치든 그냥 꽉 붙들고 있어라."
+   },
+   "plain": {
+    "ko": "주식과 채권 비율을 한 번 잘 정했으면, 시장이 출렁여도 흔들리지 말고 유지하라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 3 “Buy Right and Hold Tight”, p. 313"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-11",
+   "advisor": "bogle",
+   "text": {
+    "en": "When you understand how hard it is to find that needle, simply buy the haystack.",
+    "ko": "바늘 하나 찾기가 얼마나 어려운지 깨달았다면, 그냥 건초더미를 통째로 사라."
+   },
+   "plain": {
+    "ko": "대박 종목 하나를 찾아 헤매지 말고, 시장 전체를 담은 인덱스펀드를 사라는 말이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 5 “Forget the Needle, Buy the Haystack”, p. 319"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-12",
+   "advisor": "bogle",
+   "text": {
+    "en": "In mutual funds performance comes and goes, but expenses go on forever.",
+    "ko": "펀드의 성과는 왔다가 사라지지만, 비용은 영원히 계속된다."
+   },
+   "plain": {
+    "ko": "수익률은 해마다 들쭉날쭉해도 수수료는 매년 빠짐없이 빠져나간다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 6 “Minimize the Croupier’s Take”, p. 320"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-13",
+   "advisor": "bogle",
+   "text": {
+    "en": "In the mutual fund industry, you not only don’t get what you pay for, you get precisely what you don’t pay for.",
+    "ko": "펀드 업계에서는 낸 만큼 얻는 게 아니다. 오히려 내지 않은 만큼 정확히 얻는다."
+   },
+   "plain": {
+    "ko": "비싼 펀드가 더 좋은 게 아니라, 비용을 덜 낸 만큼 수익이 더 남는다는 말이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 6 “Minimize the Croupier’s Take”, p. 320"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-14",
+   "advisor": "bogle",
+   "text": {
+    "en": "You are not deciding whether or not to take risk, for risk is everywhere. What you must decide is what kind of risk you wish to take.",
+    "ko": "위험을 질지 말지를 정하는 게 아니다. 위험은 어디에나 있다. 정해야 할 것은 어떤 위험을 질 것인가이다."
+   },
+   "plain": {
+    "ko": "예금도 물가 상승이라는 위험이 있으니, 위험을 피하기보다 어떤 위험을 고를지 생각하라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 7 “There’s No Escaping Risk”, p. 320"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-15",
+   "advisor": "bogle",
+   "text": {
+    "en": "We flee stocks after the stock market has plunged, and then miss the subsequent recovery.",
+    "ko": "우리는 주가가 폭락한 뒤에야 주식에서 도망치고, 그 뒤에 오는 회복을 놓친다."
+   },
+   "plain": {
+    "ko": "급락에 겁먹고 팔면, 다시 오를 때 수익을 놓치게 된다는 말이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 8 “Beware of Fighting the Last War”, p. 321"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-16",
+   "advisor": "bogle",
+   "text": {
+    "en": "The hedgehog … knows only one great thing: Long-term investment success is based on simplicity.",
+    "ko": "고슴도치는 위대한 것 딱 하나만 안다. 장기 투자의 성공은 단순함에 달려 있다는 것."
+   },
+   "plain": {
+    "ko": "복잡한 전략보다 단순하고 꾸준한 방법이 오래 가면 이긴다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 9 “The Hedgehog Bests the Fox”, p. 321"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-17",
+   "advisor": "bogle",
+   "text": {
+    "en": "The index fund wins because its concept is both priceless and price-less.",
+    "ko": "인덱스펀드가 이기는 이유는, 그 개념이 값을 매길 수 없을 만큼 귀하면서도 값(비용)은 거의 들지 않기 때문이다."
+   },
+   "plain": {
+    "ko": "인덱스펀드는 아이디어는 훌륭하고 비용은 아주 싸서 결국 이긴다는 말장난 섞인 표현이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 9 “The Hedgehog Bests the Fox”, p. 321"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-18",
+   "advisor": "bogle",
+   "text": {
+    "en": "The secret to investing is that there is no secret. … There is only the majesty of simplicity.",
+    "ko": "투자의 비밀은, 비밀 같은 건 없다는 것이다. 있는 것은 단순함의 위엄뿐이다."
+   },
+   "plain": {
+    "ko": "남들이 모르는 비법을 찾기보다 단순한 원칙을 지키는 게 답이라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 10 “Stay the Course!”, p. 322"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-19",
+   "advisor": "bogle",
+   "text": {
+    "en": "Yes, investing is simple. But it is not easy, for it requires discipline, patience, steadfastness, and that most uncommon of all gifts, common sense.",
+    "ko": "그렇다, 투자는 단순하다. 하지만 쉽지는 않다. 절제와 인내, 꾸준함, 그리고 가장 드문 재능인 상식이 필요하기 때문이다."
+   },
+   "plain": {
+    "ko": "방법은 간단해도 흔들리지 않고 지키는 게 어렵다는 말이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, Rule 10 “Stay the Course!”, p. 322"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-20",
+   "advisor": "bogle",
+   "text": {
+    "en": "I can’t promise that. But I can assure you that the number of strategies that are worse is infinite.",
+    "ko": "이것이 최고의 전략이라고 약속할 수는 없다. 하지만 이보다 나쁜 전략은 셀 수 없이 많다고 장담할 수 있다."
+   },
+   "plain": {
+    "ko": "완벽한 전략은 아니어도, 대부분의 다른 방법보다는 확실히 낫다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Clash of the Cultures: Investment vs. Speculation",
+    "year": 2012,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 2012), Ch. 9, section “Ten Simple Rules for Investment Success”, p. 310 (referring to the 10-rule strategy)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-21",
+   "advisor": "bogle",
+   "text": {
+    "en": "The one great—and largely unrecognized—idea of investing is this: Costs matter.",
+    "ko": "투자에서 위대하지만 거의 알려지지 않은 단 하나의 생각은 이것이다. 비용이 중요하다."
+   },
+   "plain": {
+    "ko": "어떤 상품을 고를지보다 수수료가 얼마인지가 장기 수익을 크게 좌우한다는 말이에요."
+   },
+   "source": {
+    "title": "Vanguard—Child of Princeton (keynote, Princeton Entrepreneurs’ Network 5th Annual National Conference, Princeton, NJ)",
+    "year": 2004,
+    "type": "speech",
+    "locator": "May 28, 2004; johncbogle.com/speeches/JCB_Princeton_5-04.pdf, p. 4"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-22",
+   "advisor": "bogle",
+   "text": {
+    "en": "If you can’t foretell the future, diversify.",
+    "ko": "미래를 내다볼 수 없다면, 분산하라."
+   },
+   "plain": {
+    "ko": "어떤 종목이 오를지 모르니 여러 곳에 나눠 담으라는 뜻이에요."
+   },
+   "source": {
+    "title": "At the 50-Year Mark—Looking Back, Looking Ahead",
+    "year": 2001,
+    "type": "speech",
+    "locator": "May 29, 2001; opening list “On Investment Principles”, p. 1 (johncbogle.com/speeches/JCB_50_anniv_5-01.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-23",
+   "advisor": "bogle",
+   "text": {
+    "en": "Not only expenses, but emotions, are the investor’s greatest enemy.",
+    "ko": "비용뿐 아니라 감정도 투자자의 가장 큰 적이다."
+   },
+   "plain": {
+    "ko": "수수료만큼이나, 겁나거나 욕심나서 충동적으로 사고파는 것이 수익을 깎는다는 말이에요."
+   },
+   "source": {
+    "title": "In Troubled Times . . . The Arithmetic of Mutual Fund Investing is More Important Than Ever (AAII Philadelphia Chapter, Valley Forge, PA)",
+    "year": 2005,
+    "type": "speech",
+    "locator": "May 24, 2005; closing advice “Fourth, don’t do something, just stand there. Stay the course.” (johncbogle.com/speeches/JCB_AAII0505.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-24",
+   "advisor": "bogle",
+   "text": {
+    "en": "A rule of thumb: begin with the idea that your bond percentage should roughly be equal to your age.",
+    "ko": "어림셈 하나: 채권 비중을 대략 자기 나이만큼 두는 데서 출발하라."
+   },
+   "plain": {
+    "ko": "나이가 들수록 안전한 채권 비중을 늘려 위험을 줄이라는 간단한 기준이에요."
+   },
+   "source": {
+    "title": "In Troubled Times . . . The Arithmetic of Mutual Fund Investing is More Important Than Ever (AAII Philadelphia Chapter, Valley Forge, PA)",
+    "year": 2005,
+    "type": "speech",
+    "locator": "May 24, 2005; closing section on asset allocation (johncbogle.com/speeches/JCB_AAII0505.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-25",
+   "advisor": "bogle",
+   "text": {
+    "en": "The magic of compounding returns is overwhelmed by the tyranny of compounding costs.",
+    "ko": "복리 수익의 마법은 복리로 쌓이는 비용의 횡포에 짓눌린다."
+   },
+   "plain": {
+    "ko": "수익만 복리로 불어나는 게 아니라 수수료도 복리로 쌓여서 수익을 크게 갉아먹는다는 뜻이에요."
+   },
+   "source": {
+    "title": "In Troubled Times . . . The Arithmetic of Mutual Fund Investing is More Important Than Ever (AAII Philadelphia Chapter, Valley Forge, PA)",
+    "year": 2005,
+    "type": "speech",
+    "locator": "May 24, 2005; concluding section (johncbogle.com/speeches/JCB_AAII0505.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-26",
+   "advisor": "bogle",
+   "text": {
+    "en": "The stock market is a giant distraction from the serious business of investing.",
+    "ko": "주식시장은 투자라는 진지한 일에서 우리의 눈을 돌리게 만드는 거대한 방해물이다."
+   },
+   "plain": {
+    "ko": "매일 오르내리는 주가보다, 기업이 꾸준히 벌어들이는 이익에 집중하라는 말이에요."
+   },
+   "source": {
+    "title": "The U.S. Financial Sector and the Relentless Rules of Humble Arithmetic (New York University, New York, NY)",
+    "year": 2007,
+    "type": "speech",
+    "locator": "Nov. 14, 2007; section on the “expectations market” vs. the “real market” (johncbogle.com, NYU-11-14-07.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-27",
+   "advisor": "bogle",
+   "text": {
+    "en": "Simplicity is the master key to financial success.",
+    "ko": "단순함은 재정적 성공을 여는 마스터키다."
+   },
+   "plain": {
+    "ko": "복잡한 방법보다 단순한 방법이 돈 관리에 더 잘 통한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Investing with Simplicity (The Washington Post Personal Finance Conference, Washington, D.C.)",
+    "year": 1999,
+    "type": "speech",
+    "locator": "Jan. 30, 1999; introduction (johncbogle.com, Investing-with-Simplicity-1-30-99.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-28",
+   "advisor": "bogle",
+   "text": {
+    "en": "The courage to press on regardless—regardless of whether we face calm seas or rough seas, and especially when the market storms howl around us—is the quintessential attribute of the successful investor.",
+    "ko": "바다가 잔잔하든 거칠든, 특히 시장의 폭풍이 주위에서 울부짖을 때조차 개의치 않고 나아가는 용기야말로 성공한 투자자의 핵심 자질이다."
+   },
+   "plain": {
+    "ko": "시장이 무섭게 흔들릴 때도 원래 계획을 지키는 용기가 가장 중요하다는 말이에요."
+   },
+   "source": {
+    "title": "A Tale of Two Markets (Trinity University Policymaker Breakfast Series, San Antonio, TX)",
+    "year": 2001,
+    "type": "speech",
+    "locator": "Apr. 16, 2001; closing remarks (johncbogle.com, Trinity-TX-4-16-01.pdf; also in Wikiquote’s sourced section)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-29",
+   "advisor": "bogle",
+   "text": {
+    "en": "While experienced investment professionals may have a pretty good idea of what is going to happen in the market, we have no idea of when.",
+    "ko": "노련한 투자 전문가들은 시장에서 무슨 일이 일어날지는 꽤 짐작할 수 있을지 몰라도, 그게 언제일지는 전혀 모른다."
+   },
+   "plain": {
+    "ko": "전문가도 '언제' 오르고 내릴지는 모르니 타이밍을 맞추려 하지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "The Twelve Pillars of Wisdom (The Arizona Republic Investment Strategies Forum, Phoenix, AZ)",
+    "year": 2001,
+    "type": "speech",
+    "locator": "Apr. 27, 2001; introduction, p. 1 (johncbogle.com, AZRepublic-4-27-01.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-30",
+   "advisor": "bogle",
+   "text": {
+    "en": "Too much cost, not enough value. Too much speculation, not enough investment. Too much complexity, not enough simplicity.",
+    "ko": "비용은 너무 많고 가치는 부족하다. 투기는 너무 많고 투자는 부족하다. 복잡함은 너무 많고 단순함은 부족하다."
+   },
+   "plain": {
+    "ko": "금융에서 비용·투기·복잡함은 줄이고 가치·투자·단순함을 늘려야 한다는 말이에요."
+   },
+   "source": {
+    "title": "Economic Markets and Public Purpose (The Reinvestment Fund’s 24th Annual Celebration, Philadelphia, PA)",
+    "year": 2009,
+    "type": "speech",
+    "locator": "June 11, 2009; Bogle summarizing the recurring theme of his book Enough. (2008), whose opening chapters carry these titles (johncbogle.com, Reinvestment-6-11-09.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-31",
+   "advisor": "bogle",
+   "text": {
+    "en": "My own career is a monument, not to brilliance, but to simplicity.",
+    "ko": "내 경력은 탁월함이 아니라 단순함을 기리는 기념비다."
+   },
+   "plain": {
+    "ko": "대단한 재능보다 단순한 생각을 꾸준히 실천한 것이 성공의 비결이었다는 뜻이에요."
+   },
+   "source": {
+    "title": "Entrepreneurship—What’s It Really About? (NFTE Entrepreneur of the Year Award)",
+    "year": 2003,
+    "type": "speech",
+    "locator": "May 19, 2003; section “Never Underestimate the Power of Simplicity” (johncbogle.com/speeches/JCB_NFTE0503.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-32",
+   "advisor": "bogle",
+   "text": {
+    "en": "Successful investing involves doing just a few things right and avoiding serious mistakes.",
+    "ko": "성공적인 투자란 몇 가지만 제대로 하고, 큰 실수를 피하는 것이다."
+   },
+   "plain": {
+    "ko": "많은 걸 잘할 필요 없이 기본 몇 가지만 지키고 큰 실수만 안 하면 된다는 말이에요."
+   },
+   "source": {
+    "title": "Bogle on Mutual Funds: New Perspectives for the Intelligent Investor",
+    "year": 1993,
+    "type": "book",
+    "locator": "1st ed. (Irwin, 1993; copyright 1994), Epilogue “Twelve Pillars of Wisdom”, Pillar 1 “Investing Is Not Nearly as Difficult as It Looks” — reproduced verbatim by Bogle in his speech 'The Twelve Pillars of Wisdom', Arizona Republic Investment Strategies Forum, Phoenix, Apr. 27, 2001 (johncbogle.com)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-33",
+   "advisor": "bogle",
+   "text": {
+    "en": "Never forget that risk, return, and cost are the three sides of the eternal triangle of investing.",
+    "ko": "위험, 수익, 비용은 투자라는 영원한 삼각형의 세 변이라는 것을 잊지 마라."
+   },
+   "plain": {
+    "ko": "수익만 보지 말고 위험과 비용을 함께 따져야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Bogle on Mutual Funds: New Perspectives for the Intelligent Investor",
+    "year": 1993,
+    "type": "book",
+    "locator": "1st ed. (Irwin, 1993; copyright 1994), Epilogue “Twelve Pillars of Wisdom”, Pillar 6 “The Eternal Triangle” — reproduced verbatim by Bogle in his speech 'The Twelve Pillars of Wisdom', Arizona Republic Investment Strategies Forum, Phoenix, Apr. 27, 2001 (johncbogle.com)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-34",
+   "advisor": "bogle",
+   "text": {
+    "en": "It is nearly always unwise to act on insights that you think are your own but are in fact shared by millions of others.",
+    "ko": "나만 안다고 생각하지만 실은 수백만 명이 이미 알고 있는 통찰에 따라 행동하는 것은 거의 언제나 현명하지 못하다."
+   },
+   "plain": {
+    "ko": "뉴스로 아는 정보는 이미 주가에 반영돼 있으니, 그걸로 남보다 앞설 수 없다는 말이에요."
+   },
+   "source": {
+    "title": "Bogle on Mutual Funds: New Perspectives for the Intelligent Investor",
+    "year": 1993,
+    "type": "book",
+    "locator": "1st ed. (Irwin, 1993; copyright 1994), Epilogue “Twelve Pillars of Wisdom”, Pillar 11 “You Rarely, If Ever, Know Something the Market Does Not” — reproduced verbatim by Bogle in his speech 'The Twelve Pillars of Wisdom', Arizona Republic Investment Strategies Forum, Phoenix, Apr. 27, 2001 (johncbogle.com)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-35",
+   "advisor": "bogle",
+   "text": {
+    "en": "Patience and consistency are valuable assets for the intelligent investor. The best rule: Stay the Course.",
+    "ko": "인내와 꾸준함은 현명한 투자자의 소중한 자산이다. 최고의 규칙은 이것이다. 원래의 길을 지켜라."
+   },
+   "plain": {
+    "ko": "조급해하지 말고 정한 계획을 꾸준히 이어 가는 게 가장 좋은 방법이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Bogle on Mutual Funds: New Perspectives for the Intelligent Investor",
+    "year": 1993,
+    "type": "book",
+    "locator": "1st ed. (Irwin, 1993; copyright 1994), Epilogue “Twelve Pillars of Wisdom”, Pillar 12 “Think Long-Term” — reproduced verbatim by Bogle in his speech 'The Twelve Pillars of Wisdom', Arizona Republic Investment Strategies Forum, Phoenix, Apr. 27, 2001 (johncbogle.com)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-36",
+   "advisor": "bogle",
+   "text": {
+    "en": "In an uncertain world, tactical change should be made sparingly, and only if you are prepared to take the risk of being wrong.",
+    "ko": "불확실한 세상에서 전술적인 변경은 드물게, 그리고 틀릴 위험을 감수할 각오가 되어 있을 때만 해야 한다."
+   },
+   "plain": {
+    "ko": "시장 전망에 따라 포트폴리오를 자주 바꾸지 말고, 바꾸더라도 틀릴 수 있다는 걸 각오하라는 말이에요."
+   },
+   "source": {
+    "title": "Bogle on Mutual Funds: New Perspectives for the Intelligent Investor",
+    "year": 1993,
+    "type": "book",
+    "locator": "1st ed. (Irwin, 1993; copyright 1994), chapter not identified — quoted by Bogle (“As I wrote in Bogle on Mutual Funds nearly a decade ago”) in 'The Twelve Pillars of Wisdom', Arizona Republic forum, Apr. 27, 2001"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-37",
+   "advisor": "bogle",
+   "text": {
+    "en": "Investing is an act of faith. We entrust our capital to corporate stewards in the faith—at least with the hope—that their efforts will generate high rates of return on our investments.",
+    "ko": "투자는 믿음의 행위다. 우리는 기업 경영자들이 우리 투자에 높은 수익을 내 주리라는 믿음, 적어도 그런 희망을 품고 그들에게 자본을 맡긴다."
+   },
+   "plain": {
+    "ko": "주식을 산다는 건 기업과 경제가 길게 보면 성장할 거라고 믿고 돈을 맡기는 일이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Sense on Mutual Funds: New Imperatives for the Intelligent Investor",
+    "year": 1999,
+    "type": "book",
+    "locator": "1st ed. (Wiley, 1999), Ch. 1, opening sentences — quoted by Bogle from the book in 'Economics, Politics, and the Financial Markets', Blair Academy reception, New York, Oct. 14, 2008, and in 'Fixing a Broken Financial System', Feb. 12, 2009 (“the very first sentence of my 1999 book”)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "bogle-38",
+   "advisor": "bogle",
+   "text": {
+    "en": "My simple advice is this: Turn off the TV, and don't pay much attention to the regular quarterly statements for your retirement plan. … Think about 'Don't Peek' as an important rule of long-term investing.",
+    "ko": "내 조언은 간단하다. TV를 끄고, 퇴직연금 분기 보고서에 크게 신경 쓰지 마라. ‘들여다보지 마라’를 장기 투자의 중요한 규칙으로 여겨라."
+   },
+   "plain": {
+    "ko": "계좌를 자주 들여다볼수록 충동적으로 사고팔기 쉬우니, 가끔만 확인하라는 말이에요."
+   },
+   "source": {
+    "title": "The Pulse: Bogle's antidote to market mania: 'Hold tight' (Michael Smerconish, The Philadelphia Inquirer)",
+    "year": 2012,
+    "type": "interview",
+    "locator": "Dec. 9, 2012; Bogle speaking to Smerconish (reprint attached to Bogle’s 'To Principals and Veterans' note, Dec. 17, 2012, johncbogle.com)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-39",
+   "advisor": "bogle",
+   "text": {
+    "en": "Get out of the casino, own Corporate America and hold it forever.",
+    "ko": "카지노에서 나와라. 미국 기업 전체를 사서 영원히 보유하라."
+   },
+   "plain": {
+    "ko": "단타 매매를 그만두고 시장 전체를 사서 오래 들고 있으라는 뜻이에요."
+   },
+   "source": {
+    "title": "“The Big Interview,” MoneyLife with Chuck Jaffe (reported in MarketWatch blog The Tell, “Jack Bogle: Forget trading, start investing”)",
+    "year": 2012,
+    "type": "interview",
+    "locator": "Oct. 17, 2012; first quoted line (reprint on johncbogle.com, Forget-Trading-Start-Investing-Jaffe-10-17-12.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-40",
+   "advisor": "bogle",
+   "text": {
+    "en": "An index fund really doesn't have to do much, and, equally important, the investor doesn't have to do much.",
+    "ko": "인덱스펀드는 사실 별로 할 일이 없다. 그리고 그만큼 중요한 건, 투자자도 별로 할 일이 없다는 것이다."
+   },
+   "plain": {
+    "ko": "인덱스펀드를 사 두면 투자자가 매일 신경 쓰고 고를 필요가 거의 없다는 말이에요."
+   },
+   "source": {
+    "title": "John Bogle's Dim View of the Asset-Management Industry (U.S. News & World Report, edited interview transcript)",
+    "year": 2012,
+    "type": "interview",
+    "locator": "Oct. 4, 2012; answer on asset management as a “rent-seeking business”, p. 2 of reprint (johncbogle.com, U-S-News-10-4-12.pdf)"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "bogle-41",
+   "advisor": "bogle",
+   "text": {
+    "en": "There was Nelson’s triumphant dispatch from his flagship, “Vanguard, off the mouth of the Nile.” Together, the Wellington tie-in, the proud naval tradition embodied in HMS Vanguard, and the leading-edge implication of the name vanguard were more than I could resist.",
+    "ko": "거기에는 넬슨이 기함에서 보낸 승전 보고, “뱅가드호, 나일강 하구 앞바다에서”가 있었다. 웰링턴과의 연결 고리, HMS 뱅가드에 깃든 자랑스러운 해군 전통, 그리고 ‘선봉’이라는 이름의 뜻까지, 도저히 거부할 수 없었다."
+   },
+   "plain": {
+    "ko": "1974년 새 회사 이름을 고민하던 보글은 골동품 판화와 함께 받은 책에서 나일 해전 때 넬슨 제독의 기함 ‘뱅가드’ 이야기를 읽고, ‘업계의 선봉에 선다’는 뜻까지 담아 회사 이름을 뱅가드로 지었어요."
+   },
+   "source": {
+    "title": "Vanguard—Child of Princeton (keynote, Princeton Entrepreneurs’ Network 5th Annual National Conference, Princeton, NJ)",
+    "year": 2004,
+    "type": "speech",
+    "locator": "May 28, 2004; section before “A Narrow Mandate”, p. 3 — Bogle recounts buying Napoleonic-era naval prints in late summer 1974 and reading of the Battle of the Nile; The Vanguard Group was incorporated Sept. 24, 1974 (johncbogle.com/speeches/JCB_Princeton_5-04.pdf)"
+   },
+   "confidence": "primary",
+   "kind": "story"
+  },
+  {
+   "id": "munger-01",
+   "advisor": "munger",
+   "text": {
+    "en": "It is in the nature of things, as Jacobi knew, that many hard problems are best solved only when they are addressed backward.",
+    "ko": "야코비가 알았듯이, 많은 어려운 문제는 거꾸로 접근할 때에야 비로소 가장 잘 풀린다는 것이 세상의 이치다."
+   },
+   "plain": {
+    "ko": "어떻게 성공할지보다 어떻게 하면 실패하는지를 먼저 생각해 보면 답이 더 잘 보인다는 뜻이에요."
+   },
+   "source": {
+    "title": "Harvard School Commencement Speech",
+    "year": 1986,
+    "type": "speech",
+    "locator": "June 13, 1986, Harvard School (Los Angeles); reprinted in Poor Charlie's Almanack, Talk One"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-02",
+   "advisor": "munger",
+   "text": {
+    "en": "I wish I knew where I was going to die, and then I'd never go there.",
+    "ko": "내가 어디서 죽게 될지 알면 좋겠다. 그러면 거기엔 절대 가지 않을 테니까."
+   },
+   "plain": {
+    "ko": "큰 손실을 부르는 상황이 어떤 건지 미리 알아 두고 그런 곳을 피하는 것만으로도 투자의 절반은 성공이라는 농담 섞인 교훈이에요."
+   },
+   "source": {
+    "title": "Harvard School Commencement Speech",
+    "year": 1986,
+    "type": "speech",
+    "locator": "June 13, 1986, Harvard School (Los Angeles); reprinted in Poor Charlie's Almanack, Talk One"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-03",
+   "advisor": "munger",
+   "text": {
+    "en": "My second prescription for misery is to learn everything you possibly can from your own experience, minimizing what you learn vicariously from the good and bad experiences of others, living and dead.",
+    "ko": "비참해지는 두 번째 처방은 모든 것을 오직 자기 경험으로만 배우고, 산 사람이든 죽은 사람이든 남들의 좋고 나쁜 경험에서는 최대한 배우지 않는 것이다."
+   },
+   "plain": {
+    "ko": "반어법이에요. 남의 실패담과 성공담에서 배우면 내 돈을 잃지 않고도 교훈을 얻을 수 있다는 말이에요."
+   },
+   "source": {
+    "title": "Harvard School Commencement Speech",
+    "year": 1986,
+    "type": "speech",
+    "locator": "June 13, 1986, Harvard School (Los Angeles); reprinted in Poor Charlie's Almanack, Talk One"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-04",
+   "advisor": "munger",
+   "text": {
+    "en": "[Darwin] always gave priority attention to evidence tending to disconfirm whatever cherished and hard-won theory he already had.",
+    "ko": "[다윈은] 자신이 애지중지하며 힘들게 얻은 이론이 무엇이든, 그것을 반박하는 증거에 언제나 가장 먼저 주의를 기울였다."
+   },
+   "plain": {
+    "ko": "내가 산 주식이 좋다는 뉴스만 찾지 말고, 내 생각이 틀렸다는 신호를 일부러 찾아보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Harvard School Commencement Speech",
+    "year": 1986,
+    "type": "speech",
+    "locator": "June 13, 1986, Harvard School (Los Angeles); reprinted in Poor Charlie's Almanack, Talk One"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-05",
+   "advisor": "munger",
+   "text": {
+    "en": "You've got to have models in your head. And you've got to array your experience—both vicarious and direct—on this latticework of models.",
+    "ko": "머릿속에 여러 모델을 갖고 있어야 한다. 그리고 남에게서 얻은 경험이든 직접 겪은 경험이든, 그 경험을 이 모델들의 격자 위에 배열해야 한다."
+   },
+   "plain": {
+    "ko": "지식을 따로따로 외우지 말고 여러 분야의 핵심 원리를 뼈대로 삼아 경험을 연결해 두라는 말이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-06",
+   "advisor": "munger",
+   "text": {
+    "en": "80 or 90 important models will carry about 90 percent of the freight in making you a worldly-wise person.",
+    "ko": "중요한 모델 80~90개만 있으면 세상 물정에 밝은 사람이 되는 데 필요한 짐의 90% 정도는 거뜬히 짊어질 수 있다."
+   },
+   "plain": {
+    "ko": "세상의 모든 지식을 알 필요는 없고, 여러 분야의 핵심 원리 몇십 개만 제대로 익혀도 충분하다는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-07",
+   "advisor": "munger",
+   "text": {
+    "en": "You have to figure out where you've got an edge. And you've got to play within your own circle of competence.",
+    "ko": "자신이 어디에서 우위를 갖고 있는지 알아내야 한다. 그리고 자기 능력의 범위 안에서 게임을 해야 한다."
+   },
+   "plain": {
+    "ko": "내가 잘 아는 업종과 회사에만 투자해야 남보다 유리하다는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-08",
+   "advisor": "munger",
+   "text": {
+    "en": "In effect, you've got to know what you know and what you don't know. What could possibly be more useful in life than that?",
+    "ko": "결국 자신이 무엇을 알고 무엇을 모르는지 알아야 한다. 인생에서 이보다 더 쓸모 있는 것이 또 있을까?"
+   },
+   "plain": {
+    "ko": "모르는 분야를 아는 척하지 않는 것이 투자에서 가장 큰 실수를 막아 준다는 말이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom ... Revisited",
+    "year": 1996,
+    "type": "speech",
+    "locator": "Stanford Law School, April 19, 1996 (talk and Q&A); reprinted in Poor Charlie's Almanack, Talk Three"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-09",
+   "advisor": "munger",
+   "text": {
+    "en": "We have three baskets for investing: yes, no, and too tough to understand.",
+    "ko": "우리에게는 투자용 바구니가 세 개 있다. '예', '아니요', 그리고 '이해하기 너무 어려움'."
+   },
+   "plain": {
+    "ko": "이해가 안 되는 회사는 고민하지 말고 '너무 어려움' 바구니에 넣고 넘어가면 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2005,
+    "type": "book",
+    "locator": "Chapter Three, 'The Munger Approach to Life, Learning, and Decision-Making' (Munger quoted by Peter Kaufman)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "munger-10",
+   "advisor": "munger",
+   "text": {
+    "en": "And the wise ones bet heavily when the world offers them that opportunity. They bet big when they have the odds. And the rest of the time, they don't. It's just that simple.",
+    "ko": "현명한 사람들은 세상이 기회를 줄 때 크게 건다. 승산이 있을 때 크게 걸고, 나머지 시간에는 걸지 않는다. 그냥 그렇게 단순하다."
+   },
+   "plain": {
+    "ko": "확신이 드는 좋은 기회는 드물기 때문에, 그때를 기다렸다가 제대로 투자하고 평소에는 참으라는 말이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-11",
+   "advisor": "munger",
+   "text": {
+    "en": "How many insights do you need? Well, I'd argue that you don't need many in a lifetime.",
+    "ko": "통찰이 몇 개나 필요할까? 내 생각에 평생 그렇게 많이 필요하지는 않다."
+   },
+   "plain": {
+    "ko": "매일 사고팔 필요 없이, 평생 몇 번의 좋은 판단만으로도 큰 부를 이룰 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-12",
+   "advisor": "munger",
+   "text": {
+    "en": "As Buffett and I say over and over again, we don't leap 7-foot fences. Instead, we look for 1-foot fences with big rewards on the other side.",
+    "ko": "버핏과 내가 늘 말하듯이, 우리는 2미터짜리 울타리를 뛰어넘지 않는다. 대신 건너편에 큰 보상이 있는 30센티미터짜리 울타리를 찾는다."
+   },
+   "plain": {
+    "ko": "어려운 문제를 억지로 풀기보다, 쉽고 확실하면서 보상이 큰 기회를 찾는 게 현명하다는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom ... Revisited",
+    "year": 1996,
+    "type": "speech",
+    "locator": "Stanford Law School, April 19, 1996 (talk and Q&A); reprinted in Poor Charlie's Almanack, Talk Three"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-13",
+   "advisor": "munger",
+   "text": {
+    "en": "If you can buy a few great companies, then you can sit on your ass. That's a good thing.",
+    "ko": "훌륭한 회사 몇 개를 살 수 있다면, 그다음엔 그냥 엉덩이 붙이고 앉아 있으면 된다. 그건 좋은 일이다."
+   },
+   "plain": {
+    "ko": "정말 좋은 회사를 샀다면 자주 사고팔지 말고 오래 들고 있는 것이 가장 좋은 전략이라는 말이에요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2005,
+    "type": "book",
+    "locator": "Chapter Three, 'The Munger Approach to Life, Learning, and Decision-Making' (Munger quoted by Peter Kaufman)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "munger-14",
+   "advisor": "munger",
+   "text": {
+    "en": "I do think that there's a lot to be said for developing a temperament that can own securities without fretting.",
+    "ko": "초조해하지 않고 주식을 보유할 수 있는 기질을 기르는 것은 정말 큰 의미가 있다고 생각한다."
+   },
+   "plain": {
+    "ko": "주가가 오르내릴 때마다 불안해하지 않는 마음가짐이 장기 투자의 핵심 실력이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 2003,
+    "type": "meeting",
+    "locator": "May 3, 2003, morning session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-15",
+   "advisor": "munger",
+   "text": {
+    "en": "Over the long term, it's hard for a stock to earn a much better return than the business that underlies it earns.",
+    "ko": "장기적으로 보면, 주식이 그 바탕이 되는 사업이 벌어들이는 수익률보다 훨씬 더 높은 수익을 내기는 어렵다."
+   },
+   "plain": {
+    "ko": "오래 들고 있을수록 주식 수익률은 결국 그 회사가 돈을 얼마나 잘 버느냐를 따라간다는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-16",
+   "advisor": "munger",
+   "text": {
+    "en": "When you analyze what happened, the big money's been made in the high-quality businesses.",
+    "ko": "무슨 일이 있었는지 분석해 보면, 큰돈은 고품질 사업에서 벌렸다."
+   },
+   "plain": {
+    "ko": "싸기만 한 회사보다 꾸준히 돈을 잘 버는 좋은 회사에서 큰 수익이 나왔다는 말이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom as It Relates to Investment Management and Business",
+    "year": 1994,
+    "type": "speech",
+    "locator": "USC Marshall School of Business, 1994; reprinted in Poor Charlie's Almanack, Talk Two"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-17",
+   "advisor": "munger",
+   "text": {
+    "en": "But why should it be easy to get rich? In a competitive world, shouldn't it be impossible for there to be an easy way for everybody to get rich?",
+    "ko": "그런데 왜 부자가 되는 게 쉬워야 하는가? 경쟁하는 세상에서 모두가 쉽게 부자가 되는 길이 있다는 건 애초에 불가능하지 않겠는가?"
+   },
+   "plain": {
+    "ko": "누구나 아는 쉬운 돈벌이 비법은 없으니, '쉽게 큰돈 번다'는 말은 의심부터 하라는 뜻이에요."
+   },
+   "source": {
+    "title": "A Lesson on Elementary, Worldly Wisdom ... Revisited",
+    "year": 1996,
+    "type": "speech",
+    "locator": "Stanford Law School, April 19, 1996 (talk and Q&A); reprinted in Poor Charlie's Almanack, Talk Three"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-18",
+   "advisor": "munger",
+   "text": {
+    "en": "Never, ever, think about something else when you should be thinking about the power of incentives.",
+    "ko": "인센티브의 힘을 생각해야 할 때는 절대로, 절대로 다른 것을 생각하지 마라."
+   },
+   "plain": {
+    "ko": "어떤 사람이나 회사의 행동을 이해하려면 '이들이 무엇으로 보상받는가'부터 보라는 말이에요."
+   },
+   "source": {
+    "title": "The Psychology of Human Misjudgment",
+    "year": 2005,
+    "type": "speech",
+    "locator": "1995 Harvard talk, revised by Munger in 2005; Poor Charlie's Almanack, Talk Eleven"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-19",
+   "advisor": "munger",
+   "text": {
+    "en": "I think I've been in the top 5 percent of my age cohort almost all my adult life in understanding the power of incentives, yet I've always underestimated that power.",
+    "ko": "나는 성인이 된 뒤 거의 평생 인센티브의 힘을 이해하는 데 있어 또래 중 상위 5%에 들었다고 생각하지만, 그럼에도 늘 그 힘을 과소평가해 왔다."
+   },
+   "plain": {
+    "ko": "보상이 사람의 행동을 바꾸는 힘은 아무리 크게 생각해도 실제보다 작게 느껴질 정도로 강하다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Psychology of Human Misjudgment",
+    "year": 2005,
+    "type": "speech",
+    "locator": "1995 Harvard talk, revised by Munger in 2005; Poor Charlie's Almanack, Talk Eleven"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-20",
+   "advisor": "munger",
+   "text": {
+    "en": "Learn how to ignore the examples from others when they are wrong, because few skills are more worth having.",
+    "ko": "남들의 본보기가 틀렸을 때 그것을 무시하는 법을 배워라. 이보다 더 가질 가치가 있는 기술은 드물다."
+   },
+   "plain": {
+    "ko": "모두가 산다고 따라 사지 말고, 다수가 틀릴 수도 있다는 걸 기억하라는 말이에요."
+   },
+   "source": {
+    "title": "The Psychology of Human Misjudgment",
+    "year": 2005,
+    "type": "speech",
+    "locator": "1995 Harvard talk, revised by Munger in 2005; Poor Charlie's Almanack, Talk Eleven"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-21",
+   "advisor": "munger",
+   "text": {
+    "en": "I have a friend whose grandmother used to say that she couldn't understand why people got into envy-jealousy, because it was the only one of the sins that you could never possibly have any fun at.",
+    "ko": "내 친구의 할머니는 사람들이 왜 시기와 질투에 빠지는지 이해할 수 없다고 하셨다. 모든 죄 가운데 즐거움을 조금도 얻을 수 없는 유일한 죄이기 때문이라고."
+   },
+   "plain": {
+    "ko": "남이 나보다 더 많이 벌었다고 배 아파해 봐야 얻는 것은 하나도 없고 판단만 흐려진다는 뜻이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 1995,
+    "type": "meeting",
+    "locator": "May 1, 1995, afternoon session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-22",
+   "advisor": "munger",
+   "text": {
+    "en": "Generally speaking, envy, resentment, revenge, and self-pity are disastrous modes of thought.",
+    "ko": "대체로 시기, 원망, 복수심, 자기 연민은 재앙과도 같은 사고방식이다."
+   },
+   "plain": {
+    "ko": "투자에서 손해를 봤을 때 남 탓이나 신세 한탄을 하기보다 차분히 원인을 돌아보라는 말이에요."
+   },
+   "source": {
+    "title": "USC Gould School of Law Commencement Address",
+    "year": 2007,
+    "type": "speech",
+    "locator": "USC Law School, May 13, 2007; reprinted in Poor Charlie's Almanack, Talk Ten"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-23",
+   "advisor": "munger",
+   "text": {
+    "en": "I feel that I'm not entitled to have an opinion unless I can state the arguments against my position better than the people who are in opposition.",
+    "ko": "반대편 사람들보다 내 입장에 대한 반론을 더 잘 말할 수 없다면, 나는 의견을 가질 자격이 없다고 생각한다."
+   },
+   "plain": {
+    "ko": "어떤 주식을 사기 전에 그 주식을 사면 안 되는 이유를 누구보다 잘 설명할 수 있어야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "USC Gould School of Law Commencement Address",
+    "year": 2007,
+    "type": "speech",
+    "locator": "USC Law School, May 13, 2007; reprinted in Poor Charlie's Almanack, Talk Ten"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-24",
+   "advisor": "munger",
+   "text": {
+    "en": "It's kind of fun to sit there and outthink people who are way smarter than you are because you've trained yourself to be more objective and more multidisciplinary.",
+    "ko": "더 객관적이고 더 다학제적으로 생각하도록 스스로를 훈련했기 때문에, 나보다 훨씬 똑똑한 사람들을 생각으로 앞지르는 건 꽤 재미있는 일이다."
+   },
+   "plain": {
+    "ko": "머리가 아주 좋지 않아도 객관적으로, 여러 분야를 엮어 생각하는 습관을 들이면 남보다 나은 판단을 할 수 있다는 말이에요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2005,
+    "type": "book",
+    "locator": "Chapter Three, 'The Munger Approach to Life, Learning, and Decision-Making' (Munger quoted by Peter Kaufman)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "munger-25",
+   "advisor": "munger",
+   "text": {
+    "en": "It is remarkable how much long-term advantage people like us have gotten by trying to be consistently not stupid, instead of trying to be very intelligent.",
+    "ko": "우리 같은 사람들이 아주 똑똑해지려 애쓰는 대신 꾸준히 멍청하지 않으려고 애써서 얻은 장기적 이점이 얼마나 큰지 놀라울 정도다."
+   },
+   "plain": {
+    "ko": "대단한 묘수를 찾기보다 큰 실수를 안 하는 것만으로도 오랜 시간이 지나면 크게 앞서게 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "Wesco Financial Corporation 1989 Annual Report",
+    "year": 1990,
+    "type": "letter",
+    "locator": "Chairman's letter to shareholders dated March 5, 1990 (traced by Quote Investigator, 2025)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "munger-26",
+   "advisor": "munger",
+   "text": {
+    "en": "The mistakes that have been most extreme in Berkshire's history are mistakes of omission. They don't show up in our figures. They show up in opportunity costs.",
+    "ko": "버크셔 역사에서 가장 심각했던 실수는 하지 않아서 생긴 실수들이다. 그런 실수는 우리 숫자에 나타나지 않는다. 기회비용으로 나타난다."
+   },
+   "plain": {
+    "ko": "확신이 있는데도 망설여서 좋은 기회를 놓치는 것도 손실이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 2001,
+    "type": "meeting",
+    "locator": "April 28, 2001, morning session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-27",
+   "advisor": "munger",
+   "text": {
+    "en": "We kind of mentally rub our own noses in our own mistakes. And that is a very good mental habit.",
+    "ko": "우리는 마음속으로 스스로의 실수에 코를 박고 문지르듯 되새긴다. 그건 아주 좋은 정신 습관이다."
+   },
+   "plain": {
+    "ko": "실수를 덮어 두지 말고 일부러 다시 들여다봐야 같은 실수를 반복하지 않는다는 말이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 1998,
+    "type": "meeting",
+    "locator": "May 4, 1998, afternoon session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-28",
+   "advisor": "munger",
+   "text": {
+    "en": "As this tale demonstrates, psychological ignorance can be very expensive.",
+    "ko": "이 이야기가 보여 주듯, 심리에 대한 무지는 매우 비싼 대가를 치르게 할 수 있다."
+   },
+   "plain": {
+    "ko": "자기 마음이 어떻게 판단을 비트는지 모르면 실제로 큰돈을 잃을 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "The Psychology of Human Misjudgment",
+    "year": 2005,
+    "type": "speech",
+    "locator": "1995 Harvard talk, revised by Munger in 2005; Poor Charlie's Almanack, Talk Eleven"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-29",
+   "advisor": "munger",
+   "text": {
+    "en": "Our game is to find a few intelligent things to do. It's not to stay up on every damn thing that's going on in the whole world.",
+    "ko": "우리가 하는 게임은 할 만한 현명한 일 몇 가지를 찾는 것이다. 세상에서 벌어지는 온갖 일을 다 쫓아가는 게 아니다."
+   },
+   "plain": {
+    "ko": "모든 뉴스와 종목을 다 알 필요는 없고, 확실히 좋은 기회 몇 개만 찾으면 된다는 말이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 1999,
+    "type": "meeting",
+    "locator": "May 3, 1999, afternoon session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-30",
+   "advisor": "munger",
+   "text": {
+    "en": "In my whole life, I have known no wise people (over a broad subject matter area) who didn't read all the time—none.",
+    "ko": "평생 동안 나는 (폭넓은 분야에 걸쳐) 현명한 사람 중에 늘 책을 읽지 않는 사람을 단 한 명도 보지 못했다. 정말 단 한 명도."
+   },
+   "plain": {
+    "ko": "현명해지고 싶다면 꾸준한 독서가 빠질 수 없다는 뜻이에요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2005,
+    "type": "book",
+    "locator": "'Recommended Reading' section epigraph"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-31",
+   "advisor": "munger",
+   "text": {
+    "en": "I constantly see people rise in life who are not the smartest, sometimes not even the most diligent. But they are learning machines.",
+    "ko": "나는 가장 똑똑하지도, 때로는 가장 부지런하지도 않은 사람들이 성공하는 모습을 늘 본다. 하지만 그들은 학습 기계다."
+   },
+   "plain": {
+    "ko": "타고난 머리보다 계속 배우는 습관이 결국 사람을 앞서게 만든다는 말이에요."
+   },
+   "source": {
+    "title": "USC Gould School of Law Commencement Address",
+    "year": 2007,
+    "type": "speech",
+    "locator": "USC Law School, May 13, 2007; reprinted in Poor Charlie's Almanack, Talk Ten"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-32",
+   "advisor": "munger",
+   "text": {
+    "en": "Spend each day trying to be a little wiser than you were when you woke up. Discharge your duties faithfully and well.",
+    "ko": "매일 아침 눈떴을 때보다 조금 더 현명해지려고 노력하며 하루를 보내라. 맡은 일을 성실하고 훌륭하게 해내라."
+   },
+   "plain": {
+    "ko": "하루하루 조금씩 배우고 맡은 일을 잘하는 것이 쌓이면 큰 차이가 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2006,
+    "type": "interview",
+    "locator": "Talk Two, 2006 'Revisited' addendum: Q&A with Peter Kaufman"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-33",
+   "advisor": "munger",
+   "text": {
+    "en": "Another thing you have to do is have a lot of assiduity. I like that word because to me it means \"Sit down on your ass until you do it.\"",
+    "ko": "또 하나 필요한 것은 끈기다. 나는 이 단어를 좋아하는데, 내게는 '해낼 때까지 엉덩이 붙이고 앉아 있어라'라는 뜻이기 때문이다."
+   },
+   "plain": {
+    "ko": "공부든 분석이든, 끝날 때까지 자리를 지키는 끈기가 실력을 만든다는 말이에요."
+   },
+   "source": {
+    "title": "USC Gould School of Law Commencement Address",
+    "year": 2007,
+    "type": "speech",
+    "locator": "USC Law School, May 13, 2007; reprinted in Poor Charlie's Almanack, Talk Ten"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-34",
+   "advisor": "munger",
+   "text": {
+    "en": "The safest way to try to get what you want is to try to deserve what you want.",
+    "ko": "원하는 것을 얻는 가장 안전한 방법은 그것을 누릴 자격을 갖추려고 노력하는 것이다."
+   },
+   "plain": {
+    "ko": "운이나 요령보다, 원하는 결과에 걸맞은 실력과 신뢰를 쌓는 것이 가장 확실한 길이라는 뜻이에요."
+   },
+   "source": {
+    "title": "USC Gould School of Law Commencement Address",
+    "year": 2007,
+    "type": "speech",
+    "locator": "USC Law School, May 13, 2007; reprinted in Poor Charlie's Almanack, Talk Ten"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-35",
+   "advisor": "munger",
+   "text": {
+    "en": "Don't sell anything you wouldn't buy yourself. Don't work for anyone you don't respect and admire. Work only with people you enjoy.",
+    "ko": "자신이 사지 않을 물건은 팔지 마라. 존경하고 우러러보지 않는 사람 밑에서 일하지 마라. 함께 있어 즐거운 사람들과만 일하라."
+   },
+   "plain": {
+    "ko": "투자할 회사를 고를 때도 정직하게 일하고 믿을 만한 사람들이 이끄는 곳인지 보라는 교훈으로 읽을 수 있어요."
+   },
+   "source": {
+    "title": "Poor Charlie's Almanack (Stripe Press ed.)",
+    "year": 2006,
+    "type": "interview",
+    "locator": "Talk Two, 2006 'Revisited' addendum: Q&A with Peter Kaufman"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-36",
+   "advisor": "munger",
+   "text": {
+    "en": "The hard part of the process for most people is the first $100,000. If you have a standing start at zero, getting together $100,000 is a long struggle for most people.",
+    "ko": "대부분의 사람에게 이 과정에서 가장 어려운 부분은 첫 10만 달러다. 맨손으로 시작한다면, 10만 달러를 모으는 일은 대부분에게 긴 싸움이다."
+   },
+   "plain": {
+    "ko": "처음 종잣돈을 모으는 시기가 가장 힘들지만, 그 고비를 넘기면 복리 덕분에 점점 쉬워진다는 뜻이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 1999,
+    "type": "meeting",
+    "locator": "May 3, 1999, afternoon session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-37",
+   "advisor": "munger",
+   "text": {
+    "en": "Well, I think if you have very unreasonable expectations of life, it makes life much more miserable. Much better to get your expectations within reason.",
+    "ko": "삶에 대해 아주 비현실적인 기대를 품으면 삶이 훨씬 더 괴로워진다고 생각한다. 기대를 합리적인 수준으로 맞추는 편이 훨씬 낫다."
+   },
+   "plain": {
+    "ko": "투자 수익률에 대한 기대를 너무 높이 잡으면 무리하게 되고 실망도 커지니, 현실적인 목표를 세우라는 말이에요."
+   },
+   "source": {
+    "title": "Berkshire Hathaway Annual Meeting",
+    "year": 2000,
+    "type": "meeting",
+    "locator": "April 29, 2000, morning session; transcript in CNBC Warren Buffett Archive"
+   },
+   "confidence": "primary"
+  },
+  {
+   "id": "munger-38",
+   "advisor": "munger",
+   "text": {
+    "en": "You fix what can be fixed, and what can't be fixed you endure.",
+    "ko": "고칠 수 있는 것은 고치고, 고칠 수 없는 것은 견뎌라."
+   },
+   "plain": {
+    "ko": "손실이나 어려움이 생기면 바꿀 수 있는 것에 집중하고 바꿀 수 없는 것은 담담히 받아들이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Daily Journal Corporation Annual Meeting",
+    "year": 2021,
+    "type": "meeting",
+    "locator": "February 24, 2021; Yahoo Finance video at 1:09:20 (cited in Wikiquote's sourced section)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "munger-39",
+   "advisor": "munger",
+   "text": {
+    "en": "You don't have a lot of envy, you don't have a lot of resentment. You don't overspend your income, you stay cheerful in spite of your troubles.",
+    "ko": "시기심을 많이 품지 않고, 원망도 많이 하지 않는다. 버는 것보다 많이 쓰지 않고, 힘든 일이 있어도 쾌활함을 잃지 않는다."
+   },
+   "plain": {
+    "ko": "길고 행복한 삶의 비결은 거창하지 않고, 남과 비교하지 않고 분수에 맞게 쓰며 밝게 사는 것이라는 말이에요."
+   },
+   "source": {
+    "title": "CNBC interview with Becky Quick",
+    "year": 2019,
+    "type": "interview",
+    "locator": "Quoted in CNBC article 'What Berkshire Hathaway's Charlie Munger learned about life at age 7', February 22, 2019"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-01",
+   "advisor": "fisher",
+   "text": {
+    "en": "Go to five companies in an industry, ask each of them intelligent questions about the points of strength and weakness of the other four, and nine times out of ten a surprisingly detailed and accurate picture of all five will emerge.",
+    "ko": "한 업종의 회사 다섯 곳을 찾아가 각 회사에 나머지 네 곳의 강점과 약점을 영리하게 물어보라. 열에 아홉은 다섯 회사 모두에 대해 놀랄 만큼 자세하고 정확한 그림이 그려질 것이다."
+   },
+   "plain": {
+    "ko": "경쟁사끼리는 서로를 잘 알기 때문에, 여러 회사에 서로에 대해 물어보면 각 회사의 진짜 모습이 드러난다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 2, \"What 'Scuttlebutt' Can Do\" (Wiley Investment Classics ed. (2003), pp. 44–46)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-02",
+   "advisor": "fisher",
+   "text": {
+    "en": "Of all the phases of a company's activity, none is easier to learn about from sources outside the company than the relative efficiency of a sales organization. Both competitors and customers know the answers.",
+    "ko": "회사 활동의 모든 측면 가운데, 회사 밖에서 알아보기 가장 쉬운 것이 영업 조직의 상대적 효율성이다. 경쟁사와 고객이 모두 답을 알고 있다."
+   },
+   "plain": {
+    "ko": "회사 영업력이 좋은지는 회사 말보다 경쟁사와 고객에게 물어보는 게 가장 정확하다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 4) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-03",
+   "advisor": "fisher",
+   "text": {
+    "en": "One of the major steps in prudent investment must be to find out about a company's affairs from those who have some direct familiarity with them.",
+    "ko": "신중한 투자의 핵심 단계 중 하나는, 회사 사정을 직접 아는 사람들에게서 그 회사에 대해 알아내는 것이다."
+   },
+   "plain": {
+    "ko": "재무제표만 읽지 말고, 그 회사를 실제로 겪어 본 사람들의 이야기를 들어 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 1, \"Origins of a Philosophy\" (Wiley Investment Classics ed. (2003), pp. 227–237)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-04",
+   "advisor": "fisher",
+   "text": {
+    "en": "…the investor must be alert as to whether the management is and continues to be of the highest order of ability; without this, the sales growth will not continue.",
+    "ko": "…투자자는 경영진이 지금 최고 수준의 능력을 갖추고 있는지, 그리고 앞으로도 계속 그럴지를 늘 살펴야 한다. 그렇지 않으면 매출 성장은 이어지지 않는다."
+   },
+   "plain": {
+    "ko": "좋은 제품이 있어도 경영진이 뛰어나지 않으면 성장이 멈추니, 경영진을 꾸준히 지켜보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 1) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-05",
+   "advisor": "fisher",
+   "text": {
+    "en": "Regardless of how high the rating may be in all other matters, however, if there is a serious question of the lack of a strong management sense of trusteeship for stockholders, the investor should never seriously consider participating in such an enterprise.",
+    "ko": "다른 모든 면에서 평가가 아무리 높더라도, 경영진에게 주주의 재산을 맡아 지킨다는 의식이 부족하다는 심각한 의문이 있다면, 투자자는 그런 회사에 투자하는 것을 절대 진지하게 고려해서는 안 된다."
+   },
+   "plain": {
+    "ko": "아무리 실적이 좋아도 경영진이 정직하지 않거나 주주를 무시한다면 투자하지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 15) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-06",
+   "advisor": "fisher",
+   "text": {
+    "en": "In any event, the investor will do well to exclude from investment any company that withholds or tries to hide bad news.",
+    "ko": "어떤 경우든, 나쁜 소식을 감추거나 숨기려 하는 회사는 투자 대상에서 빼는 것이 현명하다."
+   },
+   "plain": {
+    "ko": "잘될 때만 말하고 문제가 생기면 입을 닫는 회사는 믿기 어렵다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 14) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-07",
+   "advisor": "fisher",
+   "text": {
+    "en": "Of one thing the investor can be certain: A large company's need to bring in a new chief executive from the outside is a damning sign of something basically wrong with the existing management.",
+    "ko": "투자자가 확신해도 되는 것이 하나 있다. 큰 회사가 새 최고경영자를 외부에서 데려와야 한다면, 그것은 기존 경영진에 근본적인 문제가 있다는 결정적인 신호다."
+   },
+   "plain": {
+    "ko": "좋은 회사는 내부에서 다음 리더를 키우기 때문에, 외부 영입이 필요하다는 건 안에 문제가 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "Conservative Investors Sleep Well",
+    "year": 1975,
+    "type": "book",
+    "locator": "Part Two, Ch. 2, \"The Second Dimension\" (Wiley Investment Classics ed. (2003), pp. 187–197)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-08",
+   "advisor": "fisher",
+   "text": {
+    "en": "Getting to know the management of a company is like getting married. You never really know the girl until you live with her.",
+    "ko": "회사 경영진을 알아 가는 것은 결혼과 같다. 함께 살아 보기 전에는 상대를 진짜로 알 수 없다."
+   },
+   "plain": {
+    "ko": "경영진은 짧은 만남으로는 알 수 없고, 오래 지켜봐야 제대로 알 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-09",
+   "advisor": "fisher",
+   "text": {
+    "en": "…the greatest investment reward comes to those who by good luck or good sense find the occasional company that over the years can grow in sales and profits far more than industry as a whole.",
+    "ko": "…가장 큰 투자 보상은, 운이 좋든 안목이 좋든, 오랜 세월에 걸쳐 산업 전체보다 훨씬 더 크게 매출과 이익을 키울 수 있는 드문 회사를 찾아낸 사람에게 돌아간다."
+   },
+   "plain": {
+    "ko": "큰돈은 평범한 회사가 아니라 오랫동안 남보다 훨씬 빨리 성장하는 드문 회사에서 나온다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 1, \"Clues from the Past\" (Wiley Investment Classics ed. (2003), pp. 34–43)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-10",
+   "advisor": "fisher",
+   "text": {
+    "en": "The reason why the growth stocks do so much better is that they seem to show gains in value in the hundreds of per cent each decade. In contrast, it is an unusual bargain that is as much as 50 per cent undervalued.",
+    "ko": "성장주가 훨씬 나은 성과를 내는 이유는, 10년마다 가치가 수백 퍼센트씩 오르는 것처럼 보이기 때문이다. 반면에 50퍼센트나 저평가된 싸구려 주식은 흔치 않다."
+   },
+   "plain": {
+    "ko": "싼 주식으로 얻는 이익에는 한계가 있지만, 진짜 성장 기업은 몇 배씩 커질 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 4, \"What to Buy: Applying This to Your Own Needs\" (Wiley Investment Classics ed. (2003), pp. 79–88)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-11",
+   "advisor": "fisher",
+   "text": {
+    "en": "He is buying stocks because they are outstanding and not just because they are cheap.",
+    "ko": "(이 책의 원칙을 따르는) 투자자는 주식이 싸서가 아니라 뛰어나기 때문에 산다."
+   },
+   "plain": {
+    "ko": "주가가 낮다는 이유만으로 사지 말고, 회사가 정말 훌륭한지를 보고 사라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 7, \"The Hullabaloo about Dividends\" (Wiley Investment Classics ed. (2003), pp. 114–122)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-12",
+   "advisor": "fisher",
+   "text": {
+    "en": "He should keep in mind that it is the next five years' earnings, not those of the past five years, that now matter to him.",
+    "ko": "투자자는 지금 중요한 것이 지난 5년의 이익이 아니라 앞으로 5년의 이익이라는 점을 명심해야 한다."
+   },
+   "plain": {
+    "ko": "주식의 가치는 과거 실적보다 앞으로 벌어들일 돈에 달려 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 9, \"Five More Don'ts for Investors\" (Don't No. 3) (Wiley Investment Classics ed. (2003), pp. 135–161)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-13",
+   "advisor": "fisher",
+   "text": {
+    "en": "The fact that a stock has or has not risen in the last several years is of no significance whatsoever in determining whether it should be bought now.",
+    "ko": "어떤 주식이 지난 몇 년간 올랐는지 안 올랐는지는, 지금 그 주식을 살지 판단하는 데 아무런 의미가 없다."
+   },
+   "plain": {
+    "ko": "'많이 올랐으니 비싸다', '안 올랐으니 오를 차례다'라는 생각은 틀렸다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 9, \"Five More Don'ts for Investors\" (Don't No. 3) (Wiley Investment Classics ed. (2003), pp. 135–161)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-14",
+   "advisor": "fisher",
+   "text": {
+    "en": "Stocks of this type will frequently be found to be discounting the future much less than many investors believe. This is why some of the stocks that at first glance appear highest priced may, upon analysis, be the biggest bargains.",
+    "ko": "이런 종류의 주식은 많은 투자자가 생각하는 것보다 미래를 훨씬 덜 반영하고 있는 경우가 많다. 그래서 언뜻 가장 비싸 보이는 주식이 분석해 보면 가장 싼 주식일 수도 있다."
+   },
+   "plain": {
+    "ko": "PER이 높아 비싸 보여도, 회사가 계속 성장한다면 실제로는 싼 주식일 수 있다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 8, \"Five Don'ts for Investors\" (Don't No. 4) (Wiley Investment Classics ed. (2003), pp. 123–134)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-15",
+   "advisor": "fisher",
+   "text": {
+    "en": "The only true test of whether a stock is \"cheap\" or \"high\" is not its current price in relation to some former price … but whether the company's fundamentals are significantly more or less favorable than the current financial-community appraisal of that stock.",
+    "ko": "주식이 '싼지' '비싼지'를 가리는 유일한 진짜 기준은 지금 가격을 예전 가격과 비교하는 것이 아니다. … 회사의 기초 체력이 현재 시장의 평가보다 확실히 더 좋은지 나쁜지가 기준이다."
+   },
+   "plain": {
+    "ko": "예전 주가와 비교하지 말고, 회사의 실제 실력과 시장의 평가를 비교해야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Conservative Investors Sleep Well",
+    "year": 1975,
+    "type": "book",
+    "locator": "Part Two, Ch. 6, \"Still More about the Fourth Dimension\" (Wiley Investment Classics ed. (2003), pp. 218–225)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-16",
+   "advisor": "fisher",
+   "text": {
+    "en": "I believe that the economics which deal with forecasting business trends may be considered to be about as far along as was the science of chemistry during the days of alchemy in the Middle Ages.",
+    "ko": "경기 흐름을 예측하는 경제학의 수준은, 중세 연금술 시대의 화학 정도에 머물러 있다고 본다."
+   },
+   "plain": {
+    "ko": "경기 예측은 거의 맞히기 어려우니, 경기 전망에 기대어 주식을 사고팔지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 5, \"When to Buy\" (Wiley Investment Classics ed. (2003), pp. 89–104)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-17",
+   "advisor": "fisher",
+   "text": {
+    "en": "The extra eighth, or quarter, or half point that may be paid is insignificant compared to the profit that will be missed if the stock is not obtained.",
+    "ko": "조금 더 비싸게 치르는 8분의 1, 4분의 1, 2분의 1 포인트는, 그 주식을 사지 못해 놓치게 될 이익에 비하면 아무것도 아니다."
+   },
+   "plain": {
+    "ko": "좋은 주식이라면 몇 푼 아끼려다 놓치지 말고 사라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 8, \"Five Don'ts for Investors\" (Don't No. 5) (Wiley Investment Classics ed. (2003), pp. 123–134)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-18",
+   "advisor": "fisher",
+   "text": {
+    "en": "If the job has been correctly done when a common stock is purchased, the time to sell it is—almost never.",
+    "ko": "주식을 살 때 제대로 일을 해 두었다면, 그 주식을 팔 때는—거의 오지 않는다."
+   },
+   "plain": {
+    "ko": "처음에 좋은 회사를 제대로 골랐다면 오래 갖고 있는 게 가장 좋다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 6, \"When to Sell: And When Not To\" (Wiley Investment Classics ed. (2003), pp. 105–113)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-19",
+   "advisor": "fisher",
+   "text": {
+    "en": "More money has probably been lost by investors holding a stock they really did not want until they could \"at least come out even\" than from any other single reason.",
+    "ko": "투자자들은 원하지도 않는 주식을 '최소한 본전은 찾을 때까지' 붙들고 있다가, 다른 어떤 이유보다 많은 돈을 잃었을 것이다."
+   },
+   "plain": {
+    "ko": "잘못 산 주식을 본전 생각에 계속 들고 있는 것이 가장 큰 손실의 원인이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 6, \"When to Sell: And When Not To\" (Wiley Investment Classics ed. (2003), pp. 105–113)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-20",
+   "advisor": "fisher",
+   "text": {
+    "en": "However, there is a complicating factor that makes the handling of investment mistakes more difficult. This is the ego in each of us. None of us likes to admit to himself that he has been wrong.",
+    "ko": "그런데 투자 실수를 처리하기 어렵게 만드는 복잡한 요인이 있다. 바로 우리 각자의 자존심이다. 누구도 자신이 틀렸다고 스스로 인정하고 싶어 하지 않는다."
+   },
+   "plain": {
+    "ko": "실수를 인정하기 싫은 마음 때문에 잘못된 주식을 못 판다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 6, \"When to Sell: And When Not To\" (Wiley Investment Classics ed. (2003), pp. 105–113)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-21",
+   "advisor": "fisher",
+   "text": {
+    "en": "When a bear market has come, I have not seen one time in ten when the investor actually got back into the same shares before they had gone up above his selling price.",
+    "ko": "하락장이 왔을 때, 투자자가 판 값보다 주가가 오르기 전에 같은 주식을 다시 사들인 경우를 나는 열 번에 한 번도 보지 못했다."
+   },
+   "plain": {
+    "ko": "하락장을 피하려고 팔았다가 더 싸게 되사는 일은 생각보다 거의 성공하지 못한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 6, \"When to Sell: And When Not To\" (Wiley Investment Classics ed. (2003), pp. 105–113)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-22",
+   "advisor": "fisher",
+   "text": {
+    "en": "Never sell the most attractive stocks you own for short-term reasons.",
+    "ko": "가지고 있는 가장 매력적인 주식을 단기적인 이유로 절대 팔지 마라."
+   },
+   "plain": {
+    "ko": "정말 좋은 회사 주식은 잠깐의 흔들림 때문에 팔지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 4, \"Is the Market Efficient?\" (Conclusion) (Wiley Investment Classics ed. (2003), pp. 266–278)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-23",
+   "advisor": "fisher",
+   "text": {
+    "en": "Getting your bait back is just a question of psychological comfort. It doesn't have anything to do with whether it is the right move or not.",
+    "ko": "원금을 먼저 빼 두는 것은 그저 마음 편하자고 하는 일이다. 그것이 옳은 결정인지와는 아무 관계가 없다."
+   },
+   "plain": {
+    "ko": "'원금만 먼저 회수하자'는 생각은 기분의 문제일 뿐, 좋은 투자 판단이 아니라는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-24",
+   "advisor": "fisher",
+   "text": {
+    "en": "Well, it is true that you don't go broke taking a profit, but that assumes you will make a profit on everything you do.",
+    "ko": "물론 이익을 챙기다 망하지는 않는다. 하지만 그 말은 당신이 하는 모든 투자에서 이익을 낸다고 가정한 것이다."
+   },
+   "plain": {
+    "ko": "작은 이익만 자주 챙기면, 피할 수 없는 손실을 큰 이익으로 메울 수 없다는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-25",
+   "advisor": "fisher",
+   "text": {
+    "en": "I don't want to spend my time trying to earn a lot of little profits. I want very, very big profits that I'm ready to wait for.",
+    "ko": "작은 이익을 여러 번 얻으려고 시간을 쓰고 싶지 않다. 나는 기다릴 각오가 되어 있는, 아주 아주 큰 이익을 원한다."
+   },
+   "plain": {
+    "ko": "자잘한 단타보다 오래 기다려서 크게 버는 투자를 하라는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-26",
+   "advisor": "fisher",
+   "text": {
+    "en": "I have repeated again and again to my clients that when I purchase something for them, not to judge the results in a matter of a month or a year, but to allow me a three-year period.",
+    "ko": "나는 고객들에게 몇 번이고 말했다. 내가 무언가를 사 주면 한 달이나 1년 만에 결과를 판단하지 말고, 3년의 시간을 달라고."
+   },
+   "plain": {
+    "ko": "좋은 투자도 결과가 나오려면 시간이 걸리니, 최소 몇 년은 기다려 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 2, \"Learning from Experience\" (\"Patience and Performance\") (Wiley Investment Classics ed. (2003), pp. 238–251)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-27",
+   "advisor": "fisher",
+   "text": {
+    "en": "It is just appalling the nerve strain people put themselves under trying to buy something today and sell it tomorrow. It's a small-win proposition.",
+    "ko": "오늘 사서 내일 팔려고 사람들이 스스로 견디는 신경의 긴장은 정말 끔찍할 정도다. 그것은 작게 이기는 게임일 뿐이다."
+   },
+   "plain": {
+    "ko": "자주 사고파는 투자는 스트레스는 크고 얻는 건 작다는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-28",
+   "advisor": "fisher",
+   "text": {
+    "en": "Usually a very long list of securities is not a sign of the brilliant investor, but of one who is unsure of himself.",
+    "ko": "보유 종목 목록이 아주 길다는 것은 보통 뛰어난 투자자라는 표시가 아니라, 자신이 없는 투자자라는 표시다."
+   },
+   "plain": {
+    "ko": "종목을 너무 많이 가진 건 확신이 없다는 뜻일 수 있으니, 잘 아는 회사에 집중하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 9, \"Five More Don'ts for Investors\" (Don't No. 1) (Wiley Investment Classics ed. (2003), pp. 135–161)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-29",
+   "advisor": "fisher",
+   "text": {
+    "en": "…beyond this point he should take extreme care to own not the most, but the best.",
+    "ko": "…(실수에 대비할 만큼 분산한 뒤에는) 가장 많이가 아니라 가장 좋은 것을 갖도록 각별히 신경 써야 한다."
+   },
+   "plain": {
+    "ko": "한두 번의 실수를 견딜 정도로만 나누고, 그다음엔 종목 수보다 질에 집중하라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 9, \"Five More Don'ts for Investors\" (Don't No. 1) (Wiley Investment Classics ed. (2003), pp. 135–161)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-30",
+   "advisor": "fisher",
+   "text": {
+    "en": "For individuals (in possible contrast to institutions and certain types of funds), any holding of over twenty different stocks is a sign of financial incompetence.",
+    "ko": "개인 투자자에게는(기관이나 일부 펀드와는 다를 수 있지만) 서로 다른 주식을 스무 종목 넘게 갖고 있는 것은 투자 역량이 부족하다는 표시다."
+   },
+   "plain": {
+    "ko": "개인은 다 챙겨 볼 수 없을 만큼 많은 종목을 사면 오히려 관리가 안 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 4, \"Is the Market Efficient?\" (Conclusion) (Wiley Investment Classics ed. (2003), pp. 266–278)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-31",
+   "advisor": "fisher",
+   "text": {
+    "en": "This matter of training oneself not to go with the crowd but to be able to zig when the crowd zags, in my opinion, is one of the most important fundamentals of investment success.",
+    "ko": "군중을 따라가지 않고, 군중이 한쪽으로 꺾을 때 반대쪽으로 꺾을 수 있도록 스스로를 훈련하는 것은, 내 생각에 투자 성공의 가장 중요한 기본 중 하나다."
+   },
+   "plain": {
+    "ko": "모두가 같은 방향으로 몰릴 때 따라가지 않는 연습이 투자에서 매우 중요하다는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 2, \"Learning from Experience\" (\"Zigging and Zagging\") (Wiley Investment Classics ed. (2003), pp. 238–251)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-32",
+   "advisor": "fisher",
+   "text": {
+    "en": "If there's standing room only, that's usually a pretty fair sign it's not a good time to buy the stock.",
+    "ko": "(기업 설명회에) 서 있을 자리밖에 없을 정도라면, 대개 그 주식을 사기에 좋은 때가 아니라는 꽤 확실한 신호다."
+   },
+   "plain": {
+    "ko": "모두가 몰려드는 인기 주식은 이미 늦었을 가능성이 높다는 뜻이에요."
+   },
+   "source": {
+    "title": "What We Can Learn from Phil Fisher (Forbes interview)",
+    "year": 1987,
+    "type": "interview",
+    "locator": "Forbes, Oct. 19, 1987, vol. 140, p. 40ff. (interview by Thomas Jaffe, intro by Warren Buffett)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-33",
+   "advisor": "fisher",
+   "text": {
+    "en": "I have always believed that the chief difference between a fool and a wise man is that the wise man learns from his mistakes, while the fool never does.",
+    "ko": "나는 늘 어리석은 사람과 현명한 사람의 가장 큰 차이가, 현명한 사람은 실수에서 배우고 어리석은 사람은 결코 배우지 않는다는 데 있다고 믿어 왔다."
+   },
+   "plain": {
+    "ko": "실수는 누구나 하지만, 거기서 배우는 사람이 결국 더 나은 투자자가 된다는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 1, \"Origins of a Philosophy\" (Wiley Investment Classics ed. (2003), pp. 227–237)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-34",
+   "advisor": "fisher",
+   "text": {
+    "en": "Actually dividend considerations should be given the least, not the most, weight by those desiring to select outstanding stocks.",
+    "ko": "사실 뛰어난 주식을 고르고 싶은 사람이라면 배당에 가장 큰 비중이 아니라 가장 작은 비중을 두어야 한다."
+   },
+   "plain": {
+    "ko": "배당을 많이 주는지보다, 번 돈을 잘 재투자해 성장하는 회사인지를 먼저 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 7, \"The Hullabaloo about Dividends\" (Wiley Investment Classics ed. (2003), pp. 114–122)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-35",
+   "advisor": "fisher",
+   "text": {
+    "en": "Does the company have products or services with sufficient market potential to make possible a sizable increase in sales for at least several years?",
+    "ko": "그 회사는 적어도 몇 년 동안 매출을 크게 늘릴 수 있을 만큼 시장 잠재력이 충분한 제품이나 서비스를 갖고 있는가?"
+   },
+   "plain": {
+    "ko": "15가지 체크포인트의 첫 번째로, 앞으로 몇 년간 크게 팔릴 제품이 있는지 보라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 1) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-36",
+   "advisor": "fisher",
+   "text": {
+    "en": "Does the company have a management of unquestionable integrity?",
+    "ko": "그 회사의 경영진은 의심할 여지 없이 정직한가?"
+   },
+   "plain": {
+    "ko": "15가지 체크포인트의 마지막으로, 경영진의 정직함은 절대 양보할 수 없는 조건이라는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 15) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-37",
+   "advisor": "fisher",
+   "text": {
+    "en": "The success of a stock purchase does not depend on what is generally known about a company at the time the purchase is made. Rather it depends upon what gets to be known about it after the stock has been bought.",
+    "ko": "주식 매수의 성공은 살 때 그 회사에 대해 널리 알려진 것에 달려 있지 않다. 오히려 주식을 산 뒤에 그 회사에 대해 새로 알려지게 되는 것에 달려 있다."
+   },
+   "plain": {
+    "ko": "이미 모두가 아는 정보는 주가에 반영되어 있으니, 앞으로 드러날 회사의 가치를 내다봐야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Ch. 3, \"What to Buy: The Fifteen Points\" (Point 6) (Wiley Investment Classics ed. (2003), pp. 47–78)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-38",
+   "advisor": "fisher",
+   "text": {
+    "en": "…when a company clearly becomes the leader in its field, not just in dollar volume but in profitability, it seldom gets displaced from this position as long as its management remains highly competent.",
+    "ko": "…한 회사가 매출 규모뿐 아니라 수익성에서도 분명한 업계 1위가 되면, 경영진이 계속 유능한 한 그 자리에서 밀려나는 일은 드물다."
+   },
+   "plain": {
+    "ko": "돈을 가장 잘 버는 업계 1등 기업은 경영만 잘되면 쉽게 무너지지 않는다는 뜻이에요."
+   },
+   "source": {
+    "title": "Conservative Investors Sleep Well",
+    "year": 1975,
+    "type": "book",
+    "locator": "Part Two, Ch. 3, \"The Third Dimension\" (Wiley Investment Classics ed. (2003), pp. 198–206)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-39",
+   "advisor": "fisher",
+   "text": {
+    "en": "I believe that it is hard to be correct in forecasting the short-term movement of stocks more than 60 percent of the time no matter how diligently the skill is cultivated.",
+    "ko": "아무리 열심히 실력을 갈고닦아도, 주가의 단기 움직임을 60퍼센트 넘게 맞히기는 어렵다고 생각한다."
+   },
+   "plain": {
+    "ko": "단기 주가를 맞히는 건 전문가에게도 어려우니, 단기 예측에 기대지 말라는 뜻이에요."
+   },
+   "source": {
+    "title": "Developing an Investment Philosophy",
+    "year": 1980,
+    "type": "book",
+    "locator": "Part Three, Ch. 3, \"The Philosophy Matures\" (\"Stay or Sell in Anticipation of Possible Market Downturns?\") (Wiley Investment Classics ed. (2003), pp. 252–265)"
+   },
+   "confidence": "secondary"
+  },
+  {
+   "id": "fisher-40",
+   "advisor": "fisher",
+   "text": {
+    "en": "This book is dedicated to all investors, large and small, who do NOT adhere to the philosophy: \"I have already made up my mind, don't confuse me with facts.\"",
+    "ko": "이 책을 크고 작은 모든 투자자에게 바친다. 단, '나는 이미 마음을 정했으니 사실로 나를 헷갈리게 하지 마라'라는 태도를 고집하지 않는 투자자에게."
+   },
+   "plain": {
+    "ko": "자기 생각만 고집하지 말고 사실을 보고 판단을 바꿀 줄 알아야 한다는 뜻이에요."
+   },
+   "source": {
+    "title": "Common Stocks and Uncommon Profits",
+    "year": 1958,
+    "type": "book",
+    "locator": "Dedication (Wiley Investment Classics ed. (2003), front matter)"
+   },
+   "confidence": "secondary"
+  }
+ ]
+}
