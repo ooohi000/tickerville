@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ERA_IDS, ERAS, TAGLINE_KO } from "@/lib/era/eras";
+import { ERA_IDS, ERAS } from "@/lib/era/eras";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
@@ -58,7 +58,8 @@ export default function AboutPage() {
 
       <header className={styles.hero}>
         <p className={styles.eyebrow}>TICKERVILLE · 티커빌</p>
-        <h1 className={styles.title}>{TAGLINE_KO}</h1>
+        <h1 className={styles.title}>티커빌</h1>
+        <p className={styles.subtitle}>미국 상장 기업을 실제 지도 위 3D 건물로 — SEC 공시로 보는 실적과 재무</p>
         <p className={styles.lead}>
           티커빌은 미국 상장 기업이 실제로 어디에 있는지 지도 위에서 보고, 건물을 누르면 그 회사의 실적과 재무 상태를 한국어로
           읽을 수 있는 서비스예요. 숫자는 모두 기업이 미국 증권거래위원회에 낸 공시에서 가져와요.

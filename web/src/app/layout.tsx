@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // 링크 미리보기 이미지 주소를 절대 주소로 (배포 주소는 TICKERVILLE_SITE_URL)
+  metadataBase: new URL(process.env.TICKERVILLE_SITE_URL ?? "http://localhost:3000"),
   title: "티커빌 — 미국 기업 3D 지도",
-  description: "대통령님, 보고드립니다. 미국 기업 본사를 실제 지도 위 3D 건물로 — SEC 공시로 보는 실적과 재무 상태",
+  description: "미국 상장 기업을 실제 지도 위 3D 건물로. 대통령이 되어 기업 보고를 받아보세요 — SEC 공시로 보는 실적과 재무",
+  openGraph: { siteName: "티커빌", locale: "ko_KR", type: "website" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

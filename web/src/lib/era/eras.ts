@@ -163,9 +163,6 @@ export function formatGreeting(era: EraSpec, analystName: string | null = null):
   return `${who}, 보고드립니다`;
 }
 
-/** 서비스 대표 문구 (소개 페이지·링크 미리보기처럼 캐릭터가 없는 곳) */
-export const TAGLINE_KO = "대통령님, 보고드립니다";
-
 export function formatBriefing(era: EraSpec, name: string): string {
   return era.briefingKo.replace("{name}", name);
 }

@@ -55,3 +55,4 @@
   .reading { grid-template-columns: 1fr; }
   .eras { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+.subtitle { color: #ffffff; font-size: clamp(17px, 3vw, 22px); font-weight: 700; }
